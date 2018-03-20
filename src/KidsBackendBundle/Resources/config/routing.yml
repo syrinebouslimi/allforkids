@@ -1,0 +1,3 @@
+kids_backend_homepage:
+    path:     /
+    defaults: { _controller: KidsBackendBundle:Default:index }
