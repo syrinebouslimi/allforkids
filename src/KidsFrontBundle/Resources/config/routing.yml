@@ -1,7 +1,3 @@
 kids_front_homepage:
     path:     /
     defaults: { _controller: KidsFrontBundle:Default:index }
-
-kids_front_acceuil:
-    path:     /kids
-    defaults: { _controller: KidsFrontBundle:Default:index }
