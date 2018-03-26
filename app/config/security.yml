@@ -5,6 +5,7 @@ security:
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
         ROLE_PRESTATAIRE: ROLE_USER
+        ROLE_PARENT:      ROLE_USER
         ROLE_SUPER_ADMIN: ROLE_ADMIN
 
     providers:
@@ -16,6 +17,7 @@ security:
             pattern: ^/
             form_login:
                 provider: fos_userbundle
+                success_handler: redirect.after.login
             logout:       true
             anonymous:    true
 

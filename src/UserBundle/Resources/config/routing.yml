@@ -1,3 +1,7 @@
-user_homepage:
-    path:     /
-    defaults: { _controller: UserBundle:Default:index }
+parent_page:
+    path:     /parent
+    defaults: { _controller: UserBundle:Default:parent }
+
+prestataire_page:
+    path:     /prestataire
+    defaults: { _controller: UserBundle:Default:prestataire }
