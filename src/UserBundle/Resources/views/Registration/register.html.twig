@@ -1,59 +1,7 @@
-{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+{% extends "@FOSUser/layout.html.twig" %}
 
-<div class="form-group formField">
-    {{ form_widget(form.email,{'attr':{'class':'form-control','placeholder': "Adresse email"}} ) }}
-</div>
+{% block fos_user_content %}
+    {% include "@FOSUser/Registration/register_content.html.twig" %}
+{% endblock fos_user_content %}
 
-
-<div class="form-group formField">
-    {{ form_widget(form.plainPassword.first, {'attr':{'class':'form-control','placeholder' : "Mot de passe"}} ) }}
-</div>
-
-<div class="form-group formField">
-    {{ form_widget(form.plainPassword.second, {'attr':{'class':'form-control','placeholder' : "Retaper Mot de passe"}} ) }}
-</div>
-
-
-<div class="form-group formField">
-    {{ form_widget(form.username,{'attr':{'class':'form-control','placeholder': "Nom d'utilisateur"}} ) }}
-</div>
-
-
-<div class="form-group formField">
-    {{ form_widget(form.datenaissanceUser,{'attr':{'class':'form-control','placeholder': "Date de naissance"}} ) }}
-</div>
-
-
-<div class="form-group formField">
-    {{ form_widget(form.adresseUser,{'attr':{'class':'form-control','placeholder': "Adresse"}} ) }}
-</div>
-
-<div class="form-group formField">
-    {{ form_widget(form.profilePictureUser,{'attr':{'class':'form-control','placeholder' : "Url de Votre photo de profil"}} ) }}
-</div>
-
-<div class="form-group formField">
-    {{ form_widget(form.numeroTelephoneUser,{'attr':{'class':'form-control','placeholder' : "Numéro de téléphone"}} ) }}
-</div>
-
-
-<div class="form-group formField">
-    {{ form_widget(form.nomUser,{'attr':{'class':'form-control', 'placeholder' : "Nom"}} ) }}
-</div>
-
-<div class="form-group formField">
-    {{ form_widget(form.prenomUser,{'attr':{'class':'form-control' , 'placeholder' : "Prénom"}} ) }}
-</div>
-
-
-{{ form_end(form) }}
-
-<div class="form-group formField">
-    <input type="submit" class="btn btn-primary btn-block bg-color-3 border-color-3" value="Register">
-</div>
-
-
-<div class="form-group formField">
-    <p class="help-block">Allready have an account? <a href="#">Log in</a></p>
-</div>
 

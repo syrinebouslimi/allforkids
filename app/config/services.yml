@@ -34,12 +34,7 @@ services:
         class: UserBundle\Redirection\AfterLoginRedirection
         arguments: ['@router']
 
-    registration_confirmation_subscriber:
-        class: UserBundle\EventListener\RegistrationConfirmationSubscriber
-        arguments:
-            - "@router"
-        tags:
-            - { name: kernel.event_subscriber }
+
 
 
     # add more services, or override services that need manual wiring

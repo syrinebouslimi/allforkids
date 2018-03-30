@@ -83,3 +83,4 @@ fos_user:
             handler: registration_confirm_subscriber
 
 
+
