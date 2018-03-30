@@ -1,3 +1,17 @@
+kids_back_homepage:
+    path:     /backend
+    defaults: { _controller: KidsBackendBundle:Default:index }
+
 kids_front_homepage:
-    path:     /
+    path:     /front
     defaults: { _controller: KidsFrontBundle:Default:index }
+contact:
+    path:     /contact
+    defaults: { _controller: KidsFrontBundle:Etablissement:contact }
+etablissement:
+    path:     /etablissements
+    defaults: { _controller: KidsFrontBundle:Etablissement:etablissements }
+test:
+    path:     /
+    defaults: { _controller: KidsFrontBundle:Etablissement:index }
+

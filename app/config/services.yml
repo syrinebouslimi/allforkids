@@ -34,6 +34,12 @@ services:
         class: UserBundle\Redirection\AfterLoginRedirection
         arguments: ['@router']
 
+    rs_user.registration_complet:
+        class: UserBundle\EventListener\RegistrationConfirmListner
+        arguments: ['@router']
+        tags:
+            - { name: kernel.event_subscriber }
+
 
 
 

@@ -78,9 +78,7 @@ fos_user:
     from_email:
         address: "syrine.bouslimi@esprit.tn"
         sender_name: "demo"
-    registration:
-        form:
-            handler: registration_confirm_subscriber
+
 
 
 

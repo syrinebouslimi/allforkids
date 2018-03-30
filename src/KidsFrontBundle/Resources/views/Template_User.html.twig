@@ -30,7 +30,6 @@
     <link rel="stylesheet" href="{{ asset('Template_front_principal/css/default.css')}}" id="option_color">
 
     <!-- Icons -->
-    <link rel="shortcut icon" href="img/favicon.png">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -293,6 +292,18 @@
                                 <li class=" "><a href="typography.html">Typography</a></li>
                                 <li class=" "><a href="responsive-embed.html">Responsive Embed</a></li>
                             </ul>
+                        </li>
+
+                        <li class="dropdown singleDrop color-1   active ">
+                            <a href="{{ path('contact')}}"  role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-home bg-color-1" aria-hidden="true"></i> <span class="active">Contact</span>
+                            </a>
+                            {#<ul class="dropdown-menu dropdown-menu-left">#}
+                                {#<li class=" active "><a href="index-2.html">Kidz School</a></li>#}
+                                {#<li class=""><a href="index-v2.html">Kidz Store</a></li>#}
+                                {#<li class=""><a href="index-v3.html">Kidz Daycare</a></li>#}
+                                {#<li class=""><a href="index-v4.html">Kidz Fashion</a></li>#}
+                            {#</ul>#}
                         </li>
                     </ul>
                 </div>
@@ -626,9 +637,13 @@
         </div>
         <!-- FOOTER INFO AREA -->
         <div class="footerInfoArea full-width clearfix" style="background-image: url({{ asset('Template_front_principal/img/footer/footer-bg.png')}});">
-            <div class="container">
-                <h1 style="text-align: center; color: white; font-family: inherit; font-weight: lighter;font-size: 37px; ">All For Kidz</h1>
-            </div>
+            {#<div class="container">#}
+                {#<h1 style="text-align: center; color: white; font-family: inherit; font-weight: lighter;font-size: 37px; ">All For Kidz</h1>#}
+            {#</div>#}
+
+            {% block body %}
+            {% endblock body %}
+
         </div>
         <!-- COPY RIGHT -->
         <div class="copyRight clearfix" style="background-color: #0f506b">
