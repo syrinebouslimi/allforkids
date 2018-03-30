@@ -2,8 +2,3 @@ services:
 #    user.example:
 #        class: UserBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
-    rs_user.registration_complet:
-         class: UserBundle\EventListener\RegistrationConfirmListner
-         arguments: ['@router']
-         tags:
-            - { name: kernel.event_subscriber }
