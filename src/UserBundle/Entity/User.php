@@ -54,7 +54,7 @@ class User extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(name="datenaissanceUser", type="string", length=255,nullable=true)
+     * @ORM\Column(name="datenaissanceUser", type="date", length=255,nullable=true)
      */
     protected $datenaissanceUser;
 
@@ -103,6 +103,16 @@ class User extends BaseUser
         $this->adresseUser = $adresseUser;
     }
 
+
+
+    /**
+     * @return string
+     */
+    public function getNomUser()
+    {
+        return $this->nomUser;
+    }
+
     /**
      * @return string
      */
@@ -117,14 +127,6 @@ class User extends BaseUser
     public function setDatenaissanceUser($datenaissanceUser)
     {
         $this->datenaissanceUser = $datenaissanceUser;
-    }
-
-    /**
-     * @return string
-     */
-    public function getNomUser()
-    {
-        return $this->nomUser;
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace UsersBundle\Entity;
+namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Reclamation
  *
  * @ORM\Table(name="reclamation")
- * @ORM\Entity(repositoryClass="UsersBundle\Repository\ReclamationRepository")
+ * @ORM\Entity(repositoryClass="UserBundle\Repository\ReclamationRepository")
  */
 class Reclamation
 {

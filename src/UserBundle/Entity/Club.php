@@ -1,6 +1,6 @@
 <?php
 
-namespace UsersBundle\Entity;
+namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Club
  *
  * @ORM\Table(name="club")
- * @ORM\Entity(repositoryClass="UsersBundle\Repository\ClubRepository")
+ * @ORM\Entity(repositoryClass="UserBundle\Repository\ClubRepository")
  */
 class Club
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace UsersBundle\Entity;
+namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Publication
  *
  * @ORM\Table(name="publication")
- * @ORM\Entity(repositoryClass="UsersBundle\Repository\PublicationRepository")
+ * @ORM\Entity(repositoryClass="UserBundle\Repository\PublicationRepository")
  */
 class Publication
 {
@@ -52,7 +52,7 @@ class Publication
     /**
      * @var string
      *
-     * @ORM\Column(name="contenuPublication", type="string", length=255)
+     * @ORM\Column(name="descriptionPublication", type="string", length=255)
      */
     private $descriptionPublication;
 

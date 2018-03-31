@@ -1,6 +1,6 @@
 <?php
 
-namespace UsersBundle\Entity;
+namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Service
  *
  * @ORM\Table(name="service")
- * @ORM\Entity(repositoryClass="UsersBundle\Repository\ServiceRepository")
+ * @ORM\Entity(repositoryClass="UserBundle\Repository\ServiceRepository")
  */
 class Service
 {
