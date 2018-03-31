@@ -37,6 +37,26 @@ class RendezVous
 
 
     /**
+ *
+ * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
+ * @ORM\JoinColumn(name="idUserRendezVous",referencedColumnName="id",onDelete="CASCADE")
+ */
+
+    private $idUserRendezVous;
+
+
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\Service")
+     * @ORM\JoinColumn(name="idServiceRendezVous",referencedColumnName="id",onDelete="CASCADE")
+     */
+
+    private $idServiceRendezVous;
+
+
+
+
+    /**
      * Get id
      *
      * @return int
@@ -93,5 +113,41 @@ class RendezVous
     {
         return $this->lieuRendezVous;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getIdUserRendezVous()
+    {
+        return $this->idUserRendezVous;
+    }
+
+    /**
+     * @param mixed $idUserRendezVous
+     */
+    public function setIdUserRendezVous($idUserRendezVous)
+    {
+        $this->idUserRendezVous = $idUserRendezVous;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdServiceRendezVous()
+    {
+        return $this->idServiceRendezVous;
+    }
+
+    /**
+     * @param mixed $idServiceRendezVous
+     */
+    public function setIdServiceRendezVous($idServiceRendezVous)
+    {
+        $this->idServiceRendezVous = $idServiceRendezVous;
+    }
+
+
+
+
 }
 
