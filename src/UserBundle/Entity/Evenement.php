@@ -1,6 +1,6 @@
 <?php
 
-namespace UsersBundle\Entity;
+namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Evenement
  *
  * @ORM\Table(name="evenement")
- * @ORM\Entity(repositoryClass="UsersBundle\Repository\EvenementRepository")
+ * @ORM\Entity(repositoryClass="UserBundle\Repository\EvenementRepository")
  */
 class Evenement
 {
@@ -20,6 +20,8 @@ class Evenement
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+
 
     /**
      * @var string
@@ -62,6 +64,31 @@ class Evenement
      * @ORM\Column(name="etatEvenement", type="string", length=255)
      */
     private $etatEvenement;
+
+
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
+     * @ORM\JoinColumn(name="idUserEvenement",referencedColumnName="id",onDelete="CASCADE")
+     */
+
+    private $idUserEvenement;
+
+    /**
+     * @return mixed
+     */
+    public function getIdUserEvenement()
+    {
+        return $this->idUserEvenement;
+    }
+
+    /**
+     * @param mixed $idUserEvenement
+     */
+    public function setIdUserEvenement($idUserEvenement)
+    {
+        $this->idUserEvenement = $idUserEvenement;
+    }
 
 
     /**

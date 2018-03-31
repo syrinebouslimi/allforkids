@@ -1,6 +1,6 @@
 <?php
 
-namespace UsersBundle\Entity;
+namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Service
  *
  * @ORM\Table(name="service")
- * @ORM\Entity(repositoryClass="UsersBundle\Repository\ServiceRepository")
+ * @ORM\Entity(repositoryClass="UserBundle\Repository\ServiceRepository")
  */
 class Service
 {
@@ -62,6 +62,57 @@ class Service
      * @ORM\Column(name="dateService", type="datetime")
      */
     private $dateService;
+
+
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
+     * @ORM\JoinColumn(name="idUserService",referencedColumnName="id",onDelete="CASCADE")
+     */
+
+    private $idUserService;
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\TypeService")
+     * @ORM\JoinColumn(name="idTypeService",referencedColumnName="id",onDelete="CASCADE")
+     */
+
+    private $idTypeService;
+
+    /**
+     * @return mixed
+     */
+    public function getIdUserService()
+    {
+        return $this->idUserService;
+    }
+
+    /**
+     * @param mixed $idUserService
+     */
+    public function setIdUserService($idUserService)
+    {
+        $this->idUserService = $idUserService;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdTypeService()
+    {
+        return $this->idTypeService;
+    }
+
+    /**
+     * @param mixed $idTypeService
+     */
+    public function setIdTypeService($idTypeService)
+    {
+        $this->idTypeService = $idTypeService;
+    }
+
+
+
 
 
     /**
@@ -217,5 +268,6 @@ class Service
     {
         return $this->dateService;
     }
+
 }
 

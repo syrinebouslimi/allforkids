@@ -1,6 +1,6 @@
 <?php
 
-namespace UsersBundle\Entity;
+namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * ProfilEnfant
  *
  * @ORM\Table(name="profil_enfant")
- * @ORM\Entity(repositoryClass="UsersBundle\Repository\ProfilEnfantRepository")
+ * @ORM\Entity(repositoryClass="UserBundle\Repository\ProfilEnfantRepository")
  */
 class ProfilEnfant
 {
@@ -62,6 +62,14 @@ class ProfilEnfant
      * @ORM\Column(name="datenaissanceEnfant", type="datetime")
      */
     private $datenaissanceEnfant;
+
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
+     * @ORM\JoinColumn(name="idUserProfileEnfant",referencedColumnName="id",onDelete="CASCADE")
+     */
+
+    private $idUserProfileEnfant;
 
 
     /**
@@ -217,5 +225,23 @@ class ProfilEnfant
     {
         return $this->datenaissanceEnfant;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getIdUserProfileEnfant()
+    {
+        return $this->idUserProfileEnfant;
+    }
+
+    /**
+     * @param mixed $idUserProfileEnfant
+     */
+    public function setIdUserProfileEnfant($idUserProfileEnfant)
+    {
+        $this->idUserProfileEnfant = $idUserProfileEnfant;
+    }
+
+
 }
 

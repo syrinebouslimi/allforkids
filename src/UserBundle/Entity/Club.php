@@ -1,6 +1,6 @@
 <?php
 
-namespace UsersBundle\Entity;
+namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Club
  *
  * @ORM\Table(name="club")
- * @ORM\Entity(repositoryClass="UsersBundle\Repository\ClubRepository")
+ * @ORM\Entity(repositoryClass="UserBundle\Repository\ClubRepository")
  */
 class Club
 {
@@ -48,6 +48,16 @@ class Club
      * @ORM\Column(name="imageClub", type="string", length=255)
      */
     private $imageClub;
+
+
+
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\Etablissement")
+     * @ORM\JoinColumn(name="idEtablissement",referencedColumnName="id",onDelete="CASCADE")
+     */
+
+    private $idEtablissement;
 
 
     /**
@@ -155,5 +165,23 @@ class Club
     {
         return $this->imageClub;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getIdEtablissement()
+    {
+        return $this->idEtablissement;
+    }
+
+    /**
+     * @param mixed $idEtablissement
+     */
+    public function setIdEtablissement($idEtablissement)
+    {
+        $this->idEtablissement = $idEtablissement;
+    }
+
+
 }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace UsersBundle\Entity;
+namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Reclamation
  *
  * @ORM\Table(name="reclamation")
- * @ORM\Entity(repositoryClass="UsersBundle\Repository\ReclamationRepository")
+ * @ORM\Entity(repositoryClass="UserBundle\Repository\ReclamationRepository")
  */
 class Reclamation
 {
@@ -62,6 +62,15 @@ class Reclamation
      * @ORM\Column(name="dateReclamation", type="datetime")
      */
     private $dateReclamation;
+
+
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
+     * @ORM\JoinColumn(name="idUserReclamation",referencedColumnName="id",onDelete="CASCADE")
+     */
+
+    private $idUserReclamation;
 
 
     /**
@@ -201,6 +210,24 @@ class Reclamation
     {
         $this->recepteurReclamation = $recepteurReclamation;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getIdUserReclamation()
+    {
+        return $this->idUserReclamation;
+    }
+
+    /**
+     * @param mixed $idUserReclamation
+     */
+    public function setIdUserReclamation($idUserReclamation)
+    {
+        $this->idUserReclamation = $idUserReclamation;
+    }
+
+
 
 
 }

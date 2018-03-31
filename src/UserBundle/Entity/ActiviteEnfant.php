@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * ActiviteEnfant
  *
  * @ORM\Table(name="activite_enfant")
- * @ORM\Entity(repositoryClass="UsersBundle\Repository\ActiviteEnfantRepository")
+ * @ORM\Entity(repositoryClass="UserBundle\Repository\ActiviteEnfantRepository")
  */
 class ActiviteEnfant
 {
@@ -27,6 +27,15 @@ class ActiviteEnfant
      * @ORM\Column(name="nomActivite", type="string", length=255)
      */
     private $nomActivite;
+
+
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\ProfilEnfant")
+     * @ORM\JoinColumn(name="idProfileEnfant",referencedColumnName="id",onDelete="CASCADE")
+     */
+
+    private $idProfileEnfant;
 
 
     /**
@@ -62,5 +71,22 @@ class ActiviteEnfant
     {
         return $this->nomActivite;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getIdProfileEnfant()
+    {
+        return $this->idProfileEnfant;
+    }
+
+    /**
+     * @param mixed $idProfileEnfant
+     */
+    public function setIdProfileEnfant($idProfileEnfant)
+    {
+        $this->idProfileEnfant = $idProfileEnfant;
+    }
+
 }
 

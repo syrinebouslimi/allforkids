@@ -1,6 +1,6 @@
 <?php
 
-namespace UsersBundle\Entity;
+namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * TypePublication
  *
  * @ORM\Table(name="type_publication")
- * @ORM\Entity(repositoryClass="UsersBundle\Repository\TypePublicationRepository")
+ * @ORM\Entity(repositoryClass="UserBundle\Repository\TypePublicationRepository")
  */
 class TypePublication
 {
