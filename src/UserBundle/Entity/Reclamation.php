@@ -65,6 +65,15 @@ class Reclamation
 
 
     /**
+     *
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
+     * @ORM\JoinColumn(name="idUserReclamation",referencedColumnName="id",onDelete="CASCADE")
+     */
+
+    private $idUserReclamation;
+
+
+    /**
      * Get id
      *
      * @return int
@@ -201,6 +210,24 @@ class Reclamation
     {
         $this->recepteurReclamation = $recepteurReclamation;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getIdUserReclamation()
+    {
+        return $this->idUserReclamation;
+    }
+
+    /**
+     * @param mixed $idUserReclamation
+     */
+    public function setIdUserReclamation($idUserReclamation)
+    {
+        $this->idUserReclamation = $idUserReclamation;
+    }
+
+
 
 
 }

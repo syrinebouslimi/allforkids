@@ -42,6 +42,7 @@ class Etablissement
      */
     private $dateCreationEtablissement;
 
+
     /**
      * @var string
      *
@@ -55,6 +56,31 @@ class Etablissement
      * @ORM\Column(name="horaireEtablissement", type="string", length=255)
      */
     private $horaireEtablissement;
+
+
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
+     * @ORM\JoinColumn(name="idUserEtablissement",referencedColumnName="id",onDelete="CASCADE")
+     */
+
+    private $idUserEtablissement;
+
+    /**
+     * @return mixed
+     */
+    public function getIdUserEtablissement()
+    {
+        return $this->idUserEtablissement;
+    }
+
+    /**
+     * @param mixed $idUserEtablissement
+     */
+    public function setIdUserEtablissement($idUserEtablissement)
+    {
+        $this->idUserEtablissement = $idUserEtablissement;
+    }
 
 
     /**

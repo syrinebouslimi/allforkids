@@ -63,6 +63,14 @@ class ProfilEnfant
      */
     private $datenaissanceEnfant;
 
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
+     * @ORM\JoinColumn(name="idUserProfileEnfant",referencedColumnName="id",onDelete="CASCADE")
+     */
+
+    private $idUserProfileEnfant;
+
 
     /**
      * Get id
@@ -217,5 +225,23 @@ class ProfilEnfant
     {
         return $this->datenaissanceEnfant;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getIdUserProfileEnfant()
+    {
+        return $this->idUserProfileEnfant;
+    }
+
+    /**
+     * @param mixed $idUserProfileEnfant
+     */
+    public function setIdUserProfileEnfant($idUserProfileEnfant)
+    {
+        $this->idUserProfileEnfant = $idUserProfileEnfant;
+    }
+
+
 }
 

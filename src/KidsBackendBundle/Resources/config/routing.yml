@@ -1,3 +1,3 @@
 kids_backend_homepage:
     path:     /admintemplate
-    defaults: { _controller: KidsBackendBundle:Default:index }
+    defaults: { _controller: KidsBackendBundle:Default:admin }

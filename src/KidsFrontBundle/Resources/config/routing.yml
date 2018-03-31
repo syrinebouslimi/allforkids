@@ -14,4 +14,7 @@ etablissement:
 test:
     path:     /
     defaults: { _controller: KidsFrontBundle:Etablissement:index }
+acceuil:
+    path:     /acceuil
+    defaults: { _controller: KidsFrontBundle:Etablissement:acceuil }
 

@@ -56,6 +56,38 @@ class Produit
      */
     private $imageProduit;
 
+    /**
+     * @return mixed
+     */
+    public function getIdUserProduit()
+    {
+        return $this->idUserProduit;
+    }
+
+    /**
+     * @param mixed $idUserProduit
+     */
+    public function setIdUserProduit($idUserProduit)
+    {
+        $this->idUserProduit = $idUserProduit;
+    }
+
+
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
+     * @ORM\JoinColumn(name="idUserProduit",referencedColumnName="id",onDelete="CASCADE")
+     */
+
+    private $idUserProduit;
+
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\CategorieProduit")
+     * @ORM\JoinColumn(name="idCategorieProduit",referencedColumnName="id",onDelete="CASCADE")
+     */
+
+    private $idCategorieProduit;
 
     /**
      * Get id
@@ -186,5 +218,23 @@ class Produit
     {
         return $this->imageProduit;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getIdCategorieProduit()
+    {
+        return $this->idCategorieProduit;
+    }
+
+    /**
+     * @param mixed $idCategorieProduit
+     */
+    public function setIdCategorieProduit($idCategorieProduit)
+    {
+        $this->idCategorieProduit = $idCategorieProduit;
+    }
+
+
 }
 

@@ -21,6 +21,36 @@ class Publication
      */
     private $id;
 
+
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
+     * @ORM\JoinColumn(name="idUserPublication",referencedColumnName="id",onDelete="CASCADE")
+     */
+
+    private $idUserPublication;
+
+
+
+
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\TypePublication")
+     * @ORM\JoinColumn(name="typePublication",referencedColumnName="id",onDelete="CASCADE")
+     */
+
+    private $typePublication;
+
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\CategoriePublication")
+     * @ORM\JoinColumn(name="categoriePublication",referencedColumnName="id",onDelete="CASCADE")
+     */
+
+    private $categoriePublication;
+
+
+
     /**
      * @var string
      *
@@ -41,6 +71,13 @@ class Publication
      * @ORM\Column(name="imagePublication", type="string", length=255)
      */
     private $imagePublication;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etatPublication", type="string", length=255)
+     */
+    private $etatPublication;
 
     /**
      * @var \DateTime
@@ -178,6 +215,75 @@ class Publication
     {
         $this->descriptionPublication = $descriptionPublication;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getIdUserPublication()
+    {
+        return $this->idUserPublication;
+    }
+
+    /**
+     * @param mixed $idUserPublication
+     */
+    public function setIdUserPublication($idUserPublication)
+    {
+        $this->idUserPublication = $idUserPublication;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEtatPublication()
+    {
+        return $this->etatPublication;
+    }
+
+    /**
+     * @param string $etatPublication
+     */
+    public function setEtatPublication($etatPublication)
+    {
+        $this->etatPublication = $etatPublication;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTypePublication()
+    {
+        return $this->typePublication;
+    }
+
+    /**
+     * @param mixed $typePublication
+     */
+    public function setTypePublication($typePublication)
+    {
+        $this->typePublication = $typePublication;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCategoriePublication()
+    {
+        return $this->categoriePublication;
+    }
+
+    /**
+     * @param mixed $categoriePublication
+     */
+    public function setCategoriePublication($categoriePublication)
+    {
+        $this->categoriePublication = $categoriePublication;
+    }
+
+
+
+
+
 
 
 }

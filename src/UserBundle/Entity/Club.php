@@ -50,6 +50,16 @@ class Club
     private $imageClub;
 
 
+
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\Etablissement")
+     * @ORM\JoinColumn(name="idEtablissement",referencedColumnName="id",onDelete="CASCADE")
+     */
+
+    private $idEtablissement;
+
+
     /**
      * Get id
      *
@@ -155,5 +165,23 @@ class Club
     {
         return $this->imageClub;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getIdEtablissement()
+    {
+        return $this->idEtablissement;
+    }
+
+    /**
+     * @param mixed $idEtablissement
+     */
+    public function setIdEtablissement($idEtablissement)
+    {
+        $this->idEtablissement = $idEtablissement;
+    }
+
+
 }
 

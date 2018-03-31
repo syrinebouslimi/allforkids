@@ -30,6 +30,15 @@ class ActiviteEnfant
 
 
     /**
+     *
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\ProfilEnfant")
+     * @ORM\JoinColumn(name="idProfileEnfant",referencedColumnName="id",onDelete="CASCADE")
+     */
+
+    private $idProfileEnfant;
+
+
+    /**
      * Get id
      *
      * @return int
@@ -62,5 +71,22 @@ class ActiviteEnfant
     {
         return $this->nomActivite;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getIdProfileEnfant()
+    {
+        return $this->idProfileEnfant;
+    }
+
+    /**
+     * @param mixed $idProfileEnfant
+     */
+    public function setIdProfileEnfant($idProfileEnfant)
+    {
+        $this->idProfileEnfant = $idProfileEnfant;
+    }
+
 }
 
