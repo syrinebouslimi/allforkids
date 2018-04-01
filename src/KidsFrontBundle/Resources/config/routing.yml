@@ -17,4 +17,8 @@ test:
 acceuil:
     path:     /acceuil
     defaults: { _controller: KidsFrontBundle:Etablissement:acceuil }
+services:
+    path:     /services
+    defaults: { _controller: KidsFrontBundle:Services:services }
+
 
