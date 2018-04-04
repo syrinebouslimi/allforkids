@@ -1,0 +1,173 @@
+{% extends 'KidsFrontBundle::Template_User.html.twig' %}
+
+ {% block ajouteretablissement %}
+     {{ form_start(form) }}
+     <section class="mainContent full-width clearfix">
+         <div class="container">
+             <div class="row progress-wizard" style="border-bottom:0;">
+                 <div class="col-sm-4 col-xs-12 progress-wizard-step active">
+                     <div class="progress"><div class="progress-bar"></div></div>
+                     <a href="{{ path('ajouterEtablissement1') }}" class="progress-wizard-dot">
+                         <i class="fa fa-user" aria-hidden="true"></i>
+                     </a>
+                     <div class="progressInfo">1. Personal info</div>
+                 </div>
+
+                 <div class="col-sm-4 col-xs-12 progress-wizard-step incomplete">
+                     <div class="progress"><div class="progress-bar"></div></div>
+                     <a href="{{ path('ajouterEtablissement2') }}" class="progress-wizard-dot">
+                         <i class="fa fa-usd" aria-hidden="true"></i>
+                     </a>
+                     <div class="progressInfo">2. Payment Mathod</div>
+                 </div>
+
+                 <div class="col-sm-4 col-xs-12 progress-wizard-step incomplete">
+                     <div class="progress"><div class="progress-bar"></div></div>
+                     <a href="{{ path('ajouterEtablissement3') }}" class="progress-wizard-dot">
+                         <i class="fa fa-check" aria-hidden="true"></i>
+                     </a>
+                     <div class="progressInfo">3. Confirmation</div>
+                 </div>
+             </div>
+             <div class="row">
+                 <div class="col-sm-4 col-sm-push-8 col-xs-12">
+
+                 </div>
+                 <div class="col-sm-8  col-sm-pull-4 col-xs-12">
+                     <form action="#" method="POST" role="form" class="form">
+                         <div class="panel panel-default checkoutInfo">
+                             <div class="panel-heading bg-color-3 border-color-3">
+                                 <h3 class="panel-title">Informations générales sur l'établissement</h3>
+                             </div>
+                             <div class="panel-body">
+                                 <div class="form-group">
+                                     <div class="col-sm-6 col-xs-12">
+                                         <label for="">Nom Etablissement</label>
+                                         {{ form_widget(form.nomEtablissement,{'attr':{'class':'form-control border-color-1'}} ) }}
+
+                                         {#<input type="text" class="form-control border-color-1" id="">#}
+                                     </div>
+                                 </div>
+
+                                 <div class="form-group">
+                                     <div class="col-sm-6 col-xs-12">
+                                         <label for="">Addresse Etablissement</label>
+                                         {{ form_widget(form.adresseEtablissement,{'attr':{'class':'form-control border-color-3'}} ) }}
+                                     </div>
+                                 </div>
+
+
+                                 <div class="form-group">
+                                     <div class="col-sm-6 col-xs-12">
+                                         <label for="imagePub">Joindre Image Etablissement</label>
+                                         {{ form_widget(form.imageEtablissement,{'attr':{'class':'form-control border-color-6'}} ) }}
+                                     </div>
+                                 </div>
+
+                                 <div class="form-group">
+                                     <div class="col-sm-6 col-xs-12">
+                                         <label for="">City</label>
+                                         {{ form_widget(form.cityEtablissement,{'attr':{'class':'form-control border-color-5'}} ) }}
+
+                                         {#<input type="text" class="form-control border-color-5" id="">#}
+                                     </div>
+                                 </div>
+
+                                 <div class="form-group">
+                                     <div class="col-sm-6 col-xs-12">
+                                         <label for="">Code postal</label>
+                                         {{ form_widget(form.codepostalEtablissement,{'attr':{'class':'form-control border-color-6'}} ) }}
+
+                                         {#<input type="text" class="form-control border-color-6" id="">#}
+                                     </div>
+                                 </div>
+                                 <div class="form-group">
+                                     <div class="col-sm-6 col-xs-12">
+                                         <label for="">State/Region</label>
+                                         {{ form_widget(form.regionEtablissement,{'attr':{'class':'form-control border-color-1'}} ) }}
+
+                                         {#<input type="text" class="form-control border-color-1" id="">#}
+                                     </div>
+                                 </div>
+
+
+                                 <div class="form-group">
+                                     <div class="col-sm-6 col-xs-12">
+                                         <label for="">Country</label>
+                                         {#{{ form_widget(form.countryEtablissement,{'attr':{'class':'form-control border-color-2'}} ) }}#}
+                                         <div class="bookingDrop">
+                                             {{ form_widget(form.countryEtablissement,{'attr':{'class':'select-drop'}} ) }}
+                                             {#<select name="guiest_id3" id="guiest_id3" class="select-drop">#}
+                                                 {#<option value="0">Select Country</option>#}
+                                                 {#<option value="1">USA</option>#}
+                                                 {#<option value="2">UK</option>#}
+                                                 {#<option value="3">Canada</option>#}
+                                             {#</select>#}
+                                         </div>
+                                     </div>
+                                 </div>
+
+                                 <div class="form-group">
+                                     <div class="col-sm-6 col-xs-12">
+                                         <label for="">Horaire de travail</label>
+                                         {#{{ form_widget(form.countryEtablissement,{'attr':{'class':'form-control border-color-2'}} ) }}#}
+                                         <div class="bookingDrop">
+                                             {{ form_widget(form.horaireEtablissement,{'attr':{'class':'select-drop'}} ) }}
+                                             {#<select name="guiest_id3" id="guiest_id3" class="select-drop">#}
+                                             {#<option value="0">Select Country</option>#}
+                                             {#<option value="1">USA</option>#}
+                                             {#<option value="2">UK</option>#}
+                                             {#<option value="3">Canada</option>#}
+                                             {#</select>#}
+                                         </div>
+                                     </div>
+                                 </div>
+
+
+
+                                 <div class="form-group">
+                                     <div class="col-xs-12">
+                                         <label for="">Description</label>
+                                         {{ form_widget(form.descriptionEtablissement,{'attr':{'class':'form-control border-color-5'}} ) }}
+
+                                         {#<textarea class="form-control border-color-5"></textarea>#}
+                                     </div>
+                                 </div>
+                                 <div class="form-group">
+                                     <div class="col-xs-12">
+                                         <label for="">Requirements</label>
+                                         {{ form_widget(form.exigenceEtablissement,{'attr':{'class':'form-control border-color-5'}} ) }}
+
+                                         {#<textarea class="form-control border-color-5"></textarea>#}
+                                     </div>
+                                 </div>
+                                 <div class="form-group">
+                                     <div class="checkbox col-xs-12">
+                                         <label>
+                                             <input type="checkbox"> I have read and accept the <a href="#">terms and conditions</a>
+                                         </label>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="continueBtnArea">
+                             <ul class="list-inline">
+                                 <li><a href="javascript:void(0)" class="btn btn-primary">back</a></li>
+
+
+                                 <li class="pull-right">
+                                     {#<a href="{{ path('ajouterEtablissement2') }}" class="btn btn-primary">next</a>#}
+                                     {{ form_widget(form.AjouterEtablissement,{'attr':{'class':'btn btn-primary'}} ) }}
+
+                                 </li>
+                             </ul>
+                         </div>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     {{ form_end(form) }}
+     </section>
+
+
+ {% endblock ajouteretablissement %}

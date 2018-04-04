@@ -1,0 +1,175 @@
+{% extends 'KidsFrontBundle::Template_User.html.twig' %}
+
+ {% block ajouteretablissement %}
+     {{ form_start(form) }}
+     <section class="mainContent full-width clearfix">
+         <div class="container">
+             <div class="row progress-wizard" style="border-bottom:0;">
+                 <div class="col-sm-4 col-xs-12 progress-wizard-step active">
+                     <div class="progress"><div class="progress-bar"></div></div>
+                     <a href="{{ path('ajouterEtablissement1') }}" class="progress-wizard-dot">
+                         <i class="fa fa-user" aria-hidden="true"></i>
+                     </a>
+                     <div class="progressInfo">1. Personal info</div>
+                 </div>
+
+                 <div class="col-sm-4 col-xs-12 progress-wizard-step incomplete">
+                     <div class="progress"><div class="progress-bar"></div></div>
+                     <a href="{{ path('ajouterEnseignant') }}" class="progress-wizard-dot">
+                         <i class="fa fa-usd" aria-hidden="true"></i>
+                     </a>
+                     <div class="progressInfo">2. Payment Mathod</div>
+                 </div>
+
+                 <div class="col-sm-4 col-xs-12 progress-wizard-step incomplete">
+                     <div class="progress"><div class="progress-bar"></div></div>
+                     <a href="{{ path('ajouterEtablissement3') }}" class="progress-wizard-dot">
+                         <i class="fa fa-check" aria-hidden="true"></i>
+                     </a>
+                     <div class="progressInfo">3. Confirmation</div>
+                 </div>
+             </div>
+             <div class="row">
+                 <div class="col-sm-4 col-sm-push-8 col-xs-12">
+
+                 </div>
+                 <div class="col-sm-8  col-sm-pull-4 col-xs-12">
+                     <form action="#" method="POST" role="form" class="form">
+                         <div class="panel panel-default checkoutInfo">
+                             <div class="panel-heading bg-color-3 border-color-3">
+                                 <h3 class="panel-title">Informations sur les enseignants d'un etablissement</h3>
+                             </div>
+                             <div class="panel-body">
+                                 <div class="form-group">
+                                     <div class="col-sm-6 col-xs-12">
+                                         <label for="">Nom Enseignant</label>
+                                         {{ form_widget(form.nomEnseignant,{'attr':{'class':'form-control border-color-1'}} ) }}
+
+                                         {#<input type="text" class="form-control border-color-1" id="">#}
+                                     </div>
+                                 </div>
+
+                                 <div class="form-group">
+                                     <div class="col-sm-6 col-xs-12">
+                                         <label for="">Prénom enseignant</label>
+                                         {{ form_widget(form.prenomEnseignant,{'attr':{'class':'form-control border-color-3'}} ) }}
+                                     </div>
+                                 </div>
+
+
+                                 <div class="form-group">
+                                     <div class="col-sm-6 col-xs-12">
+                                         <label for="imagePub">Joindre Photo de l'enseignant</label>
+                                         {{ form_widget(form.imageEnseignant,{'attr':{'class':'form-control border-color-6'}} ) }}
+                                     </div>
+                                 </div>
+
+                                 <div class="form-group">
+                                     <div class="col-sm-6 col-xs-12">
+                                         <label for="">Adresse</label>
+                                         {{ form_widget(form.adresseEnseignant,{'attr':{'class':'form-control border-color-5'}} ) }}
+                                     </div>
+                                 </div>
+
+                                 <div class="form-group">
+                                     <div class="col-sm-6 col-xs-12">
+                                         <label for="">Code postal</label>
+                                         {{ form_widget(form.codePostalEnseignant,{'attr':{'class':'form-control border-color-3'}} ) }}
+                                     </div>
+                                 </div>
+
+                                 <div class="form-group">
+                                     <div class="col-sm-6 col-xs-12">
+                                         <label for="">Région</label>
+                                         {{ form_widget(form.regionEnseignant,{'attr':{'class':'form-control border-color-1'}} ) }}
+                                     </div>
+                                 </div>
+
+                                 <div class="form-group">
+                                     <div class="col-sm-6 col-xs-12">
+                                         <label for="">Country</label>
+                                         <div class="bookingDrop">
+                                             {{ form_widget(form.countryEnseignant,{'attr':{'class':'select-drop'}} ) }}
+
+                                         </div>
+                                     </div>
+                                 </div>
+
+
+
+                                 <div class="form-group">
+                                     <div class="col-sm-6 col-xs-12">
+                                         <label for="">Etablissement</label>
+                                         <div class="bookingDrop">
+                                             {{ form_widget(form.etablissementId,{'attr':{'class':'select-drop'}} ) }}
+
+                                         </div>
+                                     </div>
+                                 </div>
+
+
+                                 <div class="form-group">
+                                     <div class="col-xs-12">
+                                         <label for="">About Enseignant</label>
+                                         {{ form_widget(form.aboutEnseignant,{'attr':{'class':'form-control border-color-5'}} ) }}
+                                     </div>
+                                 </div>
+                                 <div class="form-group">
+                                     <div class="col-xs-12">
+                                         <label for="">Designation Enseignant</label>
+                                         {{ form_widget(form.designationEnseignant,{'attr':{'class':'form-control border-color-1'}} ) }}
+                                     </div>
+                                 </div>
+
+                                 <div class="form-group">
+                                     <div class="col-xs-12">
+                                         <label for="">Dipolôme obtenue </label>
+                                         {{ form_widget(form.diplomeEnseignant,{'attr':{'class':'form-control border-color-6'}} ) }}
+                                     </div>
+                                 </div>
+
+                                 <div class="form-group">
+                                     <div class="col-xs-12">
+                                         <label for="">Expérience Enseignant</label>
+                                         {{ form_widget(form.experienceEnseignant,{'attr':{'class':'form-control border-color-1'}} ) }}
+                                     </div>
+                                 </div>
+
+
+                                 <div class="form-group">
+                                     <div class="col-xs-12">
+                                         <label for="">Hobbies Enseignant</label>
+                                         {{ form_widget(form.hobbiesEnseignant,{'attr':{'class':'form-control border-color-5'}} ) }}
+                                     </div>
+                                 </div>
+
+
+                                 <div class="form-group">
+                                     <div class="col-xs-12">
+                                         <label for="">Cours Enseignant</label>
+                                         {{ form_widget(form.coursEnseignant,{'attr':{'class':'form-control border-color-3'}} ) }}
+                                     </div>
+                                 </div>
+
+                             </div>
+                         </div>
+                         <div class="continueBtnArea">
+                             <ul class="list-inline">
+                                 <li><a href="javascript:void(0)" class="btn btn-primary">back</a></li>
+
+
+                                 <li class="pull-right">
+                                     {{ form_widget(form.AjouterEnseignant,{'attr':{'class':'btn btn-primary'}} ) }}
+
+                                 </li>
+                             </ul>
+                         </div>
+                     </form>
+                 </div>
+             </div>
+         </div>
+         {{ form_end(form) }}
+     </section>
+
+
+ {% endblock ajouteretablissement %}

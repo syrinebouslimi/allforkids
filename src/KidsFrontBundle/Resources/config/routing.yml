@@ -17,4 +17,20 @@ test:
 acceuil:
     path:     /acceuil
     defaults: { _controller: KidsFrontBundle:Etablissement:acceuil }
+ajouterEtablissement1:
+    path: /ajouterEtablissementch1
+    defaults: { _controller: KidsFrontBundle:Etablissement:ajouterEtablissement1 }
+ajouterEnseignant:
+    path: /ajouterEnseignant
+    defaults: { _controller: KidsFrontBundle:Etablissement:ajouterEnseignant }
+ajouterEtablissement3:
+    path: /ajouterEtablissementch3
+    defaults: { _controller: KidsFrontBundle:Etablissement:ajouterEtablissement3 }
+afficherprof:
+    path: /afficherprof
+    defaults: { _controller: KidsFrontBundle:Etablissement:afficherprof }
+afficherdetailprof:
+    path: /afficherdetailprof
+    defaults: { _controller: KidsFrontBundle:Etablissement:afficherdetailprof }
+
 

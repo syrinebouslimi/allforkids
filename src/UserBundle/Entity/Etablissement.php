@@ -36,9 +36,49 @@ class Etablissement
     private $descriptionEtablissement;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="cityEtablissement", type="string", length=255)
+     */
+    private $cityEtablissement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="codepostalEtablissement", type="string", length=255)
+     */
+    private $codepostalEtablissement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="regionEtablissement", type="string", length=255)
+     */
+    private $regionEtablissement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="countryEtablissement", type="string", length=255)
+     */
+    private $countryEtablissement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="exigenceEtablissement", type="string", length=255)
+     */
+    private $exigenceEtablissement;
+
+
+
+
+
+
+    /**
      * @var \DateTime
      *
-     * @ORM\Column(name="dateCreationEtablissement", type="datetime")
+     * @ORM\Column(name="dateCreationEtablissement", type="datetime",nullable=true)
      */
     private $dateCreationEtablissement;
 
@@ -46,16 +86,23 @@ class Etablissement
     /**
      * @var string
      *
-     * @ORM\Column(name="imageEtablissement", type="string", length=255)
+     * @ORM\Column(name="imageEtablissement", type="string", length=255,nullable=true)
      */
     private $imageEtablissement;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="horaireEtablissement", type="string", length=255)
+     * @ORM\Column(name="horaireEtablissement", type="string", length=255,nullable=true)
      */
     private $horaireEtablissement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresseEtablissement", type="string", length=255)
+     */
+    private $adresseEtablissement;
 
 
     /**
@@ -212,5 +259,105 @@ class Etablissement
     {
         return $this->horaireEtablissement;
     }
+
+    /**
+     * @return string
+     */
+    public function getCityEtablissement()
+    {
+        return $this->cityEtablissement;
+    }
+
+    /**
+     * @param string $cityEtablissement
+     */
+    public function setCityEtablissement($cityEtablissement)
+    {
+        $this->cityEtablissement = $cityEtablissement;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCodepostalEtablissement()
+    {
+        return $this->codepostalEtablissement;
+    }
+
+    /**
+     * @param string $codepostalEtablissement
+     */
+    public function setCodepostalEtablissement($codepostalEtablissement)
+    {
+        $this->codepostalEtablissement = $codepostalEtablissement;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRegionEtablissement()
+    {
+        return $this->regionEtablissement;
+    }
+
+    /**
+     * @param string $regionEtablissement
+     */
+    public function setRegionEtablissement($regionEtablissement)
+    {
+        $this->regionEtablissement = $regionEtablissement;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCountryEtablissement()
+    {
+        return $this->countryEtablissement;
+    }
+
+    /**
+     * @param string $countryEtablissement
+     */
+    public function setCountryEtablissement($countryEtablissement)
+    {
+        $this->countryEtablissement = $countryEtablissement;
+    }
+
+    /**
+     * @return string
+     */
+    public function getExigenceEtablissement()
+    {
+        return $this->exigenceEtablissement;
+    }
+
+    /**
+     * @param string $exigenceEtablissement
+     */
+    public function setExigenceEtablissement($exigenceEtablissement)
+    {
+        $this->exigenceEtablissement = $exigenceEtablissement;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAdresseEtablissement()
+    {
+        return $this->adresseEtablissement;
+    }
+
+    /**
+     * @param string $adresseEtablissement
+     */
+    public function setAdresseEtablissement($adresseEtablissement)
+    {
+        $this->adresseEtablissement = $adresseEtablissement;
+    }
+
+
+
+
 }
 
