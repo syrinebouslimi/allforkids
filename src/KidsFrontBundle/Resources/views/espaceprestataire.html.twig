@@ -1,0 +1,79 @@
+{% extends 'KidsFrontBundle::Template_User.html.twig' %}
+
+{% block Menu %}
+<nav id="menuBar" class="navbar navbar-default lightHeader" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ><img src="{{ asset('Template_front_principal/img/logo-school.png') }}" alt="Kidz School"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown singleDrop color-1  ">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-home bg-color-1" aria-hidden="true"></i> <span class="active">Etablissement</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-left">
+                        <li class=""><a href="{{ path('afficherEtabPrestataireInfo') }}">Consulter les détails</a></li>
+                        <li class=""><a href="{{ path('modifieretablissement') }}">Modifier les informations de l'etablissement</a></li>
+                        <li class=""><a href="{{ path('ajouterEtablissement') }}">Ajouter un établissement</a></li>
+                        <li class=""><a href="index-v4.html">Supprimer </a></li>
+                    </ul>
+                </li>
+                <li class="dropdown singleDrop color-3 ">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-list-ul bg-color-3" aria-hidden="true">
+                        </i> <span>Enseignants</span></a>
+                    <ul class="dropdown-menu dropdown-menu-left">
+                        <li class=" "><a href="{{ path('afficherprof') }}">Consulter liste des enseigants</a></li>
+                        <li class=" "><a href="{{ path('ajouterEnseignant') }}">Ajouter Enseignant</a></li>
+                        <li class=" "><a href="{{ path('afficherprofpourmodifier') }}">Modifier Enseignant</a></li>
+                        <li class=" "><a href="{{ path('afficherprofpoursupprimer') }}">Supprimer Enseignant</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown singleDrop color-4">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                       aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true">
+                        </i> <span>Gallerie</span></a>
+                    <ul class="dropdown-menu dropdown-menu-left">
+                        <li class=" "><a href="{{ path('affichergallerie') }}">Consulter la gallerie des images</a></li>
+                        <li class=" "><a href="{{ path('ajouterGallerieImage') }}">Ajouter une image</a></li>
+                        <li class=" "><a href="{{ path('afficherimagepourmodifier') }}">Modifier une image</a></li>
+                        <li class=" "><a href="{{ path('afficherimagepoursupprimer') }}">Supprimer une image de la gallerie</a></li>
+                    </ul>
+                </li>
+            </ul></div>
+    </div>
+</nav>
+
+
+        {% endblock Menu %}
+
+
+{% block bandeau %}
+
+    <section class="pageTitleSection">
+        <div class="container">
+            <div class="pageTitleInfo">
+                <i><h2>Bonjour Prestataire de service {{ app.user.username|default('') }}</h2></i>
+                <br>
+
+                <h2>Bienvenue dans votre espace prestataire</h2>
+            </div>
+        </div>
+    </section>
+{% endblock bandeau %}
+
+ {% block body %}
+
+
+ {% endblock body %}

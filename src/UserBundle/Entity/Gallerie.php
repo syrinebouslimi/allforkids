@@ -26,21 +26,21 @@ class Gallerie
      *
      * @ORM\Column(name="imageGallery", type="string", length=255)
      */
-    private $imageGallery;
+    public $imageGallery;
 
     /**
      * @var string
      *
      * @ORM\Column(name="descriptionImageGallery", type="string", length=255)
      */
-    private $descriptionImageGallery;
+    public $descriptionImageGallery;
 
     /**
      *
      * @ORM\ManyToOne(targetEntity="UserBundle\Entity\Etablissement")
      * @ORM\JoinColumn(name="etablissementId",referencedColumnName="id",onDelete="CASCADE")
      */
-    private $etablissementId;
+    public $etablissementId;
 
 
     /**

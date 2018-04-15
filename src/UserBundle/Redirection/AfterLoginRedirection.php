@@ -45,10 +45,10 @@ class AfterLoginRedirection implements AuthenticationSuccessHandlerInterface
 
        if (in_array('ROLE_PARENT', $rolesTab, true)) {
             // c'est un aministrateur : on le rediriger vers l'espace admin
-           $redirection = new RedirectResponse($this->router->generate('parent_page'));
+           $redirection = new RedirectResponse($this->router->generate('espace_parent'));
         } else if (in_array('ROLE_PRESTATAIRE', $rolesTab, true)) {
             // c'est un utilisaeur lambda : on le rediriger vers l'accueil
-           $redirection = new RedirectResponse($this->router->generate('prestataire_page'));
+           $redirection = new RedirectResponse($this->router->generate('espace_prestataire'));
         } else {
            $redirection = new RedirectResponse($this->router->generate('kids_backend_homepage'));
 

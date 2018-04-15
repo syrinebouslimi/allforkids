@@ -38,6 +38,53 @@ class Enseignant
     /**
      * @var string
      *
+     * @ORM\Column(name="emailEnseignant", type="string", length=255)
+     */
+    private $emailEnseignant;
+
+    /**
+     * @return string
+     */
+    public function getEmailEnseignant()
+    {
+        return $this->emailEnseignant;
+    }
+
+    /**
+     * @param string $emailEnseignant
+     */
+    public function setEmailEnseignant($emailEnseignant)
+    {
+        $this->emailEnseignant = $emailEnseignant;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPhoneEnseignant()
+    {
+        return $this->phoneEnseignant;
+    }
+
+    /**
+     * @param int $phoneEnseignant
+     */
+    public function setPhoneEnseignant($phoneEnseignant)
+    {
+        $this->phoneEnseignant = $phoneEnseignant;
+    }
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="phoneEnseignant", type="integer")
+
+     */
+    private $phoneEnseignant;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="adresseEnseignant", type="string", length=255)
      */
     private $adresseEnseignant;
@@ -45,35 +92,14 @@ class Enseignant
     /**
      * @var string
      *
-     * @ORM\Column(name="codePostalEnseignant", type="string", length=255)
-     */
-    private $codePostalEnseignant;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="countryEnseignant", type="string", length=255)
-     */
-    private $countryEnseignant;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="regionEnseignant", type="string", length=255)
-     */
-    private $regionEnseignant;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="imageEnseignant", type="string", length=255)
+     * @ORM\Column(name="imageEnseignant", type="string", length=255, nullable=true)
      */
     private $imageEnseignant;
 
     /**
-     * @var string
+     * @var text
      *
-     * @ORM\Column(name="aboutEnseignant", type="string", length=255)
+     * @ORM\Column(name="aboutEnseignant", type="text")
      */
     private $aboutEnseignant;
 
@@ -209,77 +235,6 @@ class Enseignant
         return $this->adresseEnseignant;
     }
 
-    /**
-     * Set codePostalEnseignant
-     *
-     * @param string $codePostalEnseignant
-     *
-     * @return Enseignant
-     */
-    public function setCodePostalEnseignant($codePostalEnseignant)
-    {
-        $this->codePostalEnseignant = $codePostalEnseignant;
-
-        return $this;
-    }
-
-    /**
-     * Get codePostalEnseignant
-     *
-     * @return string
-     */
-    public function getCodePostalEnseignant()
-    {
-        return $this->codePostalEnseignant;
-    }
-
-    /**
-     * Set countryEnseignant
-     *
-     * @param string $countryEnseignant
-     *
-     * @return Enseignant
-     */
-    public function setCountryEnseignant($countryEnseignant)
-    {
-        $this->countryEnseignant = $countryEnseignant;
-
-        return $this;
-    }
-
-    /**
-     * Get countryEnseignant
-     *
-     * @return string
-     */
-    public function getCountryEnseignant()
-    {
-        return $this->countryEnseignant;
-    }
-
-    /**
-     * Set regionEnseignant
-     *
-     * @param string $regionEnseignant
-     *
-     * @return Enseignant
-     */
-    public function setRegionEnseignant($regionEnseignant)
-    {
-        $this->regionEnseignant = $regionEnseignant;
-
-        return $this;
-    }
-
-    /**
-     * Get regionEnseignant
-     *
-     * @return string
-     */
-    public function getRegionEnseignant()
-    {
-        return $this->regionEnseignant;
-    }
 
     /**
      * Set imageEnseignant
@@ -306,28 +261,22 @@ class Enseignant
     }
 
     /**
-     * Set aboutEnseignant
-     *
-     * @param string $aboutEnseignant
-     *
-     * @return Enseignant
-     */
-    public function setAboutEnseignant($aboutEnseignant)
-    {
-        $this->aboutEnseignant = $aboutEnseignant;
-
-        return $this;
-    }
-
-    /**
-     * Get aboutEnseignant
-     *
-     * @return string
+     * @return text
      */
     public function getAboutEnseignant()
     {
         return $this->aboutEnseignant;
     }
+
+    /**
+     * @param text $aboutEnseignant
+     */
+    public function setAboutEnseignant($aboutEnseignant)
+    {
+        $this->aboutEnseignant = $aboutEnseignant;
+    }
+
+
 
     /**
      * Set designationEnseignant

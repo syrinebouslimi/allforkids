@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new UserBundle\UserBundle(),
             new KidsFrontBundle\KidsFrontBundle(),
             new KidsBackendBundle\KidsBackendBundle(),
+            new Mgilet\NotificationBundle\MgiletNotificationBundle(),
             new FOS\UserBundle\FOSUserBundle(),
         ];
 

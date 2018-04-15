@@ -1,43 +1,126 @@
 {% extends 'KidsFrontBundle::Template_User.html.twig' %}
 
- {% block ajouteretablissement %}
-
-<section class="mainContent full-width clearfix">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4 col-xs-12">
-                <div class="teachersPhoto">
-                    <img src="{{ asset('bundles/kidsfront/img/home/team/team-1.jpg') }}" alt="image" class="img-rounded img-responsive">
-                </div>
+{% block Menu %}
+    <nav id="menuBar" class="navbar navbar-default lightHeader" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" ><img src="{{ asset('Template_front_principal/img/logo-school.png') }}" alt="Kidz School"></a>
             </div>
-            <div class="col-sm-8 col-xs-12">
-                <div class="teachersInfo">
-                    <h3>About Me</h3>
-                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Vir ginia, looked up one of the more obscure Latin words, consectetur, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero,</p>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-                    <p>Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubt able source.</p>
-                    <ul class="list-inline">
-                        <li><a href="#" class="bg-color-1"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="#" class="bg-color-2"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="#" class="bg-color-3"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                        <li><a href="#" class="bg-color-4"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-                        <li><a href="#" class="bg-color-5"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-                    </ul>
-                    <h3>Teachers Information</h3>
-                    <div class="teachersProfession bg-color-1">Designation</div>
-                    <div class="professionDetails">Assistent Teacher</div>
-                    <div class="teachersProfession bg-color-2">Degree</div>
-                    <div class="professionDetails">English Literature</div>
-                    <div class="teachersProfession bg-color-3">Experience</div>
-                    <div class="professionDetails">10 Years In Preschool Education</div>
-                    <div class="teachersProfession bg-color-4">Hobbies</div>
-                    <div class="professionDetails">Music,Dancing And Playing Football</div>
-                    <div class="teachersProfession bg-color-5">My Course</div>
-                    <div class="professionDetails">Language,Grammer</div>
-                </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown singleDrop color-1  ">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-home bg-color-1" aria-hidden="true"></i> <span class="active">Etablissement</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li class=""><a href="{{ path('afficherEtabPrestataireInfo') }}">Consulter les détails</a></li>
+                            <li class=""><a href="{{ path('modifieretablissement') }}">Modifier les informations de l'etablissement</a></li>
+                            <li class=""><a href="{{ path('ajouterEtablissement') }}">Ajouter un établissement</a></li>
+                            <li class=""><a href="index-v4.html">Supprimer </a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown singleDrop color-3 ">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-list-ul bg-color-3" aria-hidden="true">
+                            </i> <span>Enseignants</span></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li class=" "><a href="{{ path('afficherprof') }}">Consulter liste des enseigants</a></li>
+                            <li class=" "><a href="{{ path('ajouterEnseignant') }}">Ajouter Enseignant</a></li>
+                            <li class=" "><a href="{{ path('afficherprofpourmodifier') }}">Modifier Enseignant</a></li>
+                            <li class=" "><a href="{{ path('afficherprofpoursupprimer') }}">Supprimer Enseignant</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown singleDrop color-4">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true">
+                            </i> <span>Gallerie</span></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li class=" "><a href="{{ path('affichergallerie') }}">Consulter la gallerie des images</a></li>
+                            <li class=" "><a href="{{ path('ajouterGallerieImage') }}">Ajouter une image</a></li>
+                            <li class=" "><a href="{{ path('afficherimagepourmodifier') }}">Modifier une image</a></li>
+                            <li class=" "><a href="{{ path('afficherimagepoursupprimer') }}">Supprimer une image de la gallerie</a></li>
+                        </ul>
+                    </li>
+
+                </ul></div>
+        </div>
+    </nav>
+
+
+{% endblock Menu %}
+
+{% block bandeau %}
+
+    <section class="pageTitleSection">
+        <div class="container">
+            <div class="pageTitleInfo">
+                <i><h2>Bonjour Prestataire de service {{ app.user.username|default('') }}</h2></i>
+                <br>
+
+                <h2>Bienvenue dans votre espace prestataire</h2>
             </div>
         </div>
+    </section>
+{% endblock bandeau %}
+
+ {% block body %}
+
+     <section class="teacher-details padding-120">
+         <div class="container">
+             <div class="row">
+                 <div class="col-md-6 col-sm-12 col-xs-12">
+                     <div class="teacher-image">
+                         <img src="{{ asset('uploads/images/' ~ enseignant.imageEnseignant) }}" alt="teacher image" class="img-responsive">
+                     </div>
+                 </div>
+                 <div class="col-md-6 col-sm-12 col-xs-12">
+                     <div class="teacher-content">
+                         <h4>{{ enseignant.prenomEnseignant }} {{ enseignant.nomEnseignant }}</h4>
+                         <span>{{ enseignant.designationEnseignant }}</span>
+                         <p>{{ enseignant.aboutEnseignant }}</p>
+
+                         <ul class="teacher-address">
+                             <li><span><i class="fa fa-home" aria-hidden="true"></i></span>{{ enseignant.adresseEnseignant }}</li>
+                             <li><span><i class="fa fa-phone" aria-hidden="true"></i></span>{{ enseignant.phoneEnseignant }}</li>
+                             <li><span><i class="fa fa-envelope-o" aria-hidden="true"></i></span>{{ enseignant.emailEnseignant }}</li>
+                         </ul>
+                     </div>
+                 </div>
+             </div><!-- row -->
+
+
+             <section>
+                 <div class="container">
+                     <div class="row">
+
+                         <div class="teachersInfo">
+
+                             <h3>Teachers Information</h3>
+                             <div class="teachersProfession bg-color-1">Designation</div>
+                             <div class="professionDetails">{{ enseignant.designationEnseignant }}</div>
+                             <div class="teachersProfession bg-color-2">Diplôme</div>
+                             <div class="professionDetails">{{ enseignant.diplomeEnseignant }}</div>
+                             <div class="teachersProfession bg-color-3">Experience</div>
+                             <div class="professionDetails">{{ enseignant.experienceEnseignant }}</div>
+                             <div class="teachersProfession bg-color-4">Hobbies</div>
+                             <div class="professionDetails">{{ enseignant.hobbiesEnseignant }}</div>
+                             <div class="teachersProfession bg-color-5">Cours</div>
+                             <div class="professionDetails">{{ enseignant.coursEnseignant }}</div>
+                         </div>
+                     </div>
+                 </div>
+             </section>
     </div>
 </section>
 
- {% endblock ajouteretablissement %}
+ {% endblock body %}

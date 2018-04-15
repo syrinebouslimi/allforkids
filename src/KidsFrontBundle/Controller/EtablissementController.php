@@ -4,10 +4,12 @@ namespace KidsFrontBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use UserBundle\Entity\Enseignant;
+use Symfony\Component\HttpFoundation\Response;
 use UserBundle\Entity\Etablissement;
-use UserBundle\Form\EnseignantType;
 use UserBundle\Form\EtablissementType;
+use Symfony\Component\Config\Definition\Exception\Exception;
+
+
 
 class EtablissementController extends Controller
 {
@@ -16,28 +18,32 @@ class EtablissementController extends Controller
         $em = $this->getDoctrine()->getManager();
         $users = $em->getRepository('UserBundle:User')->findAll();
         return $this->render('KidsFrontBundle::Template_User.html.twig', array('u' => $users));
-
     }
 
-    public function contactAction()
+
+    public function afficherEtabByIdAction($id)
     {
-        return $this->render('@KidsFront/contact.html.twig');
+        $creche = $this->getDoctrine()->getRepository('UserBundle:Etablissement')->find($id);
 
+        return $this->render('@KidsFront/detailsetablissement.html.twig', array('detail' => $creche));
     }
 
-    public function etablissementsAction()
+
+    public function espacePrestataireAction()
     {
-        return $this->render('@KidsFront/etablissements.html.twig');
+        return $this->render('@KidsFront/espaceprestataire.html.twig');
 
     }
 
-    public function acceuilAction()
+    public function espaceParentAction()
     {
-        return $this->render('::acceuil.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $allEtab = $em->getRepository('UserBundle:Etablissement')->findAll();
+        return $this->render('@KidsFront/espaceparent.html.twig', array('etablissement' => $allEtab));
 
     }
 
-    public function ajouterEtablissement1Action(Request $request)
+    public function ajouterEtablissementAction(Request $request)
     {
         $etablissement = new Etablissement();
         $form = $this->createForm(EtablissementType::class, $etablissement);
@@ -47,82 +53,132 @@ class EtablissementController extends Controller
 
             $user = $this->container->get('security.token_storage')->getToken()->getUser();
             $id = $user->getId();
-//            var_dump($id);
-//            die($id);
-            $affectedUser = $this->getDoctrine()->getRepository('UserBundle:User')->findOneBy(array('id'=>$id));
-            $etablissement ->setIdUserEtablissement($affectedUser);
+
+            $affectedUser = $this->getDoctrine()->getRepository('UserBundle:User')->findOneBy(array('id' => $id));
+            $etablissement->setIdUserEtablissement($affectedUser);
+
+
+            // uploaad image
 
             $imagefile = $etablissement->getImageEtablissement();
-            $fileName = md5(uniqid()).'.'.$imagefile ->guessExtension();
-            $imagefile ->move($this->getParameter('images_directory'), $fileName);
+
+            $fileName = md5(uniqid()) . '.' . $imagefile->guessExtension();
+
+            $imagefile->move(
+                $this->getParameter('images_directory'),
+                $fileName
+            );
+
+
             $etablissement->setImageEtablissement($fileName);
+
+
+//            var_dump($etablissement);
+//            die($etablissement);
+//
 
             $save = $this->getDoctrine()->getManager();
 
-//            $this->get('session')->getFlashBag()->add(
-//                'notice',
-//                'Patient ajouté avec succée');
-
             $save->persist($etablissement);
             $save->flush();
-            return $this->redirectToRoute('parent_page');
+            return $this->redirectToRoute('afficherConfimationApresCreationEtab');
 
         }
 
-        return $this->render('@KidsFront/ajouteretablissementcheckout1.html.twig',array('form' => $formview));
+        return $this->render('@KidsFront/ajouteretablissement.html.twig', array('form' => $formview));
+    }
+
+
+    public function afficherConfimationApresCreationEtabAction()
+    {
+
+
+        return $this->render('@KidsFront/after_create_etablissement.html.twig');
     }
 
 
 
-    public function ajouterEnseignantAction(Request $request)
+
+
+    public function modifieretablissementAction(Request $request)
+    {
+
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $id = $user->getId();
+
+
+        $etablissement = $this->getDoctrine()->getRepository('UserBundle:Etablissement')->findOneBy(array('idUserEtablissement'=>$id));
+        $imageOld =$etablissement->getImageEtablissement();
+
+        $form = $this->createForm(EtablissementType::class, $etablissement);
+        $formView = $form->createView();
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $imagefile = $etablissement->getImageEtablissement();
+
+            if(is_null($imagefile))
+            {
+                $etablissement->setImageEtablissement($imageOld);
+                $em = $this->getDoctrine()->getManager();
+                $em->flush();
+                return $this->redirectToRoute('espace_prestataire');
+            }else
+                if(!is_null($imagefile))
+                {
+                    $fileName = md5(uniqid()) . '.' . $imagefile->guessExtension();
+
+                    $imagefile->move(
+                        $this->getParameter('images_directory'),
+                        $fileName
+                    );
+
+
+                    $etablissement->setImageEtablissement($fileName);
+
+                    $em = $this->getDoctrine()->getManager();
+                    $em->flush();
+                    return $this->redirectToRoute('espace_prestataire');
+                }
+        }
+        return $this->render('@KidsFront/ajouteretablissement.html.twig', array('form' => $formView));
+    }
+
+
+
+    public function afficherEtabPrestataireInfoAction()
     {
         $user = $this->container->get('security.token_storage')->getToken()->getUser();
         $id = $user->getId();
 
-        $enseignant = new Enseignant();
 
-        $form = $this->createForm(EnseignantType::class, $enseignant,array('data' => $id));
-        $formview = $form->createView();
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
+        $etablissement = $this->getDoctrine()->getRepository('UserBundle:Etablissement')->findOneBy(array('idUserEtablissement'=>$id));
+
+        return $this->render('@KidsFront/etablissementinfo.html.twig',array('detail'=>$etablissement));
+
+    }
 
 
-            $imageEnse = $enseignant->getImageEnseignant();
-            $fileName = md5(uniqid()).'.'.$imageEnse ->guessExtension();
-            $imageEnse ->move($this->getParameter('images_directory'), $fileName);
-            $enseignant->setImageEnseignant($fileName);
+    public function supprimeretablissementparidAction($id)
+    {
+        try{
+            $em=$this->getDoctrine()->getManager();
+            $etablissement = $this->getDoctrine()->getRepository('UserBundle:Etablissement')->find($id);
+            $em->remove($etablissement);
 
-            $save = $this->getDoctrine()->getManager();
-
+            $em->flush();
 //            $this->get('session')->getFlashBag()->add(
 //                'notice',
-//                'Patient ajouté avec succée');
-
-            $save->persist($enseignant);
-            $save->flush();
-            return $this->redirectToRoute('parent_page');
-
+//                'Encadreur supprimé avec succés');
+//            // return $this->forward('/affichevoiture',array('voiturerepo'=>$voiturerepo));
+           return $this->redirectToRoute('espace_parent');
         }
-
-        return $this->render('@KidsFront/ajouterenseignant.html.twig',array('form' => $formview));
-
-    }
-
-    public function ajouterEtablissement3Action()
-    {
-        return $this->render('@KidsFront/ajouteretablissementcheckout3.html.twig');
-
-    }
-
-    public function afficherprofAction()
-    {
-        return $this->render('@KidsFront/teachers.html.twig');
-
-    }
-
-    public function afficherdetailprofAction()
-    {
-        return $this->render('@KidsFront/teacherdetail.html.twig');
+        catch (Exception $e){
+            $this->get('session')->getFlashBag()->add(
+                'notic  e',
+                'probléme lors de la suppression');
+        }
 
     }
 

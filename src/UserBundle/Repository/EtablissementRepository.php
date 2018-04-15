@@ -10,4 +10,13 @@ namespace UserBundle\Repository;
  */
 class EtablissementRepository extends \Doctrine\ORM\EntityRepository
 {
+
+    public function createEtabByUserIdQueryBuilder($user)
+    {
+
+        //$id = $this->getUser();
+        return $this->createQueryBuilder('etablissement')
+            ->where('etablissement.idUserEtablissement = :idUser')
+            ->setParameter('idUser', $user);
+    }
 }

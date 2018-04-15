@@ -1,36 +1,103 @@
-kids_back_homepage:
-    path:     /backend
-    defaults: { _controller: KidsBackendBundle:Default:index }
-
 kids_front_homepage:
     path:     /front
     defaults: { _controller: KidsFrontBundle:Default:index }
+espace_prestataire:
+    path: /espacePrestataire
+    defaults: { _controller: KidsFrontBundle:Etablissement:espacePrestataire}
+espace_parent:
+    path: /espaceParent
+    defaults: { _controller: KidsFrontBundle:Etablissement:espaceParent}
 contact:
     path:     /contact
-    defaults: { _controller: KidsFrontBundle:Etablissement:contact }
-etablissement:
-    path:     /etablissements
-    defaults: { _controller: KidsFrontBundle:Etablissement:etablissements }
+    defaults: { _controller: KidsFrontBundle:AcceuilContact:contact }
 test:
     path:     /
     defaults: { _controller: KidsFrontBundle:Etablissement:index }
 acceuil:
     path:     /acceuil
-    defaults: { _controller: KidsFrontBundle:Etablissement:acceuil }
-ajouterEtablissement1:
-    path: /ajouterEtablissementch1
-    defaults: { _controller: KidsFrontBundle:Etablissement:ajouterEtablissement1 }
+    defaults: { _controller: KidsFrontBundle:AcceuilContact:acceuil }
+ajouterEtablissement:
+    path: /ajouterEtablissement
+    defaults: { _controller: KidsFrontBundle:Etablissement:ajouterEtablissement }
 ajouterEnseignant:
     path: /ajouterEnseignant
-    defaults: { _controller: KidsFrontBundle:Etablissement:ajouterEnseignant }
-ajouterEtablissement3:
-    path: /ajouterEtablissementch3
-    defaults: { _controller: KidsFrontBundle:Etablissement:ajouterEtablissement3 }
+    defaults: { _controller: KidsFrontBundle:Enseignant:ajouterEnseignant }
 afficherprof:
     path: /afficherprof
-    defaults: { _controller: KidsFrontBundle:Etablissement:afficherprof }
+    defaults: { _controller: KidsFrontBundle:Enseignant:afficherprof }
 afficherdetailprof:
-    path: /afficherdetailprof
-    defaults: { _controller: KidsFrontBundle:Etablissement:afficherdetailprof }
+    path: /afficherdetailprof/id/{id}
+    defaults: { _controller: KidsFrontBundle:Enseignant:afficherdetailprof }
+
+modifierenseignantbyid:
+    path: /modifierenseignantbyid/id/{id}
+    defaults: { _controller: KidsFrontBundle:Enseignant:modifierenseignantbyid }
+
+supprimerenseignantbyid:
+    path: /supprimerenseignantbyid/id/{id}
+    defaults: { _controller: KidsFrontBundle:Enseignant:supprimersenseignantparid }
+ajouterGallerieImage:
+    path: /ajouterGallerieImage
+    defaults: { _controller: KidsFrontBundle:Gallerie:ajouterGallerieImage}
+affichergallerie:
+    path: /affichergallerie
+    defaults: { _controller: KidsFrontBundle:Gallerie:affichergallerie}
+afficherEtabPrestataireInfo:
+    path: /afficherEtabPrestataireInfo
+    defaults: { _controller: KidsFrontBundle:Etablissement:afficherEtabPrestataireInfo}
+afficherEtabById:
+    path: /afficherEtabById/id/{id}
+    defaults: { _controller: KidsFrontBundle:Etablissement:afficherEtabById}
+
+modifieretablissement:
+    path: /modifieretablissement
+    defaults: { _controller: KidsFrontBundle:Etablissement:modifieretablissement}
+
+supprimeretablissementparid:
+    path: /supprimeretablissementparid/id/{id}
+    defaults: { _controller: KidsFrontBundle:Etablissement:supprimeretablissementparid}
+afficherprofpourmodifier:
+    path: /afficherprofpourmodifier
+    defaults: { _controller: KidsFrontBundle:Enseignant:afficherprofpourmodifier}
+
+afficherprofpoursupprimer:
+    path: /afficherprofpoursupprimer
+    defaults: { _controller: KidsFrontBundle:Enseignant:afficherprofpoursupprimer}
+
+afficherimagepourmodifier:
+    path : /afficherimagepourmodifier
+    defaults: { _controller: KidsFrontBundle:Gallerie:afficherimagepourmodifier}
+
+afficherimagepoursupprimer:
+    path : /afficherimagepoursupprimer
+    defaults: { _controller: KidsFrontBundle:Gallerie:afficherimagepoursupprimer}
+
+modifierimagebyid:
+    path: /modifierimagebyid/id/{id}
+    defaults: { _controller: KidsFrontBundle:Gallerie:modifierimagebyid}
+
+supprimerimagebyid:
+    path: /supprimerimagebyid/id/{id}
+    defaults: { _controller: KidsFrontBundle:Gallerie:supprimerimageparid}
+
+afficherConfimationApresCreationEtab:
+    path: /afficherConfimationApresCreationEtab
+    defaults: { _controller: KidsFrontBundle:Etablissement:afficherConfimationApresCreationEtab}
+
+
+api_mobile_get_all_etablissement:
+    path: /getAllEtablissement
+    defaults: { _controller: KidsFrontBundle:EtablissementMobile:allEtablissement}
+
+send_notification:
+    path: /send-notification
+    defaults: { _controller: KidsBackendBundle:Admin:sendNotification}
+
+getNotificationsAction:
+    path: /getNotifications
+    defaults: { _controller: KidsBackendBundle:Admin:getNotifications}
+notifications:
+    resource: "@MgiletNotificationBundle/Controller/"
+    type: annotation
 
 

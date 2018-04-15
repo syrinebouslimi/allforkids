@@ -2,7 +2,11 @@
 
 namespace UserBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,8 +17,16 @@ class GallerieType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('imageGallery')->add('descriptionImageGallery')->add('etablissementId');
-    }/**
+        $builder
+            ->add('imageGallery', FileType::class,array("label" => "Files",'data_class' => null,
+                'required' => true,
+                'multiple' => false))
+            ->add('descriptionImageGallery', TextareaType::class)
+            ->add('submit', SubmitType::class, array('label' => 'Ajouter Image pour un etablissment'));
+
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)

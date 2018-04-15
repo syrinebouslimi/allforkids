@@ -12,6 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Etablissement
 {
+
+
     /**
      * @var int
      *
@@ -22,6 +24,20 @@ class Etablissement
     private $id;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="rating", type="integer",nullable=true)
+     */
+    private $rating;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="phone", type="integer",nullable=true)
+     */
+    private $phone;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="nomEtablissement", type="string", length=255)
@@ -29,9 +45,24 @@ class Etablissement
     private $nomEtablissement;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="descriptionEtablissement", type="string", length=255)
+     * @return int
+     */
+    public function getRating()
+    {
+        return $this->rating;
+    }
+
+    /**
+     * @param int $rating
+     */
+    public function setRating($rating)
+    {
+        $this->rating = $rating;
+    }
+
+    /**
+     * @var text
+     * @ORM\Column(name="descriptionEtablissement", type="text",length=256)
      */
     private $descriptionEtablissement;
 
@@ -64,15 +95,34 @@ class Etablissement
     private $countryEtablissement;
 
     /**
-     * @var string
+     * @var text
      *
-     * @ORM\Column(name="exigenceEtablissement", type="string", length=255)
+     * @ORM\Column(name="exigenceEtablissement", type="text", length=255)
      */
     private $exigenceEtablissement;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="typeEtablissement", type="string", length=255)
+     */
+    private $typeEtablissement;
 
+    /**
+     * @return string
+     */
+    public function getTypeEtablissement()
+    {
+        return $this->typeEtablissement;
+    }
 
-
+    /**
+     * @param string $typeEtablissement
+     */
+    public function setTypeEtablissement($typeEtablissement)
+    {
+        $this->typeEtablissement = $typeEtablissement;
+    }
 
 
     /**
@@ -165,28 +215,22 @@ class Etablissement
     }
 
     /**
-     * Set descriptionEtablissement
-     *
-     * @param string $descriptionEtablissement
-     *
-     * @return Etablissement
-     */
-    public function setDescriptionEtablissement($descriptionEtablissement)
-    {
-        $this->descriptionEtablissement = $descriptionEtablissement;
-
-        return $this;
-    }
-
-    /**
-     * Get descriptionEtablissement
-     *
-     * @return string
+     * @return text
      */
     public function getDescriptionEtablissement()
     {
         return $this->descriptionEtablissement;
     }
+
+    /**
+     * @param text $descriptionEtablissement
+     */
+    public function setDescriptionEtablissement($descriptionEtablissement)
+    {
+        $this->descriptionEtablissement = $descriptionEtablissement;
+    }
+
+
 
     /**
      * Set dateCreationEtablissement
@@ -325,7 +369,7 @@ class Etablissement
     }
 
     /**
-     * @return string
+     * @return text
      */
     public function getExigenceEtablissement()
     {
@@ -333,12 +377,14 @@ class Etablissement
     }
 
     /**
-     * @param string $exigenceEtablissement
+     * @param text $exigenceEtablissement
      */
     public function setExigenceEtablissement($exigenceEtablissement)
     {
         $this->exigenceEtablissement = $exigenceEtablissement;
     }
+
+
 
     /**
      * @return string
@@ -356,6 +402,25 @@ class Etablissement
         $this->adresseEtablissement = $adresseEtablissement;
     }
 
+    /**
+     * @return int
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param int $phone
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+    }
+    public function __construct()
+    {
+        $this->dateCreationEtablissement = new \DateTime();
+    }
 
 
 

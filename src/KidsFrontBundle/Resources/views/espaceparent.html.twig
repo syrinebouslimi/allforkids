@@ -1,0 +1,94 @@
+{% extends 'KidsFrontBundle::Template_User.html.twig' %}
+
+{% block bandeau %}
+
+    <section class="pageTitleSection">
+        <div class="container">
+            <div class="pageTitleInfo">
+                <h2>Bonjour Madame {{  app.user.username|default('') }} Bienvenue dans votre espace parent</h2>
+                <ol class="breadcrumb">
+                    <li><a href="index-2.html">Liste des Etablissements</a></li>
+                    {#<li class="active">Teachers</li>#}
+                </ol>
+            </div>
+        </div>
+    </section>
+    {% endblock bandeau %}
+{% block body %}
+
+    <section class="mainContent full-width clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="sectionTitle text-center">
+                        <h2>
+                            <span class="shape shape-left bg-color-4"></span>
+                            <span>Liste des Etablissements</span>
+                            <span class="shape shape-right bg-color-4"></span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="tabCommon">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="{{ path('espace_parent') }}">Voir tout</a></li>
+                            <li><a data-toggle="tab" href="">Crèche</a></li>
+                            <li><a data-toggle="tab" href="">Jardin d'enfant</a></li>
+                            <li><a data-toggle="tab" href="">Garderie</a></li>
+                            <li><a data-toggle="tab" href="">Ecole</a></li>
+                            <li><a data-toggle="tab" href="">Baby Sitting </a></li>
+
+
+                        </ul>
+                        <div class="tab-content">
+                            {% for i in etablissement %}
+                                <div class="media courseList couresListPage">
+                                    <a class="media-left border-color-1" href="course-single-left-sidebar.html">
+                                        <img class="media-object" src="{{ asset('uploads/images/' ~ i.imageEtablissement) }}" alt="Image">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">{{ i.nomEtablissement }}</a></h4>
+                                        <ul class="list-inline">
+                                            <li><i class="fa fa-calendar-o" aria-hidden="true"></i>Age 0 to 2 Years</li>
+                                            <li><i class="fa fa-clock-o" aria-hidden="true"></i>{{ i.horaireEtablissement }}</li>
+                                        </ul>
+                                        <p>{{ i.descriptionEtablissement|truncate(50)}}</p>
+                                        <ul class="list-inline btn-yellow btnPart">
+                                            <li><a href="" class="btn btn-primary" data-toggle="modal" data-target="#supp{{ i.id }}" data-whatever="{{ i.id }}"><i class="fa fa-shopping-basket " aria-hidden="true"></i>Supprimer</a></li>
+
+                                            {#<li><a href="{{ path('modifieretablissementparid',{'id':i.id}) }}" class="btn btn-primary "><i class="fa fa-shopping-basket " aria-hidden="true"></i>Modifier</a></li>#}
+                                            <li><a  href="{{ path('afficherEtabById',{'id':i.id}) }}" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> More</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" id="supp{{ i.id }}">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                Suppression de l'etablissement
+                                            </div>
+                                            <div class="modal-body">
+                                                Etes-vous sûr de vouloir supprimer cet etablissement
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a class="btn btn-info" data-dismiss="modal">Annuler</a>
+                                                <a href="{{ path('supprimeretablissementparid',{'id':i.id}) }}" class="btn btn-danger btn-ok" >Supprimer t</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+{% endblock body %}

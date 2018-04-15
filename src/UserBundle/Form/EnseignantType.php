@@ -2,8 +2,6 @@
 
 namespace UserBundle\Form;
 
-use Doctrine\ORM\EntityRepository;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -11,58 +9,69 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use UserBundle\Entity\Enseignant;
-use UserBundle\Entity\Etablissement;
+use Symfony\Component\Security\Core\SecurityContext;
+
+// ne pas oublier
 
 class EnseignantType extends AbstractType
 {
+
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $user = $options['data'];
+        //$user = $this->getUser();
 //                    var_dump($user);
 //            die($user);
 
         $builder
             ->add('nomEnseignant')
             ->add('prenomEnseignant')
+            ->add('phoneEnseignant')
+            ->add('emailEnseignant')
             ->add('adresseEnseignant')
-            ->add('codePostalEnseignant')
-            ->add('countryEnseignant',ChoiceType::class,array('choices'=>array('à 08h:00'=>'à 08h:00','à 09h:00'=>'à 09h:00'
-    ,'à 10h:00'=>'à 10h:00','à 11h:00'=>'à 11h:00','à 12h:00'=>'à 12h:00','à 13h:00'=>'à 13h:00','à 14h:00'=>'à 14h:00'
-    ,'à 15h:00'=>'à 15h:00','à 16h:00'=>'à 16h:00','à 17h:00'=>'à 17h:00')))
-            ->add('regionEnseignant')
-            ->add('imageEnseignant',FileType::class)
+            ->add('imageEnseignant', FileType::class,array("label" => "Files",'data_class' => null,
+                'required' => false,
+                'multiple' => false))
             ->add('aboutEnseignant', TextareaType::class)
-            ->add('designationEnseignant')
-            ->add('diplomeEnseignant')
-            ->add('experienceEnseignant')
-            ->add('hobbiesEnseignant')
-            ->add('coursEnseignant')
-            ->add('etablissementId',EntityType::class,array('class'=>'UserBundle:Etablissement','choice_label'=>'nomEtablissement'
-
-                ,'query_builder' => function(EntityRepository $er) use ($user)
-                    {
-                        return $er->createQueryBuilder('s')
-                            ->where('s.idUserEtablissement = :idUser')
-                            ->setParameter('idUser', $user);
-
-                    }
-
-                )
 
 
+            ->add('designationEnseignant',ChoiceType::class, array('choices'=>array('Professeurs des écoles'=>'Professeurs des écoles',
+        'Agrégés'=>'Agrégés',
+        'Certifiés'=>'Certifiés'
+    )))
 
 
-            )
+            ->add('diplomeEnseignant',ChoiceType::class, array('choices'=>array('Licence'=>'Licence',
+                'Licence professionnelle'=>'Licence professionnelle',
+                'Diplôme national de technologie spécialisé'=>'Diplôme national de technologie spécialisé',
+                'Master professionnel'=>'Master professionnel',
+                'Master recherche'=>'Master Recherche',
+                'Diplôme Ingénieur'=>'Diplôme Ingénieur'
+                )))
+            ->add('experienceEnseignant',ChoiceType::class, array('choices'=>array('0 ans à 2 ans dans un etablissement educatif'=>'0 ans à 2 ans dans un etablissement educatif',
+                '2 ans à 4 ans dans un etablissement educatif'=>'2 ans à 4 ans dans un etablissement educatif',
+                '4 ans à 6 ans dans un etablissement educatif'=>'4 ans à 6 ans dans un etablissement educatif'
+            )))
+
+            ->add('hobbiesEnseignant',ChoiceType::class, array('choices'=>array('Lecture'=>'Lecture',
+                'Musique'=>'Musique',
+                'Dance'=>'Dance',
+                'Sport'=>'Sport'
+            )))
+            ->add('coursEnseignant',ChoiceType::class, array('choices'=>array('Français'=>'Français',
+                'Anglais'=>'Anglais',
+                'Arabe'=>'Arabe',
+                'Mathématique'=>'Mathématique',
+            )))
 
 
 
-            ->add('AjouterEnseignant', SubmitType::class,array('label' => 'Ajouter Enseignant'))
-        ;
-    }/**
+            ->add('submit', SubmitType::class, array('label' => 'Ajouter Enseignant'));
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
@@ -80,14 +89,12 @@ class EnseignantType extends AbstractType
         return 'userbundle_enseignant';
     }
 
-    public function setDefaultOptions(OptionsResolver $resolver)
-    {
-        $resolver->setDefaults(array(
-            'data_class' => Enseignant::class,
-        ));
-    }
-
-
+//    public function setDefaultOptions(OptionsResolver $resolver)
+//    {
+//        $resolver->setDefaults(array(
+//            'data_class' => Enseignant::class,
+//        ));
+//    }
 
 
 }

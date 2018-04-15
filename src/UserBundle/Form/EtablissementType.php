@@ -7,6 +7,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -18,22 +19,27 @@ class EtablissementType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nomEtablissement')
+            ->add('nomEtablissement',TextType::class)
             ->add('descriptionEtablissement', TextareaType::class)
-            ->add('cityEtablissement')
-            ->add('adresseEtablissement')
-            ->add('codepostalEtablissement')
-            ->add('regionEtablissement')
-            ->add('countryEtablissement',ChoiceType::class,array('choices'=>array('à 08h:00'=>'à 08h:00','à 09h:00'=>'à 09h:00'
-            ,'à 10h:00'=>'à 10h:00','à 11h:00'=>'à 11h:00','à 12h:00'=>'à 12h:00','à 13h:00'=>'à 13h:00','à 14h:00'=>'à 14h:00'
-            ,'à 15h:00'=>'à 15h:00','à 16h:00'=>'à 16h:00','à 17h:00'=>'à 17h:00')))
+            ->add('phone',TextType::class)
+//            ->add('rating', RatingType::class, [
+//                'label' => 'Rating'
+//            ])
+
+            ->add('cityEtablissement',TextType::class)
+            ->add('adresseEtablissement',TextType::class)
+            ->add('codepostalEtablissement',TextType::class)
+            ->add('regionEtablissement',TextType::class)
+            ->add('countryEtablissement',ChoiceType::class,array('choices'=>array('Tunisie'=>'Tunisie','USA'=>'USA'
+            ,'France'=>'France','Algérie'=>'Algérie')))
             ->add('exigenceEtablissement', TextareaType::class)
-            ->add('imageEtablissement',FileType::class, array("label" => "Files",
+            ->add('imageEtablissement',FileType::class, array("label" => "Files",'data_class'=>null,
                 'required' => false,
-                'multiple' => true))
-            ->add('horaireEtablissement',ChoiceType::class,array('choices'=>array('à 08h:00'=>'à 08h:00','à 09h:00'=>'à 09h:00'
-            ,'à 10h:00'=>'à 10h:00','à 11h:00'=>'à 11h:00','à 12h:00'=>'à 12h:00','à 13h:00'=>'à 13h:00','à 14h:00'=>'à 14h:00'
-            ,'à 15h:00'=>'à 15h:00','à 16h:00'=>'à 16h:00','à 17h:00'=>'à 17h:00')))
+                'multiple' => false))
+            ->add('horaireEtablissement',ChoiceType::class,array('choices'=>array('8:30am-5:30pm'=>'8:30am-5:30pm','9:30am-5:30pm'=>'9:30am-5:30pm'
+            ,'7:30am-4:30pm'=>'7:30am-4:30pm','9:00am-5:00pm'=>'9:00am-5:00pm','8:00am-4:00pm'=>'8:00am-4:00pm')))
+            ->add('typeEtablissement',ChoiceType::class,array('choices'=>array('Créche'=>'Créche','Jardin denfants'=>'Jardin denfants','Garderie'
+            =>'Garderie','Ecole'=>'Ecole')))
             ->add('AjouterEtablissement',SubmitType::class,array('label'=>'Ajouter Etablissement'));
 
         ;

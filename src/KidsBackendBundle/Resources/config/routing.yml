@@ -1,3 +1,14 @@
 kids_backend_homepage:
-    path:     /admintemplate
-    defaults: { _controller: KidsBackendBundle:Default:admin }
+    path:     /espaceAdmin
+    defaults: { _controller: KidsBackendBundle:Admin:admin }
+
+send_notification:
+    path: /send-notification
+    defaults: { _controller: KidsBackendBundle:Admin:sendNotification}
+
+getNotificationsAction:
+    path: /getNotifications
+    defaults: { _controller: KidsBackendBundle:Admin:getNotifications}
+notifications:
+    resource: "@MgiletNotificationBundle/Controller/"
+    type: annotation
