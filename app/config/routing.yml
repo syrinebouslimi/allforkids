@@ -16,3 +16,14 @@ app:
 
 fos_user:
  resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+send_notification:
+    path: /send-notification
+    defaults: { _controller: KidsBackendBundle:Admin:sendNotification}
+
+getNotificationsAction:
+    path: /getNotifications
+    defaults: { _controller: KidsBackendBundle:Admin:getNotifications}
+notifications:
+    resource: "@MgiletNotificationBundle/Controller/"
+    type: annotation

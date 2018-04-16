@@ -1,0 +1,82 @@
+{% extends 'KidsBackendBundle::Template_Admin.html.twig' %}
+
+{% block body %}
+
+
+
+    <div class="box-header">
+        <h2 class="box-title">Details de l'etablissement : {{ etablissement.nomEtablissement }}</h2>
+    </div>
+
+    {#<div class="col-sm-6">#}
+        {#<img class="img-responsive" src="../../dist/img/photo1.png" alt="Photo">#}
+    {#</div>#}
+    {##}
+
+    <div style="margin-top: 10px">
+
+        <div class="box-body">
+
+            <form role="form">
+
+                <div  class="form-group has-warning">
+                    <label>Image Etablissement</label>
+                    <img class="img-responsive" src="{{ asset('uploads/images/' ~ etablissement.imageEtablissement) }}" alt="Photo">
+                </div>
+
+
+
+                <div class="form-group has-success">
+                    <label>Description Etablissement</label>
+                    <textarea class="form-control" rows="11" disabled>{{ etablissement.descriptionEtablissement }}</textarea>
+                </div>
+
+                <div class="form-group has-warning">
+                    <label>Exigence Etablissement</label>
+                    <textarea class="form-control" rows="11" disabled>{{ etablissement.exigenceEtablissement }}</textarea>
+                </div>
+
+
+                <div class="form-group has-success">
+                    <label>Date création</label>
+                    <input type="text" class="form-control" value="{{ etablissement.dateCreationEtablissement|date("m/d/Y") }}" disabled>
+                </div>
+
+
+                <div class="form-group has-warning">
+                    <label>Horaire etablissement</label>
+                    <input type="text" class="form-control" value="{{ etablissement.horaireEtablissement }}" disabled>
+                </div>
+
+                <div class="form-group has-success">
+                    <label>Email Responsable</label>
+                    <input type="text" class="form-control" value="{{ etablissement.idUserEtablissement.email }}" disabled>
+                </div>
+
+
+                <div class="form-group has-warning">
+                    <label>Numéro télephone</label>
+                    <input type="text" class="form-control" value="{{ etablissement.phone }}" disabled>
+                </div>
+
+
+                <div class="form-group has-success">
+                    <label>Adresse</label>
+                    <input type="text" class="form-control" value="{{ etablissement.adresseEtablissement }}" disabled>
+                </div>
+
+                <div class="form-group has-warning">
+                    <label>Country</label>
+                    <input type="text" class="form-control" value="{{ etablissement.countryEtablissement }}" disabled>
+                </div>
+
+
+
+
+            </form>
+        </div>
+    </div>
+
+
+
+{% endblock body %}

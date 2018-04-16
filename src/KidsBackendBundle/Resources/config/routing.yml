@@ -2,6 +2,22 @@ kids_backend_homepage:
     path:     /espaceAdmin
     defaults: { _controller: KidsBackendBundle:Admin:admin }
 
+afficherAllEtablissement:
+    path: /afficherAllEtablissement
+    defaults: { _controller: KidsBackendBundle:AdminEtablissement:afficherAllEtablissement}
+
+afficherEtablissementbyid:
+    path: /afficherEtablissementbyid/id/{id}
+    defaults: { _controller: KidsBackendBundle:AdminEtablissement:afficherEtablissementbyid}
+afficheretablissementparsearch:
+    path: /afficheretablissementparsearch
+    defaults: { _controller: KidsBackendBundle:AdminEtablissement:afficheretablissementparsearch}
+
+
+
+notifications:
+    resource: "@MgiletNotificationBundle/Controller/"
+    type: annotation
 send_notification:
     path: /send-notification
     defaults: { _controller: KidsBackendBundle:Admin:sendNotification}
@@ -9,6 +25,3 @@ send_notification:
 getNotificationsAction:
     path: /getNotifications
     defaults: { _controller: KidsBackendBundle:Admin:getNotifications}
-notifications:
-    resource: "@MgiletNotificationBundle/Controller/"
-    type: annotation
