@@ -1,0 +1,102 @@
+{% extends 'KidsBackendBundle::Template_Admin.html.twig' %}
+
+{% block body %}
+
+
+
+    <div class="box-header">
+        <h2 class="box-title">Details de l'enseignant : {{ enseignant.nomEnseignant }} {{ enseignant.prenomEnseignant }}</h2>
+    </div>
+
+    <div style="margin-top: 10px">
+
+        <div class="box-body">
+
+            <form role="form">
+
+                <div  class="form-group has-warning">
+                    <label>Image Enseignant</label>
+                    <img class="img-responsive" src="{{ asset('uploads/images/' ~ enseignant.imageEnseignant) }}" alt="Photo">
+                </div>
+
+
+
+                <div class="form-group has-success">
+                    <label>Email Enseignant</label>
+                    <input type="text" class="form-control" value="{{ enseignant.emailEnseignant }}" disabled>
+
+
+                    {#<textarea class="form-control" rows="11" disabled>{{ enseignant.emailEnseignant }}</textarea>#}
+                </div>
+
+                <div class="form-group has-warning">
+                    <label>Telephone Enseignant</label>
+                    <input type="text" class="form-control" value="{{ enseignant.phoneEnseignant }}" disabled>
+
+
+                    {#<textarea class="form-control" rows="11" disabled>{{ enseignant.emailEnseignant }}</textarea>#}
+                </div>
+
+                <div class="form-group has-success">
+                    <label>Adresse Enseignant</label>
+                    <input type="text" class="form-control" value="{{ enseignant.adresseEnseignant }}" disabled>
+
+
+                    {#<textarea class="form-control" rows="11" disabled>{{ enseignant.emailEnseignant }}</textarea>#}
+                </div>
+
+
+                <div class="form-group has-success">
+                    <label>Designation Enseignant</label>
+                    <input type="text" class="form-control" value="{{ enseignant.designationEnseignant }}" disabled>
+
+
+                    {#<textarea class="form-control" rows="11" disabled>{{ enseignant.emailEnseignant }}</textarea>#}
+                </div>
+
+
+                <div class="form-group has-success">
+                    <label>Diplôme Enseignant</label>
+                    <input type="text" class="form-control" value="{{ enseignant.diplomeEnseignant }}" disabled>
+
+
+                    {#<textarea class="form-control" rows="11" disabled>{{ enseignant.emailEnseignant }}</textarea>#}
+                </div>
+
+                <div class="form-group has-success">
+                    <label>Cours Enseignant</label>
+                    <input type="text" class="form-control" value="{{ enseignant.coursEnseignant }}" disabled>
+
+                </div>
+
+                <div class="form-group has-warning">
+                    <label>A propos de l'enseignant</label>
+                    <textarea class="form-control" rows="11" disabled>{{ enseignant.aboutEnseignant }}</textarea>
+                </div>
+
+
+
+                <div class="form-group has-success">
+                    <label>Email Responsable</label>
+                    <input type="text" class="form-control" value="{{ enseignant.emailEnseignant }}" disabled>
+                </div>
+
+
+                <div class="form-group has-warning">
+                    <label>Etablissement </label>
+                    <input type="text" class="form-control" value="{{ enseignant.etablissementId.nomEtablissement }}" disabled>
+                </div>
+
+
+                <div class="form-group has-success">
+                    <label>Type Etablissement</label>
+                    <input type="text" class="form-control" value="{{ enseignant.etablissementId.typeEtablissement }}" disabled>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+
+{% endblock body %}

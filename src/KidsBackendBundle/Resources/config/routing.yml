@@ -9,10 +9,20 @@ afficherAllEtablissement:
 afficherEtablissementbyid:
     path: /afficherEtablissementbyid/id/{id}
     defaults: { _controller: KidsBackendBundle:AdminEtablissement:afficherEtablissementbyid}
+
 afficheretablissementparsearch:
     path: /afficheretablissementparsearch
     defaults: { _controller: KidsBackendBundle:AdminEtablissement:afficheretablissementparsearch}
+afficherAllEnseignant:
+    path: /afficherAllEnseignant
+    defaults: { _controller: KidsBackendBundle:AdminEnseignants:afficherAllEnseignant}
+afficherEnseignantparid:
+    path: /afficherEnseignantparid/id/{id}
+    defaults: { _controller: KidsBackendBundle:AdminEnseignants:afficherEnseignantbyid}
 
+afficherAllGallerie:
+    path: /afficherAllGallerie
+    defaults: { _controller: KidsBackendBundle:AdminGallerie:afficherAllGallerie}
 
 
 notifications:
