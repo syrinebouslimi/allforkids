@@ -11,32 +11,32 @@
             {#<input type="text" class="form-control">#}
 
             {#<div class="input-group">#}
-                {#<label>Selectionner l'etablissement</label>#}
-                {#<select class="form-control">#}
-                    {#<option>Select option..</option>#}
-                    {#<option>Option 1</option>#}
-                    {#<option>Option 2</option>#}
-                {#</select>#}
-                {#<span class="input-group-btn">#}
-    {#<button class="btn btn-default" type="button" tabindex="-1"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>#}
-  {#</span>#}
+            {#<label>Selectionner l'etablissement</label>#}
+            {#<select class="form-control">#}
+            {#<option>Select option..</option>#}
+            {#<option>Option 1</option>#}
+            {#<option>Option 2</option>#}
+            {#</select>#}
+            {#<span class="input-group-btn">#}
+            {#<button class="btn btn-default" type="button" tabindex="-1"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>#}
+            {#</span>#}
             {#</div>#}
 
 
 
             {#<div class="form-group">#}
-                {#<div class="col-sm-6 col-xs-12">#}
-                    {#<label for="">Etablissement</label>#}
-                    {#<div class="bookingDrop">#}
-                        {#<select name="idEtab" class="select-drop">#}
+            {#<div class="col-sm-6 col-xs-12">#}
+            {#<label for="">Etablissement</label>#}
+            {#<div class="bookingDrop">#}
+            {#<select name="idEtab" class="select-drop">#}
 
-                            {#{% for i in etab %}#}
-                                {#<option value="{{ i.id }}">{{ i.nomEtablissement }}</option>#}
-                            {#{% endfor %}#}
-                        {#</select>#}
+            {#{% for i in etab %}#}
+            {#<option value="{{ i.id }}">{{ i.nomEtablissement }}</option>#}
+            {#{% endfor %}#}
+            {#</select>#}
 
-                    {#</div>#}
-                {#</div>#}
+            {#</div>#}
+            {#</div>#}
             {#</div>#}
 
 
@@ -44,43 +44,43 @@
             <label>Selectionner l'etablissement</label>
             <form style="margin: 2%;" class="example" action="{{ path('afficherGallerieByEtab') }}">
 
-            <div class="input-group" style="width: 500px;">
-                <select name="idEtab"  class="form-control">
-                    <option >Voir tout</option>
+                <div class="input-group" style="width: 500px;">
+                    <select name="idEtab"  class="form-control">
+                        <option >Voir tout</option>
 
-                    {% for i in etab %}
-                        <option value="{{ i.id }}">{{ i.nomEtablissement }}</option>
-                    {% endfor %}
-                    {#<option>option 1</option>#}
-                    {#<option>option 2</option>#}
-                    {#<option>option 3</option>#}
-                    {#<option>option 4</option>#}
-                    {#<option>option 5</option>#}
-                </select>
-                <span class="input-group-btn" >
+                        {% for i in etab %}
+                            <option value="{{ i.id }}">{{ i.nomEtablissement }}</option>
+                        {% endfor %}
+                        {#<option>option 1</option>#}
+                        {#<option>option 2</option>#}
+                        {#<option>option 3</option>#}
+                        {#<option>option 4</option>#}
+                        {#<option>option 5</option>#}
+                    </select>
+                    <span class="input-group-btn" >
                       <button type="submit" class="btn btn-info ">Go!</button>
                     </span>
-            </div>
+                </div>
 
             </form>
 
         </div>
 
-        </div>
+    </div>
 
 
-        {#<div class="box-tools">#}
+    {#<div class="box-tools">#}
 
-            {#<form style="margin: 2%;" class="example" action="{{ path('afficheretablissementparsearch')}}">#}
-                {#<div class="input-group input-group-sm" style="width: 150px;">#}
-                    {#<input type="text" name="search" class="form-control pull-right" placeholder="Search">#}
-                    {#<div class="input-group-btn">#}
-                        {#<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>#}
-                    {#</div>#}
-                {#</div>#}
-            {#</form>#}
+    {#<form style="margin: 2%;" class="example" action="{{ path('afficheretablissementparsearch')}}">#}
+    {#<div class="input-group input-group-sm" style="width: 150px;">#}
+    {#<input type="text" name="search" class="form-control pull-right" placeholder="Search">#}
+    {#<div class="input-group-btn">#}
+    {#<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>#}
+    {#</div>#}
+    {#</div>#}
+    {#</form>#}
 
-        {#</div>#}
+    {#</div>#}
     <!-- /.box-header -->
 
     <div class="col-sm-12"><table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
@@ -103,7 +103,7 @@
                         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#{{ key.id }}">
                             Consulter image
                         </button>
-                       {#<button type="button" data-toggle="modal" data-target="{{ key.id }}">Consulter image</button>#}
+                        {#<button type="button" data-toggle="modal" data-target="{{ key.id }}">Consulter image</button>#}
                     </td>
 
                     <div class="modal modal-success fade" id="{{ key.id }}">

@@ -23,6 +23,9 @@ afficherEnseignantparid:
 afficherAllGallerie:
     path: /afficherAllGallerie
     defaults: { _controller: KidsBackendBundle:AdminGallerie:afficherAllGallerie}
+afficherGallerieByEtab:
+    path: /afficherGallerieByEtab
+    defaults: { _controller: KidsBackendBundle:AdminGallerie:afficherGallerieByEtab}
 
 
 notifications:
