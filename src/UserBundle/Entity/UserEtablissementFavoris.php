@@ -28,6 +28,8 @@ class UserEtablissementFavoris
      */
     private $dateCreation;
 
+    
+
 
 
     /**

@@ -23,9 +23,16 @@ class EtablissementController extends Controller
 
     public function afficherEtabByIdAction($id)
     {
+
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $idUser = $user->getId();
+
+        $em = $this->getDoctrine()->getManager();
+        $allFavoris = $em->getRepository('UserBundle:UserEtablissementFavoris')->findBy(array('user'=>$idUser));
+
         $creche = $this->getDoctrine()->getRepository('UserBundle:Etablissement')->find($id);
 
-        return $this->render('@KidsFront/detailsetablissement.html.twig', array('detail' => $creche));
+        return $this->render('@KidsFront/detailsetablissement.html.twig', array('detail' => $creche,'favoris'=>$allFavoris));
     }
 
 

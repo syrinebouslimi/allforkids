@@ -92,6 +92,13 @@ getAllFavoris:
     path: /getAllFavoris
     defaults:  { _controller: KidsFrontBundle:Favoris:getAllFavorisByUser}
 
+afficherEtabByParent:
+    path: /afficherEtabByParent
+    defaults:  { _controller: KidsFrontBundle:Parent:afficherEtabParent}
+ajouterfavoris:
+    path: /ajouterfavoris/id/{id}
+    defaults: { _controller: KidsFrontBundle:Favoris:ajouterfavoris}
+
 
 api_mobile_get_all_etablissement:
     path: /getAllEtablissement

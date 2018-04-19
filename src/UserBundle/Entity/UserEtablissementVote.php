@@ -34,6 +34,11 @@ class UserEtablissementVote
      */
     private $etablissement;
 
+    /**
+     * @var int
+     * @ORM\Column(name="vote", type="integer",nullable=true)
+     */
+    private $vote;
 
 
     /**
@@ -53,6 +58,23 @@ class UserEtablissementVote
     {
         return $this->user;
     }
+
+    /**
+     * @return int
+     */
+    public function getVote()
+    {
+        return $this->vote;
+    }
+
+    /**
+     * @param int $vote
+     */
+    public function setVote($vote)
+    {
+        $this->vote = $vote;
+    }
+
 
     /**
      * @param mixed $user

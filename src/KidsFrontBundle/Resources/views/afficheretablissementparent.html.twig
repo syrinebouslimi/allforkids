@@ -109,84 +109,80 @@
 
  {% block body %}
 
-<section class="mainContent full-width clearfix courseSingleSection">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9 col-sm-8 col-xs-12 block">
-                <div class="thumbnail thumbnailContent alt">
-                    <img src="{{ asset('uploads/images/' ~ detail.imageEtablissement) }}" alt="image" class="img-responsive">
-                    <div class="caption border-color-1">
-                        <h3 class="color-1">{{ detail.nomEtablissement }}</h3>
-                        <p>{{ detail.descriptionEtablissement }}</p>
-                        {#<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.</p>#}
-                    </div>
-                </div>
-                <div class="btnArea">
+     <section class="mainContent full-width clearfix">
+         <div class="container">
+             <div class="row">
+                 <div class="col-xs-12">
+                     <div class="sectionTitle text-center">
+                         <h2>
+                             <span class="shape shape-left bg-color-4"></span>
+                             <span>Liste des Etablissements</span>
+                             <span class="shape shape-right bg-color-4"></span>
+                         </h2>
+                     </div>
+                 </div>
+             </div>
+             <div class="row">
+                 <div class="col-xs-12">
+                     <div class="tabCommon">
+                         <ul class="nav nav-tabs">
+                             <li class="active"><a data-toggle="tab" href="{{ path('espace_parent') }}">Voir tout</a></li>
+                             <li><a data-toggle="tab" href="">Crèche</a></li>
+                             <li><a data-toggle="tab" href="">Jardin d'enfant</a></li>
+                             <li><a data-toggle="tab" href="">Garderie</a></li>
+                             <li><a data-toggle="tab" href="">Ecole</a></li>
+                             <li><a data-toggle="tab" href="">Baby Sitting </a></li>
 
-                    <label for="input-3" class="control-label">Donner une note à cet établissement:</label>
-                    <input id="input-3" name="input-3" class="rating rating-loading" data-min="0" data-max="5" data-step="0.1" value="5" >
 
-                    <a href="" class="btn btn-primary">Envoyer votre votre à {{ detail.nomEtablissement }}</a>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-4 col-xs-12">
-                <aside>
-                    <div class="rightSidebar">
-                        <div class="panel panel-default">
-                            <div class="panel-heading bg-color-1 border-color-1">
-                                <h3 class="panel-title">Course Information</h3>
-                            </div>
+                         </ul>
+                         <div class="tab-content">
+                             {% for i in etablissement %}
+                                 <div class="media courseList couresListPage">
+                                     <a class="media-left border-color-1" href="course-single-left-sidebar.html">
+                                         <img class="media-object" src="{{ asset('uploads/images/' ~ i.imageEtablissement) }}" alt="Image" style="width: 500px; height: 300px;">
+                                     </a>
+                                     <div class="media-body">
+                                         <h4 class="media-heading">{{ i.nomEtablissement }}</a></h4>
+                                         <ul class="list-inline">
+                                             <li><i class="fa fa-calendar-o" aria-hidden="true"></i>Age 0 to 2 Years</li>
+                                             <li><i class="fa fa-clock-o" aria-hidden="true"></i>{{ i.horaireEtablissement }}</li>
+                                         </ul>
+                                         <p>{{ i.descriptionEtablissement|truncate(50)}}</p>
+                                         <ul class="list-inline btn-yellow btnPart">
+                                             <li><a href="{{ path('ajouterfavoris', {'id':i.id}) }}" class="btn btn-primary" ><i class="fa fa-shopping-basket " aria-hidden="true"></i>Marquer favoris</a></li>
 
-                            <div class="panel-body">
-                                <ul class="media-list">
-                                    <li class="media">
-                                        <div class="media-left iconContent bg-color-2">
-                                            <i class="fa fa-calendar" aria-hidden="true"></i>
-                                        </div>
-                                        <div class="media-body iconContent">
-                                            <h4 class="media-heading color-2">Creation Date</h4>
-                                            <p>15 Oct,2016</p>
-                                        </div>
-                                    </li>
-                                    <li class="media">
-                                        <div class="media-left iconContent bg-color-3">
-                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                        </div>
-                                        <div class="media-body iconContent">
-                                            <h4 class="media-heading color-3">Etablissement Duration</h4>
-                                            <p>{{ detail.horaireEtablissement }}</p>
-                                        </div>
-                                    </li>
-                                    <li class="media iconContet">
-                                        <div class="media-left iconContent bg-color-4">
-                                            <i class="fa fa-phone" aria-hidden="true"></i>
-                                        </div>
-                                        <div class="media-body iconContent">
-                                            <h4 class="media-heading color-4">Contact</h4>
-                                            <p>954 124 2542</p>
-                                        </div>
-                                    </li>
-                                    <li class="media">
-                                        <div class="media-left iconContent bg-color-5">
-                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        </div>
-                                        <div class="media-body iconContent">
-                                            <h4 class="media-heading color-5">Event Venue</h4>
-                                            <p>{{ detail.countryEtablissement }}<br> {{ detail.adresseEtablissement }}<br> {{ detail.codepostalEtablissement }}</p>
-                                        </div>
-                                    </li>
-                                    <li><a href="#" class="btn btn-primary bg-color-6 btn-block">Register now</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="btnPart">
-                            <a href="#" class="btn btn-primary btn-block bg-color-6">Enroll now</a>
-                        </div>
-                    </div>
-                </aside>
-            </div>
-        </div>
-    </div>
-</section>
+                                             {#<li><a href="" class="btn btn-primary" data-toggle="modal" data-target="#supp{{ i.id }}" data-whatever="{{ i.id }}"><i class="fa fa-shopping-basket " aria-hidden="true"></i>Marquer favoris</a></li>#}
 
-{% endblock body %}
+                                             {#<li><a href="{{ path('modifieretablissementparid',{'id':i.id}) }}" class="btn btn-primary "><i class="fa fa-shopping-basket " aria-hidden="true"></i>Modifier</a></li>#}
+                                             <li><a  href="{{ path('afficherEtabById',{'id':i.id}) }}" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> More</a></li>
+                                         </ul>
+                                     </div>
+                                 </div>
+                                 <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" id="supp{{ i.id }}">
+                                     <div class="modal-dialog">
+                                         <div class="modal-content">
+                                             <div class="modal-header">
+                                                 Suppression de l'etablissement
+                                             </div>
+                                             <div class="modal-body">
+                                                 Etes-vous sûr de vouloir supprimer cet etablissement
+                                             </div>
+                                             <div class="modal-footer">
+                                                 <a class="btn btn-info" data-dismiss="modal">Annuler</a>
+                                                 <a href="{{ path('supprimeretablissementparid',{'id':i.id}) }}" class="btn btn-danger btn-ok" >Supprimer t</a>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+
+
+                             {% endfor %}
+
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+     </section>
+ {% endblock body %}

@@ -3,6 +3,7 @@
 namespace KidsFrontBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use UserBundle\Entity\UserEtablissementFavoris;
 
 class FavorisController extends Controller
 {
@@ -31,6 +32,24 @@ class FavorisController extends Controller
 
         $em->flush();
         return $this->redirectToRoute('getAllFavoris');
+    }
+
+    public function ajouterfavorisAction($id){
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+
+        $etab = $this->getDoctrine()->getRepository('UserBundle:Etablissement')->findOneBy(array('id' => $id));
+        $newFavoris = new UserEtablissementFavoris();
+        $newFavoris->setEtablissement($etab);
+        $newFavoris->setUser($user);
+        $newFavoris->setDateCreation( new \DateTime());
+
+        $save = $this->getDoctrine()->getManager();
+
+        $save->persist($newFavoris);
+        $save->flush();
+        return $this->redirectToRoute('afficherEtabByParent');
+
+
     }
 
 }
