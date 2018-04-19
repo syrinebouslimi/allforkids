@@ -35,13 +35,6 @@ class EtablissementController extends Controller
 
     }
 
-    public function espaceParentAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-        $allEtab = $em->getRepository('UserBundle:Etablissement')->findAll();
-        return $this->render('@KidsFront/espaceparent.html.twig', array('etablissement' => $allEtab));
-
-    }
 
     public function ajouterEtablissementAction(Request $request)
     {

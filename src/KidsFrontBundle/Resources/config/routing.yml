@@ -6,7 +6,7 @@ espace_prestataire:
     defaults: { _controller: KidsFrontBundle:Etablissement:espacePrestataire}
 espace_parent:
     path: /espaceParent
-    defaults: { _controller: KidsFrontBundle:Etablissement:espaceParent}
+    defaults: { _controller: KidsFrontBundle:Parent:espaceParent}
 contact:
     path:     /contact
     defaults: { _controller: KidsFrontBundle:AcceuilContact:contact }
@@ -28,6 +28,10 @@ afficherprof:
 afficherdetailprof:
     path: /afficherdetailprof/id/{id}
     defaults: { _controller: KidsFrontBundle:Enseignant:afficherdetailprof }
+
+supprimerfavorisparid:
+    path: /supprimerfavorisparid/id/{id}
+    defaults: { _controller: KidsFrontBundle:Favoris:supprimerfavorisparid}
 
 modifierenseignantbyid:
     path: /modifierenseignantbyid/id/{id}
@@ -83,6 +87,10 @@ supprimerimagebyid:
 afficherConfimationApresCreationEtab:
     path: /afficherConfimationApresCreationEtab
     defaults: { _controller: KidsFrontBundle:Etablissement:afficherConfimationApresCreationEtab}
+
+getAllFavoris:
+    path: /getAllFavoris
+    defaults:  { _controller: KidsFrontBundle:Favoris:getAllFavorisByUser}
 
 
 api_mobile_get_all_etablissement:

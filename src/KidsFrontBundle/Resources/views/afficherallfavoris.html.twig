@@ -1,0 +1,208 @@
+{% extends 'KidsFrontBundle::Template_User.html.twig' %}
+
+{% block Menu %}
+    <nav id="menuBar" class="navbar navbar-default lightHeader" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"><img src="{{ asset('Template_front_principal/img/logo-school.png') }}"
+                                             alt="Kidz School"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown singleDrop color-1  ">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-home bg-color-1" aria-hidden="true"></i> <span
+                                    class="active">Etablissement</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li class=""><a href="{{ path('afficherEtabPrestataireInfo') }}">Consulter les
+                                    Etablissements</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown singleDrop color-3 ">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-list-ul bg-color-3" aria-hidden="true">
+                            </i> <span>Enseignants</span></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li class=" "><a href="{{ path('afficherprof') }}">Consulter la liste des enseigants</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown singleDrop color-4">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true">
+                            </i> <span>Gallerie</span></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li class=" "><a href="{{ path('affichergallerie') }}">Consulter la gallerie des images</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+{% endblock Menu %}
+
+{% block favoris %}
+    <li class="cart-dropdown">
+        <a href="#" class="bg-color-6 shop-cart">
+            <i class="fa fa-shopping-basket " aria-hidden="true"></i>
+            <span class="badge bg-color-1">{{ favoris|length }}</span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right">
+            <li><i class="fa fa-shopping-basket " aria-hidden="true"></i>{{ favoris|length }} items in your cart</li>
+
+            {% for i in favoris %}
+
+                {% if loop.index < 2 %}
+                    <li>
+                        <a href="">
+                            <div class="media">
+                                <div class="media-left">
+
+                                    <img src="{{ asset('uploads/images/' ~ i.etablissement.imageEtablissement) }}"
+                                         alt="cart-Image">
+                                </div>
+                                <div class="media-body">
+                                    <h4>{{ i.etablissement.nomEtablissement }}</h4>
+                                    {#<div class="price">#}
+                                    {#<span class="color-1">{{ i.etablissement.adresseEtablissement }}</span>#}
+                                    {#</div>#}
+                                    {#<span class="amount">Qnt: 1</span>#}
+                                </div>
+                            </div>
+                        </a>
+                        <span class="cancel"><i class="fa fa-close" aria-hidden="true"></i></span>
+                    </li>
+
+                {% elseif loop.index == 2 %}
+                    <li>
+                        <a href="{{ path('getAllFavoris') }}">
+                            <button type="button" class="btn btn-primary">Voir plus</button>
+                        </a>
+                    </li>
+
+                {% endif %}
+
+            {% endfor %}
+        </ul>
+    </li>
+{% endblock favoris %}
+
+
+{% block bandeau %}
+
+    <section class="pageTitleSection">
+        <div class="container">
+            <div class="pageTitleInfo">
+                <h2>Cart Page</h2>
+                <ol class="breadcrumb">
+                    <li><a href="">Favoris</a></li>
+                    <li class="active">Liste des etablissements marqués</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+{% endblock bandeau %}
+
+ {% block body %}
+     <section class="mainContent full-width clearfix" style="margin-top: 50px;">
+         <div class="container">
+             <div class="row">
+                 <div class="col-xs-12">
+                     <form action="#">
+                         <div class="cartInfo">
+                             <div class="table-responsive">
+                                 <table class="table">
+                                     <thead>
+                                     <tr class="bg-color-1">
+                                         <th class="col-lg-2 col-xs-3" style="min-width: 190px; text-indent:-999px;">
+                                             empty
+                                         </th>
+                                         <th class="col-lg-4 col-xs-3">Etablissement</th>
+                                         <th class="col-lg-2 col-xs-2">Adresse</th>
+                                         <th class="col-lg-2 col-xs-2">Type Etablissement</th>
+                                         <th class="col-lg-2 col-xs-2">Telephone</th>
+                                         <th class="col-lg-2 col-xs-2">Actions</th>
+
+                                     </tr>
+                                     </thead>
+                                     <tbody>
+
+                                     {% for i in favoris %}
+
+                                     <tr>
+                                         <td>
+                                             <button type="button" class="close" data-toggle="modal"
+                                                     data-target="#{{ i.id }}"><span aria-hidden="true">&times;</span>
+                                             </button>
+
+                                             <div class="modal fade" id="{{ i.id }}" role="dialog">
+                                                 <div class="modal-dialog">
+                                                     <div class="modal-content">
+                                                         <div class="modal-header">
+                                                             <div class="modal-header">
+                                                                 Suppression l'etablissement
+                                                             </div>
+                                                         </div>
+                                                         <div class="modal-body">
+                                                             Etes-vous sûr de vouloir supprimer cet etablissement de la
+                                                             liste des favoris?
+                                                         </div>
+                                                         <div class="modal-footer">
+                                                             <button type="button" class="btn btn-default"
+                                                                     data-dismiss="modal">Close
+                                                             </button>
+                                                             <a href="{{ path('supprimerfavorisparid',{'id':i.id}) }}"
+                                                                class="btn btn-danger btn-ok">Supprimer</a>
+
+                                                         </div>
+                                                     </div>
+
+                                                 </div>
+                                             </div>
+
+                                             <span class="cartImage"><img
+                                                         src="{{ asset('uploads/images/' ~ i.etablissement.imageEtablissement) }}"
+                                                         alt="image" class="img-rounded"></span>
+                                         </td>
+                                         <td>{{ i.etablissement.nomEtablissement }}</td>
+                                         <td>{{ i.etablissement.adresseEtablissement }}</td>
+                                         <td>{{ i.etablissement.typeEtablissement }}</td>
+                                         <td>{{ i.etablissement.phone }}</td>
+
+                                         <td>
+                                             <a href="{{ path('afficherEtabById',{'id':i.etablissement.id}) }}">
+                                                 <button type="button" class="btn btn-xl btn-primary ">Détails</button>
+                                             </a>
+                                         </td>
+
+                                         {% endfor %}
+
+                                     </tbody>
+                                 </table>
+                             </div>
+                         </div>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+
+ {% endblock body %}

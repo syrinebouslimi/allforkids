@@ -26,9 +26,9 @@ class Etablissement
     /**
      * @var int
      *
-     * @ORM\Column(name="rating", type="integer",nullable=true)
+     * @ORM\Column(name="avg_rating", type="integer",nullable=true)
      */
-    private $rating;
+    private $avgRating;
 
     /**
      * @var int
@@ -44,21 +44,7 @@ class Etablissement
      */
     private $nomEtablissement;
 
-    /**
-     * @return int
-     */
-    public function getRating()
-    {
-        return $this->rating;
-    }
 
-    /**
-     * @param int $rating
-     */
-    public function setRating($rating)
-    {
-        $this->rating = $rating;
-    }
 
     /**
      * @var text
@@ -107,6 +93,24 @@ class Etablissement
      * @ORM\Column(name="typeEtablissement", type="string", length=255)
      */
     private $typeEtablissement;
+
+    /**
+     * @return int
+     */
+    public function getAvgRating()
+    {
+        return $this->avgRating;
+    }
+
+    /**
+     * @param int $avgRating
+     */
+    public function setAvgRating($avgRating)
+    {
+        $this->avgRating = $avgRating;
+    }
+
+
 
     /**
      * @return string
@@ -162,6 +166,35 @@ class Etablissement
      */
 
     private $idUserEtablissement;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="UserBundle\Entity\UserEtablissementFavoris", mappedBy="etablissement", cascade={"persist"})
+     */
+    private $userFavorites;
+
+    /**
+     * @ORM\OneToMany(targetEntity="UserBundle\Entity\UserEtablissementVote", mappedBy="etablissement", cascade={"persist"})
+     */
+    private $userNote;
+
+    /**
+     * @return mixed
+     */
+    public function getUserNote()
+    {
+        return $this->userNote;
+    }
+
+    /**
+     * @param mixed $userNote
+     */
+    public function setUserNote($userNote)
+    {
+        $this->userNote = $userNote;
+    }
+
+
 
     /**
      * @return mixed
@@ -420,6 +453,22 @@ class Etablissement
     public function __construct()
     {
         $this->dateCreationEtablissement = new \DateTime();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUserFavorites()
+    {
+        return $this->userFavorites;
+    }
+
+    /**
+     * @param mixed $userFavorites
+     */
+    public function setUserFavorites($userFavorites)
+    {
+        $this->userFavorites = $userFavorites;
     }
 
 

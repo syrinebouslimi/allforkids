@@ -68,6 +68,34 @@ class User extends BaseUser implements NotifiableInterface
      */
     protected $numeroTelephoneUser;
 
+    /**
+     * @ORM\OneToMany(targetEntity="UserBundle\Entity\UserEtablissementFavoris", mappedBy="user", cascade={"persist"})
+     */
+    private $userEtabFavorites;
+
+    /**
+     * @ORM\OneToMany(targetEntity="UserBundle\Entity\UserEtablissementVote", mappedBy="user", cascade={"persist"})
+     */
+    private $userEtabVote;
+
+    /**
+     * @return mixed
+     */
+    public function getUserEtabVote()
+    {
+        return $this->userEtabVote;
+    }
+
+    /**
+     * @param mixed $userEtabVote
+     */
+    public function setUserEtabVote($userEtabVote)
+    {
+        $this->userEtabVote = $userEtabVote;
+    }
+
+
+
 
 
     /**
@@ -184,6 +212,22 @@ class User extends BaseUser implements NotifiableInterface
     public function setNumeroTelephoneUser($numeroTelephoneUser)
     {
         $this->numeroTelephoneUser = $numeroTelephoneUser;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUserEtabFavorites()
+    {
+        return $this->userEtabFavorites;
+    }
+
+    /**
+     * @param mixed $userEtabFavorites
+     */
+    public function setUserEtabFavorites($userEtabFavorites)
+    {
+        $this->userEtabFavorites = $userEtabFavorites;
     }
 
 
