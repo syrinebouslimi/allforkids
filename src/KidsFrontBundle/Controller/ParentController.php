@@ -26,26 +26,7 @@ class ParentController extends Controller
 
     public function afficherEtabParentAction()
     {
-//        $user = $this->container->get('security.token_storage')->getToken()->getUser();
-//        $idUser = $user->getId();
-//
-//
-//        $em = $this->getDoctrine()->getManager();
-//
-//
-//
-//
-//        $query = $em->createQueryBuilder();
-//        $query->select('avg(o.vote) AS vote');
-//        $query->from('UserBundle:UserEtablissementVote', 'o');
-//        $query->where('o.user = :userId');
-//$query->setParameter('userId', $idUser);
-//
-//        $a = $query->getQuery();
-//
-//        $result = $a->getResult();
-//
-//        var_dump($result).die();
+
 
 
         $user = $this->container->get('security.token_storage')->getToken()->getUser();
@@ -59,36 +40,33 @@ class ParentController extends Controller
         $allEtab = $em->getRepository('UserBundle:Etablissement')->findAll();
 
 
-//        foreach ($allEtab as $etab) {
-//            $query = $em->createQuery(
-//                'SELECT AVG(vote),user_id,etablissement_id
-//    FROM UserBundle:UserEtablissementVote
-//    WHERE user=: idUser AND etablissement=: idEtab'
-//            )->setParameter('user', $idUser)
-//            ->setParameter('idEtab',$etab->getId());
-//
-//            $avg = $query->getResult();
-//            $etab->setAvgRating($avg);
-
+        foreach($allEtab as $e) {
 
             $query = $em->createQueryBuilder();
             $query->select('avg(o.vote) AS vote');
             $query->from('UserBundle:UserEtablissementVote', 'o');
-            $query->where('o.user = :userId');
-            $query->setParameter('userId', $idUser);
-            $query->andWhere('o.etablissement = :etabId');
+//            $query->where('o.user = :userId');
+//            $query->setParameter('userId', $idUser);
+            $query->where('o.etablissement = :etabId');
 
-            $query->setParameter('etabId', 37);
+            $query->setParameter('etabId', $e->getId());
 
-                    $a = $query->getQuery();
+            $a = $query->getQuery();
 
-        $result = $a->getResult();
+            $result = $a->getResult();
+            $e->setAvgRating($result[0]['vote']);
+//            var_dump($result[0]['vote']).die();
 
-        var_dump($result).die();
+            $save = $this->getDoctrine()->getManager();
+            $save->persist($e);
+            $save->flush();
 
 
+        }
 
-   //     }
+
+//        var_dump($allEtab).die();
+
 
 
 
