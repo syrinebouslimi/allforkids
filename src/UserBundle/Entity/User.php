@@ -2,6 +2,7 @@
 
 namespace UserBundle\Entity;
 
+use FOS\MessageBundle\Model\ParticipantInterface;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Mgilet\NotificationBundle\Annotation\Notifiable;
@@ -14,7 +15,7 @@ use Mgilet\NotificationBundle\NotifiableInterface;
  * @ORM\Entity(repositoryClass="UserBundle\Repository\UserRepository")
  * @Notifiable(name="user")
  */
-class User extends BaseUser implements NotifiableInterface
+class User extends BaseUser implements NotifiableInterface,  ParticipantInterface
 {
     /**
      * @var int

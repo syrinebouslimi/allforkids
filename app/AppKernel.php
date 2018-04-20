@@ -22,6 +22,8 @@ class AppKernel extends Kernel
             new KidsBackendBundle\KidsBackendBundle(),
             new Mgilet\NotificationBundle\MgiletNotificationBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new FOS\MessageBundle\FOSMessageBundle(),
+            new MessageBundle\MessageBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
