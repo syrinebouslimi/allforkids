@@ -86,8 +86,8 @@ fos_user:
 
 fos_message:
     db_driver: orm
-    thread_class: UserBundle\Entity\Thread
-    message_class:  UserBundle\Entity\Message
+    thread_class: MessageBundle\Entity\Thread
+    message_class:  MessageBundle\Entity\Message
 
 
 

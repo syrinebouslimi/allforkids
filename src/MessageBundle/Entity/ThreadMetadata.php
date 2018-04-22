@@ -1,30 +1,26 @@
 <?php
+// src/FrontBundle/Entity/ThreadMetadata.php
 
-namespace UserBundle\Entity;
+namespace MessageBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use FOS\MessageBundle\Entity\ThreadMetadata as BaseThreadMetadata;
 
-
 /**
- * ThreadMetadata
- *
- * @ORM\Table(name="thread_metadata")
- * @ORM\Entity(repositoryClass="UserBundle\Repository\ThreadMetadataRepository")
+ * @ORM\Entity
  */
-class ThreadMetadata  extends BaseThreadMetadata
+class ThreadMetadata extends BaseThreadMetadata
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
+     * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
     /**
      * @ORM\ManyToOne(
-     *   targetEntity="UserBundle\Entity\Thread",
+     *   targetEntity="MessageBundle\Entity\Thread",
      *   inversedBy="metadata"
      * )
      * @var \FOS\MessageBundle\Model\ThreadInterface
@@ -36,19 +32,4 @@ class ThreadMetadata  extends BaseThreadMetadata
      * @var \FOS\MessageBundle\Model\ParticipantInterface
      */
     protected $participant;
-
-
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-
-
 }
-

@@ -1,38 +1,23 @@
 <?php
+// src/FrontBundle/Entity/Thread.php
 
-namespace UserBundle\Entity;
+namespace MessageBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\Collection;
 use FOS\MessageBundle\Entity\Thread as BaseThread;
 
 /**
- * Thread
- *
- * @ORM\Table(name="thread")
- * @ORM\Entity(repositoryClass="UserBundle\Repository\ThreadRepository")
+ * @ORM\Entity
  */
 class Thread extends BaseThread
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
+     * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-
-
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
@@ -42,7 +27,7 @@ class Thread extends BaseThread
 
     /**
      * @ORM\OneToMany(
-     *   targetEntity="UserBundle\Entity\Message",
+     *   targetEntity="MessageBundle\Entity\Message",
      *   mappedBy="thread"
      * )
      * @var Message[]|Collection
@@ -51,15 +36,11 @@ class Thread extends BaseThread
 
     /**
      * @ORM\OneToMany(
-     *   targetEntity="UserBundle\Entity\ThreadMetadata",
+     *   targetEntity="MessageBundle\Entity\ThreadMetadata",
      *   mappedBy="thread",
      *   cascade={"all"}
      * )
      * @var ThreadMetadata[]|Collection
      */
     protected $metadata;
-
-
-
 }
-

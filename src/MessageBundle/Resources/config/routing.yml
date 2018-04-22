@@ -1,3 +1,8 @@
 message_homepage:
     path:     /
     defaults: { _controller: MessageBundle:Default:index }
+fos_message:
+    resource: "@FOSMessageBundle/Resources/config/routing.xml"
+    prefix: /message
+
+

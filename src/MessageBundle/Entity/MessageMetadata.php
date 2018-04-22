@@ -1,31 +1,26 @@
 <?php
+// src/FrontBundle/Entity/MessageMetadata.php
 
-namespace UserBundle\Entity;
+namespace MessageBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use FOS\MessageBundle\Entity\MessageMetadata as BaseMessageMetadata;
 
-
 /**
- * MessageMetadata
- *
- * @ORM\Table(name="message_metadata")
- * @ORM\Entity(repositoryClass="UserBundle\Repository\MessageMetadataRepository")
+ * @ORM\Entity
  */
 class MessageMetadata extends BaseMessageMetadata
 {
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
+     * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
 
     /**
      * @ORM\ManyToOne(
-     *   targetEntity="UserBundle\Entity\Message",
+     *   targetEntity="MessageBundle\Entity\Message",
      *   inversedBy="metadata"
      * )
      * @var \FOS\MessageBundle\Model\MessageInterface
@@ -37,19 +32,4 @@ class MessageMetadata extends BaseMessageMetadata
      * @var \FOS\MessageBundle\Model\ParticipantInterface
      */
     protected $participant;
-
-
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-
-
 }
-
