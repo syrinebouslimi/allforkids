@@ -93,7 +93,7 @@ getAllFavoris:
     defaults:  { _controller: KidsFrontBundle:Favoris:getAllFavorisByUser}
 
 afficherEtabByParent:
-    path: /afficherEtabByParent
+    path: /afficherEtabByParent/type/{type}
     defaults:  { _controller: KidsFrontBundle:Parent:afficherEtabParent}
 ajouterfavoris:
     path: /ajouterfavoris/id/{id}

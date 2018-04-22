@@ -126,12 +126,11 @@
                  <div class="col-xs-12">
                      <div class="tabCommon">
                          <ul class="nav nav-tabs">
-                             <li class="active"><a data-toggle="tab" href="{{ path('espace_parent') }}">Voir tout</a></li>
-                             <li><a data-toggle="tab" href="">Crèche</a></li>
-                             <li><a data-toggle="tab" href="">Jardin d'enfant</a></li>
-                             <li><a data-toggle="tab" href="">Garderie</a></li>
-                             <li><a data-toggle="tab" href="">Ecole</a></li>
-                             <li><a data-toggle="tab" href="">Baby Sitting </a></li>
+                             <li class="active"><a  href="{{ path('afficherEtabByParent',{'type':'all'}) }}">Voir tout</a></li>
+                             <li><a  href="{{ path('afficherEtabByParent',{'type':'Créche'}) }}">Crèche</a></li>
+                             <li><a  href="{{ path('afficherEtabByParent',{'type':'Jardin denfants'}) }}">Jardin d'enfant</a></li>
+                             <li><a  href="{{ path('afficherEtabByParent',{'type':'Garderie'}) }}">Garderie</a></li>
+                             <li><a href="{{ path('afficherEtabByParent',{'type':'Ecole'}) }}">Ecole</a></li>
 
 
                          </ul>
