@@ -2,6 +2,7 @@
 
 namespace UserBundle\Form;
 
+use blackknight467\StarRatingBundle\Form\RatingType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -22,9 +23,9 @@ class EtablissementType extends AbstractType
             ->add('nomEtablissement',TextType::class)
             ->add('descriptionEtablissement', TextareaType::class)
             ->add('phone',TextType::class)
-//            ->add('rating', RatingType::class, [
-//                'label' => 'Rating'
-//            ])
+            ->add('avgRating', RatingType::class, [
+                'label' => 'Rating'
+            ])
 
             ->add('cityEtablissement',TextType::class)
             ->add('adresseEtablissement',TextType::class)
