@@ -4,7 +4,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Evento </title>
+    <title>AllForKids </title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -24,14 +24,13 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-
     <header class="main-header">
         <!-- Logo -->
         <a href="../../index2.html" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>E</b>VT</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Even</b>TO</span>
+            <span class="logo-lg"><b>AllFor</b>Kids</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
@@ -140,9 +139,6 @@
                             <!-- Menu Body -->
                             <li class="user-body">
                                 <div class="row">
-
-
-
                                 </div>
                                 <!-- /.row -->
                             </li>
@@ -163,7 +159,7 @@
                     </li>
                 </ul>
             </div>
-        </nav>     
+        </nav>
     </header>
     <!-- Left side column. contains the logo and sidebar -->
     <aside class="main-sidebar">
@@ -184,21 +180,19 @@
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Evénement</span>
+                        <i class="fa fa-dashboard"></i> <span>Publications</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
                         {% if app.user and is_granted('ROLE_ADMIN') %}
-                            <li><a href=""><i class="fa fa-circle-o"></i> Ajouter Evenement </a></li>
-
-
+                            <li><a href=""><i class="fa fa-circle-o"></i> Ajouter publication </a></li>
                         {% endif %}
-                        <li><a href=""><i class="fa fa-circle-o"></i> Afficher Vos Evenement </a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Listes des Evenement </a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Rechercher  Evenement </a></li>
-
+                        <li><a href="{{ path('cree_Pub') }}"><i class="fa fa-circle-o"></i> Ajouter publication </a></li>
+                        <li><a href="{{ path('creertype_Pub') }}"><i class="fa fa-circle-o"></i> Ajouter type </a></li>
+                        <li><a href="{{ path('creercategorie_Pub') }}"><i class="fa fa-circle-o"></i> Ajouter catégorie </a></li>
+                        <li><a href="{{ path('afficher_pub') }}"><i class="fa fa-circle-o"></i> Afficher publication </a></li>
                     </ul>
 
                 </li>
@@ -210,12 +204,8 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-
-
                         <li><a href=""><i class="fa fa-circle-o"></i> Envoyer Reclamation </a></li>
                         <li><a href=""><i class="fa fa-circle-o"></i> Afficher  Reclamation </a></li>
-
-
                     </ul>
 
                 </li>
@@ -227,14 +217,9 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-
                         <li><a href=""><i class="fa fa-circle-o"></i> Ajouter Compte </a></li>
                         <li><a href=""><i class="fa fa-circle-o"></i> Afficher  Compte </a></li>
                         <li><a href=""><i class="fa fa-circle-o"></i> Changer Mot de passe </a></li>
-
-
-
-
                     </ul>
 
                 </li>
@@ -249,8 +234,6 @@
 
                         <li><a href=""><i class="fa fa-circle-o"></i> Ajouter Offre </a></li>
                         <li><a href=""><i class="fa fa-circle-o"></i> Afficher  Offre </a></li>
-
-
                     </ul>
 
                 </li>
@@ -262,18 +245,10 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-
                         <li><a href=""><i class="fa fa-circle-o"></i> Ajouter Categorie </a></li>
                         <li><a href=""><i class="fa fa-circle-o"></i> Afficher  Categorie </a></li>
-
-
                     </ul>
-
                 </li>
-
-
-
-
             </ul>
         </section>
         <!-- /.sidebar -->
@@ -284,10 +259,9 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Evento
+                AllForKids
                 <small>Dashbord</small>
             </h1>
-
         </section>
 
         <!-- Main content -->
@@ -296,9 +270,6 @@
                 <div class="col-md-12">
                     <div class="box box-info">
                         <div class="box-header">
-
-
-
                             <!-- tools box -->
                             <div class="pull-right box-tools">
 
@@ -307,18 +278,11 @@
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body pad">
+                            {% block body %}
+                                <div class="box-info">
 
-
-
-
-                                {% block body %}
-                            <div class="box-info">
-                            </div>
-                                {% endblock body %}
-
-
-
-
+                                </div>
+                            {% endblock body %}
 
                         </div>
                     </div>
@@ -346,7 +310,6 @@
     <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
-
 <!-- jQuery 3 -->
 <script src="{{ asset('template_Admin_Principal/bower_components/jquery/dist/jquery.min.js') }}"></script>
 <!-- Bootstrap 3.3.7 -->

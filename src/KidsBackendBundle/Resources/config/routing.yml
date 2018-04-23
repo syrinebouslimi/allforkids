@@ -1,3 +1,39 @@
 kids_backend_homepage:
     path:     /admintemplate
     defaults: { _controller: KidsBackendBundle:Default:admin }
+
+cree_Pub:
+    path: /creerpub
+    defaults : {_controller: KidsBackendBundle:Publication:creerpub }
+
+creertype_Pub:
+    path: /creertypepub
+    defaults : {_controller: KidsBackendBundle:Publication:creertypepub }
+
+supprimertype_pubparid:
+    path: /supprimertypepubparid/{id}
+    defaults : {_controller: KidsBackendBundle:Publication:supprimertypepubparid }
+
+supprimercategorie_parid:
+    path: /supprimercategorieparid/{id}
+    defaults : {_controller: KidsBackendBundle:Publication:supprimercategorieparid }
+
+creercategorie_Pub:
+    path: /creercatpub
+    defaults : {_controller: KidsBackendBundle:Publication:creercategoriepub }
+
+afficher_pub:
+    path: /afficherpub
+    defaults : {_controller: KidsBackendBundle:Publication:afficherpub }
+
+supprimer_pubparid:
+    path: /supprimerpubparid/{id}
+    defaults : {_controller: KidsBackendBundle:Publication:supprimerpubparid }
+
+modifier_pubparid:
+    path: /modifierpubparid/{id}
+    defaults : {_controller: KidsBackendBundle:Publication:modifierpubparid }
+
+recherchePub_Titre:
+    path: /recherchePubTitre
+    defaults : {_controller: KidsBackendBundle:Publication:recherchePubTitre}

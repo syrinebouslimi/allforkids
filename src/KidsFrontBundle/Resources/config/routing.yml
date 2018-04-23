@@ -18,3 +18,34 @@ acceuil:
     path:     /acceuil
     defaults: { _controller: KidsFrontBundle:Etablissement:acceuil }
 
+publications:
+    path:     /publications
+    defaults: { _controller: KidsFrontBundle:Publication:afficherpublication }
+
+afficherespaceenfant:
+    path:     /afficherespaceenfant
+    defaults: { _controller: KidsFrontBundle:EspaceEnfant:afficherespaceenfant }
+
+afficherpublicationdetails:
+    path:     /publicationsdetails/{id}
+    defaults: { _controller: KidsFrontBundle:Publication:afficherpublicationdetails }
+
+afficherpublicationcategorie:
+    path:     /afficherpublicationcategorie/{categoriePublication}
+    defaults: { _controller: KidsFrontBundle:Publication:afficherpublicationcategorie }
+
+imprimerpublication:
+    path:     /imprimerpublication/{id}
+    defaults: { _controller: KidsFrontBundle:Publication:imprimerpublication }
+
+creerespace:
+    path:     /creerespace
+    defaults: { _controller: KidsFrontBundle:EspaceEnfant:creerespace }
+
+espacedetails:
+    path:     /espacedetails/{id}
+    defaults: { _controller: KidsFrontBundle:EspaceEnfant:espacedetails }
+
+creeractivite:
+    path:     /creeractivite/{id}
+    defaults: { _controller: KidsFrontBundle:EspaceEnfant:creeractivite }

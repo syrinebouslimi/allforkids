@@ -124,43 +124,27 @@
                                 <li class=""><a href="index-v4.html">Kidz Fashion</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown singleDrop color-3 ">
-                            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-list-ul bg-color-3" aria-hidden="true"></i> <span>Pages</span></a>
-                            <ul class="dropdown-menu dropdown-menu-left">
-                                <li class=" "><a href="about_us.html">About</a></li>
-                                <li class="dropdown dropdown-submenu ">
-                                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Team<i class="fa fa-chevron-right" aria-hidden="true"></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class=" "><a href="teachers.html">Teachers</a></li>
-                                        <li class=" "><a href="teachers-details.html">Teacher Details</a></li>
-                                    </ul>
-                                </li>
-                                <li class=" "><a href="testimonial.html">Testimonial</a></li>
-                                <li class="dropdown dropdown-submenu
-                     ||
-                     ||
-                     ">
-                                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Events <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li class=" "><a href="all-events.html">All Events</a></li>
-                                        <li class=""><a href="single-event-left-sidebar.html">Single Event Left Sidebar</a></li>
-                                        <li class=""><a href="single-event-right-sidebar.html">Single Event Right Sidebar</a></li>
-                                    </ul>
-                                </li>
-                                <li class=""><a href="photo-gallery.html">Photo Gallery</a></li>
-                                <li class=""><a href="pricing-table.html">Pricing Table</a></li>
-                                <li class=""><a href="services.html">Services</a></li>
-                                <li class=""><a href="service-details.html">Services Details</a></li>
-                                <li class=""><a href="search-result.html">Search Results</a></li>
-                                <li class=""><a href="contact-us.html">Contact Us</a></li>
-                                <li class=""><a href="faq.html">FAQ</a></li>
-                                <li class=""><a href="sign-up-or-login.html">Sign Up / Login</a></li>
-                                <li class="" ><a href="404.html">Error 404</a></li>
-                                <li><a href="coming-soon.html">Coming Soon</a></li>
-                            </ul>
+
+
+
+
+
+                        <li class="dropdown singleDrop color-3 active">
+                           <a href="{{ path('publications') }}" role="button" aria-haspopup="true" aria-expanded="false">
+                               <i class="fa fa-list-ul bg-color-3" aria-hidden="true">
+                               </i>
+                               <span class="active">Publications</span>
+                           </a>
                         </li>
+
+
+
+
+
+
+
+
+
                         <li class=" dropdown megaDropMenu color-2 ">
                             <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="300" data-close-others="true" aria-expanded="false">
                                 <i class="fa fa-file-text-o bg-color-2" aria-hidden="true"></i>
@@ -280,33 +264,17 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="dropdown singleDrop color-6 ">
-                            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-gg bg-color-6" aria-hidden="true"></i> <span>Components</span></a>
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <li class=" "><a href="accordion-toggles.html">Accordions &amp; Toggles</a></li>
-                                <li class=""><a href="tabs-dropdown.html">Tabs &amp; Dropdowns</a></li>
-                                <li class=" "><a href="alert-label-badges.html">Alert-Label-badges</a></li>
-                                <li class=" "><a href="progress-bar.html">Progress Bar</a></li>
-                                <li class=" "><a href="buttons.html">Buttons</a></li>
-                                <li class=" "><a href="forms.html">Forms</a></li>
-                                <li class=" "><a href="list-panel.html">Listgroups Panel</a></li>
-                                <li class=" "><a href="tooltip-pagination.html">Tooltip Pagination</a></li>
-                                <li class=" "><a href="typography.html">Typography</a></li>
-                                <li class=" "><a href="responsive-embed.html">Responsive Embed</a></li>
-                            </ul>
+
+                        <li class="dropdown singleDrop color-6 active">
+                            <a href="{{ path('afficherespaceenfant') }}"  role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-gg bg-color-6" aria-hidden="true"></i>
+                                <span class="active">Espace enfant</span>
+                            </a>
                         </li>
 
-                        <li class="dropdown singleDrop color-1   active ">
-                            <a href="{{ path('contact')}}"  role="button" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-home bg-color-1" aria-hidden="true"></i> <span class="active">Contact</span>
-                            </a>
-                            {#<ul class="dropdown-menu dropdown-menu-left">#}
-                                {#<li class=" active "><a href="index-2.html">Kidz School</a></li>#}
-                                {#<li class=""><a href="index-v2.html">Kidz Store</a></li>#}
-                                {#<li class=""><a href="index-v3.html">Kidz Daycare</a></li>#}
-                                {#<li class=""><a href="index-v4.html">Kidz Fashion</a></li>#}
-                            {#</ul>#}
-                        </li>
+
+
+
                     </ul>
                 </div>
 
@@ -384,7 +352,7 @@
         </nav>
     </header>
 
-
+    {% block bandeau %}
     <!-- BANNER -->
     <section class="bannercontainer bannercontainerV1">
         <div class="fullscreenbanner-container">
@@ -537,87 +505,11 @@
             </div>
         </div>
     </section>
-
+    {% endblock bandeau %}
     <!-- FEATURE SECTION -->
     <section class="mainContent full-width clearfix featureSection">
-        <div class="container">
-            <div class="sectionTitle text-center">
-                <h2>
-                    <span class="shape shape-left bg-color-4"></span>
-                    <span>Our Features</span>
-                    <span class="shape shape-right bg-color-4"></span>
-                </h2>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-4 col-xs-12">
-                    <div class="media featuresContent">
-              <span class="media-left bg-color-1">
-                <i class="fa fa-graduation-cap bg-color-1" aria-hidden="true"></i>
-              </span>
-                        <div class="media-body">
-                            <h3 class="media-heading color-1">Experience Teachers</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <div class="media featuresContent">
-              <span class="media-left bg-color-2">
-                <i class="fa fa-leaf bg-color-2" aria-hidden="true"></i>
-              </span>
-                        <div class="media-body">
-                            <h3 class="media-heading color-2">Physical Activity</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <div class="media featuresContent">
-              <span class="media-left bg-color-3">
-                <i class="fa fa-car bg-color-3" aria-hidden="true"></i>
-              </span>
-                        <div class="media-body">
-                            <h3 class="media-heading color-3">Physical Activity</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <div class="media featuresContent">
-              <span class="media-left bg-color-4">
-                <i class="fa fa-cutlery bg-color-4" aria-hidden="true"></i>
-              </span>
-                        <div class="media-body">
-                            <h3 class="media-heading color-4">Delicious Food</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <div class="media featuresContent">
-              <span class="media-left bg-color-5">
-                <i class="fa fa-heart bg-color-5" aria-hidden="true"></i>
-              </span>
-                        <div class="media-body">
-                            <h3 class="media-heading color-5">Love &amp; Care</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 col-xs-12">
-                    <div class="media featuresContent">
-              <span class="media-left bg-color-6">
-                <i class="fa fa-shield bg-color-6" aria-hidden="true"></i>
-              </span>
-                        <div class="media-body">
-                            <h3 class="media-heading color-6">Meny Sports</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% block body %}
+        {% endblock body %}
     </section>
 
     <!-- FOOTER -->
@@ -639,16 +531,43 @@
                 <div class="col-sm-1 bg-color-6 hidden-xs">fix bar</div>
             </div>
         </div>
-        <!-- FOOTER INFO AREA -->
-        <div class="footerInfoArea full-width clearfix" style="background-image: url({{ asset('Template_front_principal/img/footer/footer-bg.png')}});">
-            {#<div class="container">#}
-                {#<h1 style="text-align: center; color: white; font-family: inherit; font-weight: lighter;font-size: 37px; ">All For Kidz</h1>#}
-            {#</div>#}
 
-            {% block body %}
-            {% endblock body %}
-
-        </div>
+        <section class="lightSection full-width clearfix homeContactSection">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="homeContactContent">
+                            <h2>Our Address</h2>
+                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <address>
+                                <p><i class="fa fa-map-marker bg-color-1" aria-hidden="true"></i>9/4/C Ring Road,Garden Street Dhaka,Bangladesh-1200</p>
+                                <p><i class="fa fa-envelope bg-color-2" aria-hidden="true"></i><a href="mailto:hello@example.com">hello@example.com</a></p>
+                                <p><i class="fa fa-phone bg-color-4" aria-hidden="true"></i>3333 222 1111</p>
+                            </address>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="homeContactContent">
+                            <form action="#" method="POST" role="form">
+                                <div class="form-group">
+                                    <i class="fa fa-user"></i>
+                                    <input type="text" class="form-control border-color-1" id="exampleInputEmail1" placeholder="First name">
+                                </div>
+                                <div class="form-group">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    <input type="text" class="form-control border-color-2" id="exampleInputEmail2" placeholder="Email address">
+                                </div>
+                                <div class="form-group">
+                                    <i class="fa fa-comments" aria-hidden="true"></i>
+                                    <textarea class="form-control border-color-4" placeholder="Write message"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- COPY RIGHT -->
         <div class="copyRight clearfix" style="background-color: #0f506b">
             <div class="container">

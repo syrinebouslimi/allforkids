@@ -19,19 +19,16 @@ class TypePublication
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    public $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="nomTypePublication", type="string", length=255)
      */
-    private $nomTypePublication;
-
+    public $nomTypePublication;
 
     /**
-     * Get id
-     *
      * @return int
      */
     public function getId()
@@ -40,27 +37,30 @@ class TypePublication
     }
 
     /**
-     * Set nomTypePublication
-     *
-     * @param string $nomTypePublication
-     *
-     * @return TypePublication
+     * @param int $id
      */
-    public function setNomTypePublication($nomTypePublication)
+    public function setId($id)
     {
-        $this->nomTypePublication = $nomTypePublication;
-
-        return $this;
+        $this->id = $id;
     }
 
     /**
-     * Get nomTypePublication
-     *
      * @return string
      */
     public function getNomTypePublication()
     {
         return $this->nomTypePublication;
     }
+
+    /**
+     * @param string $nomTypePublication
+     */
+    public function setNomTypePublication($nomTypePublication)
+    {
+        $this->nomTypePublication = $nomTypePublication;
+    }
+
+
+
 }
 
