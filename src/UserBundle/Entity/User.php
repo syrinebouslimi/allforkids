@@ -56,9 +56,9 @@ class User extends BaseUser implements NotifiableInterface,  ParticipantInterfac
     protected $profilePictureUser;
 
     /**
-     * @var string
+     * @var \DateTime
      *
-     * @ORM\Column(name="datenaissanceUser", type="string", length=255,nullable=true)
+     * @ORM\Column(name="datenaissanceUser", type="datetime", length=255,nullable=true)
      */
     protected $datenaissanceUser;
 
@@ -135,21 +135,7 @@ class User extends BaseUser implements NotifiableInterface,  ParticipantInterfac
         $this->adresseUser = $adresseUser;
     }
 
-    /**
-     * @return string
-     */
-    public function getDatenaissanceUser()
-    {
-        return $this->datenaissanceUser;
-    }
 
-    /**
-     * @param string $datenaissanceUser
-     */
-    public function setDatenaissanceUser($datenaissanceUser)
-    {
-        $this->datenaissanceUser = $datenaissanceUser;
-    }
 
     /**
      * @return string
@@ -157,6 +143,19 @@ class User extends BaseUser implements NotifiableInterface,  ParticipantInterfac
     public function getNomUser()
     {
         return $this->nomUser;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDatenaissanceUser()
+    {
+        return $this->datenaissanceUser;
+    }
+
+    public function setDatenaissanceUser($datenaissanceUser)
+    {
+        $this->datenaissanceUser = $datenaissanceUser;
     }
 
     /**

@@ -1,0 +1,68 @@
+{% extends 'KidsFrontBundle::Template_User.html.twig' %}
+
+{% block bandeau %}
+
+    <section class="pageTitleSection">
+        <div class="container">
+            <div class="pageTitleInfo">
+                <h2> </h2>
+                <ol class="breadcrumb">
+                    <li class="active"> </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+{% endblock bandeau %}
+
+{% block body %}
+
+    <div class="sectionTitle text-center">
+        <h2 style="margin-bottom: 3%">
+            <span class="shape shape-left bg-color-4"></span>
+            {% if is_granted("ROLE_PARENT") %}
+                <span>Bienvenue {{ app.user }}</span>
+            {% else %}
+                <span>Bienvenue</span>
+            {% endif %}
+            <span class="shape shape-right bg-color-4"></span>
+            <h3 class="color-4" style="text-transform: capitalize; font-weight: 600; margin-bottom: 3%">Creer un espace personnalisé pour votre enfant</h3>
+            <div class="row progress-wizard" style="border-bottom:0;margin-bottom: 0%;margin-left: 40%;padding: 2%;">
+                <div class="col-sm-4 col-xs-12 progress-wizard-step active">
+                    <a href="{{ path('creerespace') }}" target="_blank" class="progress-wizard-dot">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+            </div>
+        </h2>
+    </div>
+
+    <section class="colorSection full-width clearfix bg-color-4 teamSection" style="padding: 3%; margin-bottom: 1%">
+        <div class="container">
+            <div class="sectionTitle text-center alt">
+                <h2>
+                    <span class="shape shape-left"></span>
+                    <span style="font-size: 29px;">Consultez vos espaces enfants</span>
+                    <span class="shape shape-right"></span>
+                </h2>
+            </div>
+            {% for key in profil %}
+                {% if key.idUserProfileEnfant is same as(app.user) %}
+
+                    <div class="col-sm-4 col-xs-12">
+                        <div class="teamContent teamAdjust">
+                            <div class="teamImage" style="border: 3px solid white;">
+                                <img src="{{ asset('uploads/images/' ~ key.photoEnfant) }}" alt="img" class="img-circle img-responsive">
+                            </div>
+                            <div class="teamInfo teamTeacher">
+                                <h3><a href="{{ path('espacedetails',{'id':key.id}) }}" style="color: white;">{{ key.nomEnfant }}</a></h3>
+                                <p style="color: white;">Consulter le profil</p>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+{% endblock body %}

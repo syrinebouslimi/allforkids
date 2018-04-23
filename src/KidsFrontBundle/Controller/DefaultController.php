@@ -12,5 +12,4 @@ class DefaultController extends Controller
         return $this->render('KidsFrontBundle::Template_User.html.twig');
 
     }
-
 }

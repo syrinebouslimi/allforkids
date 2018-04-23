@@ -13,9 +13,26 @@ contact:
 test:
     path:     /
     defaults: { _controller: KidsFrontBundle:Etablissement:index }
-acceuil:
-    path:     /acceuil
-    defaults: { _controller: KidsFrontBundle:AcceuilContact:acceuil }
+
+services:
+    path:     /services
+    defaults: { _controller: KidsFrontBundle:Services:services }
+
+afficherServiceFront:
+    path:     /afficherServiceFront
+    defaults: { _controller: KidsFrontBundle:Services:afficherServiceFront}
+
+publications:
+    path:     /publications
+    defaults: { _controller: KidsFrontBundle:Publication:afficherpublication }
+
+afficherespaceenfant:
+    path:     /afficherespaceenfant
+    defaults: { _controller: KidsFrontBundle:EspaceEnfant:afficherespaceenfant }
+
+afficherpublicationdetails:
+    path:     /publicationsdetails/{id}
+    defaults: { _controller: KidsFrontBundle:Publication:afficherpublicationdetails }
 ajouterEtablissement:
     path: /ajouterEtablissement
     defaults: { _controller: KidsFrontBundle:Etablissement:ajouterEtablissement }
@@ -116,3 +133,44 @@ notifications:
     type: annotation
 
 
+afficherpublicationcategorie:
+    path:     /afficherpublicationcategorie/{categoriePublication}
+    defaults: { _controller: KidsFrontBundle:Publication:afficherpublicationcategorie }
+
+imprimerpublication:
+    path:     /imprimerpublication/{id}
+    defaults: { _controller: KidsFrontBundle:Publication:imprimerpublication }
+afficheServ:
+    path:     /afficheServ
+    defaults: { _controller: KidsFrontBundle:Services:afficheServFront}
+
+detailServiceFront:
+    path:     /detail/{id}
+    defaults: { _controller: KidsFrontBundle:Services:detailServiceFront}
+search:
+    path:     /search
+    defaults: { _controller: KidsFrontBundle:Services:search}
+
+tempserv:
+    path:     /tempserv
+    defaults: { _controller: KidsFrontBundle:Services:tempserv}
+
+detailServiceFront2:
+    path:     /detail2/{id}
+    defaults: { _controller: KidsFrontBundle:Services:detailServiceFront}
+
+recherche:
+    path:     /recherche
+    defaults: { _controller: KidsFrontBundle:Services:recherche}
+
+creerespace:
+    path:     /creerespace
+    defaults: { _controller: KidsFrontBundle:EspaceEnfant:creerespace }
+
+espacedetails:
+    path:     /espacedetails/{id}
+    defaults: { _controller: KidsFrontBundle:EspaceEnfant:espacedetails }
+
+creeractivite:
+    path:     /creeractivite/{id}
+    defaults: { _controller: KidsFrontBundle:EspaceEnfant:creeractivite }
