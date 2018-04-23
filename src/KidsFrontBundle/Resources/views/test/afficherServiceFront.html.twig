@@ -1,0 +1,89 @@
+{% extends 'KidsFrontBundle::templateAffichserv.html.twig' %}
+
+
+{% block body %}
+
+
+<!-- WHITE SECTION -->
+<section class="whiteSection full-width clearfix coursesSection" id="ourCourses">
+    <div class="container">
+        <div class="sectionTitle text-center">
+            <h2>
+                <span class="shape shape-left bg-color-4"></span>
+                <span>Nos services</span>
+                <span class="shape shape-right bg-color-4"></span>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="tabCommon">
+                    {% block menu %}
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="{{ path('afficheServ') }}">Voir tout</a></li>
+                        <li><a data-toggle="tab" href="">Medecins</a></li>
+                        <li><a data-toggle="tab" href="#menu1">Cliniques</a></li>
+                        <li><a data-toggle="tab" href="#menu2">Associations</a></li>
+                        <li><a data-toggle="tab" href="#menu3">Salle de sport</a></li>
+
+                    </ul>
+                    <ul class="nav nav-tabs">
+                        <ul class="list-inline filter">
+                            <li class=""><a href="{{ path('services') }}" data-filter="*">View All</a></li>
+                            <li class="active"><a href="{{ path('afficherServiceFront') }}" data-filter="">pediatre</a></li>
+                            <li class=""><a href="#" data-filter=".nature">nature</a></li>
+                            <li class=""><a href="#" data-filter=".children">children</a></li>
+                        </ul>
+
+
+
+
+                        {% endblock %}
+
+                        <div class="container">
+                            <div class="sectionTitle text-center">
+                                <h2>
+
+                                </h2>
+                            </div>
+
+
+                            <section class="mainContent full-width clearfix coursesSection">
+                                <div class="container">
+                                    <div class="row">
+
+                                        {% for p in serv %}
+                                            {% if p.idTypeService=='association' %}
+
+                                                <div class="col-sm-6 col-xs-12 block">
+                                                    <div class="media eventContent bg-color-1">
+                                                        <a class="media-left" href="single-event-left-sidebar.html">
+                                                            <img class="media-object" src="{{ asset('uploads/images/' ~ p.imagServ) }}" alt="Image">
+
+                                                        </a>
+                                                        <div class="media-body">
+                                                            <h3 class="media-heading"><a href="{{ asset('Template_front_principal/single-event-left-sidebar.html')}}">{{ p.nomService}}</a></h3>
+                                                            <ul class="list-unstyled">
+                                                                <li><i class="fa fa-calendar-o" aria-hidden="true"></i>{{ p.adresseService }}</li>
+                                                                <li><i class="fa fa-clock-o" aria-hidden="true"></i>{{ p.contact}}</li>
+                                                            </ul>
+                                                            <p>{{ p.descriptionService }} </p>
+                                                            <ul class="list-inline btn-yellow">
+                                                                <li><a href="  {{ path('detailServiceFront',{'id':p.id})}}" target="_blank" class="btn btn-primary">read more</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+
+
+
+                            </section>
+                            <div class="navigation text-center">
+                            </div>
+                            {% endblock %}
+
+

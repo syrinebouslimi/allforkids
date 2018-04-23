@@ -28,12 +28,7 @@ class Service
      */
     private $nomService;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="contenuService", type="string", length=255)
-     */
-    private $contenuService;
+
 
     /**
      * @var string
@@ -49,19 +44,56 @@ class Service
      */
     private $adresseService;
 
+
+
+
+
+
+    /**
+     * @var String
+     *
+     * @ORM\Column(name="contact", type="string")
+     */
+    private $contact;
+
+    /**
+     * @return String
+     */
+    public function getContact()
+    {
+        return $this->contact;
+    }
+
+    /**
+     * @param String $contact
+     */
+    public function setContact($contact)
+    {
+        $this->contact = $contact;
+    }
+
     /**
      * @var string
      *
-     * @ORM\Column(name="prixService", type="string", length=255)
+     * @ORM\Column(name="imagServ", type="string")
      */
-    private $prixService;
+    private $imagServ;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="dateService", type="datetime")
+     * @return string
      */
-    private $dateService;
+    public function getImagServ()
+    {
+        return $this->imagServ;
+    }
+
+    /**
+     * @param string $imagServ
+     */
+    public function setImagServ($imagServ)
+    {
+        $this->imagServ = $imagServ;
+    }
 
 
     /**
@@ -149,29 +181,6 @@ class Service
         return $this->nomService;
     }
 
-    /**
-     * Set contenuService
-     *
-     * @param string $contenuService
-     *
-     * @return Service
-     */
-    public function setContenuService($contenuService)
-    {
-        $this->contenuService = $contenuService;
-
-        return $this;
-    }
-
-    /**
-     * Get contenuService
-     *
-     * @return string
-     */
-    public function getContenuService()
-    {
-        return $this->contenuService;
-    }
 
     /**
      * Set descriptionService
@@ -221,53 +230,18 @@ class Service
         return $this->adresseService;
     }
 
-    /**
-     * Set prixService
-     *
-     * @param string $prixService
-     *
-     * @return Service
-     */
-    public function setPrixService($prixService)
-    {
-        $this->prixService = $prixService;
 
-        return $this;
-    }
 
+   
     /**
-     * Get prixService
      *
      * @return string
      */
-    public function getPrixService()
+    public function __toString()
     {
-        return $this->prixService;
+        return $this->setIdTypeService();
     }
 
-    /**
-     * Set dateService
-     *
-     * @param \DateTime $dateService
-     *
-     * @return Service
-     */
-    public function setDateService($dateService)
-    {
-        $this->dateService = $dateService;
-
-        return $this;
-    }
-
-    /**
-     * Get dateService
-     *
-     * @return \DateTime
-     */
-    public function getDateService()
-    {
-        return $this->dateService;
-    }
 
 }
 

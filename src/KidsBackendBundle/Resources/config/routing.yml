@@ -37,3 +37,25 @@ modifier_pubparid:
 recherchePub_Titre:
     path: /recherchePubTitre
     defaults : {_controller: KidsBackendBundle:Publication:recherchePubTitre}
+test:
+    path:     /test
+    defaults: { _controller: KidsBackendBundle:Default:test }
+
+ajout:
+    path:     /ajout
+    defaults: { _controller: KidsBackendBundle:Service:ajout }
+
+afficherServiceBack:
+    path:     /afficherServiceBack
+    defaults: { _controller: KidsBackendBundle:Service:afficherServiceBack}
+
+updateService:
+    path:     /updateService/{id}
+    defaults: { _controller: KidsBackendBundle:Service:updateService }
+
+suppServ:
+    path:     /suppServ/{id}
+    defaults: { _controller: KidsBackendBundle:Service:suppServ }
+rechercheback:
+    path:     /rechercheback}
+    defaults: { _controller: KidsBackendBundle:Service:rechercheback }

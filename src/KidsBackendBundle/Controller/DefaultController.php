@@ -3,15 +3,21 @@
 namespace KidsBackendBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use UserBundle\Entity\Publication;
-use UserBundle\Form\PublicationType;
 use Symfony\Component\HttpFoundation\Request;
 
 
 class DefaultController extends Controller
 {
-    public function adminAction()
+    public function adminAction(Request $request)
     {
         return $this->render('KidsBackendBundle::Template_Admin.html.twig');
     }
+
+    public function testAction()
+    {
+        return $this->render('KidsBackendBundle::test.html.twig');
+    }
+
+
+
 }

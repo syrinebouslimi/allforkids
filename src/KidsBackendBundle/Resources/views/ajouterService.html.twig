@@ -1,0 +1,79 @@
+{% extends '@KidsBackend/Template_Admin.html.twig' %}
+
+{% block body %}
+    <h3 class="box-title">Services </h3>
+    <table border="2" bgcolor="#a52a2a" align="center" >
+
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+
+
+        <div class="form-group has-feedback">
+            {{ form_label(form.nomService ,'nomService') }}
+            {{ form_errors(form.nomService) }}
+            {{ form_widget(form.nomService,{'attr': {'class': 'form-control','placeholder': "nomService"}}) }}
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        </div>
+
+        <div class="form-group has-feedback">
+            {{ form_label(form.descriptionService ,'descriptionService ')}}
+            {{ form_errors(form.descriptionService) }}
+            {{ form_widget(form.descriptionService,{'attr': {'class': 'form-control','placeholder': "descriptionService" }}) }}
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        </div>
+
+        <div class="form-group has-feedback">
+            {{ form_label(form.adresseService ,'adresseService')}}
+            {{ form_errors(form.adresseService) }}
+            {{ form_widget(form.adresseService,{'attr': {'class': 'form-control','placeholder': "adresseService"}}) }}
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        </div>
+
+
+        <div class="form-group has-feedback">
+            {{ form_label(form.contact ,'contact') }}
+            {{ form_errors(form.contact) }}
+            {{ form_widget(form.contact,{'attr': {'class': 'form-control','placeholder': "contact"}}) }}
+            <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+            {{ form_label(form.idTypeService ,'TypeService') }}
+            {{ form_errors(form.idTypeService) }}
+            {{ form_widget(form.idTypeService,{'attr': {'class': 'form-control','placeholder': "idTypeService"}}) }}
+            <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+        </div>
+
+        <div class="form-group has-feedback">
+            {{ form_label(form.imagServ,'File') }}
+            {{ form_errors(form.imagServ) }}
+            {{ form_widget(form.imagServ,{'attr': {'class': 'form-control','placeholder': "file"}}) }}
+            <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-8">
+                <div class="checkbox icheck">
+
+                </div>
+            </div>
+            <!-- /.col -->
+            <div class="col-xs-4">
+                {{ form_widget(form.Register,{'attr': {'class': 'btn btn-primary btn-block btn-flat'}}) }}
+
+            </div>
+            <!-- /.col -->
+        </div>
+
+
+
+        {{ form_end(form) }}
+
+    </table>
+{% endblock body %}
+
+
+
+
+
+
+

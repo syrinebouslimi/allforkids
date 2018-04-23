@@ -1,0 +1,121 @@
+{% extends 'KidsFrontBundle::templateAffichserv.html.twig' %}
+
+
+{% block body %}
+
+
+<!-- WHITE SECTION -->
+<section >
+    <?php
+
+if(isset($_POST['search']))
+{
+    $valueToSearch = $_POST['valueToSearch'];
+    // search in all table columns
+    // using concat mysql function
+    $query = "SELECT * FROM `service` WHERE CONCAT(`nomService`, `descriptionService`, `adresseService`,`contact`) LIKE '%".$valueToSearch."%'";
+    $search_result = filterTable($query);
+
+}
+ else {
+    $query = "SELECT * FROM `service`";
+    $search_result = filterTable($query);
+}
+
+// function to connect and execute the query
+function filterTable($query)
+{
+    $connect = mysqli_connect("localhost", "root", "", "kids");
+    $filter_Result = mysqli_query($connect, $query);
+    return $filter_Result;
+}
+
+?>
+    <div class="container">
+        <div class="sectionTitle text-center">
+            <h2>
+                <span class="shape shape-left bg-color-4"></span>
+                <span>Nos services</span>
+                <span class="shape shape-right bg-color-4"></span>
+
+                <style>
+                    table,tr,th,td
+                    {
+                        border: 1px solid black;
+                    }
+                </style>
+            </h2>
+        </div>
+
+        <form method="POST" align="right">
+
+
+            Rechercher par nom:   <input type="text" name="nomService" >
+
+            <input type="submit" name="submit" value="search" class="btn-danger" >
+
+
+        </form>
+
+        <form action="recherche"   >
+            <input type="text" name="nomService" placeholder="Value To Search"><br><br>
+            <input type="submit" name="search" value="Filter"><br><br>
+
+            <table>
+
+                <tr>
+                    <th>nomService </th>
+                    <td> descriptionService  </td>
+                    <td> adresseService </td>
+                    <td> contact </td>
+                </tr>
+                </tr>
+                {% for p in serv %}
+                    <tr>
+
+                        <td> {{ p.nomService}} </td>
+                        <td> {{ p.descriptionService }} </td>
+                        <td> {{ p.adresseService }} </td>
+                        <td> {{ p.contact}} </td>
+
+                    </tr>
+                {% endfor %}
+
+                <!-- populate table from mysql database -->
+                <?php while($row = mysqli_fetch_array($search_result)):?>
+                <div>
+                <tr>
+                    <td><?php echo $row['nomService'];?></td>
+                    <td><?php echo $row['descriptionService'];?></td>
+                    <td><?php echo $row['adresseService'];?></td>
+                    <td><?php echo $row['contact'];?></td>
+                </tr>
+                </div>
+                <?php endwhile;?>
+            </table>
+        </form>
+
+        <div action="php_html_table_data_filter.php" method="post" class="input-group searchArea">
+            <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+            <input type="text" name="valueToSearch" placeholder="Value To Search" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Search something...">
+            <button type="submit" name="search" value="Filter" class="input-group-addon button" id="basic-addon21">Search</button>
+
+
+
+            <form style="margin: 2%;" class="example" action="{{ path('search')}}">
+            <input type="text" placeholder="Recherche.." name="Evnt" value="">}
+            <button type="submit" ><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+
+
+        </div>
+
+
+        {% endblock %}
+
+
+
+
+
+

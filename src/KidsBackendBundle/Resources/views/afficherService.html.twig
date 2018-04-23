@@ -1,0 +1,47 @@
+{% extends '@KidsBackend/Template_Admin.html.twig' %}
+
+{% block body %}
+    <h3 class="box-title">Liste des services </h3>
+    <table border="2" class="table table-bordered table-hover" >
+
+        {#<th>{{ knp_pagination_filter(serv, {'service.nomService': 'Name'})}}</th>#}
+        <tr>
+
+            <th>{{ knp_pagination_sortable(serv,'Nom services','nomService') }}</th>
+
+            <form style="margin: 2%;" class="example" action="{{ path('rechercheback')}}">
+                <input type="text" placeholder="Recherche.." name="search" value="">
+                <button type="submit" ><i class="fa fa-search"></i></button>
+            </form>
+
+            <th>Description services</th>
+            <th>adresse services</th>
+            <th>contact services</th>
+            <th>{{ knp_pagination_sortable(serv,'Type services','idTypeService') }}</th>
+            <th>File</th>
+
+
+
+        </tr>
+        {% for p in serv %}
+            <tr>
+
+                <td> {{ p.nomService}} </td>
+                <td> {{ p.descriptionService }} </td>
+                <td> {{ p.adresseService }} </td>
+                <td> {{ p.contact}} </td>
+                <td> {{ p.idTypeService }} </td>
+                <td>  <img src="{{ asset('uploads/images/' ~ p.imagServ) }}" style="width: 50px;height: 50px;"></img></td>
+
+                <td><a  class="btn btn-default" href="{{path('updateService',{'id':p.id}) }}">Modifier </a>
+                <td><a  class="btn btn-danger" href="{{path('suppServ',{'id':p.id}) }}">Supprimer </a>
+
+            </tr>
+        {% endfor %}
+    </table>
+    <div class="navigation text-center">
+   {{ knp_pagination_render(serv) }}
+
+    </div>
+
+{% endblock %}

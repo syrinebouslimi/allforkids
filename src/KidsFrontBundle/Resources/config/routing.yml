@@ -17,6 +17,13 @@ test:
 acceuil:
     path:     /acceuil
     defaults: { _controller: KidsFrontBundle:Etablissement:acceuil }
+services:
+    path:     /services
+    defaults: { _controller: KidsFrontBundle:Services:services }
+
+afficherServiceFront:
+    path:     /afficherServiceFront
+    defaults: { _controller: KidsFrontBundle:Services:afficherServiceFront}
 
 publications:
     path:     /publications
@@ -37,6 +44,28 @@ afficherpublicationcategorie:
 imprimerpublication:
     path:     /imprimerpublication/{id}
     defaults: { _controller: KidsFrontBundle:Publication:imprimerpublication }
+afficheServ:
+    path:     /afficheServ
+    defaults: { _controller: KidsFrontBundle:Services:afficheServFront}
+
+detailServiceFront:
+    path:     /detail/{id}
+    defaults: { _controller: KidsFrontBundle:Services:detailServiceFront}
+search:
+    path:     /search
+    defaults: { _controller: KidsFrontBundle:Services:search}
+
+tempserv:
+    path:     /tempserv
+    defaults: { _controller: KidsFrontBundle:Services:tempserv}
+
+detailServiceFront2:
+    path:     /detail2/{id}
+    defaults: { _controller: KidsFrontBundle:Services:detailServiceFront}
+
+recherche:
+    path:     /recherche
+    defaults: { _controller: KidsFrontBundle:Services:recherche}
 
 creerespace:
     path:     /creerespace
