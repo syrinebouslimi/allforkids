@@ -1,0 +1,70 @@
+{% extends 'KidsBackendBundle::Template_Admin.html.twig' %}
+
+
+{% block body %}
+    <h3 class="box-title">Formulaires d'enregistrement </h3>
+    <table border="2" bgcolor="#a52a2a" align="center" >
+
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+        <div class="form-group has-feedback">
+            {{ form_label(form.nomClub ,'Nom de Club') }}
+            {{ form_errors(form.nomClub) }}
+            {{ form_widget(form.nomClub,{'attr': {'class': 'form-control','placeholder': "club"}}) }}
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        </div>
+
+        <div class="form-group has-feedback">
+            {{ form_label(form.descriptionClub ,'Description ')}}
+            {{ form_errors(form.descriptionClub) }}
+            {{ form_widget(form.descriptionClub,{'attr': {'class': 'form-control','placeholder': "description" }}) }}
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        </div>
+
+        <div class="form-group has-feedback">
+            {{ form_label(form.imageClub ,'File Uploade') }}
+            {{ form_errors(form.imageClub) }}
+            {{ form_widget(form.imageClub,{'attr': {'class': 'form-control','placeholder': "image"}}) }}
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+            {{ form_label(form.idEtablissement ,'Nom Etablissement')}}
+            {{ form_errors(form.idEtablissement) }}
+            {{ form_widget(form.idEtablissement,{'attr': {'class': 'form-control','placeholder': "etablisseent"}}) }}
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+            {{ form_label(form.adresse ,'Adresse')}}
+            {{ form_errors(form.adresse) }}
+            {{ form_widget(form.adresse,{'attr': {'class': 'form-control','placeholder': "adresse"}}) }}
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        </div>
+        <div class="row">
+            <div class="col-xs-8">
+                <div class="checkbox icheck">
+
+                </div>
+            </div>
+            <!-- /.col -->
+            <div class="col-xs-4">
+                {{ form_widget(form.Register,{'attr': {'class': 'btn btn-primary btn-block btn-flat'}}) }}
+
+            </div>
+            <!-- /.col -->
+        </div>
+
+
+
+        {{ form_end(form) }}
+
+    </table>
+{% endblock body %}
+
+
+
+
+
+
+
+
+

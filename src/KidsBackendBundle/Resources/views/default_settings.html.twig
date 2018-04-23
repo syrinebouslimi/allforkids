@@ -1,0 +1,173 @@
+<script>
+
+    $(document).ready(function() {
+        var count=0;
+        var liveDate=new Date();
+        var dat = new Date();
+        var d = dat.getDate();
+        var m = dat.getMonth();
+        var y = dat.getFullYear();
+
+
+
+        $.getJSON("<?php echo base_url(); ?>names",function(data){
+            var select = $('#AgentName'); //combo/select/dropdown list
+            if (select.prop) {
+                var options = select.prop('options');
+            }
+            else {
+                var options = select.attr('options');
+            }
+            $('option', select).remove();
+            $.each(data, function(key, value){
+                options[options.length] = new Option(value['name'], value['id']);
+            });
+        });
+        var calendar = $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            selectable: true,
+            selectHelper: true,
+            select: function(start, end, allDay) {
+                $("#popup").show();
+                $("#eventName").focus();
+                $("#submit-cal").click(function () {
+                    alert('submit clicked');
+                    var title = $("#eventName").val();
+
+                    var dataString = {};
+                    dataString['eventName'] = title;
+                    dataString['startTime'] = $('#AgentName').val();
+                    dataString['endTime'] =$('#UserName').val();
+                    //alert("debut: "+$('#AgentName').val() + " Fin : "+$('#UserName').val())
+                   // alert(dataString);
+                    $.ajax({
+                        method: 'POST',
+                        dataType: 'json',
+                        url: '{{ path('ajouterevntClub') }}',
+                        data: dataString,
+                        success: function (data) {
+                            alert("Data 1 SuccessFully");
+                            if (data.success)
+                                alert("Data 2 SuccessFully");
+                        }
+                    });
+
+                    calendar.fullCalendar('unselect');
+                    calendar.fullCalendar('refetchEvents');
+                    $("#popup").modal('hide');
+                });
+
+
+            },
+            editable: true,
+
+            droppable: true, // this allows things to be dropped onto the calendar
+
+            drop: function(date) {
+                alert("Dropped on " + date.format());
+            },
+
+
+
+            events: [
+
+                {% for entity in events %}
+                {
+                    title: '{{ entity.nomEvnt }}',
+                    start: new Date('{{ entity.datedebutEvnt|date('Y-m-d H:i:s') }}'),
+                    end: new Date('{{ entity.datefinEvnt|date('Y-m-d H:i:s') }}'),
+                    backgroundColor: '#f56954',
+                    borderColor: '#f56954'
+                },
+                {% endfor %}
+                {% for entity in publication %}
+                {
+                    title: '{{ entity.nomPublication }}',
+                    start: new Date('{{ entity.datePublication|date('Y-m-d H:i:s') }}'),
+                    end: new Date('{{ entity.datePublication|date('Y-m-d H:i:s') }}'),
+                    backgroundColor: '#F5A9F2',
+                    borderColor: '#F5A9F2'
+                },
+
+                {% endfor %}
+
+                {% for entity in service %}
+                {
+                    title: '{{ entity.nomService }}',
+                    start: new Date('{{ entity.dateService|date('Y-m-d H:i:s') }}'),
+                    end: new Date('{{ entity.dateService|date('Y-m-d H:i:s') }}'),
+                    backgroundColor: '#32CD32',
+                    borderColor    : '#32CD32'
+                }
+                {{ loop.last ? '' : ',' }}
+                {% endfor %}
+
+
+
+
+             ],
+
+            //event clique
+            eventClick : function (start,end){
+                $("#popup").open();
+                $("#submit-cal").click(function () {
+                    alert('submit clicked');
+                    var title = $("#eventName").val();
+                    var dataString = {};
+                    dataString['eventName'] = title;
+                    dataString['startTime'] = $('#AgentName').val();
+                    dataString['endTime'] =$('#UserName').val();
+                   // alert("debut: "+$('#AgentName').val() + " Fin : "+$('#UserName').val())
+                   // alert(dataString);
+                    $.ajax({
+                        method: 'POST',
+                        dataType: 'json',
+                        url: '{{ path('ajouterevntClub') }}',
+                        data: dataString,
+                        success: function (data) {
+                            alert("Data 1 SuccessFully");
+                            if (data.success)
+                                alert("Data 2 SuccessFully");
+                        }
+                    });
+
+                    calendar.fullCalendar('unselect');
+                    calendar.fullCalendar('refetchEvents');
+                    $("#popup").modal('hide');
+
+
+                });
+            },
+            //evenet drop
+            eventDrop: function(event, delta){
+                $.ajax({
+                    url: '{{ path('ajouterevntClub') }}',
+                    data: 'action=update&amp;title='+event.title+'&amp;start='+moment(event.start).format()+'&amp;end='+moment(event.end).format()+'&amp;id='+event.id ,
+                    type: "POST",
+                    success: function(json) {
+           //alert(json);
+                    }
+                });
+            },
+
+            // edvent resize
+            eventResize: function(event) {
+                $.ajax({
+                    url: '{{ path('ajouterevntClub') }}',
+                    data: 'action=update&amp;title='+event.title+'&amp;start='+moment(event.start).format()+'&amp;end='+moment(event.end).format()+'&amp;id='+event.id,
+                    type: "POST",
+                    success: function(json) {alert(json);
+                    }
+                });
+            }
+
+
+
+
+        });
+    });
+</script>

@@ -1,0 +1,45 @@
+{% extends '@KidsFront/Template_User.html.twig' %}
+{% block body %}
+
+
+    <section class="mainContent full-width clearfix coursesSection">
+    <div class="container">
+
+            <div class="sectionTitle text-center">
+                <h2>
+                    <span class="shape shape-left bg-color-4"></span>
+                    <span>Listes des Clubs</span>
+                    <span class="shape shape-right bg-color-4"></span>
+                </h2>
+            </div>
+            {% for p in form %}
+
+                <div class="media courseList couresListPage">
+                    <a class="media-left border-color-1" href="course-single-left-sidebar.html">
+                        <img class="media-object" src="{{ asset('uploads/images/' ~ p.imageClub) }}" alt="Image">
+                    </a>
+                    <div class="media-body">
+                        <h3 class="media-heading"><a href="course-single-left-sidebar.html" class="color-1">{{ p.nomClub }}</a></h3>
+                        <ul class="list-inline">
+                            <li><i class="fa fa-calendar-o" aria-hidden="true">{{ p.idEtablissement.getNomEtablissement()}}</li>
+                            <li><i class="fa fa-clock-o" aria-hidden="true"></i>{{ p.dateCreationClub |date("d/m/Y") }}</li>
+                        </ul>
+                        <p> {{ p.descriptionClub }}  </p>
+                        <ul class="list-inline btn-yellow btnPart">
+
+                            <li><a href="{{ path('map',{'id':p.id})}}" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Afficher Map</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+            {% endfor %}
+
+
+
+    </div>
+
+
+
+{% endblock %}

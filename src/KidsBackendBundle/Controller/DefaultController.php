@@ -10,4 +10,5 @@ class DefaultController extends Controller
     {
         return $this->render('KidsBackendBundle::Template_Admin.html.twig');
     }
+
 }

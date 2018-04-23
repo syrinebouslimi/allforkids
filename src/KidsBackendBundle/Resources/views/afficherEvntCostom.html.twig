@@ -1,0 +1,27 @@
+{% extends 'KidsBackendBundle::Template_Admin.html.twig' %}
+{% block body %}
+    <h3 class="box-title">Listes des event  </h3>
+    <table border="2" class="table table-bordered table-hover" >
+        <tr>
+            <th>Nom Evnt</th>
+            <th>DateEvnt</th>
+            <th>Date fin evnt</th>
+            <th>Etat Evnt</th>
+
+        </tr>
+        {% for p in form %}
+            <tr>
+                <th>{{ p.nomEvnt }}</th>
+                <td > {{ p.datedebutEvnt|date("d/m/Y")}} </td>
+                <td> {{ p.datefinEvnt |date("d/m/Y")}} </td>
+                <th>{{ p.etatEvnt }}</th>
+
+                <td><a  class="btn btn-default" href="{{path('modifierCalendar',{'id':p.id}) }}">Modifier </a>
+                <td><a  class="btn btn-danger" href="{{path('supprimerEvntCalendar',{'id':p.id}) }}">remove </a>
+
+            </tr>
+        {% endfor %}
+
+    </table>
+
+{% endblock %}

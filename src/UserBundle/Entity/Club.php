@@ -31,7 +31,7 @@ class Club
     /**
      * @var string
      *
-     * @ORM\Column(name="descriptionClub", type="string", length=255)
+     * @ORM\Column(name="descriptionClub", type="string", length=4000)
      */
     private $descriptionClub;
 
@@ -143,28 +143,21 @@ class Club
     }
 
     /**
-     * Set imageClub
-     *
-     * @param string $imageClub
-     *
-     * @return Club
-     */
-    public function setImageClub($imageClub)
-    {
-        $this->imageClub = $imageClub;
-
-        return $this;
-    }
-
-    /**
-     * Get imageClub
-     *
      * @return string
      */
     public function getImageClub()
     {
         return $this->imageClub;
     }
+
+    /**
+     * @param string $imageClub
+     */
+    public function setImageClub($imageClub)
+    {
+        $this->imageClub = $imageClub;
+    }
+
 
     /**
      * @return mixed
@@ -182,6 +175,73 @@ class Club
         $this->idEtablissement = $idEtablissement;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getAdresse()
+    {
+        return $this->adresse;
+    }
+
+    /**
+     * @param mixed $adresse
+     */
+    public function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLong()
+    {
+        return $this->long;
+    }
+
+    /**
+     * @param mixed $long
+     */
+    public function setLong($long)
+    {
+        $this->long = $long;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLat()
+    {
+        return $this->lat;
+    }
+
+    /**
+     * @param mixed $lat
+     */
+    public function setLat($lat)
+    {
+        $this->lat = $lat;
+    }
+
+    /**
+     *
+     * @ORM\Column(name="adresse", type="string", length=255, nullable=true)
+     */
+    private $adresse;
+
+    /**
+     *
+     * @ORM\Column(name="longi", type="float", nullable=true)
+     */
+    private $long;
+
+
+    /**
+     *
+     * @ORM\Column(name="lat", type="float", nullable=true)
+     */
+    private $lat;
+
+
 
 }
-

@@ -21,6 +21,10 @@ class AppKernel extends Kernel
             new KidsFrontBundle\KidsFrontBundle(),
             new KidsBackendBundle\KidsBackendBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new AncaRebeca\FullCalendarBundle\FullCalendarBundle(),
+            new Ivory\GoogleMapBundle\IvoryGoogleMapBundle(),
+            new Ivory\SerializerBundle\IvorySerializerBundle(),
+            new Http\HttplugBundle\HttplugBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
