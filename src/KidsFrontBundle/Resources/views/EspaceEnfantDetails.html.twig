@@ -1,0 +1,87 @@
+{% extends 'KidsFrontBundle::Template_User.html.twig' %}
+
+{% block bandeau %}
+
+    <section class="pageTitleSection">
+        <div class="container">
+            <div class="pageTitleInfo">
+                <h2> </h2>
+                <ol class="breadcrumb">
+                    <li class="active"> </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+{% endblock bandeau %}
+
+{% block body %}
+
+
+    <div class="sectionTitle text-center">
+        <h2 style="margin-bottom: 3%">
+            <span class="shape shape-left bg-color-4"></span>
+            <span>Bienvenue {{ profil.nomEnfant }}</span>
+
+            <span class="shape shape-right bg-color-4"></span>
+            <h3 class="color-4" style="text-transform: capitalize; font-weight: 600; margin-bottom: 3%">Creez vos propres activités</h3>
+        </h2>
+    </div>
+    <div style="margin-left: 48%">
+        <div class="media featuresContent">
+            <a href="{{ path('creeractivite',{'id':profil.id}) }}", target="_blank">
+
+              <span class="media-left bg-color-3">
+                <i class="fa fa-support bg-color-3" aria-hidden="true"></i>
+              </span>
+            </a>
+        </div>
+    </div>
+
+    <section class="mainContent full-width clearfix coursesSection" style="margin-top: -5%;">
+        <div class="container">
+            <div class="row">
+                {#Left#}
+                <div class="col-md-9 col-sm-8 col-xs-12">
+                    <div class="row">
+                {% for key in profill %}
+                    {% if key.idProfileEnfant.id is same as(profil.id) %}
+                    <div class="col-md-4 col-sm-6 col-xs-12 block">
+                        <div class="thumbnail thumbnailContent">
+                            <img class="media-object" src="{{ asset('uploads/images/' ~ key.contenuActivite) }}" alt="Image">
+                            <div class="caption border-color-1">
+                                <h3><a href="single-blog-left-sidebar.html" class="color-1">{{ key.nomActivite }}</a></h3>
+                                <ul class="list-inline btn-yellow">
+                                    <li><a href="#" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> More</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    </div>
+                </div>
+                {#right#}
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                    <aside>
+                        <div class="panel panel-default courseSidebar">
+                            <div class="panel-heading bg-color-4 border-color-4">
+                                <h3 class="panel-title">Informations</h3>
+                            </div>
+                            <div class="panel-body">
+
+                                <p style="text-align: center;"><img class="media-object img-rounded border-color-1" src="{{ asset('uploads/images/' ~ profil.photoEnfant) }}" style="width: 35%;"></p>
+                                <p>Nom : {{ profil.nomEnfant }}</p>
+                                <p>Prenom : {{ profil.prenomEnfant }}</p>
+                                <p>Age : {{ profil.ageEnfant }}</p>
+
+                            </div>
+                        </div>
+
+                    </aside>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+{% endblock body %}

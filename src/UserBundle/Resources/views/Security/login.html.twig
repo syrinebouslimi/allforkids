@@ -20,6 +20,9 @@
         <div class="form-group formField">
             <input type="submit" class="btn btn-primary btn-block bg-color-3 border-color-3" value="Log in">
         </div>
+        {% if error %}
+            <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
 
 
         <div  class="form-group formField">

@@ -1,0 +1,89 @@
+
+{% extends 'KidsFrontBundle::Template_User.html.twig' %}
+
+{% block bandeau %}
+
+    <section class="pageTitleSection">
+        <div class="container">
+            <div class="pageTitleInfo">
+                <h2> </h2>
+                <ol class="breadcrumb">
+                    <li class="active"> </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+{% endblock bandeau %}
+
+{% block body %}
+<div class="sectionTitle text-center">
+        <h2 style="margin-bottom: 3%">
+            <span class="shape shape-left bg-color-4"></span>
+                <span>Creer un espace enfant</span>
+            <span class="shape shape-right bg-color-4"></span>
+        </h2>
+</div>
+
+{{ form_start(form) }}
+    <section class="mainContent full-width clearfix">
+    <div class="container">
+    <div class="sectionTitle text-center">
+    <div class="row">
+    <div class="col-xs-12">
+    <div class="homeContactContent">
+        <div class="row">
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <i class="fa fa-user"></i>
+                    {{ form_widget(form.nomEnfant,{'attr':{'class':'form-control border-color-1', 'placeholder': 'Nom'}} ) }}
+
+                </div>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <i class="fa fa-user"></i>
+                    {{ form_widget(form.prenomEnfant,{'attr':{'class':'form-control border-color-1', 'placeholder': 'prenom'}} ) }}
+
+                </div>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                    {{ form_widget(form.ageEnfant,{'attr':{'class':'form-control border-color-4', 'placeholder': 'Age'}} ) }}
+
+                </div>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                    {{ form_widget(form.sexEnfant,{'attr':{'class':'form-control border-color-4', 'placeholder': 'Sexe'}} ) }}
+
+                </div>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                    {{ form_widget(form.photoEnfant,{'attr':{'class':'form-control border-color-2', 'placeholder': 'Photo'}} ) }}
+
+                </div>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <div class="form-group">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                    {{ form_widget(form.datenaissanceEnfant,{'attr':{'class':'form-control border-color-2', 'placeholder': 'Date de naissance'}} ) }}
+
+                </div>
+            </div>
+            {{ form_widget(form.Valider,{'attr':{'class':'btn btn-primary'}} ) }}
+
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+
+{{ form_end(form) }}
+
+{% endblock body %}

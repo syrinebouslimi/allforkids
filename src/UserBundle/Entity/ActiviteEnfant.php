@@ -26,7 +26,16 @@ class ActiviteEnfant
      *
      * @ORM\Column(name="nomActivite", type="string", length=255)
      */
+
+
     private $nomActivite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contenuActivite", type="string", length=255)
+     */
+    private $contenuActivite;
 
 
     /**
@@ -86,6 +95,22 @@ class ActiviteEnfant
     public function setIdProfileEnfant($idProfileEnfant)
     {
         $this->idProfileEnfant = $idProfileEnfant;
+    }
+
+    /**
+     * @return string
+     */
+    public function getContenuActivite()
+    {
+        return $this->contenuActivite;
+    }
+
+    /**
+     * @param string $contenuActivite
+     */
+    public function setContenuActivite($contenuActivite)
+    {
+        $this->contenuActivite = $contenuActivite;
     }
 
 }

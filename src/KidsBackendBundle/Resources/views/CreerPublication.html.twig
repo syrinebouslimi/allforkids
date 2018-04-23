@@ -1,0 +1,67 @@
+
+{% extends 'KidsBackendBundle::Template_Admin.html.twig' %}
+
+{% block body %}
+
+{{ form_start(form) }}
+
+{#Titre#}
+    <div class="form-group">
+        <label for="nomPublication">Titre</label>
+        {{ form_widget(form.nomPublication,{'attr':{'class':'form-control'}} ) }}
+    </div>
+
+{#Description#}
+    <div class="form-group">
+        <label for="descriptionPublication">Description</label>
+        {{ form_widget(form.descriptionPublication,{'attr':{'class':'form-control'}} ) }}
+    </div>
+
+{#Date#}
+    <div class="form-group">
+        <label for="datePublication">Date</label>
+    <div class="input-group date">
+        <div class="input-group-addon">
+            <i class="fa fa-calendar"></i>
+        </div>
+        {{ form_widget(form.datePublication,{'attr':{'class':'form-control pull-right'}} ) }}
+    </div>
+    </div>
+
+{#Contenu#}
+    <div class="form-group">
+        <label for="contenuPublication">Contenu</label>
+        {{ form_widget(form.contenuPublication,{'attr':{'class':''}} ) }}
+    </div>
+
+{#Image#}
+    <div class="form-group">
+        <label for="imagePublication">Image</label>
+        {{ form_widget(form.imagePublication,{'attr':{'class':''}} ) }}
+    </div>
+
+{#Type#}
+    <div class="form-group">
+        <label for="typePublication">Type</label>
+        {{ form_widget(form.typePublication,{'attr':{'class':'form-control'}} ) }}
+    </div>
+
+{#Categorie#}
+    <div class="form-group">
+        <label for="categoriePublication">Categorie</label>
+        {{ form_widget(form.categoriePublication,{'attr':{'class':'form-control'}} ) }}
+    </div>
+
+{#Etat#}
+    <div class="form-group">
+        <label for="etatPublication">Etat</label>
+        {{ form_widget(form.etatPublication,{'attr':{'class':'form-control'}} ) }}
+    </div>
+
+{#Submit#}
+    <div class="form-group">
+        {{ form_widget(form.Valider,{'attr':{'class':'btn btn-primary'}} ) }}
+    </div>
+    {{ form_end(form) }}
+
+{% endblock body %}
