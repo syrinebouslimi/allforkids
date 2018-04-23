@@ -4,7 +4,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Evento </title>
+    <title>All For Kids </title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -20,7 +20,6 @@
 
     <link rel="stylesheet" href="{{ asset('template_Admin_Principal/dist/css/skins/_all-skins.min.css') }}">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -184,20 +183,21 @@
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Evénement</span>
+                        <i class="fa fa-dashboard"></i> <span>Services</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
                         {% if app.user and is_granted('ROLE_ADMIN') %}
-                            <li><a href=""><i class="fa fa-circle-o"></i> Ajouter Evenement </a></li>
+                            <li><a href=""><i class="fa fa-circle-o"></i> Ajouter service </a></li>
 
 
                         {% endif %}
-                        <li><a href=""><i class="fa fa-circle-o"></i> Afficher Vos Evenement </a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Listes des Evenement </a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Rechercher  Evenement </a></li>
+                        <li><a href="{{ path('ajout' )}}"><i class="fa fa-circle-o"></i>Ajouter service </a></li>
+
+                        <li><a href="{{ path('afficherServiceBack' )}}"><i class="fa fa-circle-o"></i> Afficher Vos service </a></li>
+
 
                     </ul>
 
@@ -221,16 +221,12 @@
                 </li>
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Compte</span>
+                        <i class="fa fa-dashboard"></i> <span>Forums</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
-
-                        <li><a href=""><i class="fa fa-circle-o"></i> Ajouter Compte </a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Afficher  Compte </a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Changer Mot de passe </a></li>
 
 
 
@@ -240,36 +236,23 @@
                 </li>
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Offre</span>
+                        <i class="fa fa-dashboard"></i> <span>test</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
 
-                        <li><a href=""><i class="fa fa-circle-o"></i> Ajouter Offre </a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Afficher  Offre </a></li>
+                        <li><a href=""><i class="fa fa-circle-o"></i> Ajouter test </a></li>
+                        <li><a href=""><i class="fa fa-circle-o"></i> Afficher  test </a></li>
 
 
-                    </ul>
 
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Category</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-
-                        <li><a href=""><i class="fa fa-circle-o"></i> Ajouter Categorie </a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Afficher  Categorie </a></li>
 
 
                     </ul>
 
-                </li>
+
 
 
 

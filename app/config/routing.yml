@@ -1,18 +1,24 @@
 kids_backend:
     resource: "@KidsBackendBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /back
 
 kids_front:
     resource: "@KidsFrontBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /front
 
 user:
     resource: "@UserBundle/Resources/config/routing.yml"
     prefix:   /
 
 app:
-    resource: '@AppBundle/Controller/'
+    resource: "@AppBundle/Controller/"
     type: annotation
 
 fos_user:
- resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+fos_comment_api:
+    type: rest
+    resource: "@FOSCommentBundle/Resources/config/routing.yml"
+    prefix: /api
+    defaults: { _format: html }

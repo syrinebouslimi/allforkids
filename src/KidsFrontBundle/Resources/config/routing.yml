@@ -1,5 +1,5 @@
 kids_back_homepage:
-    path:     /backend
+    path:     /back
     defaults: { _controller: KidsBackendBundle:Default:index }
 
 kids_front_homepage:
@@ -21,4 +21,29 @@ services:
     path:     /services
     defaults: { _controller: KidsFrontBundle:Services:services }
 
+afficherServiceFront:
+    path:     /afficherServiceFront
+    defaults: { _controller: KidsFrontBundle:Services:afficherServiceFront}
 
+afficheServ:
+    path:     /afficheServ
+    defaults: { _controller: KidsFrontBundle:Services:afficheServFront}
+
+detailServiceFront:
+    path:     /detail/{id}
+    defaults: { _controller: KidsFrontBundle:Services:detailServiceFront}
+search:
+    path:     /search
+    defaults: { _controller: KidsFrontBundle:Services:search}
+
+tempserv:
+    path:     /tempserv
+    defaults: { _controller: KidsFrontBundle:Services:tempserv}
+
+detailServiceFront2:
+    path:     /detail2/{id}
+    defaults: { _controller: KidsFrontBundle:Services:detailServiceFront}
+
+recherche:
+    path:     /recherche
+    defaults: { _controller: KidsFrontBundle:Services:recherche}
