@@ -90,4 +90,40 @@ class EspaceEnfantController extends Controller
         }
         return $this->render('KidsFrontBundle::CreerActiviteEnfant.html.twig', array('form' => $formView));
     }
+
+    public function supprimeractiviteAction($id, $id1)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $activite = $this->getDoctrine()->getRepository('UserBundle:ActiviteEnfant')->find($id);
+        $profil = $this->getDoctrine()->getRepository('UserBundle:ProfilEnfant')->find($id1);
+        $profil1 = $this->getDoctrine()->getRepository('UserBundle:ActiviteEnfant')->findAll();
+        $em->remove($activite);
+        $em->flush();
+        return $this->redirectToRoute('espacedetails',array('id'=>$id1));
+
+    }
+
+    public function imprimeractiviteAction(Request $request, $id)
+    {
+        $snappy = $this->get('knp_snappy.pdf');
+        $snappy->setOption('no-outline', true);
+        $snappy->setOption('page-size', 'LETTER');
+        $snappy->setOption('encoding', 'UTF-8');
+        $activite = $this->getDoctrine()->getRepository('UserBundle:ActiviteEnfant')->find($id);
+        $html = $this->renderView('KidsFrontBundle::ImprimerActivite.html.twig', array(
+            'activite' => $activite,
+            'Title' => 'Activite'
+        ));
+
+        $filename = 'myFirstSnappyPDF';
+
+        return new Response(
+            $snappy->getOutputFromHtml($html),
+            200,
+            array(
+                'Content-Type' => 'application/pdf',
+                'Content-Disposition' => 'inline; filename="' . $filename . '.pdf"'
+            )
+        );
+    }
 }

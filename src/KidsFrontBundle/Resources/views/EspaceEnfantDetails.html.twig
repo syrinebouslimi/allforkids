@@ -36,7 +36,6 @@
             </a>
         </div>
     </div>
-
     <section class="mainContent full-width clearfix coursesSection" style="margin-top: -5%;">
         <div class="container">
             <div class="row">
@@ -47,11 +46,12 @@
                     {% if key.idProfileEnfant.id is same as(profil.id) %}
                     <div class="col-md-4 col-sm-6 col-xs-12 block">
                         <div class="thumbnail thumbnailContent">
+                            <div class="sticker-round bg-color-4"><a href="{{ path('imprimeractivite',{'id':key.id}) }}" target="_blank"><i class="fa fa-print"></i></a></div>
                             <img class="media-object" src="{{ asset('uploads/images/' ~ key.contenuActivite) }}" alt="Image">
-                            <div class="caption border-color-1">
-                                <h3><a href="single-blog-left-sidebar.html" class="color-1">{{ key.nomActivite }}</a></h3>
-                                <ul class="list-inline btn-yellow">
-                                    <li><a href="#" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> More</a></li>
+                            <div class="caption border-color-4">
+                                <h3><a href="#" class="color-4">{{ key.nomActivite }}</a></h3>
+                                <ul class="list-inline btn-sky">
+                                    <li><a href="{{ path('supprimeractivite',{'id':key.id, 'id1':key.idProfileEnfant.id}) }}" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i>Supprimer</a></li>
                                 </ul>
                             </div>
                         </div>
