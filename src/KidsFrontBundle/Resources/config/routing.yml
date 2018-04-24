@@ -174,3 +174,11 @@ espacedetails:
 creeractivite:
     path:     /creeractivite/{id}
     defaults: { _controller: KidsFrontBundle:EspaceEnfant:creeractivite }
+
+supprimeractivite:
+    path:     /supprimeractivite/{id}/{id1}
+    defaults: { _controller: KidsFrontBundle:EspaceEnfant:supprimeractivite }
+
+imprimeractivite:
+    path:     /imprimeractivite/{id}
+    defaults: { _controller: KidsFrontBundle:EspaceEnfant:imprimeractivite }
