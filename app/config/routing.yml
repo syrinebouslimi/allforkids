@@ -7,7 +7,7 @@ kids_backend:
 
 kids_front:
     resource: "@KidsFrontBundle/Resources/config/routing.yml"
-    prefix:   /front
+    prefix:   /
 
 user:
     resource: "@UserBundle/Resources/config/routing.yml"

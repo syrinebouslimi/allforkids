@@ -359,6 +359,28 @@
 
                 <li class="treeview">
                     <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>Services</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        {#{% if app.user and is_granted('ROLE_ADMIN') %}#}
+                            {#<li><a href=""><i class="fa fa-circle-o"></i> Ajouter service </a></li>#}
+
+
+                        {#{% endif %}#}
+                        <li><a href="{{ path('ajout' )}}"><i class="fa fa-circle-o"></i>Ajouter service </a></li>
+
+                        <li><a href="{{ path('afficherServiceBack' )}}"><i class="fa fa-circle-o"></i> Afficher Vos service </a></li>
+
+
+                    </ul>
+
+                </li>
+
+                <li class="treeview">
+                    <a href="#">
                         <i class="fa fa-dashboard"></i> <span>Evénement</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>

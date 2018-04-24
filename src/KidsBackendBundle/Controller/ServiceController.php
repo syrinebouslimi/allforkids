@@ -16,6 +16,8 @@ class ServiceController extends Controller
     public function ajoutAction(Request $request)
     {
         //var_dump('call');die;
+        $em = $this->getDoctrine()->getManager();
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
 
         $sv = new Service();
         $form=$this->createForm(ServiceType::class,$sv);
@@ -48,7 +50,7 @@ class ServiceController extends Controller
             return $this->redirect($this->generateUrl('afficherServiceBack'));
         }
 
-        return $this->render('@KidsBackend/ajouterService.html.twig',array('form'=>$formView));
+        return $this->render('@KidsBackend/ajouterService.html.twig',array('form'=>$formView,'notifiableNotifications' => $allNotif));
     }
 
 //Affichage
@@ -56,6 +58,9 @@ class ServiceController extends Controller
     public function afficherServiceBackAction (Request $request)
 
     {
+        $em = $this->getDoctrine()->getManager();
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
+
 
         $Uv=$this->getDoctrine()->getRepository('UserBundle:Service')->findAll();
         /**
@@ -68,7 +73,7 @@ class ServiceController extends Controller
             $request->query->getInt('page', 1),
             $request->query->getInt('limit',4)
         );
-        return $this->render ( '@KidsBackend/afficherService.html.twig',array('serv'=>$result));
+        return $this->render ( '@KidsBackend/afficherService.html.twig',array('serv'=>$result,'notifiableNotifications' => $allNotif));
 
     }
 
