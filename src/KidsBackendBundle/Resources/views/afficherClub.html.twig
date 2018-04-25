@@ -1,0 +1,30 @@
+{% extends 'KidsBackendBundle::Template_Admin.html.twig' %}
+{% block body %}
+    <h3 class="box-title">Listes des Club  </h3>
+    <table border="2" class="table table-bordered table-hover" >
+    <tr>
+        <th>Photo Club</th>
+        <th>Nom de Club</th>
+        <th>Description du Club</th>
+        <th>date Creation du Club </th>
+        <th>Etablissement </th>
+        <th>Adresse </th>
+
+    </tr>
+    {% for p in form %}
+        <tr>
+            <td>  <img src="{{ asset('uploads/images/' ~ p.imageClub) }}" style="width: 200px;height: 150px;"></img></td>
+            <td > {{ p.nomClub}} </td>
+            <td> {{ p.descriptionClub }} </td>
+            <td> {{ p.dateCreationClub |date("d/m/Y") }} </td>
+            <td> {{ p.idEtablissement.getNomEtablissement() }} </td>
+            <th>{{ p.adresse }} </th>
+            <td><a  class="btn btn-default" href="{{path('modificationClub',{'id':p.id}) }}">Modifier </a>
+            <td><a  class="btn btn-danger" href="{{path('remove',{'id':p.id}) }}">remove </a>
+
+        </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}

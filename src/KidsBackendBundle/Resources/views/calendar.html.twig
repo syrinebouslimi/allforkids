@@ -1,0 +1,51 @@
+
+{% extends 'KidsBackendBundle::Template_Admin.html.twig' %}
+{% block body %}
+
+    <h3 class="box-title"> Calendrier </h3>
+    <div id='calendar'></div>
+    <style>
+
+
+
+        body {
+            text-align: left;
+            font-size: 14px;
+            font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+        }
+        #calendar {
+            width: 70%;
+            margin: 0 auto;
+            text-align:center;
+        }
+        #popup{
+
+            z-index:100;
+            opacity:1;
+            border:1px;
+            font-size: 13px;
+            padding-bottom: 100%;
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            padding-top: 100px; /* Location of the box */
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+
+        }
+
+
+    </style>
+
+
+{% endblock %}
+
+
+{% block script %}
+    {{ parent() }}
+    {% include '@KidsBackend/default_settings.html.twig' %}
+
+
+
+{% endblock script %}
+

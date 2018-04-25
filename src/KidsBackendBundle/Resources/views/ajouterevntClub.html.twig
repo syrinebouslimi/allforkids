@@ -1,0 +1,64 @@
+{% extends 'KidsBackendBundle::Template_Admin.html.twig' %}
+
+{% block body %}
+
+    <h4><p class="login-box-msg">Ajouter un Evénement </p></h4>
+    <table border="2" bgcolor="#a52a2a" align="center" >
+
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+
+
+
+        <div class="form-group has-feedback">
+            {{ form_label(form.nomEvnt ,'Nom Evnt') }}
+            {{ form_errors(form.nomEvnt) }}
+            {{ form_widget(form.nomEvnt,{'attr': {'class': 'form-control','placeholder': ""}}) }}
+
+        </div>
+        <div class="form-group has-feedback">
+            {{ form_label(form.etatEvnt ,'Etat Evnt') }}
+            {{ form_errors(form.etatEvnt) }}
+            {{ form_widget(form.etatEvnt,{'attr': {'class': 'form-control','placeholder': ""}}) }}
+
+        </div>
+        <div class="form-group has-feedback">
+            {{ form_label(form.datedebutEvnt ,'date debut') }}
+            {{ form_errors(form.datedebutEvnt) }}
+            {{ form_widget(form.datedebutEvnt,{'attr': {'class': 'form-control','placeholder': "date debut"}}) }}
+
+        </div>
+        <div class="form-group has-feedback">
+            {{ form_label(form.datefinEvnt ,'date fin') }}
+            {{ form_errors(form.datefinEvnt) }}
+            {{ form_widget(form.datefinEvnt,{'attr': {'class': 'form-control','placeholder': "date fin"}}) }}
+
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-xs-8">
+                <div class="checkbox icheck">
+
+                </div>
+            </div>
+            <!-- /.col -->
+            <div class="col-xs-4">
+                {{ form_widget(form.AjouterEvnt,{'attr': {'class': 'btn btn-primary btn-block btn-flat'}}) }}
+
+            </div>
+            <!-- /.col -->
+        </div>
+
+        {{ form_end(form) }}
+
+    </table>
+{% endblock body %}
+
+
+
+
+
+
+
