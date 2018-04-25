@@ -1,129 +1,242 @@
-{% extends 'KidsFrontBundle::templateAffichserv.html.twig' %}
+{% extends 'KidsFrontBundle::Template_User.html.twig' %}
+
+
+{% block Menu %}
+    <nav id="menuBar" class="navbar navbar-default lightHeader" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" ><img src="{{ asset('Template_front_principal/img/logo-school.png') }}" alt="Kidz School"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown singleDrop color-1  ">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-home bg-color-1" aria-hidden="true"></i> <span class="active">Etablissement</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li class=""><a href="{{ path('afficherEtabByParent',{'type':'all'}) }}">Consulter les Etablissements</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown singleDrop color-3 ">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-list-ul bg-color-3" aria-hidden="true">
+                            </i> <span>Enseignants</span></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li class=" "><a href="{{ path('afficherprof') }}">Consulter la liste des enseigants</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown singleDrop color-4">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true">
+                            </i> <span>Gallerie</span></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li class=" "><a href="{{ path('affichergallerie') }}">Consulter la gallerie des images</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown singleDrop color-1 active ">
+                        <a href="{{ path('publications') }}"  role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-list-ul bg-color-1" aria-hidden="true">
+                            </i>
+                            <span class="active">Publications</span>
+                        </a>
+
+                    </li>
+
+
+                    {#<li class="dropdown singleDrop color-3 active">#}
+                    {#<a href="{{ path('publications') }}" role="button" aria-haspopup="true" aria-expanded="false">#}
+                    {#<i class="fa fa-list-ul bg-color-3" aria-hidden="true">#}
+                    {#</i>#}
+                    {#<span class="active">Publications</span>#}
+                    {#</a>#}
+                    {#</li>#}
+
+                    <li class="dropdown singleDrop color-4 active">
+                        <a href="{{ path('afficherespaceenfant') }}"  role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-gg bg-color-4" aria-hidden="true"></i>
+                            <span class="active">Espace enfant</span>
+                        </a>
+                    </li>
+
+                    <li class="dropdown singleDrop color-2 active">
+                        <a href="{{ path('services') }}"  role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-gg bg-color-6" aria-hidden="true"></i>
+                            <span class="active">Service</span>
+                        </a>
+                    </li>
+
+
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+{% endblock Menu %}
+
+
+
+{% block bandeau %}
+
+    <section class="pageTitleSection">
+        <div class="container">
+            <div class="pageTitleInfo">
+                <h2> </h2>
+                <ol class="breadcrumb">
+                    <li class="active"> </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+{% endblock bandeau %}
+
 
 
 {% block body %}
     <style>
-    form.example input[type=text] {
-    padding: 5px;
-    font-size: 15px;
-    border: 1px solid grey;
-    float: left;
-    width: 80%;
-    background: #f1f1f1;
-    }
+        form.example input[type=text] {
+            padding: 5px;
+            font-size: 15px;
+            border: 1px solid grey;
+            float: left;
+            width: 80%;
+            background: #f1f1f1;
+        }
 
-    form.example button {
-    float: left;
-    width: 20%;
-    padding: 5px;
-    background: #3c8dbc;
-    color: white;
-    font-size: 15px;
-    border: 1px solid grey;
-    border-left: none;
-    cursor: pointer;
-    }
+        form.example button {
+            float: left;
+            width: 20%;
+            padding: 5px;
+            background: #3c8dbc;
+            color: white;
+            font-size: 15px;
+            border: 1px solid grey;
+            border-left: none;
+            cursor: pointer;
+        }
 
-    form.example button:hover {
-    background: #5992b3;
-    }
+        form.example button:hover {
+            background: #5992b3;
+        }
 
-    form.example::after {
-    content: "";
-    clear: both;
-    display: table;
-    }
+        form.example::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
     </style>
 
 
-<!-- WHITE SECTION -->
-<section class="whiteSection full-width clearfix homeGallerySection" id="ourGallery">
-    <div class="container">
-        <div class="sectionTitle text-center">
-            <h2>
-                <span class="shape shape-left bg-color-4"></span>
-                <span>Nos services</span>
-                <span class="shape shape-right bg-color-4"></span>
-            </h2>
-        </div>
+    <!-- WHITE SECTION -->
+    <section class="whiteSection full-width clearfix homeGallerySection" id="ourGallery">
+        <div class="container">
+            <div class="sectionTitle text-center">
+                <h2>
+                    <span class="shape shape-left bg-color-4"></span>
+                    <span>Nos services</span>
+                    <span class="shape shape-right bg-color-4"></span>
+                </h2>
+            </div>
 
 
-        {#<div action="php_html_table_data_filter.php" method="post" class="input-group searchArea">#}
+            {#<div action="php_html_table_data_filter.php" method="post" class="input-group searchArea">#}
             {#<span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>#}
             {#<input type="text" name="valueToSearch" placeholder="Value To Search" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Search something...">#}
             {#<button type="submit" name="search" value="Filter" class="input-group-addon button" id="basic-addon21">Search</button>#}
 
-        {#</div>#}
+            {#</div>#}
 
-        <div class="input-group searchArea">
-            <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
-            <input type="text"   name="search" value="" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Search something...">
-            <button type="submit" class="input-group-addon button" id="basic-addon21"  >Search</button>
-        </div>
+            <div class="input-group searchArea">
+                <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+                <input type="text" name="search" value="" class="form-control"
+                       aria-label="Amount (to the nearest dollar)" placeholder="Search something...">
+                <button type="submit" class="input-group-addon button" id="basic-addon21">Search</button>
+            </div>
 
-        <form style="margin: 2%;" class="example" action="{{ path('recherche')}}">
-        <input type="text" placeholder="Recherche.." name="search" value="">
-        <button type="submit" ><i class="fa fa-search"></i></button>
-        </form>
+            <form style="margin: 2%;" class="example" action="{{ path('recherche') }}">
+                <input type="text" placeholder="Recherche.." name="search" value="">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
 
 
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="filter-container isotopeFilters">
-                    <ul class="list-inline filter">
-                        <li class="active"><a href="#" data-filter="*">View All</a></li>
-                        <li><a href="#" data-filter=".pediatre">Pediatres</a></li>
-                        <li><a href="#" data-filter=".cliniques">Cliniques</a></li>
-                        <li><a href="#" data-filter=".couchante">Femme Couchante</a></li>
-                    </ul>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="filter-container isotopeFilters">
+                        <ul class="list-inline filter">
+                            <li class="active"><a href="#" data-filter="*">View All</a></li>
+                            <li><a href="#" data-filter=".pediatre">Pediatres</a></li>
+                            <li><a href="#" data-filter=".cliniques">Cliniques</a></li>
+                            <li><a href="#" data-filter=".couchante">Femme Couchante</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row isotopeContainer" id="container">
+                <!-- parcour type service -->
+                {% for p in serv %}
+                {% if p.idTypeService.nomTypeService=="pediatre" %}
+                <div class="col-sm-6 col-xs-12 block isotopeSelector pediatre">
+                    {% elseif p.idTypeService.nomTypeService=="couchante" %}
+                    <div class="col-sm-6 col-xs-12 block isotopeSelector couchante">
+                        {% elseif p.idTypeService.nomTypeService=="clinique" %}
+                        <div class="col-sm-6 col-xs-12 block isotopeSelector cliniques">
+                            {% else %}
+                            <div class="col-sm-6 col-xs-12 block isotopeSelector">
+                                {% endif %}
+
+                                <div class="media eventContent bg-color-1">
+                                    <a class="media-left" href="single-event-left-sidebar.html">
+                                        <img class="media-object" src="{{ asset('uploads/images/' ~ p.imagServ) }}"
+                                             alt="Image">
+
+                                    </a>
+                                    <div class="media-body">
+                                        <h3 class="media-heading"><a
+                                                    href="{{ asset('Template_front_principal/single-event-left-sidebar.html') }}">{{ p.nomService }}</a>
+                                        </h3>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fa fa-calendar-o"
+                                                   aria-hidden="true"></i>{{ p.adresseService }}</li>
+                                            <li><i class="fa fa-clock-o" aria-hidden="true"></i>{{ p.contact }}</li>
+                                        </ul>
+                                        <p>{{ p.descriptionService }} </p>
+                                        <ul class="list-inline btn-yellow">
+                                            <li><a href="  {{ path('detailServiceFront',{'id':p.id}) }}" target="_blank"
+                                                   class="btn btn-primary">read more</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row isotopeContainer" id="container">
-            <!-- parcour type service -->
-            {% for p in serv %}
-                {% if p.idTypeService.nomTypeService=="pediatre" %}
-                    <div class="col-sm-6 col-xs-12 block isotopeSelector pediatre">
-                {% elseif p.idTypeService.nomTypeService=="couchante" %}
-                    <div class="col-sm-6 col-xs-12 block isotopeSelector couchante">
-                {% elseif p.idTypeService.nomTypeService=="clinique" %}
-                    <div class="col-sm-6 col-xs-12 block isotopeSelector cliniques">
-                {% else %}
-                    <div class="col-sm-6 col-xs-12 block isotopeSelector">
-                {% endif %}
-
-                        <div class="media eventContent bg-color-1">
-                            <a class="media-left" href="single-event-left-sidebar.html">
-                                <img class="media-object" src="{{ asset('uploads/images/' ~ p.imagServ) }}" alt="Image">
-
-                            </a>
-                            <div class="media-body">
-                                <h3 class="media-heading"><a href="{{ asset('Template_front_principal/single-event-left-sidebar.html')}}">{{ p.nomService}}</a></h3>
-                                <ul class="list-unstyled">
-                                    <li><i class="fa fa-calendar-o" aria-hidden="true"></i>{{ p.adresseService }}</li>
-                                    <li><i class="fa fa-clock-o" aria-hidden="true"></i>{{ p.contact}}</li>
-                                </ul>
-                                <p>{{ p.descriptionService }} </p>
-                                <ul class="list-inline btn-yellow">
-                                    <li><a href="  {{ path('detailServiceFront',{'id':p.id})}}" target="_blank" class="btn btn-primary">read more</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-            {% endfor %}
+    </section>
 
 
-        </div>
+
+
+
+    <div class="navigation text-center">
+        {{ knp_pagination_render(serv) }}
     </div>
-</section>
-
-
-
-
-
-                        <div class="navigation text-center">
-                            {{ knp_pagination_render(serv) }}
-                        </div>
-                        {% endblock %}
+{% endblock %}
 
 

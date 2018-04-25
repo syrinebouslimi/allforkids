@@ -1,6 +1,8 @@
 fos_message:
     resource: "@FOSMessageBundle/Resources/config/routing.xml"
     prefix: /message
+
+
 kids_backend:
     resource: "@KidsBackendBundle/Resources/config/routing.yml"
     prefix:   /back

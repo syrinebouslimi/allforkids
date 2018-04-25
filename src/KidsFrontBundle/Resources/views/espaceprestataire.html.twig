@@ -64,7 +64,6 @@
     <section class="pageTitleSection">
         <div class="container">
             <div class="pageTitleInfo">
-                <i><h2>Bonjour Prestataire de service {{ app.user.username|default('') }}</h2></i>
                 <br>
 
                 <h2>Bienvenue dans votre espace prestataire</h2>
@@ -74,6 +73,18 @@
 {% endblock bandeau %}
 
  {% block body %}
+     <section class="mainContent full-width clearfix" style="margin-top: 30px;height:150px; ">
+
+         <div class="sectionTitle text-center">
+             <h2>
+                 <span class="shape shape-left bg-color-4"></span>
+                 <span>Bienvenue {{ app.user.username|default('') }}</span>
+                 <span class="shape shape-right bg-color-4"></span>
+             </h2>
+         </div>
+
+     </section>
+
 
 
  {% endblock body %}

@@ -25,6 +25,11 @@ class PublicationController extends Controller
     //**************************** All about publication *******************************************/
     public function creerpubAction(Request $request)
     {
+
+        $em = $this->getDoctrine()->getManager();
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
+
+
         $publication = new Publication();
         $form = $this->createForm(PublicationType::class, $publication);
         $formView = $form->createView();
@@ -54,13 +59,16 @@ class PublicationController extends Controller
             $em->flush();
             return $this->forward('KidsBackendBundle:Publication:afficherpub');
         }
-        return $this->render('@KidsBackend/CreerPublication.html.twig', array('form' => $formView));
+        return $this->render('@KidsBackend/CreerPublication.html.twig', array('form' => $formView,'notifiableNotifications' => $allNotif));
     }
     public function afficherpubAction()
     {
+        $em = $this->getDoctrine()->getManager();
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
+
         $publication = $this->getDoctrine()->getRepository('UserBundle:Publication')->findAll();
 
-        return $this->render('@KidsBackend/AfficherPublication.html.twig', array('publication' => $publication));
+        return $this->render('@KidsBackend/AfficherPublication.html.twig', array('publication' => $publication,'notifiableNotifications' => $allNotif));
     }
 
     public function supprimerpubparidAction($id)
@@ -74,6 +82,10 @@ class PublicationController extends Controller
 
     public function modifierpubparidAction(Request $request, $id)
     {
+
+        $em = $this->getDoctrine()->getManager();
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
+
         $publication = $this->getDoctrine()->getRepository('UserBundle:Publication')->find($id);
         $imageOld =$publication->getImagePublication();
         $videoOld = $publication->getContenuPublication();
@@ -117,7 +129,7 @@ class PublicationController extends Controller
                     return $this->forward('KidsBackendBundle:Publication:afficherpub');
                 }
         }
-        return $this->render('@KidsBackend/CreerPublication.html.twig', array('form' => $formView));
+        return $this->render('@KidsBackend/CreerPublication.html.twig', array('form' => $formView,'notifiableNotifications' => $allNotif));
     }
 
     public function recherchePubTitreAction(Request $request)
@@ -138,6 +150,9 @@ class PublicationController extends Controller
     //**************************** All about type publication *******************************************/
     public function creertypepubAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
+
         $typePub = new typePublication();
         $form = $this->createForm(typePublicationType::class, $typePub);
         $formView = $form->createView();
@@ -150,7 +165,7 @@ class PublicationController extends Controller
         }
         $typePublication = $this->getDoctrine()->getRepository('UserBundle:TypePublication')->findAll();
 
-        return $this->render('@KidsBackend/CreerTypePublication.html.twig', array('typePublication' => $typePublication, 'form' => $formView));
+        return $this->render('@KidsBackend/CreerTypePublication.html.twig', array('typePublication' => $typePublication, 'form' => $formView,'notifiableNotifications' => $allNotif));
     }
 
     public function supprimertypepubparidAction($id)
@@ -165,6 +180,9 @@ class PublicationController extends Controller
     //**************************** All about categorie publication *******************************************/
     public function creercategoriepubAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
+
         $categoriePub = new categoriePublication();
         $form = $this->createForm(categoriePublicationType::class, $categoriePub);
         $formView = $form->createView();
@@ -177,7 +195,7 @@ class PublicationController extends Controller
         }
         $categoriePublication = $this->getDoctrine()->getRepository('UserBundle:CategoriePublication')->findAll();
 
-        return $this->render('@KidsBackend/CreerCategoriePublication.html.twig', array('categoriePublication' => $categoriePublication, 'form' => $formView));
+        return $this->render('@KidsBackend/CreerCategoriePublication.html.twig', array('categoriePublication' => $categoriePublication, 'form' => $formView,'notifiableNotifications' => $allNotif));
     }
 
     public function supprimercategorieparidAction($id)

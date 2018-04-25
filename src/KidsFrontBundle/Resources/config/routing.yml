@@ -110,7 +110,7 @@ getAllFavoris:
     defaults:  { _controller: KidsFrontBundle:Favoris:getAllFavorisByUser}
 
 afficherEtabByParent:
-    path: /afficherEtabByParent/type/{type}
+    path: /afficherEtabByParent
     defaults:  { _controller: KidsFrontBundle:Parent:afficherEtabParent}
 ajouterfavoris:
     path: /ajouterfavoris/id/{id}
@@ -182,3 +182,6 @@ supprimeractivite:
 imprimeractivite:
     path:     /imprimeractivite/{id}
     defaults: { _controller: KidsFrontBundle:EspaceEnfant:imprimeractivite }
+template:
+    path: /template
+    defaults: { _controller: KidsFrontBundle:Default:template}

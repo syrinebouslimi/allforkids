@@ -16,7 +16,7 @@
 {% endblock bandeau %}
 
 {% block body %}
-    <section class="mainContent full-width clearfix" style="margin-top: -7%">
+    <section class="mainContent full-width clearfix" style="margin-top: 30px">
     <div class="container">
     <div class="row">
     <div class="col-xs-12 block">
@@ -51,10 +51,10 @@
                             });
                         </script>
                     {% if publication.typePublication.nomTypePublication is same as('Article')%}
-                        <li style="margin-right: 5%;"><a href="{{ path('imprimerpublication',{'id':publication.id}) }}", target="_blank"><button type="button" class="btn btn-sm btn-outline-info not-rounded" >Imprimer   <i class="fa fa-print"></i></button></a></li>
+                        <li style="margin-right: 5%;"><a href="{{ path('imprimerpublication',{'id':publication.id}) }}" target="_blank"><button type="button" class="btn btn-sm btn-outline-info not-rounded" >Imprimer<i class="fa fa-print"></i></button></a></li>
                     {% endif %}
                     {% if publication.typePublication.nomTypePublication is same as('Activite')%}
-                        <li style="margin-right: 5%;"><a href="{{ path('imprimerpublication',{'id':publication.id}) }}", target="_blank"><button type="button" class="btn btn-sm btn-outline-info not-rounded" >Imprimer   <i class="fa fa-print"></i></button></a></li>
+                        <li style="margin-right: 5%;"><a href="{{ path('imprimerpublication',{'id':publication.id}) }}" target="_blank"><button type="button" class="btn btn-sm btn-outline-info not-rounded" >Imprimer<i class="fa fa-print"></i></button></a></li>
                     {% endif %}
                     <li><button type="button" class="btn btn-sm btn-outline-info not-rounded"><span>Favoris</span><i class="fa fa-star"></i></button></li>
 

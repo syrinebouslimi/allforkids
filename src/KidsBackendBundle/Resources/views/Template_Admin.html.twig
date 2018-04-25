@@ -300,7 +300,6 @@
                 <li class="header">MAIN NAVIGATION</li>
 
 
-
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-dashboard"></i> <span>Etablissement</span>
@@ -309,7 +308,8 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="{{ path('afficherAllEtablissement') }}"><i class="fa fa-circle-o"></i> Afficher Les etablissements </a></li>
+                        <li><a href="{{ path('afficherAllEtablissement') }}"><i class="fa fa-circle-o"></i> Afficher Les
+                                etablissements </a></li>
                     </ul>
                 </li>
 
@@ -322,7 +322,8 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="{{ path('afficherAllEnseignant') }}"><i class="fa fa-circle-o"></i> Afficher Les enseignants </a></li>
+                        <li><a href="{{ path('afficherAllEnseignant') }}"><i class="fa fa-circle-o"></i> Afficher Les
+                                enseignants </a></li>
                     </ul>
 
                 </li>
@@ -336,11 +337,11 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="{{ path('afficherAllGallerie') }}"><i class="fa fa-circle-o"></i> Afficher Les images de la gallerie </a></li>
+                        <li><a href="{{ path('afficherAllGallerie') }}"><i class="fa fa-circle-o"></i> Afficher Les
+                                images de la gallerie </a></li>
                     </ul>
 
                 </li>
-
 
 
                 <li class="treeview">
@@ -351,7 +352,8 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="{{ path('fos_message_inbox') }}"><i class="fa fa-circle-o"></i> Consulter ma boite email </a></li>
+                        <li><a href="{{ path('fos_message_inbox') }}"><i class="fa fa-circle-o"></i> Consulter ma boite
+                                email </a></li>
                         <li><a href=""><i class="fa fa-circle-o"></i> Envoyer un message </a></li>
                     </ul>
 
@@ -366,13 +368,14 @@
                     </a>
                     <ul class="treeview-menu">
                         {#{% if app.user and is_granted('ROLE_ADMIN') %}#}
-                            {#<li><a href=""><i class="fa fa-circle-o"></i> Ajouter service </a></li>#}
+                        {#<li><a href=""><i class="fa fa-circle-o"></i> Ajouter service </a></li>#}
 
 
                         {#{% endif %}#}
-                        <li><a href="{{ path('ajout' )}}"><i class="fa fa-circle-o"></i>Ajouter service </a></li>
+                        <li><a href="{{ path('ajout' ) }}"><i class="fa fa-circle-o"></i>Ajouter service </a></li>
 
-                        <li><a href="{{ path('afficherServiceBack' )}}"><i class="fa fa-circle-o"></i> Afficher Vos service </a></li>
+                        <li><a href="{{ path('afficherServiceBack' ) }}"><i class="fa fa-circle-o"></i> Afficher Vos
+                                service </a></li>
 
 
                     </ul>
@@ -381,90 +384,28 @@
 
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Evénement</span>
+                        <i class="fa fa-dashboard"></i> <span>Publications</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        {% if app.user and is_granted('ROLE_ADMIN') %}
-                            <li><a href=""><i class="fa fa-circle-o"></i> Ajouter Evenement </a></li>
-
-
-                        {% endif %}
-                        <li><a href=""><i class="fa fa-circle-o"></i> Afficher Vos Evenement </a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Listes des Evenement </a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Rechercher Evenement </a></li>
-
+                        <li><a href="{{ path('cree_Pub') }}"><i class="fa fa-circle-o"></i> Ajouter publication </a>
+                        </li>
+                        <li><a href="{{ path('creertype_Pub') }}"><i class="fa fa-circle-o"></i> Ajouter type </a></li>
+                        <li><a href="{{ path('creercategorie_Pub') }}"><i class="fa fa-circle-o"></i> Ajouter catégorie
+                            </a></li>
+                        <li><a href="{{ path('afficher_pub') }}"><i class="fa fa-circle-o"></i> Afficher publication
+                            </a></li>
                     </ul>
 
                 </li>
 
-
-
-
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Reclamation</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href=""><i class="fa fa-circle-o"></i> Envoyer Reclamation </a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Afficher Reclamation </a></li>
-                    </ul>
-
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Compte</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href=""><i class="fa fa-circle-o"></i> Ajouter Compte </a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Afficher Compte </a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Changer Mot de passe </a></li>
-                    </ul>
-
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Offre</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href=""><i class="fa fa-circle-o"></i> Ajouter Offre </a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Afficher Offre </a></li>
-                    </ul>
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Category</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-
-                        <li><a href=""><i class="fa fa-circle-o"></i> Ajouter Categorie </a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Afficher Categorie </a></li>
-                    </ul>
-
-                </li>
             </ul>
         </section>
-        <!-- /.sidebar -->
     </aside>
-    <!-- Content Wrapper. Contains page content -->
 
-    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
                 AllForKids

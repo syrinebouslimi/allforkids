@@ -1,5 +1,112 @@
-{% extends 'KidsFrontBundle::templateAffichserv.html.twig' %}
+{% extends 'KidsFrontBundle::Template_User.html.twig' %}
+
+{% block Menu %}
+    <nav id="menuBar" class="navbar navbar-default lightHeader" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" ><img src="{{ asset('Template_front_principal/img/logo-school.png') }}" alt="Kidz School"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown singleDrop color-1  ">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-home bg-color-1" aria-hidden="true"></i> <span class="active">Etablissement</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li class=""><a href="{{ path('afficherEtabByParent',{'type':'all'}) }}">Consulter les Etablissements</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown singleDrop color-3 ">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-list-ul bg-color-3" aria-hidden="true">
+                            </i> <span>Enseignants</span></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li class=" "><a href="{{ path('afficherprof') }}">Consulter la liste des enseigants</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown singleDrop color-4">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true">
+                            </i> <span>Gallerie</span></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li class=" "><a href="{{ path('affichergallerie') }}">Consulter la gallerie des images</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown singleDrop color-1 active ">
+                        <a href="{{ path('publications') }}"  role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-list-ul bg-color-1" aria-hidden="true">
+                            </i>
+                            <span class="active">Publications</span>
+                        </a>
+
+                    </li>
+
+
+                    {#<li class="dropdown singleDrop color-3 active">#}
+                    {#<a href="{{ path('publications') }}" role="button" aria-haspopup="true" aria-expanded="false">#}
+                    {#<i class="fa fa-list-ul bg-color-3" aria-hidden="true">#}
+                    {#</i>#}
+                    {#<span class="active">Publications</span>#}
+                    {#</a>#}
+                    {#</li>#}
+
+                    <li class="dropdown singleDrop color-4 active">
+                        <a href="{{ path('afficherespaceenfant') }}"  role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-gg bg-color-4" aria-hidden="true"></i>
+                            <span class="active">Espace enfant</span>
+                        </a>
+                    </li>
+
+                    <li class="dropdown singleDrop color-2 active">
+                        <a href="{{ path('services') }}"  role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-gg bg-color-6" aria-hidden="true"></i>
+                            <span class="active">Service</span>
+                        </a>
+                    </li>
+
+
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+{% endblock Menu %}
+
+
+
+{% block bandeau %}
+
+    <section class="pageTitleSection">
+        <div class="container">
+            <div class="pageTitleInfo">
+                <h2> </h2>
+                <ol class="breadcrumb">
+                    <li class="active"> </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+{% endblock bandeau %}
+
+
 {% block body %}
+
+<section class="mainContent full-width clearfix" style="margin-top: 30px">
+
     <div class="col-md-9 col-sm-8 col-xs-12 block pull-right">
 
         <div class="row">
@@ -88,6 +195,7 @@
         {% include '@FOSComment/Thread/async.html.twig' with {'id': 'foo'} %}
 
     </div>
+</section>
 
 
 

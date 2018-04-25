@@ -12,4 +12,10 @@ class DefaultController extends Controller
         return $this->render('KidsFrontBundle::Template_User.html.twig');
 
     }
+
+    public function templateAction()
+    {
+        return $this->render('@KidsFront/templateAffichserv.html.twig');
+
+    }
 }

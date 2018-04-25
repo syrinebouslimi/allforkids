@@ -11,62 +11,77 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" ><img src="{{ asset('Template_front_principal/img/logo-school.png') }}" alt="Kidz School"></a>
+                <a class="navbar-brand"><img src="{{ asset('Template_front_principal/img/logo-school.png') }}"
+                                             alt="Kidz School"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown singleDrop color-1  ">
-                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-home bg-color-1" aria-hidden="true"></i> <span class="active">Etablissement</span>
+                    <li class="dropdown singleDrop color-1 active ">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-home bg-color-1" aria-hidden="true"></i> <span
+                                    class="active">Etablissement</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-left">
-                            <li class=""><a href="{{ path('afficherEtabByParent',{'type':'all'}) }}">Consulter les Etablissements</a></li>
+                            <li class=""><a href="{{ path('afficherEtabByParent') }}">Consulter les
+                                    Etablissements</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown singleDrop color-3 ">
-                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <li class="dropdown singleDrop color-3 active ">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-list-ul bg-color-3" aria-hidden="true">
                             </i> <span>Enseignants</span></a>
                         <ul class="dropdown-menu dropdown-menu-left">
-                            <li class=" "><a href="{{ path('afficherprof') }}">Consulter la liste des enseigants</a></li>
+                            <li class=" "><a href="{{ path('afficherprof') }}">Consulter la liste des enseigants</a>
+                            </li>
                         </ul>
                     </li>
-                    <li class="dropdown singleDrop color-4">
+                    <li class="dropdown singleDrop color-4 active">
                         <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true">
-                            </i> <span>Gallerie</span></a>
+                            </i> <span class="active">Gallerie</span></a>
                         <ul class="dropdown-menu dropdown-menu-left">
-                            <li class=" "><a href="{{ path('affichergallerie') }}">Consulter la gallerie des images</a></li>
+                            <li class=" "><a href="{{ path('affichergallerie') }}">Consulter la gallerie des images</a>
+                            </li>
                         </ul>
                     </li>
 
-                    <li class="dropdown singleDrop color-3 active">
+                    <li class="dropdown singleDrop color-1 active ">
                         <a href="{{ path('publications') }}" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-list-ul bg-color-3" aria-hidden="true">
+                            <i class="fa fa-list-ul bg-color-1" aria-hidden="true">
                             </i>
                             <span class="active">Publications</span>
                         </a>
+
                     </li>
 
-                    <li class="dropdown singleDrop color-6 active">
-                        <a href="{{ path('afficherespaceenfant') }}"  role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-gg bg-color-6" aria-hidden="true"></i>
+
+                    {#<li class="dropdown singleDrop color-3 active">#}
+                    {#<a href="{{ path('publications') }}" role="button" aria-haspopup="true" aria-expanded="false">#}
+                    {#<i class="fa fa-list-ul bg-color-3" aria-hidden="true">#}
+                    {#</i>#}
+                    {#<span class="active">Publications</span>#}
+                    {#</a>#}
+                    {#</li>#}
+
+                    <li class="dropdown singleDrop color-5 active">
+                        <a href="{{ path('afficherespaceenfant') }}" role="button" aria-haspopup="true"
+                           aria-expanded="false">
+                            <i class="fa fa-calendar bg-color-5" aria-hidden="true"></i>
                             <span class="active">Espace enfant</span>
                         </a>
                     </li>
 
-                    <li class="dropdown singleDrop color-6 active">
-                        <a href="{{ path('services') }}"  role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-gg bg-color-6" aria-hidden="true"></i>
-                            <span class="active">Service</span>
-                        </a>
+                    <li class="dropdown singleDrop color-3 active">
+                        <a href="{{ path('services') }}" class="dropdown-toggle" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-list-ul bg-color-3" aria-hidden="true">
+                            </i> <span class="active">Service</span></a>
                     </li>
-
-
-
                 </ul>
 
             </div>
@@ -78,7 +93,7 @@
 
 {% block favoris %}
     <li class="cart-dropdown">
-        <a href="#" class="bg-color-6 shop-cart" >
+        <a href="#" class="bg-color-6 shop-cart">
             <i class="fa fa-shopping-basket " aria-hidden="true"></i>
             <span class="badge bg-color-1">{{ favoris|length }}</span>
         </a>
@@ -87,32 +102,35 @@
 
             {% for i in favoris %}
 
-            {% if loop.index < 2 %}
-                <li>
-                    <a href="">
-                        <div class="media">
-                            <div class="media-left">
+                {% if loop.index < 2 %}
+                    <li>
+                        <a href="">
+                            <div class="media">
+                                <div class="media-left">
 
-                                <img src="{{ asset('uploads/images/' ~ i.etablissement.imageEtablissement) }}" alt="cart-Image">
+                                    <img src="{{ asset('uploads/images/' ~ i.etablissement.imageEtablissement) }}"
+                                         alt="cart-Image">
+                                </div>
+                                <div class="media-body">
+                                    <h4>{{ i.etablissement.nomEtablissement }}</h4>
+                                    {#<div class="price">#}
+                                    {#<span class="color-1">{{ i.etablissement.adresseEtablissement }}</span>#}
+                                    {#</div>#}
+                                    {#<span class="amount">Qnt: 1</span>#}
+                                </div>
                             </div>
-                            <div class="media-body">
-                                <h4>{{ i.etablissement.nomEtablissement }}</h4>
-                                {#<div class="price">#}
-                                {#<span class="color-1">{{ i.etablissement.adresseEtablissement }}</span>#}
-                                {#</div>#}
-                                {#<span class="amount">Qnt: 1</span>#}
-                            </div>
-                        </div>
-                    </a>
-                    <span class="cancel"><i class="fa fa-close" aria-hidden="true"></i></span>
-                </li>
+                        </a>
+                        <span class="cancel"><i class="fa fa-close" aria-hidden="true"></i></span>
+                    </li>
 
-            {% elseif loop.index == 2%}
-                <li>
-                    <a href="{{ path('getAllFavoris') }}"><button type="button" class="btn btn-primary" >Voir plus</button> </a>
-                </li>
+                {% elseif loop.index == 2 %}
+                    <li>
+                        <a href="{{ path('getAllFavoris') }}">
+                            <button type="button" class="btn btn-primary">Voir plus</button>
+                        </a>
+                    </li>
 
-            {% endif %}
+                {% endif %}
 
             {% endfor %}
         </ul>
@@ -125,16 +143,28 @@
     <section class="pageTitleSection">
         <div class="container">
             <div class="pageTitleInfo">
-                <i><h2>Bonjour {{ app.user.username|default('') }}</h2></i>
-                <br>
+                {#<i><h2>Bonjour {{ app.user.username|default('') }}</h2></i>#}
+                {#<br>#}
 
-                <h2>Bienvenue dans votre espace parent</h2>
+                <h2>Espace parent</h2>
             </div>
         </div>
     </section>
 {% endblock bandeau %}
 
  {% block body %}
+
+     <section class="mainContent full-width clearfix" style="margin-top: 30px;height:150px; ">
+
+         <div class="sectionTitle text-center">
+             <h2>
+                 <span class="shape shape-left bg-color-4"></span>
+                 <span>Bienvenue {{ app.user.username|default('') }}</span>
+                 <span class="shape shape-right bg-color-4"></span>
+             </h2>
+         </div>
+
+     </section>
 
 
 
