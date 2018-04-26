@@ -11,26 +11,31 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" ><img src="{{ asset('Template_front_principal/img/logo-school.png') }}" alt="Kidz School"></a>
+                <a class="navbar-brand"><img src="{{ asset('Template_front_principal/img/logo-school.png') }}"
+                                             alt="Kidz School"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown singleDrop color-1  ">
-                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-home bg-color-1" aria-hidden="true"></i> <span class="active">Etablissement</span>
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-home bg-color-1" aria-hidden="true"></i> <span
+                                    class="active">Etablissement</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-left">
                             <li class=""><a href="{{ path('espace_parent') }}">Consulter les Etablissements</a></li>
                         </ul>
                     </li>
                     <li class="dropdown singleDrop color-3 ">
-                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-list-ul bg-color-3" aria-hidden="true">
                             </i> <span>Enseignants</span></a>
                         <ul class="dropdown-menu dropdown-menu-left">
-                            <li class=" "><a href="{{ path('afficherprof') }}">Consulter la liste des enseigants</a></li>
+                            <li class=" "><a href="{{ path('afficherprof') }}">Consulter la liste des enseigants</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="dropdown singleDrop color-4">
@@ -39,10 +44,12 @@
                             <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true">
                             </i> <span>Gallerie</span></a>
                         <ul class="dropdown-menu dropdown-menu-left">
-                            <li class=" "><a href="{{ path('affichergallerie') }}">Consulter la gallerie des images</a></li>
+                            <li class=" "><a href="{{ path('affichergallerie') }}">Consulter la gallerie des images</a>
+                            </li>
                         </ul>
                     </li>
-                </ul></div>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -51,7 +58,7 @@
 
 {% block favoris %}
     <li class="cart-dropdown">
-        <a href="#" class="bg-color-6 shop-cart" >
+        <a href="#" class="bg-color-6 shop-cart">
             <i class="fa fa-shopping-basket " aria-hidden="true"></i>
             <span class="badge bg-color-1">{{ favoris|length }}</span>
         </a>
@@ -66,7 +73,8 @@
                             <div class="media">
                                 <div class="media-left">
 
-                                    <img src="{{ asset('uploads/images/' ~ i.etablissement.imageEtablissement) }}" alt="cart-Image">
+                                    <img src="{{ asset('uploads/images/' ~ i.etablissement.imageEtablissement) }}"
+                                         alt="cart-Image">
                                 </div>
                                 <div class="media-body">
                                     <h4>{{ i.etablissement.nomEtablissement }}</h4>
@@ -80,9 +88,11 @@
                         <span class="cancel"><i class="fa fa-close" aria-hidden="true"></i></span>
                     </li>
 
-                {% elseif loop.index == 2%}
+                {% elseif loop.index == 2 %}
                     <li>
-                        <a href="{{ path('getAllFavoris') }}"><button type="button" class="btn btn-primary" >Voir plus</button> </a>
+                        <a href="{{ path('getAllFavoris') }}">
+                            <button type="button" class="btn btn-primary">Voir plus</button>
+                        </a>
                     </li>
 
                 {% endif %}
@@ -126,124 +136,150 @@
                  <div class="col-xs-12">
                      <div class="tabCommon isotopeFilters">
                          <ul class="nav nav-tabs">
-                             <li class="active"><a  href="#" data-filter="*">Voir tout</a></li>
-                             <li><a  href="#" data-filter=".Creche">Crèche</a></li>
-                             <li><a  href="#" data-filter=".Jardin">Jardin d'enfant</a></li>
-                             <li><a  href="#" data-filter=".Garderie">Garderie</a></li>
+                             <li class="active"><a href="#" data-filter="*">Voir tout</a></li>
+                             <li><a href="#" data-filter=".Creche">Crèche</a></li>
+                             <li><a href="#" data-filter=".Jardin">Jardin d'enfant</a></li>
+                             <li><a href="#" data-filter=".Garderie">Garderie</a></li>
                              <li><a href="#" data-filter=".Ecole">Ecole</a></li>
 
 
                          </ul>
-                         <div class="row isotopeContainer" id="container" style="margin-top: 30px;">
-                             {% for i in etablissement %}
+                     </div>
+                 </div>
+             </div>
 
-                             {% if i.typeEtablissement =="Jardin denfants" %}
+             <div class="row isotopeContainer" id="container" style="margin-top: 30px;">
+                 {% for i in etablissement %}
 
-                                 <div class="media courseList couresListPage isotopeSelector Jardin">
+                 {% if i.typeEtablissement =="Jardin denfants" %}
+                 <div class="media courseList couresListPage isotopeSelector Jardin">
+                     {% elseif i.typeEtablissement=="Garderie" %}
+                     <div class="media courseList couresListPage isotopeSelector Garderie">
+                         {% elseif i.typeEtablissement=="Ecole" %}
+                         <div class="media courseList couresListPage isotopeSelector Ecole">
+
+                             {% elseif i.typeEtablissement=="Créche" %}
+                             <div class="media courseList couresListPage isotopeSelector Creche">
+
+                                 {% else %}
+                                 <div class="media courseList couresListPage isotopeSelector">
+                                     {% endif %}
+
+                                     {#<div class="media courseList couresListPage isotopeSelector Jardin">#}
                                      <a class="media-left border-color-1" href="course-single-left-sidebar.html">
-                                         <img class="media-object" src="{{ asset('uploads/images/' ~ i.imageEtablissement) }}" alt="Image" style="width: 500px; height: 300px;">
+                                         <img class="media-object"
+                                              src="{{ asset('uploads/images/' ~ i.imageEtablissement) }}" alt="Image"
+                                              style="width: 500px; height: 300px;">
                                      </a>
                                      <div class="media-body">
                                          <h4 class="media-heading">{{ i.nomEtablissement }}</a></h4>
                                          <ul class="list-inline">
-                                             <li><i class="fa fa-calendar-o" aria-hidden="true"></i>Age 0 to 2 Years</li>
-                                             <li><i class="fa fa-clock-o" aria-hidden="true"></i>{{ i.horaireEtablissement }}</li>
+                                             <li><i class="fa fa-calendar-o" aria-hidden="true"></i>Age 0 to 2 Years
+                                             </li>
+                                             <li><i class="fa fa-clock-o"
+                                                    aria-hidden="true"></i>{{ i.horaireEtablissement }}</li>
                                          </ul>
-                                         <p>{{ i.descriptionEtablissement|truncate(50)}}</p>
+                                         <p>{{ i.descriptionEtablissement|truncate(50) }}</p>
                                          <ul class="list-inline btn-yellow btnPart">
-                                             <li><a href="{{ path('ajouterfavoris', {'id':i.id}) }}" class="btn btn-primary" ><i class="fa fa-shopping-basket " aria-hidden="true"></i>Marquer favoris</a></li>
+                                             <li><a href="{{ path('ajouterfavoris', {'id':i.id}) }}"
+                                                    class="btn btn-primary"><i class="fa fa-shopping-basket "
+                                                                               aria-hidden="true"></i>Marquer
+                                                     favoris</a></li>
 
                                              {#<li><a href="" class="btn btn-primary" data-toggle="modal" data-target="#supp{{ i.id }}" data-whatever="{{ i.id }}"><i class="fa fa-shopping-basket " aria-hidden="true"></i>Marquer favoris</a></li>#}
 
                                              {#<li><a href="{{ path('modifieretablissementparid',{'id':i.id}) }}" class="btn btn-primary "><i class="fa fa-shopping-basket " aria-hidden="true"></i>Modifier</a></li>#}
-                                             <li><a  href="{{ path('afficherEtabById',{'id':i.id}) }}" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> More</a></li>
+                                             <li><a href="{{ path('afficherEtabById',{'id':i.id}) }}"
+                                                    class="btn btn-link"><i class="fa fa-angle-double-right"
+                                                                            aria-hidden="true"></i> More</a></li>
                                          </ul>
                                      </div>
                                  </div>
 
-                             {% endif %}
+                                 {#{% endif %}#}
 
-                                 {% if i.typeEtablissement =="Garderie" %}
+                                 {#{% if i.typeEtablissement =="Garderie" %}#}
 
-                                     <div class="media courseList couresListPage isotopeSelector Garderie">
-                                         <a class="media-left border-color-1" href="course-single-left-sidebar.html">
-                                             <img class="media-object" src="{{ asset('uploads/images/' ~ i.imageEtablissement) }}" alt="Image" style="width: 500px; height: 300px;">
-                                         </a>
-                                         <div class="media-body">
-                                             <h4 class="media-heading">{{ i.nomEtablissement }}</a></h4>
-                                             <ul class="list-inline">
-                                                 <li><i class="fa fa-calendar-o" aria-hidden="true"></i>Age 0 to 2 Years</li>
-                                                 <li><i class="fa fa-clock-o" aria-hidden="true"></i>{{ i.horaireEtablissement }}</li>
-                                             </ul>
-                                             <p>{{ i.descriptionEtablissement|truncate(50)}}</p>
-                                             <ul class="list-inline btn-yellow btnPart">
-                                                 <li><a href="{{ path('ajouterfavoris', {'id':i.id}) }}" class="btn btn-primary" ><i class="fa fa-shopping-basket " aria-hidden="true"></i>Marquer favoris</a></li>
+                                 {#<div class="media courseList couresListPage isotopeSelector Garderie">#}
+                                 {#<a class="media-left border-color-1" href="course-single-left-sidebar.html">#}
+                                 {#<img class="media-object" src="{{ asset('uploads/images/' ~ i.imageEtablissement) }}" alt="Image" style="width: 500px; height: 300px;">#}
+                                 {#</a>#}
+                                 {#<div class="media-body">#}
+                                 {#<h4 class="media-heading">{{ i.nomEtablissement }}</a></h4>#}
+                                 {#<ul class="list-inline">#}
+                                 {#<li><i class="fa fa-calendar-o" aria-hidden="true"></i>Age 0 to 2 Years</li>#}
+                                 {#<li><i class="fa fa-clock-o" aria-hidden="true"></i>{{ i.horaireEtablissement }}</li>#}
+                                 {#</ul>#}
+                                 {#<p>{{ i.descriptionEtablissement|truncate(50)}}</p>#}
+                                 {#<ul class="list-inline btn-yellow btnPart">#}
+                                 {#<li><a href="{{ path('ajouterfavoris', {'id':i.id}) }}" class="btn btn-primary" ><i class="fa fa-shopping-basket " aria-hidden="true"></i>Marquer favoris</a></li>#}
 
-                                                 {#<li><a href="" class="btn btn-primary" data-toggle="modal" data-target="#supp{{ i.id }}" data-whatever="{{ i.id }}"><i class="fa fa-shopping-basket " aria-hidden="true"></i>Marquer favoris</a></li>#}
+                                 {#<li><a href="" class="btn btn-primary" data-toggle="modal" data-target="#supp{{ i.id }}" data-whatever="{{ i.id }}"><i class="fa fa-shopping-basket " aria-hidden="true"></i>Marquer favoris</a></li>#}
 
-                                                 {#<li><a href="{{ path('modifieretablissementparid',{'id':i.id}) }}" class="btn btn-primary "><i class="fa fa-shopping-basket " aria-hidden="true"></i>Modifier</a></li>#}
-                                                 <li><a  href="{{ path('afficherEtabById',{'id':i.id}) }}" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> More</a></li>
-                                             </ul>
-                                         </div>
-                                     </div>
+                                 {#<li><a href="{{ path('modifieretablissementparid',{'id':i.id}) }}" class="btn btn-primary "><i class="fa fa-shopping-basket " aria-hidden="true"></i>Modifier</a></li>#}
+                                 {#<li><a  href="{{ path('afficherEtabById',{'id':i.id}) }}" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> More</a></li>#}
+                                 {#</ul>#}
+                                 {#</div>#}
+                                 {#</div>#}
 
-                                 {% endif %}
+                                 {#{% endif %}#}
 
 
 
-                                 {% if i.typeEtablissement =="Ecole" %}
+                                 {#{% if i.typeEtablissement =="Ecole" %}#}
 
-                                     <div class="media courseList couresListPage isotopeSelector Ecole">
-                                         <a class="media-left border-color-1" href="course-single-left-sidebar.html">
-                                             <img class="media-object" src="{{ asset('uploads/images/' ~ i.imageEtablissement) }}" alt="Image" style="width: 500px; height: 300px;">
-                                         </a>
-                                         <div class="media-body">
-                                             <h4 class="media-heading">{{ i.nomEtablissement }}</a></h4>
-                                             <ul class="list-inline">
-                                                 <li><i class="fa fa-calendar-o" aria-hidden="true"></i>Age 0 to 2 Years</li>
-                                                 <li><i class="fa fa-clock-o" aria-hidden="true"></i>{{ i.horaireEtablissement }}</li>
-                                             </ul>
-                                             <p>{{ i.descriptionEtablissement|truncate(50)}}</p>
-                                             <ul class="list-inline btn-yellow btnPart">
-                                                 <li><a href="{{ path('ajouterfavoris', {'id':i.id}) }}" class="btn btn-primary" ><i class="fa fa-shopping-basket " aria-hidden="true"></i>Marquer favoris</a></li>
+                                 {#<div class="media courseList couresListPage isotopeSelector Ecole">#}
+                                 {#<a class="media-left border-color-1" href="course-single-left-sidebar.html">#}
+                                 {#<img class="media-object" src="{{ asset('uploads/images/' ~ i.imageEtablissement) }}" alt="Image" style="width: 500px; height: 300px;">#}
+                                 {#</a>#}
+                                 {#<div class="media-body">#}
+                                 {#<h4 class="media-heading">{{ i.nomEtablissement }}</a></h4>#}
+                                 {#<ul class="list-inline">#}
+                                 {#<li><i class="fa fa-calendar-o" aria-hidden="true"></i>Age 0 to 2 Years</li>#}
+                                 {#<li><i class="fa fa-clock-o" aria-hidden="true"></i>{{ i.horaireEtablissement }}</li>#}
+                                 {#</ul>#}
+                                 {#<p>{{ i.descriptionEtablissement|truncate(50)}}</p>#}
+                                 {#<ul class="list-inline btn-yellow btnPart">#}
+                                 {#<li><a href="{{ path('ajouterfavoris', {'id':i.id}) }}" class="btn btn-primary" ><i class="fa fa-shopping-basket " aria-hidden="true"></i>Marquer favoris</a></li>#}
 
-                                                 {#<li><a href="" class="btn btn-primary" data-toggle="modal" data-target="#supp{{ i.id }}" data-whatever="{{ i.id }}"><i class="fa fa-shopping-basket " aria-hidden="true"></i>Marquer favoris</a></li>#}
+                                 {#<li><a href="" class="btn btn-primary" data-toggle="modal" data-target="#supp{{ i.id }}" data-whatever="{{ i.id }}"><i class="fa fa-shopping-basket " aria-hidden="true"></i>Marquer favoris</a></li>#}
 
-                                                 {#<li><a href="{{ path('modifieretablissementparid',{'id':i.id}) }}" class="btn btn-primary "><i class="fa fa-shopping-basket " aria-hidden="true"></i>Modifier</a></li>#}
-                                                 <li><a  href="{{ path('afficherEtabById',{'id':i.id}) }}" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> More</a></li>
-                                             </ul>
-                                         </div>
-                                     </div>
+                                 {#<li><a href="{{ path('modifieretablissementparid',{'id':i.id}) }}" class="btn btn-primary "><i class="fa fa-shopping-basket " aria-hidden="true"></i>Modifier</a></li>#}
+                                 {#<li><a  href="{{ path('afficherEtabById',{'id':i.id}) }}" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> More</a></li>#}
+                                 {#</ul>#}
+                                 {#</div>#}
+                                 {#</div>#}
 
-                                 {% endif %}
+                                 {#{% endif %}#}
 
-                                 {% if i.typeEtablissement =="Créche" %}
+                                 {#{% if i.typeEtablissement =="Créche" %}#}
 
-                                     <div class="media courseList couresListPage isotopeSelector Creche">
-                                         <a class="media-left border-color-1" href="course-single-left-sidebar.html">
-                                             <img class="media-object" src="{{ asset('uploads/images/' ~ i.imageEtablissement) }}" alt="Image" style="width: 500px; height: 300px;">
-                                         </a>
-                                         <div class="media-body">
-                                             <h4 class="media-heading">{{ i.nomEtablissement }}</a></h4>
-                                             <ul class="list-inline">
-                                                 <li><i class="fa fa-calendar-o" aria-hidden="true"></i>Age 0 to 2 Years</li>
-                                                 <li><i class="fa fa-clock-o" aria-hidden="true"></i>{{ i.horaireEtablissement }}</li>
-                                             </ul>
-                                             <p>{{ i.descriptionEtablissement|truncate(50)}}</p>
-                                             <ul class="list-inline btn-yellow btnPart">
-                                                 <li><a href="{{ path('ajouterfavoris', {'id':i.id}) }}" class="btn btn-primary" ><i class="fa fa-shopping-basket " aria-hidden="true"></i>Marquer favoris</a></li>
+                                 {#<div class="media courseList couresListPage isotopeSelector Creche">#}
+                                 {#<a class="media-left border-color-1" href="course-single-left-sidebar.html">#}
+                                 {#<img class="media-object" src="{{ asset('uploads/images/' ~ i.imageEtablissement) }}" alt="Image" style="width: 500px; height: 300px;">#}
+                                 {#</a>#}
+                                 {#<div class="media-body">#}
+                                 {#<h4 class="media-heading">{{ i.nomEtablissement }}</a></h4>#}
+                                 {#<ul class="list-inline">#}
+                                 {#<li><i class="fa fa-calendar-o" aria-hidden="true"></i>Age 0 to 2 Years</li>#}
+                                 {#<li><i class="fa fa-clock-o" aria-hidden="true"></i>{{ i.horaireEtablissement }}</li>#}
+                                 {#</ul>#}
+                                 {#<p>{{ i.descriptionEtablissement|truncate(50)}}</p>#}
+                                 {#<ul class="list-inline btn-yellow btnPart">#}
+                                 {#<li><a href="{{ path('ajouterfavoris', {'id':i.id}) }}" class="btn btn-primary" ><i class="fa fa-shopping-basket " aria-hidden="true"></i>Marquer favoris</a></li>#}
 
-                                                 {#<li><a href="" class="btn btn-primary" data-toggle="modal" data-target="#supp{{ i.id }}" data-whatever="{{ i.id }}"><i class="fa fa-shopping-basket " aria-hidden="true"></i>Marquer favoris</a></li>#}
+                                 {#<li><a href="" class="btn btn-primary" data-toggle="modal" data-target="#supp{{ i.id }}" data-whatever="{{ i.id }}"><i class="fa fa-shopping-basket " aria-hidden="true"></i>Marquer favoris</a></li>#}
 
-                                                 {#<li><a href="{{ path('modifieretablissementparid',{'id':i.id}) }}" class="btn btn-primary "><i class="fa fa-shopping-basket " aria-hidden="true"></i>Modifier</a></li>#}
-                                                 <li><a  href="{{ path('afficherEtabById',{'id':i.id}) }}" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> More</a></li>
-                                             </ul>
-                                         </div>
-                                     </div>
+                                 {#<li><a href="{{ path('modifieretablissementparid',{'id':i.id}) }}" class="btn btn-primary "><i class="fa fa-shopping-basket " aria-hidden="true"></i>Modifier</a></li>#}
+                                 {#<li><a  href="{{ path('afficherEtabById',{'id':i.id}) }}" class="btn btn-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i> More</a></li>#}
+                                 {#</ul>#}
+                                 {#</div>#}
+                                 {#</div>#}
 
-                                 {% endif %}
+                                 {#{% endif %}#}
 
-                                 <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" id="supp{{ i.id }}">
+                                 <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                      aria-hidden="true" id="supp{{ i.id }}">
                                      <div class="modal-dialog">
                                          <div class="modal-content">
                                              <div class="modal-header">
@@ -254,20 +290,21 @@
                                              </div>
                                              <div class="modal-footer">
                                                  <a class="btn btn-info" data-dismiss="modal">Annuler</a>
-                                                 <a href="{{ path('supprimeretablissementparid',{'id':i.id}) }}" class="btn btn-danger btn-ok" >Supprimer t</a>
+                                                 <a href="{{ path('supprimeretablissementparid',{'id':i.id}) }}"
+                                                    class="btn btn-danger btn-ok">Supprimer t</a>
                                              </div>
                                          </div>
                                      </div>
                                  </div>
 
 
-                             {% endfor %}
+                                 {% endfor %}
 
+                             </div>
                          </div>
                      </div>
                  </div>
              </div>
          </div>
-
      </section>
  {% endblock body %}

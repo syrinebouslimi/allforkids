@@ -182,7 +182,13 @@
                         <div class="btnPart">
                             <a href="#" class="btn btn-primary btn-block bg-color-6">Enroll now</a>
                         </div>
-                        {{ 4|foravgrating }}
+
+
+                        <div class="rating">
+                            {% for i in 1..5 %}
+                                <div class="{% if i <= 5 %}star-full{% else %}star-empty{% endif %} {{ 3 }}"></div>
+                            {% endfor %}
+                        </div>
                     </div>
                 </aside>
             </div>
