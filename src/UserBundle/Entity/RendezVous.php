@@ -22,6 +22,30 @@ class RendezVous
     private $id;
 
     /**
+     * @return string
+     */
+    public function getNomPrenom()
+    {
+        return $this->nomPrenom;
+    }
+
+    /**
+     * @param string $nomPrenom
+     */
+    public function setNomPrenom($nomPrenom)
+    {
+        $this->nomPrenom = $nomPrenom;
+    }
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomprenom", type="string", length=255)
+     */
+    private $nomPrenom;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateRendezVous", type="datetime")

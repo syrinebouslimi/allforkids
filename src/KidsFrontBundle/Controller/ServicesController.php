@@ -2,10 +2,15 @@
 
 namespace KidsFrontBundle\Controller;
 
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Serializer\Serializer;
+use UserBundle\Entity\RendezVous;
 use UserBundle\Entity\Service;
+use Symfony\Component\HttpFoundation\Response;
+
 
 
 class ServicesController extends Controller
@@ -99,11 +104,66 @@ class ServicesController extends Controller
 
     }
 
-    public function rendezvousAction ($id)
+
+    //ajout RendezVous
+
+    public function ajoutrendezvousAction(Request $request)
+    {
+        $em=$this->getDoctrine()->getManager();
+        $status = 'erreur';
+        $html = 'erreur';
+        if ($request->isMethod('POST'))
+        {
+
+            if($request->isXmlHttpRequest()) {
+
+                //extraire les données de modal
+                $patient = $request->request->get('nomprenom');
+                $dateRendezvous = $request->request->get('daterendezvous');
+                $horaire = $request->request->get('horaire');
+                //nouveau rendezvous
+                $rd = new RendezVous();
+                $rd->setNomPrenom($patient);
+                $rd->setDateRendezVous(new \DateTime($dateRendezvous|$horaire));
+                $em->persist($rd);
+
+
+                if($rd!=null){
+
+                    $status = 'success';
+                    $html = 'yes';
+                }
+
+            }
+        }
+
+        $em->flush();
+
+
+
+        $jsonArray = array(
+            'status' => $status,
+            'data' => $html,
+        );
+
+        $response = new Response(json_encode($jsonArray));
+        $response->headers->set('Content-Type', 'application/json; charset=utf-8');
+
+        return $response;
+
+
+    }
+
+
+    //Affichage mobile
+
+    public function afficherServicejsonFrontAction ()
 
     {
-
-
+        $Uv=$this->getDoctrine()->getRepository('UserBundle:Service')->findAll();
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted= $serializer->normalize($Uv);
+        return new JsonResponse($formatted);
     }
 
 }

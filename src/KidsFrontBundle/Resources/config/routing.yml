@@ -47,3 +47,9 @@ detailServiceFront2:
 recherche:
     path:     /recherche
     defaults: { _controller: KidsFrontBundle:Services:recherche}
+ajoutrendezvous:
+    path:     /ajoutrendezvous
+    defaults: { _controller: KidsFrontBundle:Services:ajoutrendezvous}
+afficherServicejson:
+    path:     /afficherServicejson
+    defaults: { _controller: KidsFrontBundle:Services:afficherServicejsonFront}

@@ -522,23 +522,24 @@
             </div>
             <div class="modal-body">
 
-                <label for="comment" class="form-group formField">Nom et Prenom</label>
-                <textarea class="form-control"></textarea>
-                <br>
-                <br>
-
-                <label class="form-group formField" for="comment">Date Rendez-vous:</label>
-                <input id="date" type="date">
+                <label for="nomprenom" class="form-group formField" name="nomprenom" id="nomprenom" >Nom et Prenom</label>
+                <input class="form-control" name="nomprenom" id="nomprenom"type="text">
 
                 <br>
                 <br>
-                <label class="form-group formField" for="comment">Horaire Rendez-vous:</label>
-                <input type="time" name="horaire">
+
+                <label class="form-group formField" for="daterendezvous">Date Rendez-vous:</label>
+                <input id="date" type="date" name="daterendezvous" id="daterendezvous">
+
+                <br>
+                <br>
+                <label class="form-group formField" for="horaire">Horaire Rendez-vous:</label>
+                <input type="time" name="horaire" id="horaire">
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" action="" method="post" >Confirmer Rendez-vous</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" name="save" id="savebotom" >Confirmer Rendez-vous</button>
+                <button type="submit" class="btn btn-secondary" data-dismiss="modal" >Close</button>
             </div>
         </div>
     </div>
@@ -546,6 +547,35 @@
 <!-- /.modal -->
 
 
+<!-- /.script rendez vouq -->
+{#<script>#}
+    {#$(document).ready(function() {#}
+        {#$("#savebotom").click(function () {#}
+            {#alert('submit clicked');#}
+            {#var title = $("#nomprenom").val();#}
+
+            {#var dataString = {};#}
+            {#dataString['nomprenom'] = title;#}
+            {#dataString['daterendezvous'] = $('#daterendezvous').val();#}
+            {#dataString['horaire'] =$('#horaire').val();#}
+            {#alert("date: "+$('#daterendezvous').val() + " horaire : "+$('#horaire').val())#}
+            {#alert(dataString);#}
+            {#$.ajax({#}
+                {#method: 'POST',#}
+                {#dataType: 'json',#}
+                {#url: '{{ path('ajoutrendezvous') }}',#}
+                {#data: dataString,#}
+                {#success: function (data) {#}
+                    {#alert("Data 1 SuccessFully");#}
+                    {#if (data.success)#}
+                        {#alert("Data 2 SuccessFully");#}
+                {#}#}
+            {#});#}
+
+        {#});#}
+    {#});#}
+{#</script>#}
+{#<!-- page script -->#}
 
 <script src="{{ asset('Template_front_principal/plugins/jquery/jquery-min.js')}}"></script>
 <script src="{{ asset('Template_front_principal/plugins/jquery-ui/jquery-ui.js')}}"></script>
