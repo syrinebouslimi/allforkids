@@ -753,6 +753,48 @@
     </div>
 </div>
 
+
+<!-- MODAL Rendez-vous -->
+
+<div class="modal" tabindex="-1" role="dialog" id="modal-default">>
+
+
+
+
+
+
+    <div class="modal-dialog" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Reserver un rendez-vous</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <label for="comment" class="form-group formField">Nom et Prenom</label>
+                <textarea class="form-control"></textarea>
+                <br>
+                <br>
+
+                <label class="form-group formField" for="comment">Date Rendez-vous:</label>
+                <input id="date" type="date">
+
+                <br>
+                <br>
+                <label class="form-group formField" for="comment">Horaire Rendez-vous:</label>
+                <input type="time" name="horaire">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" action="" method="post" >Confirmer Rendez-vous</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="{{ asset('bundles/kidsfront/js/rating.js') }}"></script>
 <script src="{{ asset('Template_front_principal/plugins/jquery/jquery-min.js') }}"></script>
 <script src="{{ asset('Template_front_principal/plugins/jquery-ui/jquery-ui.js') }}"></script>

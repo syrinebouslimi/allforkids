@@ -20,46 +20,36 @@ class Club
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     /**
      * @var string
      *
      * @ORM\Column(name="nomClub", type="string", length=255)
      */
     private $nomClub;
-
     /**
      * @var string
      *
-     * @ORM\Column(name="descriptionClub", type="string", length=255)
+     * @ORM\Column(name="descriptionClub", type="string", length=4000)
      */
     private $descriptionClub;
-
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="dateCreationClub", type="datetime")
      */
     private $dateCreationClub;
-
     /**
      * @var string
      *
      * @ORM\Column(name="imageClub", type="string", length=255)
      */
     private $imageClub;
-
-
-
     /**
      *
      * @ORM\ManyToOne(targetEntity="UserBundle\Entity\Etablissement")
      * @ORM\JoinColumn(name="idEtablissement",referencedColumnName="id",onDelete="CASCADE")
      */
-
     private $idEtablissement;
-
-
     /**
      * Get id
      *
@@ -69,7 +59,6 @@ class Club
     {
         return $this->id;
     }
-
     /**
      * Set nomClub
      *
@@ -80,10 +69,8 @@ class Club
     public function setNomClub($nomClub)
     {
         $this->nomClub = $nomClub;
-
         return $this;
     }
-
     /**
      * Get nomClub
      *
@@ -93,7 +80,6 @@ class Club
     {
         return $this->nomClub;
     }
-
     /**
      * Set descriptionClub
      *
@@ -104,10 +90,8 @@ class Club
     public function setDescriptionClub($descriptionClub)
     {
         $this->descriptionClub = $descriptionClub;
-
         return $this;
     }
-
     /**
      * Get descriptionClub
      *
@@ -117,7 +101,6 @@ class Club
     {
         return $this->descriptionClub;
     }
-
     /**
      * Set dateCreationClub
      *
@@ -128,10 +111,8 @@ class Club
     public function setDateCreationClub($dateCreationClub)
     {
         $this->dateCreationClub = $dateCreationClub;
-
         return $this;
     }
-
     /**
      * Get dateCreationClub
      *
@@ -141,31 +122,20 @@ class Club
     {
         return $this->dateCreationClub;
     }
-
     /**
-     * Set imageClub
-     *
-     * @param string $imageClub
-     *
-     * @return Club
-     */
-    public function setImageClub($imageClub)
-    {
-        $this->imageClub = $imageClub;
-
-        return $this;
-    }
-
-    /**
-     * Get imageClub
-     *
      * @return string
      */
     public function getImageClub()
     {
         return $this->imageClub;
     }
-
+    /**
+     * @param string $imageClub
+     */
+    public function setImageClub($imageClub)
+    {
+        $this->imageClub = $imageClub;
+    }
     /**
      * @return mixed
      */
@@ -173,7 +143,6 @@ class Club
     {
         return $this->idEtablissement;
     }
-
     /**
      * @param mixed $idEtablissement
      */
@@ -181,6 +150,63 @@ class Club
     {
         $this->idEtablissement = $idEtablissement;
     }
+    /**
+     * @return mixed
+     */
+    public function getAdresse()
+    {
+        return $this->adresse;
+    }
+    /**
+     * @param mixed $adresse
+     */
+    public function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
+    }
+    /**
+     * @return mixed
+     */
+    public function getLong()
+    {
+        return $this->long;
+    }
+    /**
+     * @param mixed $long
+     */
+    public function setLong($long)
+    {
+        $this->long = $long;
+    }
+    /**
+     * @return mixed
+     */
+    public function getLat()
+    {
+        return $this->lat;
+    }
+    /**
+     * @param mixed $lat
+     */
+    public function setLat($lat)
+    {
+        $this->lat = $lat;
+    }
+    /**
+     *
+     * @ORM\Column(name="adresse", type="string", length=255, nullable=true)
+     */
+    private $adresse;
+    /**
+     *
+     * @ORM\Column(name="longi", type="float", nullable=true)
+     */
+    private $long;
+    /**
+     *
+     * @ORM\Column(name="lat", type="float", nullable=true)
+     */
+    private $lat;
 
 
 }
