@@ -26,6 +26,7 @@
     </div>
 
     {% for key in publication %}
+        {% if key.etatPublication=="Publié" %}
 
     <div class="row" style="padding: 2%;">
 
@@ -47,6 +48,7 @@
                 </div>
             </div>
         </div>
-    {% endfor %}
+        {% endif %}
+        {% endfor %}
 
 {% endblock body %}

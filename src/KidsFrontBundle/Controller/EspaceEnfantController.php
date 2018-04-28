@@ -43,9 +43,10 @@ class EspaceEnfantController extends Controller
             $profil->setPhotoEnfant($fileName);
 
             $em = $this->getDoctrine()->getManager();
+
             $user = $this->getUser();
-            $iduser = $user->getId();
             $profil->setIdUserProfileEnfant($user);
+
             $em->persist($profil);
             $em->flush();
             return $this->forward('KidsFrontBundle:EspaceEnfant:afficherespaceenfant');

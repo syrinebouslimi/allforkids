@@ -37,7 +37,10 @@
             <div class="caption border-color-1 singleBlog">
                 <h3 class="color-1">{{ publication.nomPublication }}</h3>
                 <h4> {{ publication.categoriePublication.nomCategPublication }}</h4>
-                <p>{{ publication.descriptionPublication }}</p>
+
+                {% set string = publication.descriptionPublication %}
+                <p>{{ string|raw }}</p>
+
                 <ul class="list-inline socailLink">
                         <script type="text/javascript" src="{{ asset('bundles/Socialite-master/socialite.js') }}"></script>
 

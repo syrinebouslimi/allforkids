@@ -41,7 +41,8 @@
 
     <div class="row isotopeContainer" id="container">
         {% for key in publication %}
-            {% if key.typePublication.nomTypePublication=="Video" %}
+            {% if key.etatPublication=="Publié" %}
+                {% if key.typePublication.nomTypePublication=="Video" %}
                 <div class="col-sm-3 col-xs-12 block isotopeSelector Video">
 
             <div class="thumbnail thumbnailContent">
@@ -106,6 +107,7 @@
                         </div>
                     </div>
             {% endif %}
+            {% endif %}
         {% endfor %}
 
     </div>
@@ -115,7 +117,7 @@
         <div class="sectionTitle text-center">
             <h2>
                 <span class="shape shape-left bg-color-4"></span>
-                <span>Decouvrir plus de publications</span>
+                <span>Decouvrez plus de publications</span>
                 <span class="shape shape-right bg-color-4"></span>
             </h2>
         </div>
@@ -201,6 +203,19 @@
         </div>
     </div>
 
-    </div>
+    <section class="colorSection full-width clearfix bg-color-4 teamSection" style="padding: 3%; margin-bottom: 1%;">
+        <div class="container">
+            <div class="commentContent text-center">
+                <a href="{{ path('proposerpublication') }}" target="_blank"><i class="fa fa-comments-o" aria-hidden="true"></i></a>
+            </div>
+            <div class="sectionTitle text-center alt">
+                <h2>
+                    <span class="shape shape-left"></span>
+                    <span style="font-size: 29px;">Proposez une publications</span>
+                    <span class="shape shape-right"></span>
+                </h2>
+            </div>
+        </div>
+    </section>
 
 {% endblock body %}

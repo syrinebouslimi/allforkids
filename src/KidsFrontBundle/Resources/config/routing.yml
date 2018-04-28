@@ -38,6 +38,10 @@ imprimerpublication:
     path:     /imprimerpublication/{id}
     defaults: { _controller: KidsFrontBundle:Publication:imprimerpublication }
 
+creerpublication:
+    path:     /creerpublication
+    defaults: { _controller: KidsFrontBundle:Publication:creerpublication }
+
 creerespace:
     path:     /creerespace
     defaults: { _controller: KidsFrontBundle:EspaceEnfant:creerespace }
@@ -57,3 +61,7 @@ supprimeractivite:
 imprimeractivite:
     path:     /imprimeractivite/{id}
     defaults: { _controller: KidsFrontBundle:EspaceEnfant:imprimeractivite }
+
+proposerpublication:
+    path:     /proposerpublication
+    defaults: { _controller: KidsFrontBundle:Publication:proposerpublication }
