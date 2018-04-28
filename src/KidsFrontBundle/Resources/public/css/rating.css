@@ -32,7 +32,7 @@
 
 .rating div.star:hover:before,.rating div.star:hover~div.star:before {
     content:"\f005";
-    color:#e3cf7a;
+    color:#ea7066;
 }
 
 .rating div.star-full {
@@ -47,7 +47,7 @@
 .rating div.star-full:before  {
     content:"\f005";
     padding-right:5px;
-    color:#e3cf7a;
+    color:#ea7066;
 }
 
 .rating div.star-empty {
