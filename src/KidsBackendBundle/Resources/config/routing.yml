@@ -26,10 +26,6 @@ afficherAllGallerie:
 afficherGallerieByEtab:
     path: /afficherGallerieByEtab
     defaults: { _controller: KidsBackendBundle:AdminGallerie:afficherGallerieByEtab}
-allEtablissement:
-    path: /allEtab
-    defaults: { _controller: KidsBackendBundle:Admin:allEtab}
-
 
 notifications:
     resource: "@MgiletNotificationBundle/Controller/"

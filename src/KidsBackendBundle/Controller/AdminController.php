@@ -5,42 +5,10 @@ namespace KidsBackendBundle\Controller;
 use Doctrine\ORM\OptimisticLockException;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\Encoder\XmlEncoder;
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
-use Symfony\Component\Serializer\Serializer;
 
 class AdminController extends Controller
 {
 
-
-    public function allEtabAction()
-    {
-
-
-        $encoders = array(new XmlEncoder(), new JsonEncoder());
-        $etab = $this->getDoctrine()->getManager()
-            ->getRepository('UserBundle:Etablissement')
-            ->findAll();
-        $normalizer = new ObjectNormalizer();
-//        $normalizer->setIgnoredAttributes(array('adresseUser'));
-
-        $normalizer->setCircularReferenceLimit(1);
-        $normalizer->setCircularReferenceHandler(function ($object) {
-            return $object->getId();
-        });
-
-
-        $normalizers = array($normalizer);
-        $serializer = new Serializer($normalizers, $encoders);
-        $em = $this->getDoctrine()->getManager();
-        $jsonContent = $serializer->normalize($etab, 'json', array('attributes' => array('nomEtablissement' => ['name'])));
-
-//        $jsonContent = $serializer->normalize($etab, 'json', array('attributes' => array('nomUser', 'prenomUser', 'profilePictureUser' => ['name'])));
-        return new JsonResponse($jsonContent);
-
-    }
 
     public function adminAction()
     {

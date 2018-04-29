@@ -115,12 +115,6 @@ afficherEtabByParent:
 ajouterfavoris:
     path: /ajouterfavoris/id/{id}
     defaults: { _controller: KidsFrontBundle:Favoris:ajouterfavoris}
-
-
-api_mobile_get_all_etablissement:
-    path: /getAllEtablissement
-    defaults: { _controller: KidsFrontBundle:EtablissementMobile:allEtablissement}
-
 send_notification:
     path: /send-notification
     defaults: { _controller: KidsBackendBundle:Admin:sendNotification}
@@ -185,3 +179,17 @@ imprimeractivite:
 template:
     path: /template
     defaults: { _controller: KidsFrontBundle:Default:template}
+
+
+api_mobile_get_all_etablissement:
+    path: /getAllEtablissement
+    defaults: { _controller: KidsFrontBundle:EtablissementMobile:allEtab}
+api_mobile_get_all_users:
+    path: /getAllUsers
+    defaults: { _controller: KidsFrontBundle:EtablissementMobile:allUsers}
+api_mobile_get_all_favoris_for_user:
+    path: /allUserFavoris/userid/{idUser}
+    defaults: { _controller: KidsFrontBundle:EtablissementMobile:allUserFavoris}
+api_mobile_update_etablissement:
+    path: /updateEtab
+    defaults: { _controller: KidsFrontBundle:EtablissementMobile:updateEtab}
