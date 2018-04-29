@@ -32,7 +32,7 @@ class EtablissementMobileController extends Controller
         $serializer = new Serializer($normalizers, $encoders);
         $em = $this->getDoctrine()->getManager();
         $jsonContent = $serializer->normalize($etab, 'json', array('attributes' => array('id', 'nomEtablissement', 'imageEtablissement'
-        , 'countryEtablissement', 'typeEtablissement', 'avgRating'
+        , 'adresseEtablissement', 'typeEtablissement','descriptionEtablissement','avgRating','phone'
             => ['name'])));
         return new JsonResponse($jsonContent);
 
