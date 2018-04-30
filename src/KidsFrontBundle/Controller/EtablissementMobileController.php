@@ -2,7 +2,6 @@
 
 namespace KidsFrontBundle\Controller;
 
-use http\Env\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -10,7 +9,8 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
-use UserBundle\Entity\Etablissement;
+use UserBundle\Entity\UserEtablissementFavoris;
+
 
 class EtablissementMobileController extends Controller
 {
@@ -82,6 +82,11 @@ class EtablissementMobileController extends Controller
 
     }
 
+
+
+
+
+
     public function updateEtabAction(Request $request)
     {
 
@@ -102,5 +107,51 @@ class EtablissementMobileController extends Controller
 
         return new \Symfony\Component\HttpFoundation\Response("success update");
     }
+
+    public function addFavorisAction(Request $request)
+    {
+
+
+        $idEtab = $request->get('idEtab');
+        $idUser = $request->get('idUser');
+
+
+        $etab = $this->getDoctrine()->getManager()
+            ->getRepository('UserBundle:Etablissement')
+            ->find($idEtab);
+
+        $user = $this->getDoctrine()->getManager()
+            ->getRepository('UserBundle:User')
+            ->find($idUser);
+
+        $favoris = new UserEtablissementFavoris();
+        $favoris->setDateCreation(new \DateTime());
+        $favoris->setEtablissement($etab);
+        $favoris->setUser($user);
+
+
+        $save = $this->getDoctrine()->getManager();
+
+        $save->persist($favoris);
+        $save->flush();
+
+
+        return new \Symfony\Component\HttpFoundation\Response("Favoris ajouté avec succés");
+    }
+
+    public function supprimerFavorisAction($idFavoris)
+    {
+
+
+        $em=$this->getDoctrine()->getManager();
+        $etablissement = $this->getDoctrine()->getRepository('UserBundle:UserEtablissementFavoris')->find($idFavoris);
+        $em->remove($etablissement);
+
+        $em->flush();
+
+
+        return new \Symfony\Component\HttpFoundation\Response("Suppression effectué avec succés");
+    }
+
 
 }

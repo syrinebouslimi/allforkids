@@ -193,3 +193,10 @@ api_mobile_get_all_favoris_for_user:
 api_mobile_update_etablissement:
     path: /updateEtab
     defaults: { _controller: KidsFrontBundle:EtablissementMobile:updateEtab}
+api_mobile_add_favoris:
+    path: /addFavoris
+    defaults: { _controller:  KidsFrontBundle:EtablissementMobile:addFavoris}
+
+api_mobile_supprimer_favoris:
+    path: /supprimerFavoris/idFavoris/{idFavoris}
+    defaults: { _controller: KidsFrontBundle:EtablissementMobile:supprimerFavoris}
