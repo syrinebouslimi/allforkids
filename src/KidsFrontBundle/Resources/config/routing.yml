@@ -200,3 +200,7 @@ api_mobile_add_favoris:
 api_mobile_supprimer_favoris:
     path: /supprimerFavoris/idFavoris/{idFavoris}
     defaults: { _controller: KidsFrontBundle:EtablissementMobile:supprimerFavoris}
+
+api_get_inbox_mobile:
+    path: /allUserReclamations/{idUser}
+    defaults: {_controller: KidsFrontBundle:EtablissementMobile:allUserReclamations}

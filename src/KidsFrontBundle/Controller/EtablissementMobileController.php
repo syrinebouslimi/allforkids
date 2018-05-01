@@ -2,9 +2,11 @@
 
 namespace KidsFrontBundle\Controller;
 
+use FOS\MessageBundle\Model\ParticipantInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
@@ -151,6 +153,42 @@ class EtablissementMobileController extends Controller
 
 
         return new \Symfony\Component\HttpFoundation\Response("Suppression effectué avec succés");
+    }
+
+    public function allUserReclamationsAction($idUser)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+
+
+        $message = $em
+            // automatically knows to select Comment
+            // the "c" is an alias you'll use in the rest of the query
+            ->createQueryBuilder('t')
+            ->select('t.subject, t.createdAt,t.id')
+            ->from('MessageBundle:Thread','t')
+            ->join('MessageBundle:ThreadMetadata','tm')
+            ->where('t.id=tm.thread')
+            ->andWhere('tm.participant= :userId')
+            ->andWhere('tm.lastMessageDate  is not null')
+            ->orderBy('tm.lastMessageDate ', 'DESC')
+            ->setParameter('userId', $idUser)
+            ->getQuery()
+            ->getResult();
+
+
+
+        $encoders = array(new XmlEncoder(), new JsonEncoder());
+        $normalizer = new ObjectNormalizer();
+        $normalizer->setCircularReferenceLimit(1);
+        $normalizer->setCircularReferenceHandler(function ($object) {
+            return $object->getId();
+        });
+        $normalizers = array($normalizer);
+        $serializer = new Serializer($normalizers, $encoders);
+        $jsonContent = $serializer->normalize($message, 'json');
+        return new JsonResponse($jsonContent);
+
     }
 
 
