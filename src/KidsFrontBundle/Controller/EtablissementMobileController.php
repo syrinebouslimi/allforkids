@@ -3,6 +3,7 @@
 namespace KidsFrontBundle\Controller;
 
 use FOS\MessageBundle\Model\ParticipantInterface;
+use MessageBundle\Entity\Message;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -189,6 +190,56 @@ class EtablissementMobileController extends Controller
         $jsonContent = $serializer->normalize($message, 'json');
         return new JsonResponse($jsonContent);
 
+    }
+
+    public function allMessageByThreadAction($idThread)
+    {
+        $messages = $this->getDoctrine()->getManager()
+            ->getRepository('MessageBundle:Message')
+            ->findBy(array('thread'=>$idThread));
+        $encoders = array(new XmlEncoder(), new JsonEncoder());
+        $normalizer = new ObjectNormalizer();
+        $normalizer->setCircularReferenceLimit(1);
+        $normalizer->setCircularReferenceHandler(function ($object) {
+            return $object->getId();
+        });
+        $normalizers = array($normalizer);
+        $serializer = new Serializer($normalizers, $encoders);
+        $jsonContent = $serializer->normalize($messages, 'json');
+
+        return new JsonResponse($jsonContent);
+
+    }
+
+    public function sendNewMessageAction(Request $request){
+
+        $idThread = $request->get('thread');
+        $idUser = $request->get('sender');
+        $body = $request->get('body');
+
+
+        $thread = $this->getDoctrine()->getManager()
+            ->getRepository('MessageBundle:Thread')
+            ->find($idThread);
+
+        $user = $this->getDoctrine()->getManager()
+            ->getRepository('UserBundle:User')
+            ->find($idUser);
+
+        $message= new Message();
+
+        $message->setBody($body);
+        $message->setSender($user);
+        $message->setThread($thread);
+
+
+        $save = $this->getDoctrine()->getManager();
+
+        $save->persist($message);
+        $save->flush();
+
+
+        return new \Symfony\Component\HttpFoundation\Response("Message ajouté avec succés");
     }
 
 

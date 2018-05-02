@@ -204,3 +204,10 @@ api_mobile_supprimer_favoris:
 api_get_inbox_mobile:
     path: /allUserReclamations/{idUser}
     defaults: {_controller: KidsFrontBundle:EtablissementMobile:allUserReclamations}
+
+api_get_message_by_thread:
+    path: /allMessageByThread/{idThread}
+    defaults: {_controller: KidsFrontBundle:EtablissementMobile:allMessageByThread}
+api_send_new_message:
+    path: /sendNewMessage
+    defaults: { _controller: KidsFrontBundle:EtablissementMobile:sendNewMessage}
