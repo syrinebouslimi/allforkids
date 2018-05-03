@@ -35,7 +35,7 @@ class EtablissementMobileController extends Controller
         $serializer = new Serializer($normalizers, $encoders);
         $em = $this->getDoctrine()->getManager();
         $jsonContent = $serializer->normalize($etab, 'json', array('attributes' => array('id', 'nomEtablissement', 'imageEtablissement'
-        , 'adresseEtablissement', 'typeEtablissement','descriptionEtablissement','avgRating','phone'
+        , 'adresseEtablissement', 'typeEtablissement', 'descriptionEtablissement', 'avgRating', 'phone'
             => ['name'])));
         return new JsonResponse($jsonContent);
 
@@ -70,9 +70,9 @@ class EtablissementMobileController extends Controller
         $encoders = array(new XmlEncoder(), new JsonEncoder());
         $users = $this->getDoctrine()->getManager()
             ->getRepository('UserBundle:UserEtablissementFavoris')
-            ->findBy(array('user'=>$idUser));
+            ->findBy(array('user' => $idUser));
         $normalizer = new ObjectNormalizer();
-        $normalizer->setIgnoredAttributes(array('dateCreation','user'));
+        $normalizer->setIgnoredAttributes(array('dateCreation', 'user'));
         $normalizer->setCircularReferenceLimit(1);
         $normalizer->setCircularReferenceHandler(function ($object) {
             return $object->getId();
@@ -93,23 +93,17 @@ class EtablissementMobileController extends Controller
         $em = $this->getDoctrine()->getManager();
 
 
-
-
-
-
         $etab = $em
             // automatically knows to select Comment
             // the "c" is an alias you'll use in the rest of the query
             ->createQueryBuilder('o')
             ->select('distinct (o.etablissement), (avg(o.vote)) AS avgRating, (e.nomEtablissement) as nomEtablissement')
             ->from('UserBundle:UserEtablissementVote', 'o')
-            ->join('UserBundle:Etablissement','e')
+            ->join('UserBundle:Etablissement', 'e')
             ->where('o.etablissement=e.id')
             ->groupBy('o.etablissement')
             ->getQuery()
             ->getResult();
-
-
 
 
         $normalizer = new ObjectNormalizer();
@@ -181,7 +175,7 @@ class EtablissementMobileController extends Controller
     {
 
 
-        $em=$this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
         $etablissement = $this->getDoctrine()->getRepository('UserBundle:UserEtablissementFavoris')->find($idFavoris);
         $em->remove($etablissement);
 
@@ -196,14 +190,13 @@ class EtablissementMobileController extends Controller
         $em = $this->getDoctrine()->getManager();
 
 
-
         $message = $em
             // automatically knows to select Comment
             // the "c" is an alias you'll use in the rest of the query
             ->createQueryBuilder('t')
             ->select('t.subject, t.createdAt,t.id')
-            ->from('MessageBundle:Thread','t')
-            ->join('MessageBundle:ThreadMetadata','tm')
+            ->from('MessageBundle:Thread', 't')
+            ->join('MessageBundle:ThreadMetadata', 'tm')
             ->where('t.id=tm.thread')
             ->andWhere('tm.participant= :userId')
             ->andWhere('tm.lastMessageDate  is not null')
@@ -211,7 +204,6 @@ class EtablissementMobileController extends Controller
             ->setParameter('userId', $idUser)
             ->getQuery()
             ->getResult();
-
 
 
         $encoders = array(new XmlEncoder(), new JsonEncoder());
@@ -231,7 +223,7 @@ class EtablissementMobileController extends Controller
     {
         $messages = $this->getDoctrine()->getManager()
             ->getRepository('MessageBundle:Message')
-            ->findBy(array('thread'=>$idThread));
+            ->findBy(array('thread' => $idThread));
         $encoders = array(new XmlEncoder(), new JsonEncoder());
         $normalizer = new ObjectNormalizer();
         $normalizer->setCircularReferenceLimit(1);
@@ -246,7 +238,8 @@ class EtablissementMobileController extends Controller
 
     }
 
-    public function sendNewMessageAction(Request $request){
+    public function sendNewMessageAction(Request $request)
+    {
 
         $idThread = $request->get('thread');
         $idUser = $request->get('sender');
@@ -261,7 +254,7 @@ class EtablissementMobileController extends Controller
             ->getRepository('UserBundle:User')
             ->find($idUser);
 
-        $message= new Message();
+        $message = new Message();
 
         $message->setBody($body);
         $message->setSender($user);
@@ -277,5 +270,42 @@ class EtablissementMobileController extends Controller
         return new \Symfony\Component\HttpFoundation\Response("Message ajouté avec succés");
     }
 
+
+    public function allNotificationsAction()
+    {
+        $notifs = $this->getDoctrine()->getManager()
+            ->getRepository('MgiletNotificationBundle:Notification')
+            ->findAll();
+        $encoders = array(new XmlEncoder(), new JsonEncoder());
+        $normalizer = new ObjectNormalizer();
+        $normalizer->setIgnoredAttributes(array('date','link'));
+
+        $normalizer->setCircularReferenceLimit(1);
+        $normalizer->setCircularReferenceHandler(function ($object) {
+            return $object->getId();
+        });
+        $normalizers = array($normalizer);
+        $serializer = new Serializer($normalizers, $encoders);
+        $jsonContent = $serializer->normalize($notifs, 'json');
+
+        return new JsonResponse($jsonContent);
+
+    }
+
+    public function supprimerNotifByIdAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $notif = $em
+            ->getRepository('MgiletNotificationBundle:Notification')
+            ->find($id);
+
+        $em->remove($notif);
+
+        $em->flush();
+
+        return new \Symfony\Component\HttpFoundation\Response("Suppression effectué avec succés");
+
+    }
 
 }
