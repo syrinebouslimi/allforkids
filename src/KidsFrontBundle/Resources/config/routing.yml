@@ -211,3 +211,7 @@ api_get_message_by_thread:
 api_send_new_message:
     path: /sendNewMessage
     defaults: { _controller: KidsFrontBundle:EtablissementMobile:sendNewMessage}
+
+api_get_all_etablissement_with_rating:
+    path: /allEtablissementWithRating
+    defaults: { _controller: KidsFrontBundle:EtablissementMobile:allEtablissementWithRating}

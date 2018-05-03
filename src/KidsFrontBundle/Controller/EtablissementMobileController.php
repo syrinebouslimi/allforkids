@@ -86,8 +86,43 @@ class EtablissementMobileController extends Controller
     }
 
 
+    public function allEtablissementWithRatingAction()
+    {
+        $encoders = array(new XmlEncoder(), new JsonEncoder());
+
+        $em = $this->getDoctrine()->getManager();
 
 
+
+
+
+
+        $etab = $em
+            // automatically knows to select Comment
+            // the "c" is an alias you'll use in the rest of the query
+            ->createQueryBuilder('o')
+            ->select('distinct (o.etablissement), (avg(o.vote)) AS avgRating, (e.nomEtablissement) as nomEtablissement')
+            ->from('UserBundle:UserEtablissementVote', 'o')
+            ->join('UserBundle:Etablissement','e')
+            ->where('o.etablissement=e.id')
+            ->groupBy('o.etablissement')
+            ->getQuery()
+            ->getResult();
+
+
+
+
+        $normalizer = new ObjectNormalizer();
+        $normalizer->setCircularReferenceLimit(1);
+        $normalizer->setCircularReferenceHandler(function ($object) {
+            return $object->getId();
+        });
+        $normalizers = array($normalizer);
+        $serializer = new Serializer($normalizers, $encoders);
+        $jsonContent = $serializer->normalize($etab, 'json');
+        return new JsonResponse($jsonContent);
+
+    }
 
 
     public function updateEtabAction(Request $request)
