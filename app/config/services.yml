@@ -2,7 +2,7 @@
 # https://symfony.com/doc/current/service_container.html
 parameters:
     #parameter_name: value
-
+    images_directory: '%kernel.root_dir%/../web/uploads/images'
 services:
     # default configuration for services in *this* file
     _defaults:
@@ -33,6 +33,8 @@ services:
     redirect.after.login:
         class: UserBundle\Redirection\AfterLoginRedirection
         arguments: ['@router']
+
+        images_directory: '%kernel.root_dir%/../web/uploads/images'
 
 
 

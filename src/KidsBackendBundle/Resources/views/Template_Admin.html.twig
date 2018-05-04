@@ -4,7 +4,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Evento </title>
+    <title>Allforkids </title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -31,7 +31,7 @@
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>E</b>VT</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Even</b>TO</span>
+            <span class="logo-lg"><b>Allfor</b>kids</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
@@ -133,7 +133,7 @@
                                 <img src="{{ asset('template_Admin_Principal/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
 
                                 <p>
-                                    Mabrouki Ali - Web Developer
+                                    - Web Developer
                                     <small>Member since Nov. 2018</small>
                                 </p>
                             </li>
@@ -175,7 +175,7 @@
                     <img src="{{ asset('template_Admin_Principal/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>Mabrouki Ali</p>
+                    <p></p>
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
@@ -184,93 +184,34 @@
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Evénement</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        {% if app.user and is_granted('ROLE_ADMIN') %}
-                            <li><a href=""><i class="fa fa-circle-o"></i> Ajouter Evenement </a></li>
-
-
-                        {% endif %}
-                        <li><a href=""><i class="fa fa-circle-o"></i> Afficher Vos Evenement </a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Listes des Evenement </a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Rechercher  Evenement </a></li>
-
-                    </ul>
-
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Reclamation</span>
+                        <i class="fa fa-dashboard"></i> <span>Produit</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
 
-
-                        <li><a href=""><i class="fa fa-circle-o"></i> Envoyer Reclamation </a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Afficher  Reclamation </a></li>
+                        <li><a href="{{ path('ajouterProduit') }}"><i class="fa fa-circle-o"></i> Ajouter Vos Produit </a></li>
+                        <li><a href="{{ path('afficherProduit') }}"><i class="fa fa-circle-o"></i> Listes des Produits </a></li>
+                        <li><a href="{{ path('ajouterCateg') }}"><i class="fa fa-circle-o"></i> Ajouter des Categories </a></li>
+                        <li><a href="{{ path('afficherCateg') }}"><i class="fa fa-circle-o"></i> Listes des Categories </a></li>
+                        <li><a href="{{ path('rechercherProduit') }}"><i class="fa fa-circle-o"></i> Rechercher  Produit </a></li>
 
 
                     </ul>
 
                 </li>
                 <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Compte</span>
+                    <a href="{{ path('stat') }}">
+                        <i class="fa fa-dashboard"></i> <span>Stat</span>
                         <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
+
             </span>
                     </a>
                     <ul class="treeview-menu">
-
-                        <li><a href=""><i class="fa fa-circle-o"></i> Ajouter Compte </a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Afficher  Compte </a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Changer Mot de passe </a></li>
-
-
-
-
+                        <li><a href="{{ path('stat') }}"><i class="fa fa-circle-o"></i> Statistique Produit </a></li>
                     </ul>
-
                 </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Offre</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-
-                        <li><a href=""><i class="fa fa-circle-o"></i> Ajouter Offre </a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Afficher  Offre </a></li>
-
-
-                    </ul>
-
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Category</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-
-                        <li><a href=""><i class="fa fa-circle-o"></i> Ajouter Categorie </a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Afficher  Categorie </a></li>
-
-
-                    </ul>
-
-                </li>
-
 
 
 
@@ -284,7 +225,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Evento
+                Allforkids
                 <small>Dashbord</small>
             </h1>
 
