@@ -14,6 +14,7 @@ class AdminController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
+
         return $this->render('KidsBackendBundle::Template_Admin.html.twig', array('notifiableNotifications' => $allNotif));
 
     }
