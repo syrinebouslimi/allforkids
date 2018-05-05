@@ -1,0 +1,37 @@
+{% extends '@KidsBackend/Template_Admin.html.twig' %}
+{% block body %}
+<h3 class="box-title">Liste des Produits </h3>
+<table border="2" class="table table-bordered table-hover" >
+
+    <tr>
+         <th>Nom Produit</th>
+        <th>Description Produit</th>
+        <th>Prix Produit</th>
+        <th>Quantite Produit</th>
+        <th>Image de Produit</th>
+        <th>Categorie Produit</th>
+        <th>Modifier Produit</th>
+        <th>Supprimer Produit</th>
+    </tr>
+{% for p in form %}
+    <tr>
+        <td>{{ p.nomProduit }}</td>
+        <td>{{ p.descriptionProduit }}</td>
+        <td>{{ p.prixProduit }}</td>
+        <td>{{ p.quantiteProduit }}</td>
+
+
+
+        <td>  <img src="{{ asset('uploads/images/' ~ p.imageProduit) }}" style="width: 50px;height: 50px;"></img></td>
+        <td>{{ p.idCategorieProduit.getNomCategorie() }}</td>
+        <td><a  class="btn btn-default" href="{{path('modifierProduit',{'id':p.id}) }}">Modifier </a>
+        <td><a  class="btn btn-danger" href="{{path('supprimerProduit',{'id':p.id}) }}">Supprimer </a>
+
+
+
+    </tr>
+
+{% endfor %}
+</table>
+
+{% endblock %}

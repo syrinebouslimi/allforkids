@@ -1,0 +1,26 @@
+{% extends '@KidsBackend/Template_Admin.html.twig' %}
+{% block body %}
+
+
+        <h4><p class="login-box-msg">Ajouter une categorie</p></h4>
+        <table border="2" bgcolor="#a52a2a" align="center" >
+
+            {{ form_start(form) }}
+
+
+
+
+                <div class="form-group has-feedback">
+                    {{ form_label(form.nomCategorie ,'Nom categorie') }}
+                    {{ form_errors(form.nomCategorie) }}
+                    {{ form_widget(form.nomCategorie,{'attr': {'class': 'form-control','placeholder': "Nom categorie"}}) }}
+
+                </div>
+
+
+
+
+            {{ form_end(form) }}
+
+        </table>
+{% endblock body %}

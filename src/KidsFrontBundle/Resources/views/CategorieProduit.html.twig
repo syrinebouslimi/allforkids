@@ -1,0 +1,22 @@
+{% extends 'KidsFrontBundle::TemplateProduit.html.twig' %}
+{% block body %}
+
+    <table border="2" class="table table-bordered table-hover" >
+
+        <tr>
+            {#<th>Nom Categorie</th>#}
+
+        </tr>
+        {% for C in form %}
+            <tr>
+                <td>{{ C.nomCategorie }}</td>
+
+
+
+
+            </tr>
+
+        {% endfor %}
+    </table>
+
+{% endblock %}
