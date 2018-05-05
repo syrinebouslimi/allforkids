@@ -1,0 +1,71 @@
+{% extends '@KidsBackend/Template_Admin.html.twig' %}
+
+        {% block body %}
+            <h3 class="box-title">Formulaires d'ajouter produit </h3>
+            <table border="2" bgcolor="#a52a2a" align="center" >
+
+            {{ form_start(form) }}
+
+                <div class="form-group has-feedback">
+                    {{ form_label(form.nomProduit ,'Nom Produit') }}
+                    {{ form_errors(form.nomProduit) }}
+                    {{ form_widget(form.nomProduit,{'attr': {'class': 'form-control','placeholder': "Nom Produit" }}) }}
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+
+                <div class="form-group has-feedback">
+                    {{ form_label(form.descriptionProduit ,'Description Produit ')}}
+                    {{ form_errors(form.descriptionProduit) }}
+                    {{ form_widget(form.descriptionProduit,{'attr': {'class': 'form-control','placeholder': "description Produit" }}) }}
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+
+                <div class="form-group has-feedback">
+                    {{ form_label(form.prixProduit ,'Prix Produit')}}
+                    {{ form_errors(form.prixProduit) }}
+                    {{ form_widget(form.prixProduit,{'attr': {'class': 'form-control','placeholder': "Prix Produit"}}) }}
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+
+                <div class="form-group has-feedback">
+                    {{ form_label(form.quantiteProduit ,'Quantite Produit')}}
+                    {{ form_errors(form.quantiteProduit) }}
+                    {{ form_widget(form.quantiteProduit,{'attr': {'class': 'form-control','placeholder': "Quantite Produit"}}) }}
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+
+
+                <div class="form-group has-feedback">
+                    {{ form_label(form.imageProduit,'Image de produit') }}
+                    {{ form_errors(form.imageProduit) }}
+                    {{ form_widget(form.imageProduit,{'attr': {'class': 'form-control','placeholder': "Image de produit"}}) }}
+                    <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+                </div>
+
+                <div class="form-group has-feedback">
+                    {{ form_label(form.idCategorieProduit ,'Categorie Produit')}}
+                    {{ form_errors(form.idCategorieProduit) }}
+                    {{ form_widget(form.idCategorieProduit,{'attr': {'class': 'form-control','placeholder': "Categorie Produit"}}) }}
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="checkbox icheck">
+
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-xs-4">
+                        {{ form_widget(form.Register,{'attr': {'class': 'btn btn-primary btn-block btn-flat'}}) }}
+
+                    </div>
+                    <!-- /.col -->
+                </div>
+
+
+
+                {{ form_end(form) }}
+
+            </table>
+        {% endblock body %}

@@ -1,0 +1,103 @@
+
+{% extends 'KidsFrontBundle::Template_User.html.twig' %}
+
+{% block bandeau %}
+
+    <section class="pageTitleSection">
+        <div class="container">
+            <div class="pageTitleInfo">
+                <h2> </h2>
+                <ol class="breadcrumb">
+                    <li class="active"> </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+{% endblock bandeau %}
+
+{% block body %}
+    <div class="sectionTitle text-center">
+        <h2 style="margin-bottom: 3%">
+            <span class="shape shape-left bg-color-4"></span>
+            <span>Proposez un article</span>
+            <span class="shape shape-right bg-color-4"></span>
+        </h2>
+    </div>
+
+
+    {{ form_start(form) }}
+
+    <section class="mainContent full-width clearfix">
+    <div class="container">
+    <div class="sectionTitle text-center">
+    <div class="row">
+    <div class="col-xs-12">
+    <div class="homeContactContent">
+    <div class="row">
+
+    <div class="col-xs-12">
+    <div class="form-group">
+        {{ form_widget(form.nomPublication,{'attr':{'class':'form-control border-color-4', 'placeholder': 'Titre'}} ) }}
+    </div>
+    </div>
+
+{#Description#}
+    <div class="col-xs-12">
+    <div class="form-group">
+        {{ form_widget(form.descriptionPublication,{'attr':{'class':'form-control border-color-4', 'placeholder': 'Description'}} ) }}
+    </div>
+    </div>
+
+{#Date#}
+    <div class="col-xs-12">
+        <div class="form-group">
+            <i class="fa fa-book" aria-hidden="true"></i>
+            {{ form_widget(form.datePublication,{'attr':{'class':'form-control border-color-4'}} ) }}
+        </div>
+    </div>
+
+{#Contenu#}
+    <div class="col-sm-6 col-xs-12">
+    <div class="form-group">
+        {{ form_widget(form.contenuPublication,{'attr':{'class':'form-control border-color-4'}} ) }}
+    </div>
+    </div>
+
+{#Image#}
+    <div class="col-sm-6 col-xs-12">
+        <div class="form-group">
+            {{ form_widget(form.imagePublication,{'attr':{'class':'form-control border-color-4'}} ) }}
+        </div>
+    </div>
+
+{#Type#}
+    <div class="col-xs-12">
+    <div class="form-group">
+        {{ form_widget(form.typePublication,{'attr':{'class':'form-control border-color-4'}} ) }}
+    </div>
+    </div>
+
+{#Categorie#}
+    <div class="col-xs-12">
+    <div class="form-group">
+        {{ form_widget(form.categoriePublication,{'attr':{'class':'form-control border-color-4'}} ) }}
+    </div>
+    </div>
+
+{#Etat#}
+    <div class="hidden">
+        {{ form_widget(form.etatPublication,{'attr':{'class':'hidden'}} ) }}
+    </div>
+
+{#Submit#}
+    <div class="col-xs-12">
+        <div class="formBtnArea">
+            {{ form_widget(form.Valider,{'attr':{'class':'btn btn-info not-rounded bg-color-3 border-color-3'}} ) }}
+
+        </div>
+    </div>
+
+
+    {{ form_end(form) }}
+
+{% endblock body %}

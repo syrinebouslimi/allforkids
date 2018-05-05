@@ -1,0 +1,72 @@
+{% extends '@KidsBackend/Template_Admin.html.twig' %}
+            {% block body %}
+                {% if produits %}
+                <h3 class="box-title">Liste des Produit</h3>
+                </tr>
+
+                <form method="POST" align="right">
+
+
+
+
+
+                    <table border="2" class="table table-bordered table-hover" >
+
+                        <tr>
+                            <th>Nom Produit</th>
+                            <th>Description Produit</th>
+                            <th>Prix Produit</th>
+                            <th>Quantite Produit</th>
+                            <th>Image de Produit</th>
+                            <th>Categorie Produit</th>
+
+                        {% for p in produits %}
+
+                            <tr>
+
+                                <td> {{ p.nomProduit}} </td>
+                                <td> {{ p.descriptionProduit }} </td>
+                                <td> {{ p.prixProduit}} </td>
+                                <td> {{ p.quantiteProduit}} </td>
+                                <td>  <img src="{{ asset('uploads/images/' ~ p.imageProduit) }}" style="width: 50px;height: 50px;"></img></td>
+                                <td>{{ p.idCategorieProduit.getNomCategorie() }}</td>
+
+
+                            </tr>
+                        {% endfor %}
+
+
+
+
+                    </table>
+
+                    <br>
+                    Rechercher par Nom de produit:   <input type="text" name="nomProduit" >
+
+                    <input type="submit" name="submit" value="Recherche" class="btn-danger" >
+
+                </form>
+                {% else %}
+                    <h1>c'est produit n'existe pas</h1>
+                {% endif %}
+
+            {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -70,4 +70,45 @@ class PublicationController extends Controller
             )
         );
     }
+
+    public function proposerpublicationAction(Request $request)
+    {
+        $publication = new Publication();
+        $form = $this->createForm(PublicationType::class, $publication);
+        $formView = $form->createView();
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $imagefile = $publication->getImagePublication();
+            $videofile = $publication->getContenuPublication();
+
+            $fileName = md5(uniqid()) . '.' . $imagefile->guessExtension();
+            $fileName1 = md5(uniqid()) . '.' . $videofile->guessExtension();
+
+            $imagefile->move(
+                $this->getParameter('images_directory'),
+                $fileName
+            );
+
+            $videofile->move(
+                $this->getParameter('videos_directory'),
+                $fileName1
+            );
+            $publication->setImagePublication($fileName);
+            $publication->setContenuPublication($fileName1);
+
+            $publication->setEtatPublication("Non Publié");
+
+//            $user = $this->getUser();
+//            $iduser = $user->getId();
+//            $publication->setIdUserPublication($user);
+//            $dateC = date('H:i:s \0\n d/m/Y');
+//            $publication->setDatePublication($dateC);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($publication);
+            $em->flush();
+            return $this->forward('KidsFrontBundle:Publication:afficherpublication');
+        }
+        return $this->render('KidsFrontBundle::ProposerPublication.html.twig', array('form' => $formView));
+    }
 }

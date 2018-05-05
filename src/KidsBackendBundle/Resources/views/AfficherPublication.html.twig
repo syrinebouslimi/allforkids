@@ -29,7 +29,10 @@
             {% for key in publication %}
                 <tr>
                     <td >{{ key.nomPublication }}</td>
-                    <td>{{ key.descriptionPublication }}</td>
+                    <td>
+                        {% set string = key.descriptionPublication %}
+                        {{ string|striptags|slice(0, 10)|raw }}...
+                    </td>
                     <td>{{ key.datePublication|date("m/d/Y") }}</td>
                     <td>{{ key.typePublication.nomTypePublication }}</td>
                     <td>{{ key.categoriePublication.nomCategPublication}}</td>
@@ -111,11 +114,11 @@
                     $('#example1').DataTable()
                     $('#example2').DataTable({
                         'paging'      : true,
-                        'lengthChange': false,
-                        'searching'   : false,
+                        'lengthChange': true,
+                        'searching'   : true,
                         'ordering'    : true,
                         'info'        : true,
-                        'autoWidth'   : false
+                        'autoWidth'   : true
                     })
                 })
             </script>

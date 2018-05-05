@@ -96,8 +96,6 @@ rechercheback:
     path:     /rechercheback}
     defaults: { _controller: KidsBackendBundle:Service:rechercheback }
 
-    path:     /admintemplate
-    defaults: { _controller: KidsBackendBundle:Default:admin }
 ajouterProduit:
     path:     /ajouterProduit
     defaults: { _controller: KidsBackendBundle:Produits:ajouterProduit}

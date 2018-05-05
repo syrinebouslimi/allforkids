@@ -16,7 +16,7 @@
 {% endblock bandeau %}
 
 {% block body %}
-    <section class="mainContent full-width clearfix" style="margin-top: 30px">
+    <section class="mainContent full-width clearfix" style="margin-top: -7%">
     <div class="container">
     <div class="row">
     <div class="col-xs-12 block">
@@ -27,39 +27,104 @@
             <source src="{{ asset('uploads/videos/' ~ publication.contenuPublication) }}" type="video/ogg" style="width: 100%; margin-left: 26%;">
             Your browser does not support the video tag.
         </video>
+        <div class="caption border-color-1 singleBlog">
+            <h3 class="color-1">{{ publication.nomPublication }}</h3>
+            <h4> {{ publication.categoriePublication.nomCategPublication }}</h4>
+
+            {% set string = publication.descriptionPublication %}
+            <p>{{ string|raw }}</p>
+
+            <ul class="list-inline socailLink">
+                <script type="text/javascript" src="{{ asset('bundles/Socialite-master/socialite.js') }}"></script>
+
+                <li><a class="bg-color-1" href="http://www.facebook.com/sharer.php?u={{ app.request.getUri |replace({'localhost': "127.0.0.1"}) }}" class="socialite facebook-like" data-href="{{ app.request.getUri }}" data-send="false" data-layout="box_count" data-width="60" data-show-faces="false" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a class="bg-color-2" href="http://twitter.com/share" class="socialite twitter-share" data-text="Socialite.js" data-url="{{ app.request.getUri }}" data-count="vertical" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a class="bg-color-3" href="https://plus.google.com/share?url={{ app.request.getUri |replace({'localhost': "127.0.0.1"}) }}" class="socialite googleplus-one" data-size="tall" data-href="{{ app.request.getUri }}" rel="nofollow" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+
+                <script>
+                    $(document).ready(function() {
+                        Socialite.load();
+                    });
+                </script>
+                <li><button type="button" class="btn btn-sm btn-outline-info not-rounded"><span>Favoris</span><i class="fa fa-star"></i></button></li>
+            </ul>
+        </div>
     {% endif %}
     {% if publication.typePublication.nomTypePublication is same as('Article')%}
-                <img src="{{ asset('uploads/videos/' ~ publication.contenuPublication) }}" alt="image" class="img-responsive" >
+         <img src="{{ asset('uploads/videos/' ~ publication.contenuPublication) }}" alt="image" class="img-responsive" >
+        <div class="caption border-color-1 singleBlog">
+            <h3 class="color-1">{{ publication.nomPublication }}</h3>
+            <h4> {{ publication.categoriePublication.nomCategPublication }}</h4>
+
+            {% set string = publication.descriptionPublication %}
+            <p>{{ string|raw }}</p>
+
+            <ul class="list-inline socailLink">
+                <script type="text/javascript" src="{{ asset('bundles/Socialite-master/socialite.js') }}"></script>
+
+                <li><a class="bg-color-1" href="http://www.facebook.com/sharer.php?u={{ app.request.getUri |replace({'localhost': "127.0.0.1"}) }}" class="socialite facebook-like" data-href="{{ app.request.getUri }}" data-send="false" data-layout="box_count" data-width="60" data-show-faces="false" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a class="bg-color-2" href="http://twitter.com/share" class="socialite twitter-share" data-text="Socialite.js" data-url="{{ app.request.getUri }}" data-count="vertical" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a class="bg-color-3" href="https://plus.google.com/share?url={{ app.request.getUri |replace({'localhost': "127.0.0.1"}) }}" class="socialite googleplus-one" data-size="tall" data-href="{{ app.request.getUri }}" rel="nofollow" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+
+                <script>
+                    $(document).ready(function() {
+                        Socialite.load();
+                    });
+                </script>
+                 <li style="margin-right: 5%;"><a href="{{ path('imprimerpublication',{'id':publication.id}) }}", target="_blank"><button type="button" class="btn btn-sm btn-outline-info not-rounded" >Imprimer   <i class="fa fa-print"></i></button></a></li>
+                <li><button type="button" class="btn btn-sm btn-outline-info not-rounded"><span>Favoris</span><i class="fa fa-star"></i></button></li>
+            </ul>
+        </div>
     {% endif %}
     {% if publication.typePublication.nomTypePublication is same as('Activite')%}
-                <img src="{{ asset('uploads/videos/' ~ publication.contenuPublication) }}" alt="image" class="img-responsive" >
+         <img src="{{ asset('uploads/videos/' ~ publication.contenuPublication) }}" alt="image" class="img-responsive" >
+        <div class="caption border-color-1 singleBlog">
+            <h3 class="color-1">{{ publication.nomPublication }}</h3>
+            <h4> {{ publication.categoriePublication.nomCategPublication }}</h4>
+
+            {% set string = publication.descriptionPublication %}
+            <p>{{ string|raw }}</p>
+
+            <ul class="list-inline socailLink">
+                <script type="text/javascript" src="{{ asset('bundles/Socialite-master/socialite.js') }}"></script>
+
+                <li><a class="bg-color-1" href="http://www.facebook.com/sharer.php?u={{ app.request.getUri |replace({'localhost': "127.0.0.1"}) }}" class="socialite facebook-like" data-href="{{ app.request.getUri }}" data-send="false" data-layout="box_count" data-width="60" data-show-faces="false" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a class="bg-color-2" href="http://twitter.com/share" class="socialite twitter-share" data-text="Socialite.js" data-url="{{ app.request.getUri }}" data-count="vertical" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a class="bg-color-3" href="https://plus.google.com/share?url={{ app.request.getUri |replace({'localhost': "127.0.0.1"}) }}" class="socialite googleplus-one" data-size="tall" data-href="{{ app.request.getUri }}" rel="nofollow" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+
+                <script>
+                    $(document).ready(function() {
+                        Socialite.load();
+                    });
+                </script>
+                <li style="margin-right: 5%;"><a href="{{ path('imprimerpublication',{'id':publication.id}) }}", target="_blank"><button type="button" class="btn btn-sm btn-outline-info not-rounded" >Imprimer   <i class="fa fa-print"></i></button></a></li>
+                <li><button type="button" class="btn btn-sm btn-outline-info not-rounded"><span>Favoris</span><i class="fa fa-star"></i></button></li>
+            </ul>
+        </div>
     {% endif %}
-            <div class="caption border-color-1 singleBlog">
-                <h3 class="color-1">{{ publication.nomPublication }}</h3>
-                <h4> {{ publication.categoriePublication.nomCategPublication }}</h4>
-                <p>{{ publication.descriptionPublication }}</p>
-                <ul class="list-inline socailLink">
-                        <script type="text/javascript" src="{{ asset('bundles/Socialite-master/socialite.js') }}"></script>
+    {% if publication.typePublication.nomTypePublication is same as('Jeux')%}
+        {% set string = publication.descriptionPublication %}
+        <p>{{ string|raw }}</p>
+        <div class="caption border-color-1 singleBlog">
+            <h3 class="color-1">{{ publication.nomPublication }}</h3>
+            <h4> {{ publication.categoriePublication.nomCategPublication }}</h4>
+            <ul class="list-inline socailLink">
+                <script type="text/javascript" src="{{ asset('bundles/Socialite-master/socialite.js') }}"></script>
 
-                        <li><a class="bg-color-1" href="http://www.facebook.com/sharer.php?u={{ app.request.getUri |replace({'localhost': "127.0.0.1"}) }}" class="socialite facebook-like" data-href="{{ app.request.getUri }}" data-send="false" data-layout="box_count" data-width="60" data-show-faces="false" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a class="bg-color-2" href="http://twitter.com/share" class="socialite twitter-share" data-text="Socialite.js" data-url="{{ app.request.getUri }}" data-count="vertical" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a class="bg-color-3" href="https://plus.google.com/share?url={{ app.request.getUri |replace({'localhost': "127.0.0.1"}) }}" class="socialite googleplus-one" data-size="tall" data-href="{{ app.request.getUri }}" rel="nofollow" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                <li><a class="bg-color-1" href="http://www.facebook.com/sharer.php?u={{ app.request.getUri |replace({'localhost': "127.0.0.1"}) }}" class="socialite facebook-like" data-href="{{ app.request.getUri }}" data-send="false" data-layout="box_count" data-width="60" data-show-faces="false" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a class="bg-color-2" href="http://twitter.com/share" class="socialite twitter-share" data-text="Socialite.js" data-url="{{ app.request.getUri }}" data-count="vertical" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a class="bg-color-3" href="https://plus.google.com/share?url={{ app.request.getUri |replace({'localhost': "127.0.0.1"}) }}" class="socialite googleplus-one" data-size="tall" data-href="{{ app.request.getUri }}" rel="nofollow" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
 
-                        <script>
-                            $(document).ready(function() {
-                                Socialite.load();
-                            });
-                        </script>
-                    {% if publication.typePublication.nomTypePublication is same as('Article')%}
-                        <li style="margin-right: 5%;"><a href="{{ path('imprimerpublication',{'id':publication.id}) }}" target="_blank"><button type="button" class="btn btn-sm btn-outline-info not-rounded" >Imprimer<i class="fa fa-print"></i></button></a></li>
-                    {% endif %}
-                    {% if publication.typePublication.nomTypePublication is same as('Activite')%}
-                        <li style="margin-right: 5%;"><a href="{{ path('imprimerpublication',{'id':publication.id}) }}" target="_blank"><button type="button" class="btn btn-sm btn-outline-info not-rounded" >Imprimer<i class="fa fa-print"></i></button></a></li>
-                    {% endif %}
-                    <li><button type="button" class="btn btn-sm btn-outline-info not-rounded"><span>Favoris</span><i class="fa fa-star"></i></button></li>
+                <script>
+                    $(document).ready(function() {
+                        Socialite.load();
+                    });
+                </script>
+                <li><button type="button" class="btn btn-sm btn-outline-info not-rounded"><span>Favoris</span><i class="fa fa-star"></i></button></li>
+            </ul>
+        </div>
+    {% endif %}
 
-                </ul>
-            </div>
         </div>
     </div>
     </div>

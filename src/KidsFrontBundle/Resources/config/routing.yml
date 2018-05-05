@@ -157,6 +157,10 @@ recherche:
     path:     /recherche
     defaults: { _controller: KidsFrontBundle:Services:recherche}
 
+creerpublication:
+    path:     /creerpublication
+    defaults: { _controller: KidsFrontBundle:Publication:creerpublication }
+
 creerespace:
     path:     /creerespace
     defaults: { _controller: KidsFrontBundle:EspaceEnfant:creerespace }
@@ -205,6 +209,10 @@ supprimeractivite:
 imprimeractivite:
     path:     /imprimeractivite/{id}
     defaults: { _controller: KidsFrontBundle:EspaceEnfant:imprimeractivite }
+
+proposerpublication:
+    path:     /proposerpublication
+    defaults: { _controller: KidsFrontBundle:Publication:proposerpublication }
 template:
     path: /template
     defaults: { _controller: KidsFrontBundle:Default:template}
