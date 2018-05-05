@@ -12,6 +12,7 @@ class DefaultController extends Controller
 {
     public function adminAction()
     {
+
         return $this->render('KidsBackendBundle::Template_Admin.html.twig');
     }
 }
