@@ -95,3 +95,30 @@ suppServ:
 rechercheback:
     path:     /rechercheback}
     defaults: { _controller: KidsBackendBundle:Service:rechercheback }
+
+    path:     /admintemplate
+    defaults: { _controller: KidsBackendBundle:Default:admin }
+ajouterProduit:
+    path:     /ajouterProduit
+    defaults: { _controller: KidsBackendBundle:Produits:ajouterProduit}
+afficherProduit:
+    path:     /afficherProduit
+    defaults: { _controller: KidsBackendBundle:Produits:afficherProduit}
+supprimerProduit:
+    path:     /supprimerProduit/{id}
+    defaults: { _controller: KidsBackendBundle:Produits:supprimerProduit}
+ajouterCateg:
+    path:     /ajouterCateg
+    defaults: { _controller: KidsBackendBundle:Produits:ajouterCateg}
+afficherCateg:
+    path:    /afficherCateg
+    defaults: { _controller: KidsBackendBundle:Produits:afficherCateg}
+rechercherProduit:
+    path:    /rechercherProduit
+    defaults:  { _controller: KidsBackendBundle:Produits:rechercherProduit}
+modifierProduit:
+    path:    /modifierProduit/{id}
+    defaults:  { _controller: KidsBackendBundle:Produits:modifierProduit}
+stat:
+    path:     /stat
+    defaults: { _controller: KidsBackendBundle:Produits:stat}

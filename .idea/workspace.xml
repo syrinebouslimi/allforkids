@@ -2,154 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="493db0d9-1ca6-428e-ad17-8e6973fae440" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/php.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsBackendBundle/Controller/PublicationController.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsBackendBundle/Controller/ServiceController.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsBackendBundle/Resources/views/AfficherPublication.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsBackendBundle/Resources/views/CreerCategoriePublication.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsBackendBundle/Resources/views/CreerPublication.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsBackendBundle/Resources/views/CreerTypePublication.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsBackendBundle/Resources/views/Pagination/bulma_pagination.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsBackendBundle/Resources/views/Pagination/filtration.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsBackendBundle/Resources/views/Pagination/foundation_v5_pagination.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsBackendBundle/Resources/views/Pagination/semantic_ui_pagination.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsBackendBundle/Resources/views/Pagination/sliding.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsBackendBundle/Resources/views/Pagination/sortable_link.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsBackendBundle/Resources/views/Pagination/twitter_bootstrap_pagination.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsBackendBundle/Resources/views/Pagination/twitter_bootstrap_v3_pagination.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsBackendBundle/Resources/views/Pagination/twitter_bootstrap_v3_sortable_link.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsBackendBundle/Resources/views/Pagination/twitter_bootstrap_v4_pagination.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsBackendBundle/Resources/views/afficherService.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsBackendBundle/Resources/views/ajouterService.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsBackendBundle/Resources/views/test.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Controller/EspaceEnfantController.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Controller/PublicationController.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Controller/ServicesController.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/CreerActiviteEnfant.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/CreerEspaceEnfant.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/EspaceEnfant.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/EspaceEnfantDetails.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/ImprimerPublication.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/PublicationDetails.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Publications.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/PublicationsSearch.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Thread/async.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Thread/comment.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Thread/comment_content.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Thread/comment_edit.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Thread/comment_new.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Thread/comment_new_content.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Thread/comment_remove.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Thread/comment_votes.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Thread/commentable.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Thread/comments.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Thread/errors.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Thread/new.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Thread/thread_xml_feed.rss.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Thread/vote_new.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/detail2sevice.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/input.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/search.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/services.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/templateAffichserv.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/test/DetailService.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/test/afficheServ.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/test/afficherServiceFront.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/test/comment_content.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/test/docteurs.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/test/etablissements.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/test/templateservice.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/test/testaffic.html.twig" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/UserBundle/Entity/Comment.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/UserBundle/Entity/Thread2.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/UserBundle/Form/ActiviteEnfantType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/UserBundle/Form/CategoriePublicationType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/UserBundle/Form/ForumType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/UserBundle/Form/ProfilEnfantType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/UserBundle/Form/PublicationType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/UserBundle/Form/ServiceType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/UserBundle/Form/TypePublicationType.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/UserBundle/Repository/CommentRepository.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/UserBundle/Repository/ForumRepository.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/UserBundle/Repository/categforumRepository.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/031ca9eade97d455a7cc1afc271a3d7f.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/07c5275f73b88219d10483986de20fb6.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/0813cee84e73f7d51742622ee64bf00b.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/0e96b3c78fe5f2e1198148f412e52759.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/0fb14511572ac6f820fedc944e38c242.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/16a1a5e419f6815232658f3e0a83963c.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/1d27788ee2c48d54552704b70f1b16e0.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/27f27254167411a848f5520f0fbfd98e.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/2c8de269974c2c98877301f4a3a69b59.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/34c05569046451b5026afc6839ba7ff5.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/3848356956d215c3545432b1a47d3259.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/3b8e3708f19d0ef3d388161bac7a5f52.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/3daf1ac89dc81bbadb6ba0dc4e6dc4db.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/43b08a925ae96730c1a949159dee9a76.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/4b67559ff367559d951c6d50de39cf64.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/4f4e215e6880bed7574d925c21d2831c.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/4fd486a307e82671af3c4c9077716bfb.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/54491ee58a9a0447d11f68c69fa4429b.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/64d1547241c30174432b6bfafc499beb.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/6510b27f22dde49c1a7626c53d4c6241.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/6ea406fb2894ee02aa9eda8127bfdf92.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/6eced65766b771dca4145f409eb37ace.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/718de480e15aadf6409f15382fc1cd09.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/7a8ddb2f4408cef500d14aed1489ed41.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/7ff9232ab214c14f7d66e6059ab0fd07.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/83d6c34889fd721a80e701e3e6775b0b.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/85b6864b223ed093a814d24ee43d6e0b.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/99684cd5501157b9f71b5d3e8c47aa8e.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/9d67ee5a3b56597e96479265dc43911b.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/9f67c9fc97f45418b4ba2ef828b45bc3.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/a162ede0669449a63e96168ec1f14e3e.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/a2728246c0a46c19f91c81211e1f20ef.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/a2b511f468241671d98b32fdbe17cd35.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/a38dd9b944b11ec5ec9245236fed3f9b.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/abe9e56d80e600b83d9ffaec2f14b486.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/add26281b658c58786ead2ed063aeef6.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/ae85bd73c07cd0de5c3c8537b5ce9717.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/b1de5971a884de415fb9633722824c1c.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/b6018bfc9bfd80a5033b8c2f2be28175.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/bc4c402ca5eeb1412d5056c3cf496d10.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/c292ba43c18572ce72bd7c881d2d3aef.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/c69ffe0bef9d98928b1691df19b77af8.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/d268e64621b28c0b5959aef86c75d46c.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/dd699fa2e4d0a2f83a969dbbf55c430f.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/e13bdc2ff1bc570e88b281a72b53dab8.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/eeb38eacf937f502862e766e2ed146bf.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/f297eae2972926baf1a84687d7bf862f.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/f8225f60ba161e6e47702a29014c48eb.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/fc6547cb9ce4442fe63bb8158ca5abcc.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/videos/03a293c2892bce795bc4e9ad90c49d1f.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/videos/1282ac70601f062bfbdb5dbeb855663b.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/videos/734c993e6d2386b151d0dadf9ae0ad18.mp4" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/uploads/videos/8328a6b4e5a3042633d49ba6bedaf76c.mp4" />
-      <change beforePath="$PROJECT_DIR$/.idea/All_FOR_KIDS.iml" afterPath="$PROJECT_DIR$/.idea/All_FOR_KIDS.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/produitParCategorie.html.twig" />
+      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_12_03_18_10_30_s.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
-      <change beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
       <change beforePath="$PROJECT_DIR$/app/config/services.yml" afterPath="$PROJECT_DIR$/app/config/services.yml" />
       <change beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change beforePath="$PROJECT_DIR$/composer.phar" afterPath="$PROJECT_DIR$/composer.phar" />
       <change beforePath="$PROJECT_DIR$/src/KidsBackendBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/KidsBackendBundle/Resources/config/routing.yml" />
-      <change beforePath="$PROJECT_DIR$/src/KidsFrontBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Controller/DefaultController.php" />
       <change beforePath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/config/routing.yml" />
-      <change beforePath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Default/index.html.twig" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Template_User.html.twig" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Template_User.html.twig" />
-      <change beforePath="$PROJECT_DIR$/src/UserBundle/Entity/ActiviteEnfant.php" afterPath="$PROJECT_DIR$/src/UserBundle/Entity/ActiviteEnfant.php" />
-      <change beforePath="$PROJECT_DIR$/src/UserBundle/Entity/Service.php" afterPath="$PROJECT_DIR$/src/UserBundle/Entity/Service.php" />
-      <change beforePath="$PROJECT_DIR$/src/UserBundle/Entity/TypePublication.php" afterPath="$PROJECT_DIR$/src/UserBundle/Entity/TypePublication.php" />
-      <change beforePath="$PROJECT_DIR$/src/UserBundle/Entity/TypeService.php" afterPath="$PROJECT_DIR$/src/UserBundle/Entity/TypeService.php" />
-      <change beforePath="$PROJECT_DIR$/src/UserBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/UserBundle/Entity/User.php" />
-      <change beforePath="$PROJECT_DIR$/src/UserBundle/Resources/views/Security/login.html.twig" afterPath="$PROJECT_DIR$/src/UserBundle/Resources/views/Security/login.html.twig" />
-      <change beforePath="$PROJECT_DIR$/src/UserBundle/Resources/views/Security/login_content.html.twig" afterPath="$PROJECT_DIR$/src/UserBundle/Resources/views/Security/login_content.html.twig" />
-      <change beforePath="$PROJECT_DIR$/web/Template_front_principal/alert-label-badges.html" afterPath="$PROJECT_DIR$/web/Template_front_principal/alert-label-badges.html" />
-      <change beforePath="$PROJECT_DIR$/web/Template_front_principal/photo-gallery.html" afterPath="$PROJECT_DIR$/web/Template_front_principal/photo-gallery.html" />
+      <change beforePath="$PROJECT_DIR$/var/cache/.gitkeep" afterPath="$PROJECT_DIR$/app/Resources/views/test2.html.twig" />
+      <change beforePath="$PROJECT_DIR$/web/Template_front_principal/product-left-sidebar.html" afterPath="$PROJECT_DIR$/web/Template_front_principal/product-left-sidebar.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -377,7 +238,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -396,81 +256,11 @@
               <item name="allforkids" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="allforkids" type="b2602c69:ProjectViewProjectNode" />
-              <item name="allforkids" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="KidsFrontBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="allforkids" type="b2602c69:ProjectViewProjectNode" />
-              <item name="allforkids" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="KidsFrontBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="allforkids" type="b2602c69:ProjectViewProjectNode" />
-              <item name="allforkids" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="UserBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="allforkids" type="b2602c69:ProjectViewProjectNode" />
-              <item name="allforkids" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="UserBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="allforkids" type="b2602c69:ProjectViewProjectNode" />
-              <item name="allforkids" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="allforkids" type="b2602c69:ProjectViewProjectNode" />
-              <item name="allforkids" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="friendsofsymfony" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="allforkids" type="b2602c69:ProjectViewProjectNode" />
-              <item name="allforkids" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="friendsofsymfony" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="message-bundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="allforkids" type="b2602c69:ProjectViewProjectNode" />
-              <item name="allforkids" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="friendsofsymfony" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="message-bundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="FOS" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="allforkids" type="b2602c69:ProjectViewProjectNode" />
-              <item name="allforkids" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="friendsofsymfony" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="message-bundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="FOS" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="MessageBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="allforkids" type="b2602c69:ProjectViewProjectNode" />
-              <item name="allforkids" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="friendsofsymfony" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="message-bundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="FOS" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="MessageBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -521,49 +311,36 @@
       <workItem from="1520877548659" duration="7864000" />
       <workItem from="1522171922205" duration="7300000" />
       <workItem from="1522432410671" duration="82000" />
+      <workItem from="1525516490880" duration="56000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35813000" />
+    <option name="totallyTimeSpent" value="35869000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31770045" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47008547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30711043" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47008547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4311649" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -701,7 +478,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -709,7 +485,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -724,7 +499,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -739,7 +513,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -747,7 +520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
           <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -755,7 +527,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
           <caret line="39" column="28" lean-forward="false" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -763,10 +534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="76" lean-forward="false" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="76" />
-          <folding>
-            <element signature="e#48#105#0#PHP" expanded="true" />
-            <element signature="e#284#329#1#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -774,7 +541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2350">
           <caret line="27" column="41" lean-forward="false" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -782,7 +548,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-412">
           <caret line="102" column="43" lean-forward="false" selection-start-line="102" selection-start-column="43" selection-end-line="102" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -797,7 +562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -854,14 +618,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
           <caret line="104" column="40" lean-forward="false" selection-start-line="104" selection-start-column="37" selection-end-line="104" selection-end-column="40" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#25862#25867#0#HTML" expanded="false" />
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#0;n#section#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#section#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -877,7 +633,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -885,81 +640,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-330267">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/var/cache/dev/ContainerJdfuoeq/getFosComment_Manager_Thread_DefaultService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="481" lean-forward="false" selection-start-line="11" selection-start-column="481" selection-end-line="11" selection-end-column="481" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/var/cache/dev/ContainerJdfuoeq/getFosComment_Manager_Thread_DefaultService.php" />
     <entry file="file://$PROJECT_DIR$/src/UserBundle/Entity/Comment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding>
-            <element signature="e#45#77#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/var/cache/dev/ContainerJdfuoeq/getFosComment_FormType_CommentableThread_DefaultService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="155" lean-forward="false" selection-start-line="11" selection-start-column="155" selection-end-line="11" selection-end-column="155" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/var/cache/dev/ContainerJdfuoeq/getForm_RegistryService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="15" column="314" lean-forward="false" selection-start-line="15" selection-start-column="314" selection-end-line="15" selection-end-column="314" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/var/cache/dev/ContainerJdfuoeq/appDevDebugProjectContainer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="3760" column="75" lean-forward="false" selection-start-line="3760" selection-start-column="75" selection-end-line="3760" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/var/cache/dev/ContainerJdfuoeq/getFosComment_FormType_CommentableThread_DefaultService.php" />
+    <entry file="file://$PROJECT_DIR$/var/cache/dev/ContainerJdfuoeq/getForm_RegistryService.php" />
+    <entry file="file://$PROJECT_DIR$/var/cache/dev/ContainerJdfuoeq/appDevDebugProjectContainer.php" />
     <entry file="file://$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
           <caret line="6002" column="40" lean-forward="false" selection-start-line="6002" selection-start-column="40" selection-end-line="6002" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/var/cache/dev/ContainerJdfuoeq/getFosComment_FormType_Thread_DefaultService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="131" lean-forward="false" selection-start-line="11" selection-start-column="131" selection-end-line="11" selection-end-column="131" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserBundle/Entity/Thread2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/var/cache/dev/ContainerJdfuoeq/getFosComment_FormType_Thread_DefaultService.php" />
+    <entry file="file://$PROJECT_DIR$/src/UserBundle/Entity/Thread2.php" />
     <entry file="file://$PROJECT_DIR$/src/UserBundle/Entity/Etablissement.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="270" column="17" lean-forward="false" selection-start-line="270" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -967,7 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
           <caret line="152" column="24" lean-forward="false" selection-start-line="152" selection-start-column="24" selection-end-line="152" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -975,10 +681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-          <folding>
-            <marker date="1524522090484" expanded="true" signature="1524:1871" ph="..." />
-            <marker date="1524522090484" expanded="true" signature="3051:3398" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1000,16 +702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
           <caret line="188" column="5" lean-forward="false" selection-start-line="188" selection-start-column="5" selection-end-line="188" selection-end-column="5" />
-          <folding>
-            <element signature="e#833#882#1#PHP" expanded="true" />
-            <element signature="e#963#1005#0#PHP" expanded="true" />
-            <element signature="e#1393#1434#0#PHP" expanded="true" />
-            <element signature="e#1779#1823#0#PHP" expanded="true" />
-            <element signature="e#2241#2290#1#PHP" expanded="true" />
-            <element signature="e#2921#2964#0#PHP" expanded="true" />
-            <element signature="e#3434#3483#1#PHP" expanded="true" />
-            <element signature="e#4000#4046#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1017,7 +709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-392">
           <caret line="61" column="32" lean-forward="true" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>

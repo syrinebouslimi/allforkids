@@ -39,6 +39,8 @@ services:
         class: UserBundle\Redirection\AfterLoginRedirection
         arguments: ['@router']
 
+        images_directory: '%kernel.root_dir%/../web/uploads/images'
+
 
 
     # add more services, or override services that need manual wiring
