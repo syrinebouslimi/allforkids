@@ -26,6 +26,7 @@ class AppKernel extends Kernel
             new MessageBundle\MessageBundle(),
             new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
             new Nomaya\SocialBundle\NomayaSocialBundle(),
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new FOS\RestBundle\FOSRestBundle(),
             new FOS\CommentBundle\FOSCommentBundle(),
