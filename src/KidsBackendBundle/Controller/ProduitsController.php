@@ -18,6 +18,9 @@ class ProduitsController extends Controller
 
     public function ajouterProduitAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
         $rec = new Produit();
         $form=$this->createForm(ProduitType::class,$rec);
         $formView=$form->createView();
@@ -54,7 +57,7 @@ class ProduitsController extends Controller
         }
 
 
-        return $this->render ( '@KidsBackend/ajouterProduit.html.twig',array('form'=>$formView));
+        return $this->render ( '@KidsBackend/ajouterProduit.html.twig',array('form'=>$formView, 'notifiableNotifications' => $allNotif));
 
 
     }
@@ -62,23 +65,32 @@ class ProduitsController extends Controller
 
     public function afficherProduitAction()
     {
+        $em = $this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
         $Uv = $this->getDoctrine()->getRepository('UserBundle:Produit')->findAll();
-        return $this->render('@KidsBackend/afficherProduit.html.twig', array('form' => $Uv));
+        return $this->render('@KidsBackend/afficherProduit.html.twig', array('form' => $Uv, 'notifiableNotifications' => $allNotif));
     }
 
     public function supprimerProduitAction(Request $request,$id)
     {
         $em = $this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
+        $em = $this->getDoctrine()->getManager();
         $Pro = $this->getDoctrine()->getRepository('UserBundle:Produit')->find($id);
 
         $em->remove($Pro);
         $em->flush();
-        return $this->forward('KidsBackendBundle:Produits:afficherProduit', array('form' => $Pro));
+        return $this->forward('KidsBackendBundle:Produits:afficherProduit', array('form' => $Pro, 'notifiableNotifications' => $allNotif));
 
     }
 
     public function ajouterCategAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
         $cat = new CategorieProduit();
 
         $form=$this->createForm(CategorieProduitType::class, $cat);
@@ -96,7 +108,7 @@ class ProduitsController extends Controller
         }
 
 
-        return $this->render('@KidsBackend/ajouterCategorie.html.twig',array('form'=>$formView));
+        return $this->render('@KidsBackend/ajouterCategorie.html.twig',array('form'=>$formView, 'notifiableNotifications' => $allNotif));
 
 
     }
@@ -104,12 +116,18 @@ class ProduitsController extends Controller
     public function afficherCategAction ()
 
     {
+        $em = $this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
         $Uv=$this->getDoctrine()->getRepository('UserBundle:CategorieProduit')->findAll();
-        return $this->render ( '@KidsBackend/afficherCategorie.html.twig',array('form'=>$Uv));
+        return $this->render ( '@KidsBackend/afficherCategorie.html.twig',array('form'=>$Uv, 'notifiableNotifications' => $allNotif));
 
     }
     function rechercherProduitAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
         $pro=new Produit();
         $em=$this->getDoctrine()->getManager();
         $produits=$em->getRepository('UserBundle:Produit')->findAll();
@@ -118,12 +136,15 @@ class ProduitsController extends Controller
            $produits=$em->getRepository('UserBundle:Produit')->findBy(array("nomProduit"=>$nomProduit));
 
     }
-        return $this->render('@KidsBackend/rechercherProduit.html.twig',array('produits'=>$produits));
+        return $this->render('@KidsBackend/rechercherProduit.html.twig',array('produits'=>$produits, 'notifiableNotifications' => $allNotif));
 
     }
 
 public function modifierProduitAction(Request $request,$id)
 {
+    $em = $this->getDoctrine()->getManager();
+
+    $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
     $Uvn = $this->getDoctrine()->getRepository('UserBundle:Produit')->find($id);
     $Uvn->setImageProduit(null);
     $form = $this->createForm(ProduitType::class, $Uvn);
@@ -158,11 +179,15 @@ public function modifierProduitAction(Request $request,$id)
     }
 
 
-    return $this->render('@KidsBackend/ajouterProduit.html.twig', array('form' => $formView));
+    return $this->render('@KidsBackend/ajouterProduit.html.twig', array('form' => $formView, 'notifiableNotifications' => $allNotif));
 }
 
     public  function stataction()
     {
+        $em = $this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
+
         $pieChart = new PieChart();
         $em = $this->getDoctrine()->getManager();
 
@@ -182,10 +207,10 @@ public function modifierProduitAction(Request $request,$id)
                     $count = $count + 1;
 
                 }
-                $nomCat = $cat->getNomCategorie();
+                $nomCategorie = $cat->getNomCategorie();
             }
 
-            array_push($catPro,array($nomCat, $count));
+            array_push($catPro,array($nomCategorie, $count));
 
 
         }
@@ -206,7 +231,8 @@ public function modifierProduitAction(Request $request,$id)
         $pieChart->getOptions()->getTitleTextStyle()->setFontSize(20);
 
         return $this->render('@KidsBackend/stat.html.twig', array(
-            'piechart'=>$pieChart
+            'piechart'=>$pieChart,
+            'notifiableNotifications' => $allNotif
 
         ));
     }

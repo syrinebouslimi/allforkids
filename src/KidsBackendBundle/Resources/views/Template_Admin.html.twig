@@ -302,7 +302,6 @@
 
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-edit"></i> <span>Publications</span>
                         <i class="fa fa-dashboard"></i> <span>Etablissement</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -368,11 +367,6 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        {#{% if app.user and is_granted('ROLE_ADMIN') %}#}
-                        {#<li><a href=""><i class="fa fa-circle-o"></i> Ajouter service </a></li>#}
-
-
-                        {#{% endif %}#}
                         <li><a href="{{ path('ajout' ) }}"><i class="fa fa-circle-o"></i>Ajouter service </a></li>
 
                         <li><a href="{{ path('afficherServiceBack' ) }}"><i class="fa fa-circle-o"></i> Afficher Vos
@@ -401,6 +395,47 @@
                     </ul>
 
                 </li>
+
+
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>Statistique</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+
+                        <li><a href="{{ path('stat') }}"><i class="fa fa-circle-o"></i> Statistique Produit </a></li>
+
+
+
+                    </ul>
+
+                </li>
+
+
+
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>Produit</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+
+                        <li><a href="{{ path('ajouterProduit') }}"><i class="fa fa-circle-o"></i> Ajouter Produit </a></li>
+                        <li><a href="{{ path('afficherProduit') }}"><i class="fa fa-circle-o"></i> Listes des Produits </a></li>
+                        <li><a href="{{ path('ajouterCateg') }}"><i class="fa fa-circle-o"></i> Ajouter Categorie </a></li>
+                        <li><a href="{{ path('afficherCateg') }}"><i class="fa fa-circle-o"></i> Listes des Categories </a></li>
+                        <li><a href="{{ path('rechercherProduit') }}"><i class="fa fa-circle-o"></i> Rechercher Produit </a></li>
+
+
+                    </ul>
+
+                </li>
+
 
             </ul>
         </section>

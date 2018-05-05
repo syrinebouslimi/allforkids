@@ -24,14 +24,17 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new FOS\MessageBundle\FOSMessageBundle(),
             new MessageBundle\MessageBundle(),
-            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
-            new Nomaya\SocialBundle\NomayaSocialBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new FOS\RestBundle\FOSRestBundle(),
             new FOS\CommentBundle\FOSCommentBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+            new Nomaya\SocialBundle\NomayaSocialBundle(),
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+            new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
+
 
 
         ];
