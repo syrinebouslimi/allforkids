@@ -18,18 +18,18 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown singleDrop color-1  ">
+                    <li class="dropdown singleDrop color-1 active ">
                         <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-home bg-color-1" aria-hidden="true"></i> <span
                                     class="active">Etablissement</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-left">
-                            <li class=""><a href="{{ path('afficherEtabPrestataireInfo') }}">Consulter les
+                            <li class=""><a href="{{ path('afficherEtabByParent') }}">Consulter les
                                     Etablissements</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown singleDrop color-3 ">
+                    <li class="dropdown singleDrop color-3 active ">
                         <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-list-ul bg-color-3" aria-hidden="true">
@@ -39,23 +39,61 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown singleDrop color-4">
+                    <li class="dropdown singleDrop color-4 active">
                         <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true">
-                            </i> <span>Gallerie</span></a>
+                            </i> <span class="active">Gallerie</span></a>
                         <ul class="dropdown-menu dropdown-menu-left">
                             <li class=" "><a href="{{ path('affichergallerie') }}">Consulter la gallerie des images</a>
                             </li>
                         </ul>
                     </li>
+
+                    <li class="dropdown singleDrop color-1 active ">
+                        <a href="{{ path('publications') }}" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-list-ul bg-color-1" aria-hidden="true">
+                            </i>
+                            <span class="active">Publications</span>
+                        </a>
+
+                    </li>
+                    <li class="dropdown singleDrop color-5 active">
+                        <a href="{{ path('afficherespaceenfant') }}" role="button" aria-haspopup="true"
+                           aria-expanded="false">
+                            <i class="fa fa-calendar bg-color-5" aria-hidden="true"></i>
+                            <span class="active">Espace enfant</span>
+                        </a>
+                    </li>
+
+                    <li class="dropdown singleDrop color-3 active">
+                        <a href="{{ path('services') }}" class="dropdown-toggle" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-list-ul bg-color-3" aria-hidden="true">
+                            </i> <span class="active">Service</span></a>
+                    </li>
+
+                    <li class="dropdown singleDrop color-4 active">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true">
+                            </i> <span class="active">Réclamations</span></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li class=" "><a href="{{ path('affichergallerie') }}">Mes réclamations</a></li>
+                            <li class=" "><a href="{{ url('fos_message_thread_new' ) }}">Envoyer nouvelle reclamation</a>
+
+                        </ul>
+                    </li>
+
                 </ul>
+
             </div>
         </div>
     </nav>
 
 
 {% endblock Menu %}
+
 
 {% block favoris %}
     <li class="cart-dropdown">

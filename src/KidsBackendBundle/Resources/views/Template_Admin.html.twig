@@ -216,7 +216,7 @@
 
                                     <div class="notification-item">
                                         <h4 class="item-title"><b>{{ notifiableNotification.notification.subject }} •
-                                                day ago</b></h4>
+                                                {{ notifiableNotification.notification.date|localizeddate('long', 'short') }}</b></h4>
                                         <p class="item-info">{{ notifiableNotification.notification.message }}</p>
                                     </div>
 
@@ -299,18 +299,22 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
 
-
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Etablissement</span>
+                        <i class="fa fa-dashboard"></i> <span>Etablissements</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="{{ path('afficherAllEtablissement') }}"><i class="fa fa-circle-o"></i> Afficher Les
+                        <li><a href="{{ path('afficherAllEtablissement' ) }}"><i class="fa fa-circle-o"></i>Afficher Les
                                 etablissements </a></li>
+
+                        <li><a href="{{ path('afficherINPEtablissement') }}"><i class="fa fa-circle-o"></i>Listes d'attente des demandes </a></li>
+
+
                     </ul>
+
                 </li>
 
 
@@ -354,7 +358,8 @@
                     <ul class="treeview-menu">
                         <li><a href="{{ path('fos_message_inbox') }}"><i class="fa fa-circle-o"></i> Consulter ma boite
                                 email </a></li>
-                        <li><a href="{{ url('fos_message_thread_new' ) }}"><i class="fa fa-circle-o"></i> Envoyer un message </a></li>
+                        <li><a href="{{ url('fos_message_thread_new' ) }}"><i class="fa fa-circle-o"></i> Envoyer un
+                                message </a></li>
                     </ul>
 
                 </li>
@@ -409,11 +414,9 @@
                         <li><a href="{{ path('stat') }}"><i class="fa fa-circle-o"></i> Statistique Produit </a></li>
 
 
-
                     </ul>
 
                 </li>
-
 
 
                 <li class="treeview">
@@ -425,11 +428,16 @@
                     </a>
                     <ul class="treeview-menu">
 
-                        <li><a href="{{ path('ajouterProduit') }}"><i class="fa fa-circle-o"></i> Ajouter Produit </a></li>
-                        <li><a href="{{ path('afficherProduit') }}"><i class="fa fa-circle-o"></i> Listes des Produits </a></li>
-                        <li><a href="{{ path('ajouterCateg') }}"><i class="fa fa-circle-o"></i> Ajouter Categorie </a></li>
-                        <li><a href="{{ path('afficherCateg') }}"><i class="fa fa-circle-o"></i> Listes des Categories </a></li>
-                        <li><a href="{{ path('rechercherProduit') }}"><i class="fa fa-circle-o"></i> Rechercher Produit </a></li>
+                        <li><a href="{{ path('ajouterProduit') }}"><i class="fa fa-circle-o"></i> Ajouter Produit </a>
+                        </li>
+                        <li><a href="{{ path('afficherProduit') }}"><i class="fa fa-circle-o"></i> Listes des Produits
+                            </a></li>
+                        <li><a href="{{ path('ajouterCateg') }}"><i class="fa fa-circle-o"></i> Ajouter Categorie </a>
+                        </li>
+                        <li><a href="{{ path('afficherCateg') }}"><i class="fa fa-circle-o"></i> Listes des Categories
+                            </a></li>
+                        <li><a href="{{ path('rechercherProduit') }}"><i class="fa fa-circle-o"></i> Rechercher Produit
+                            </a></li>
 
 
                     </ul>
@@ -444,10 +452,13 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="{{ path('ajouterClub') }}"><i class="fa fa-circle-o"></i> Ajouter des club </a></li>
-                        <li><a href="{{ path('afficherClub') }}"><i class="fa fa-circle-o"></i> Afficher les Club</a></li>
+                        <li><a href="{{ path('ajouterClub') }}"><i class="fa fa-circle-o"></i> Ajouter des club </a>
+                        </li>
+                        <li><a href="{{ path('afficherClub') }}"><i class="fa fa-circle-o"></i> Afficher les Club</a>
+                        </li>
                         <li><a href=""><i class="fa fa-circle-o"></i> Rechercher des Club </a></li>
-                        <li><a href="{{ path('calendrierClub') }}"><i class="fa fa-circle-o"></i> Afficher Calendrier</a></li>
+                        <li><a href="{{ path('calendrierClub') }}"><i class="fa fa-circle-o"></i> Afficher
+                                Calendrier</a></li>
                         <li><a href=""><i class="fa fa-circle-o"></i> Google Map</a></li>
 
                     </ul>
@@ -495,8 +506,6 @@
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-
-
 
 
     <footer class="main-footer">
@@ -719,7 +728,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('template_Admin_Principal/dist/js/demo.js') }}"></script>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $("#submit-cal").click(function () {
             alert('submit clicked');
             var title = $("#eventName").val();
@@ -727,7 +736,7 @@
             var dataString = {};
             dataString['eventName'] = title;
             dataString['startTime'] = $('#AgentName').val();
-            dataString['endTime'] =$('#UserName').val();
+            dataString['endTime'] = $('#UserName').val();
             // alert("debut: "+$('#AgentName').val() + " Fin : "+$('#UserName').val())
             //  alert(dataString);
             $.ajax({
@@ -751,7 +760,7 @@
 
 
         });
-        $('#cancel').on('click', function(e){
+        $('#cancel').on('click', function (e) {
             e.stopPropagation();
             if ($('#popup').css('display') == 'none')
                 $('#popup').show();

@@ -73,6 +73,14 @@ class PublicationController extends Controller
 
     public function proposerpublicationAction(Request $request)
     {
+
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $idUser = $user->getId();
+
+        $em = $this->getDoctrine()->getManager();
+        $allFavoris = $em->getRepository('UserBundle:UserEtablissementFavoris')->findBy(array('user' => $idUser));
+
+
         $publication = new Publication();
         $form = $this->createForm(PublicationType::class, $publication);
         $formView = $form->createView();
@@ -109,6 +117,6 @@ class PublicationController extends Controller
             $em->flush();
             return $this->forward('KidsFrontBundle:Publication:afficherpublication');
         }
-        return $this->render('KidsFrontBundle::ProposerPublication.html.twig', array('form' => $formView));
+        return $this->render('KidsFrontBundle::ProposerPublication.html.twig', array('form' => $formView,'favoris' => $allFavoris));
     }
 }

@@ -73,7 +73,7 @@ class EnseignantController extends Controller
             $save = $this->getDoctrine()->getManager();
             $save->persist($enseignant);
             $save->flush();
-            return $this->redirectToRoute('espace_prestataire');
+            return $this->redirectToRoute('afficherprof');
 
         }
 

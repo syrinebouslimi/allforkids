@@ -5,6 +5,17 @@ kids_backend_homepage:
 afficherAllEtablissement:
     path: /afficherAllEtablissement
     defaults: { _controller: KidsBackendBundle:AdminEtablissement:afficherAllEtablissement}
+accepterEtablissement:
+    path: /accepterEtablissement/{id}
+    defaults: { _controller: KidsBackendBundle:AdminEtablissement:accepterEtablissement}
+
+refuserEtablissement:
+    path: /refuserEtablissement/{id}
+    defaults: { _controller: KidsBackendBundle:AdminEtablissement:refuserEtablissement}
+
+afficherINPEtablissement:
+    path: /afficherINPEtablissement
+    defaults: { _controller: KidsBackendBundle:AdminEtablissement:afficherINPEtablissement}
 
 afficherEtablissementbyid:
     path: /afficherEtablissementbyid/id/{id}
@@ -26,6 +37,7 @@ afficherAllGallerie:
 afficherGallerieByEtab:
     path: /afficherGallerieByEtab
     defaults: { _controller: KidsBackendBundle:AdminGallerie:afficherGallerieByEtab}
+
 
 notifications:
     resource: "@MgiletNotificationBundle/Controller/"

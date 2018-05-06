@@ -66,12 +66,12 @@
     <section class="pageTitleSection">
         <div class="container">
             <div class="pageTitleInfo">
-                <i><h2>Bonjour Prestataire de service {{  app.user.username|default('') }}</h2> </i>
+                <i><h2>Espace Prestataire de service</h2> </i>
                         <br>
 
-                        <h2>Bienvenue dans votre espace prestataire</h2>
+                        <h2>Bienvenue {{ app.user.username|default('') }}</h2>
                 <ol class="breadcrumb">
-                    <li><a href="index-2.html">Ajouter un etablissement</a></li>
+                    <li><a href="{{ path('ajouterEtablissement') }}">Ajouter un etablissement</a></li>
                     {#<li class="active">Teachers</li>#}
                 </ol>
             </div>
@@ -85,7 +85,7 @@
 
 
      {{ form_start(form) }}
-     <section class="mainContent full-width clearfix">
+     <section class="mainContent full-width clearfix" style="margin-top: 50px">
          <div class="container">
 
              <div class="row">
@@ -96,7 +96,7 @@
                      <form action="#" method="POST" role="form" class="form">
                          <div class="panel panel-default checkoutInfo">
                              <div class="panel-heading bg-color-3 border-color-3">
-                                 <h3 class="panel-title" style="text-align: center;">Informations générales requises pour ajouter  votre établissement</h3>
+                                 <h3 class="panel-title" style="text-align: center;">Informations générales requises pour l'ajout d'un nouveau établissement</h3>
                              </div>
                              <div class="panel-body">
                                  <div class="form-group">
@@ -132,7 +132,7 @@
 
                                  <div class="form-group">
                                      <div class="col-sm-6 col-xs-12">
-                                         <label for="">City</label>
+                                         <label for="">Cité</label>
                                          {{ form_widget(form.cityEtablissement,{'attr':{'class':'form-control border-color-5'}} ) }}
 
                                          {#<input type="text" class="form-control border-color-5" id="">#}
@@ -178,28 +178,16 @@
                                  <div class="form-group">
                                      <div class="col-sm-6 col-xs-12">
                                          <label for="">Horaire de travail</label>
-                                         {#{{ form_widget(form.countryEtablissement,{'attr':{'class':'form-control border-color-2'}} ) }}#}
                                          <div class="bookingDrop">
                                              {{ form_widget(form.horaireEtablissement,{'attr':{'class':'select-drop'}} ) }}
-                                             {#<select name="guiest_id3" id="guiest_id3" class="select-drop">#}
-                                             {#<option value="0">Select Country</option>#}
-                                             {#<option value="1">USA</option>#}
-                                             {#<option value="2">UK</option>#}
-                                             {#<option value="3">Canada</option>#}
-                                             {#</select>#}
                                          </div>
                                      </div>
                                  </div>
-
-                                 {{ form_widget(form.avgRating) }}
-
 
                                  <div class="form-group">
                                      <div class="col-xs-12">
                                          <label for="">Description</label>
                                          {{ form_widget(form.descriptionEtablissement,{'attr':{'class':'form-control border-color-5'}} ) }}
-
-                                         {#<textarea class="form-control border-color-5"></textarea>#}
                                      </div>
                                  </div>
                                  <div class="form-group">

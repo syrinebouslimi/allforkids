@@ -2,6 +2,7 @@
 
 namespace KidsFrontBundle\Controller;
 
+use Doctrine\ORM\OptimisticLockException;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -24,15 +25,27 @@ class EtablissementController extends Controller
     public function afficherEtabByIdAction($id)
     {
 
+
         $user = $this->container->get('security.token_storage')->getToken()->getUser();
         $idUser = $user->getId();
 
         $em = $this->getDoctrine()->getManager();
         $allFavoris = $em->getRepository('UserBundle:UserEtablissementFavoris')->findBy(array('user'=>$idUser));
 
-        $creche = $this->getDoctrine()->getRepository('UserBundle:Etablissement')->find($id);
+        $detail = $this->getDoctrine()->getRepository('UserBundle:Etablissement')->find($id);
 
-        return $this->render('@KidsFront/detailsetablissement.html.twig', array('detail' => $creche,'favoris'=>$allFavoris));
+        $query = $em->createQueryBuilder();
+        $query->select('avg(o.vote) AS vote');
+        $query->from('UserBundle:UserEtablissementVote', 'o');
+        $query->where('o.etablissement = :etabId');
+
+        $query->setParameter('etabId', $detail->getId());
+
+        $a = $query->getQuery();
+
+        $result = $a->getResult();
+
+        return $this->render('@KidsFront/detailsetablissement.html.twig', array('detail' => $detail,'favoris'=>$allFavoris,'rating'=>$result[0]['vote']));
     }
 
 
@@ -71,11 +84,20 @@ class EtablissementController extends Controller
 
 
             $etablissement->setImageEtablissement($fileName);
+            $etablissement->setEtat("in progress");
+
+            $manager = $this->get('mgilet.notification');
+            $notif = $manager->createNotification('Nouveau Etablissement crée');
+            $notif->setMessage('Un nouveau etablissement vient dêtre créé');
+            $notif->setLink('http://symfony.com/');
+
+            try {
+                $manager->addNotification(array($this->getUser()), $notif, true);
+            } catch (OptimisticLockException $e) {
+            }
 
 
-//            var_dump($etablissement);
-//            die($etablissement);
-//
+
 
             $save = $this->getDoctrine()->getManager();
 
@@ -139,7 +161,7 @@ class EtablissementController extends Controller
 
                     $em = $this->getDoctrine()->getManager();
                     $em->flush();
-                    return $this->redirectToRoute('espace_prestataire');
+                    return $this->redirectToRoute('afficherEtabPrestataireInfo');
                 }
         }
         return $this->render('@KidsFront/ajouteretablissement.html.twig', array('form' => $formView));
@@ -162,25 +184,17 @@ class EtablissementController extends Controller
 
     public function supprimeretablissementparidAction($id)
     {
-        try{
             $em=$this->getDoctrine()->getManager();
             $etablissement = $this->getDoctrine()->getRepository('UserBundle:Etablissement')->find($id);
+        $manager = $this->get('mgilet.notification');
+        $notif = $manager->createNotification('Etablissement supprimé');
+        $notif->setMessage($etablissement->getNomEtablissement() .'vient detre supprimé');
+        $notif->setLink('http://symfony.com/');
+
             $em->remove($etablissement);
 
             $em->flush();
-//            $this->get('session')->getFlashBag()->add(
-//                'notice',
-//                'Encadreur supprimé avec succés');
-//            // return $this->forward('/affichevoiture',array('voiturerepo'=>$voiturerepo));
-           return $this->redirectToRoute('espace_parent');
+           return $this->redirectToRoute('espace_prestataire');
         }
-        catch (Exception $e){
-            $this->get('session')->getFlashBag()->add(
-                'notic  e',
-                'probléme lors de la suppression');
-        }
-
-    }
-
 
 }

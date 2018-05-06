@@ -46,6 +46,7 @@ class Etablissement
 
 
 
+
     /**
      * @var text
      * @ORM\Column(name="descriptionEtablissement", type="text",length=256)
@@ -65,6 +66,13 @@ class Etablissement
      * @ORM\Column(name="codepostalEtablissement", type="string", length=255)
      */
     private $codepostalEtablissement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etat", type="string", length=255)
+     */
+    private $etat;
 
     /**
      * @var string
@@ -469,6 +477,22 @@ class Etablissement
     public function setUserFavorites($userFavorites)
     {
         $this->userFavorites = $userFavorites;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEtat()
+    {
+        return $this->etat;
+    }
+
+    /**
+     * @param string $etat
+     */
+    public function setEtat($etat)
+    {
+        $this->etat = $etat;
     }
 
 

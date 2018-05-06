@@ -8,7 +8,7 @@
 
 {% extends result == 'true'
     ? 'KidsBackendBundle::Template_Admin.html.twig'
-    : 'KidsFrontBundle::Template_User.html.twig' %}
+    : 'KidsFrontBundle::espaceparent.html.twig' %}
 
 {% block body %}
 
@@ -81,7 +81,12 @@
 
 
 {% else %}
-    <h1>hhhhhhhhhhhhhh</h1>
+
+
+
+    {% include 'FOSMessageBundle:Message:threads_list.html.twig' with {'threads': threads} %}
+
 
 {% endif %}
+
 {% endblock %}

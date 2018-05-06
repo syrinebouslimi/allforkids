@@ -22,10 +22,40 @@ class AdminEtablissementController extends Controller
         $em = $this->getDoctrine()->getManager();
         $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
 
-        $etablissement = $this->getDoctrine()->getRepository('UserBundle:Etablissement')->findAll();
+        $etablissement = $this->getDoctrine()->getRepository('UserBundle:Etablissement')->findBy(array('etat'=>'valide'));
 
         return $this->render('@KidsBackend/afficheralletablissement.html.twig', array('etablissement' => $etablissement, 'notifiableNotifications' => $allNotif));
     }
+
+    public function afficherINPEtablissementAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
+
+        $etablissement = $this->getDoctrine()->getRepository('UserBundle:Etablissement')->findBy(array('etat'=>'in progress'));
+
+        return $this->render('@KidsBackend/afficherinpetablissement.html.twig', array('etablissement' => $etablissement, 'notifiableNotifications' => $allNotif));
+    }
+
+    public function accepterEtablissementAction($id){
+
+        $em = $this->getDoctrine()->getManager();
+        $etablissement = $this->getDoctrine()->getRepository('UserBundle:Etablissement')->findOneBy(array('id'=>$id));
+        $etablissement->setEtat("valide");
+        $em->flush();
+        return $this->redirectToRoute('afficherINPEtablissement');
+    }
+
+    public function refuserEtablissementAction($id){
+
+        $em = $this->getDoctrine()->getManager();
+        $etablissement = $this->getDoctrine()->getRepository('UserBundle:Etablissement')->findOneBy(array('id'=>$id));
+        $etablissement->setEtat("invalide");
+        $em->flush();
+        return $this->redirectToRoute('afficherINPEtablissement');
+
+    }
+
 
 
     public function afficherEtablissementbyidAction($id)
@@ -39,28 +69,6 @@ class AdminEtablissementController extends Controller
     }
 
 
-//    public function afficherAllEtablissementAction(Request $request)
-//    {
-//        $em = $this->getDoctrine()->getManager();
-//        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
-//
-//        $search = $request->query->get('search');
-//
-//
-//        if (is_null($search) ){
-//
-//            $etablissement = $this->getDoctrine()->getRepository('UserBundle:Etablissement')->findAll();
-//
-//        } else if ((!is_null($search) && strlen($search)!=0))
-//        {
-//            $etablissement = $this->getDoctrine()->getRepository('UserBundle:Etablissement')->findBy(array(
-//            'nomEtablissement'=>$search ));
-//            return $this->render('@KidsBackend/afficheralletablissement.html.twig', array('etablissement'=>$etablissement,'notifiableNotifications' => $allNotif));
-//
-//        }
-//
-//        return $this->render('@KidsBackend/afficheralletablissement.html.twig');
-//    }
 
     public function afficheretablissementparsearchAction(Request $request)
     {

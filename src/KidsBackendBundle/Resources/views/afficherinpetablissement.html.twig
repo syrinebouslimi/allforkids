@@ -27,27 +27,39 @@
                 <th>Responsable</th>
                 <th>Description</th>
                 <th>Type etablissement</th>
-                {#<th>Horaire</th>#}
                 <th>Adresse</th>
                 <th>Telephone</th>
-                <th>Voir détails</th>
+                <th>Consulter Image</th>
+                <th>Actions</th>
+
 
             </tr>
             {% for key in etablissement %}
                 <tr>
                     <td >{{ key.nomEtablissement }}</td>
                     <td>{{ key.idUserEtablissement.email }}</td>
-                    <td>{{ key.descriptionEtablissement|truncate(100) }}</td>
+                    <td>{{ key.descriptionEtablissement }}</td>
                     <td>{{ key.typeEtablissement }}</td>
-                    {#<td>{{ key.horaireEtablissement }}</td>#}
                     <td>{{ key.adresseEtablissement }}</td>
                     <td>{{ key.phone }}</td>
 
                     <td>
-                        <a href="{{ path('afficherEtablissementbyid',{'id':key.id}) }}"><button type="button" class="btn btn-block btn-info btn-xs">Détails</button></a>
+                        <button data-toggle="modal" data-target="#image{{ key.id }}" type="button" class="btn btn-block btn-primary btn-flat">Consulter image</button>
+
                     </td>
+                    <td><button type="button" class="btn btn-block btn-danger btn-flat"><a href="{{ path('accepterEtablissement',{'id':key.id}) }}" style="color: white;">Accepter</a></button></td>
+                    <td><button type="button" class="btn btn-block btn-warning btn-flat"><a href="{{ path('refuserEtablissement',{'id':key.id}) }}" style="color: white;">Refuser</a></button></td>
 
                 </tr>
+                <div class="modal modal-success fade" id="image{{ key.id }}">
+                    <div class="modal-dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <img src="{{ asset('uploads/images/' ~ key.imageEtablissement) }}" style="width: 100%;" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
             {% endfor %}
             </tbody>
         </table>
@@ -59,3 +71,4 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 {% endblock body %}
+

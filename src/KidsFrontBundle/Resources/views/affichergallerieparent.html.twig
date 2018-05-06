@@ -58,16 +58,6 @@
                         </a>
 
                     </li>
-
-
-                    {#<li class="dropdown singleDrop color-3 active">#}
-                    {#<a href="{{ path('publications') }}" role="button" aria-haspopup="true" aria-expanded="false">#}
-                    {#<i class="fa fa-list-ul bg-color-3" aria-hidden="true">#}
-                    {#</i>#}
-                    {#<span class="active">Publications</span>#}
-                    {#</a>#}
-                    {#</li>#}
-
                     <li class="dropdown singleDrop color-5 active">
                         <a href="{{ path('afficherespaceenfant') }}" role="button" aria-haspopup="true"
                            aria-expanded="false">
@@ -104,9 +94,10 @@
 
 {% endblock Menu %}
 
+
 {% block favoris %}
     <li class="cart-dropdown">
-        <a href="#" class="bg-color-6 shop-cart" >
+        <a href="#" class="bg-color-6 shop-cart">
             <i class="fa fa-shopping-basket " aria-hidden="true"></i>
             <span class="badge bg-color-1">{{ favoris|length }}</span>
         </a>
@@ -121,7 +112,8 @@
                             <div class="media">
                                 <div class="media-left">
 
-                                    <img src="{{ asset('uploads/images/' ~ i.etablissement.imageEtablissement) }}" alt="cart-Image">
+                                    <img src="{{ asset('uploads/images/' ~ i.etablissement.imageEtablissement) }}"
+                                         alt="cart-Image">
                                 </div>
                                 <div class="media-body">
                                     <h4>{{ i.etablissement.nomEtablissement }}</h4>
@@ -135,9 +127,11 @@
                         <span class="cancel"><i class="fa fa-close" aria-hidden="true"></i></span>
                     </li>
 
-                {% elseif loop.index == 2%}
+                {% elseif loop.index == 2 %}
                     <li>
-                        <a href="{{ path('getAllFavoris') }}"><button type="button" class="btn btn-primary" >Voir plus</button> </a>
+                        <a href="{{ path('getAllFavoris') }}">
+                            <button type="button" class="btn btn-primary">Voir plus</button>
+                        </a>
                     </li>
 
                 {% endif %}
@@ -161,111 +155,39 @@
         </div>
     </section>
 {% endblock bandeau %}
+{% block body %}
 
- {% block body %}
+    <!-- MAIN SECTION -->
+    <section class="mainContent full-width clearfix homeGallerySection" style="padding: 40px;">
 
-<section class="mainContent full-width clearfix courseSingleSection" style="padding: 30px">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9 col-sm-8 col-xs-12 block">
-                <div class="thumbnail thumbnailContent alt">
-                    <img src="{{ asset('uploads/images/' ~ detail.imageEtablissement) }}" alt="image" class="img-responsive">
-                    <div class="caption border-color-1">
-                        <h3 class="color-1">{{ detail.nomEtablissement }}</h3>
+        <div class="row isotopeContainer" id="container">
+
+            {% for i in gallerie %}
 
 
-
-                        <div class="caption border-color-2">
-                            <h3 class="color-2">Description : </h3>
-                            <p>{{ detail.descriptionEtablissement }}</p>
-                        </div>
-
-
-                        <div class="caption border-color-2">
-                            <h3 class="color-2">Exigence du {{ detail.typeEtablissement }} : {{ detail.nomEtablissement }} </h3>
-                            <p>{{ detail.exigenceEtablissement }}</p>
-                        </div>
-                    </div>
-                </div>
-                <div style="margin-left: 30px;">
-
-                    <h3 style="font-family: Serif;"> <span>Note moyenne :
-                                         <span class="rating" >
-                                             {% for j in 1..rating %}
-                                                 <div class="{% if j <= 5 %}star-full{% else %}star-empty{% endif %}"></div>
-                                             {% endfor %}
-                                         </span>
-                               </span>
-                    </h3>
-                </div>
-
-                                <form action="{{ path('ajouterOuModifierVote',{'id':detail.id}) }}" method="POST" role="form">
-                    <div class="form-group">
-                        <input id="number" type="number" min="0" max="5" step="1" class="form-control border-color-2" name="vote" >
-                    </div>
-                    <button type="submit" class="btn btn-primary">Envoyer votre note</button>
-                </form>
-
-            </div>
-
-
-
-            <div class="col-md-3 col-sm-4 col-xs-12">
-                <aside>
-                    <aside>
-                        <div class="rightSidebar">
-                            <div class="panel panel-default">
-                                <div class="panel-heading bg-color-1 border-color-1">
-                                    <h3 class="panel-title">Course Information</h3>
-                                </div>
-
-                                <div class="panel-body">
-                                    <ul class="media-list">
-                                        <li class="media">
-                                            <div class="media-left iconContent bg-color-2">
-                                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                                            </div>
-                                            <div class="media-body iconContent">
-                                                <h4 class="media-heading color-2">Date de création</h4>
-                                                <p>{{ detail.dateCreationEtablissement|date("m/d/Y") }}</p>
-                                            </div>
-                                        </li>
-                                        <li class="media">
-                                            <div class="media-left iconContent bg-color-3">
-                                                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                            </div>
-                                            <div class="media-body iconContent">
-                                                <h4 class="media-heading color-3">Ouverture</h4>
-                                                <p>{{ detail.horaireEtablissement }}</p>
-                                            </div>
-                                        </li>
-                                        <li class="media iconContet">
-                                            <div class="media-left iconContent bg-color-4">
-                                                <i class="fa fa-phone" aria-hidden="true"></i>
-                                            </div>
-                                            <div class="media-body iconContent">
-                                                <h4 class="media-heading color-4">Contact </h4>
-                                                <p>954 124 2542</p>
-                                            </div>
-                                        </li>
-                                        <li class="media">
-                                            <div class="media-left iconContent bg-color-5">
-                                                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                            </div>
-                                            <div class="media-body iconContent">
-                                                <h4 class="media-heading color-5">Adresse : </h4>
-                                                <p>{{ detail.countryEtablissement }}<br> {{ detail.adresseEtablissement }}<br> {{ detail.codepostalEtablissement }}</p>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 isotopeSelector charity">
+                    <article class="">
+                        <figure>
+                            <img src="{{ asset('uploads/images/' ~ i.imageGallery) }}" alt="image" class="img-rounded">
+                            <div class="overlay-background">
+                                <div class="inner"></div>
                             </div>
-                        </div>
-                    </aside>
-                </aside>
-            </div>
-        </div>
-    </div>
-</section>
+                            <div class="overlay">
+                                <a class="fancybox-pop" title= {{ i.descriptionImageGallery }} rel="portfolio-1" href="{{ asset('uploads/images/' ~ i.imageGallery) }}">
+                                    <i class="fa fa-search-plus" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </figure>
+                    </article>
+                </div>
+            {% endfor %}
 
-{% endblock body %}
+
+
+        </div>
+    </section>
+
+
+{% endblock %}
+
+

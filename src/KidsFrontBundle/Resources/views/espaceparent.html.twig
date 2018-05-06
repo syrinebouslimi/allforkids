@@ -58,16 +58,6 @@
                         </a>
 
                     </li>
-
-
-                    {#<li class="dropdown singleDrop color-3 active">#}
-                    {#<a href="{{ path('publications') }}" role="button" aria-haspopup="true" aria-expanded="false">#}
-                    {#<i class="fa fa-list-ul bg-color-3" aria-hidden="true">#}
-                    {#</i>#}
-                    {#<span class="active">Publications</span>#}
-                    {#</a>#}
-                    {#</li>#}
-
                     <li class="dropdown singleDrop color-5 active">
                         <a href="{{ path('afficherespaceenfant') }}" role="button" aria-haspopup="true"
                            aria-expanded="false">
@@ -89,7 +79,7 @@
                             <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true">
                             </i> <span class="active">Réclamations</span></a>
                         <ul class="dropdown-menu dropdown-menu-left">
-                            <li class=" "><a href="{{ path('affichergallerie') }}">Mes réclamations</a></li>
+                            <li class=" "><a href="{{ url('fos_message_inbox' ) }}">Mes réclamations</a></li>
                             <li class=" "><a href="{{ url('fos_message_thread_new' ) }}">Envoyer nouvelle reclamation</a>
 
                         </ul>
@@ -126,10 +116,6 @@
                                 </div>
                                 <div class="media-body">
                                     <h4>{{ i.etablissement.nomEtablissement }}</h4>
-                                    {#<div class="price">#}
-                                    {#<span class="color-1">{{ i.etablissement.adresseEtablissement }}</span>#}
-                                    {#</div>#}
-                                    {#<span class="amount">Qnt: 1</span>#}
                                 </div>
                             </div>
                         </a>

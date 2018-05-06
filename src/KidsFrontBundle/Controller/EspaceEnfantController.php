@@ -18,13 +18,24 @@ class EspaceEnfantController extends Controller
 
     public function afficherespaceenfantAction()
     {
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $idUser = $user->getId();
+
+        $em = $this->getDoctrine()->getManager();
+        $allFavoris = $em->getRepository('UserBundle:UserEtablissementFavoris')->findBy(array('user' => $idUser));
         $profil = $this->getDoctrine()->getRepository('UserBundle:ProfilEnfant')->findAll();
 
-        return $this->render('KidsFrontBundle::EspaceEnfant.html.twig', array('profil' => $profil));
+        return $this->render('KidsFrontBundle::EspaceEnfant.html.twig', array('profil' => $profil,'favoris'=>$allFavoris));
     }
 
     public function creerespaceAction(Request $request)
     {
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $idUser = $user->getId();
+
+        $em = $this->getDoctrine()->getManager();
+        $allFavoris = $em->getRepository('UserBundle:UserEtablissementFavoris')->findBy(array('user' => $idUser));
+
         $profil = new ProfilEnfant();
         $form = $this->createForm(ProfilEnfantType::class, $profil);
         $formView = $form->createView();
@@ -51,19 +62,32 @@ class EspaceEnfantController extends Controller
             $em->flush();
             return $this->forward('KidsFrontBundle:EspaceEnfant:afficherespaceenfant');
         }
-        return $this->render('KidsFrontBundle::CreerEspaceEnfant.html.twig', array('form' => $formView));
+        return $this->render('KidsFrontBundle::CreerEspaceEnfant.html.twig', array('form' => $formView,'favoris'=>$allFavoris));
     }
 
     public function espacedetailsAction($id)
     {
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $idUser = $user->getId();
+
+        $em = $this->getDoctrine()->getManager();
+        $allFavoris = $em->getRepository('UserBundle:UserEtablissementFavoris')->findBy(array('user' => $idUser));
+
         $profil = $this->getDoctrine()->getRepository('UserBundle:ProfilEnfant')->find($id);
         $profil1 = $this->getDoctrine()->getRepository('UserBundle:ActiviteEnfant')->findAll();
 
-        return $this->render('KidsFrontBundle::EspaceEnfantDetails.html.twig', array('profil'=>$profil, 'profill' =>$profil1));
+        return $this->render('KidsFrontBundle::EspaceEnfantDetails.html.twig', array('profil'=>$profil, 'profill' =>$profil1,'favoris'
+        =>$allFavoris));
     }
 
     public function creeractiviteAction(Request $request, $id)
     {
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $idUser = $user->getId();
+
+        $em = $this->getDoctrine()->getManager();
+        $allFavoris = $em->getRepository('UserBundle:UserEtablissementFavoris')->findBy(array('user' => $idUser));
+
         $activite = new ActiviteEnfant();
         $form = $this->createForm(ActiviteEnfantType::class, $activite);
         $formView = $form->createView();
@@ -89,7 +113,7 @@ class EspaceEnfantController extends Controller
             $em->flush();
             return $this->forward('KidsFrontBundle:EspaceEnfant:afficherespaceenfant');
         }
-        return $this->render('KidsFrontBundle::CreerActiviteEnfant.html.twig', array('form' => $formView));
+        return $this->render('KidsFrontBundle::CreerActiviteEnfant.html.twig', array('form' => $formView,'favoris'=>$allFavoris));
     }
 
     public function supprimeractiviteAction($id, $id1)

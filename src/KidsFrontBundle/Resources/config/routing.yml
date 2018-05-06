@@ -264,3 +264,12 @@ afficheclubsfront:
 map:
     path:     /map/{id}
     defaults: { _controller: KidsFrontBundle:Clubs:map }
+afficherEnseignParent:
+    path: /afficherEnseign
+    defaults: { _controller: KidsFrontBundle:Parent:afficherEnseignParent}
+afficherGallerieParent:
+    path: /afficherGallerie
+    defaults: { _controller: KidsFrontBundle:Parent:afficherGallerieParent}
+ajouterOuModifierVote:
+    path: /ajouterOuModifierVote/{id}
+    defaults: { _controller: KidsFrontBundle:Parent:ajouterOuModifierVote}

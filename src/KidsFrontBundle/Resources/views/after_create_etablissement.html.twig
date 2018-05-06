@@ -60,20 +60,21 @@
 
 {% block bandeau %}
 
-    <section class="pageTitleSection">
-        <div class="container">
-            <div class="pageTitleInfo">
-                <i><h2>Bonjour Prestataire de service {{  app.user.username|default('') }}</h2> </i>
-                <br>
 
-                <h2>Bienvenue dans votre espace prestataire</h2>
-                <ol class="breadcrumb">
-                    <li><a href="index-2.html">Confirmation suite à l'ajout de votre etablissement</a></li>
-                    {#<li class="active">Teachers</li>#}
-                </ol>
+        <section class="pageTitleSection">
+            <div class="container">
+                <div class="pageTitleInfo">
+                    <i><h2>Espace Prestataire de service</h2> </i>
+                    <br>
+
+                    <h2>Bienvenue {{ app.user.username|default('') }}</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="{{ path('ajouterEtablissement') }}">Ajouter un etablissement</a></li>
+                        {#<li class="active">Teachers</li>#}
+                    </ol>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 {% endblock bandeau %}
 
 

@@ -3,6 +3,8 @@
 namespace KidsFrontBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use UserBundle\Entity\UserEtablissementVote;
 
 class ParentController extends Controller
 {
@@ -23,6 +25,34 @@ class ParentController extends Controller
 
     }
 
+    public function afficherEnseignParentAction(){
+
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $idUser = $user->getId();
+
+        $em = $this->getDoctrine()->getManager();
+        $allFavoris = $em->getRepository('UserBundle:UserEtablissementFavoris')->findBy(array('user' => $idUser));
+        $allEnsei = $em->getRepository('UserBundle:Enseignant')->findAll();
+
+        return $this->render('@KidsFront/afficherenseiparparent.html.twig', array('favoris' => $allFavoris,
+            'enseignants'=>$allEnsei));
+    }
+
+
+    public function afficherGallerieParentAction(){
+
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $idUser = $user->getId();
+
+        $em = $this->getDoctrine()->getManager();
+        $allFavoris = $em->getRepository('UserBundle:UserEtablissementFavoris')->findBy(array('user' => $idUser));
+        $allGallerie = $em->getRepository('UserBundle:Gallerie')->findAll();
+
+        return $this->render('@KidsFront/affichergallerieparent.html.twig', array('favoris' => $allFavoris,
+            'gallerie'=>$allGallerie));
+    }
+
+
     public function afficherEtabParentAction()
     {
         $user = $this->container->get('security.token_storage')->getToken()->getUser();
@@ -33,16 +63,6 @@ class ParentController extends Controller
 
         $allFavoris = $em->getRepository('UserBundle:UserEtablissementFavoris')->findBy(array('user' => $idUser));
         $allEtab = $em->getRepository('UserBundle:Etablissement')->findAll();
-
-
-//
-//        if ($type == "all"){
-//            $allEtab = $em->getRepository('UserBundle:Etablissement')->findAll();
-//
-//        } else{
-//            $allEtab = $em->getRepository('UserBundle:Etablissement')->findBy(array('typeEtablissement'=>$type));
-//
-//        }
 
         foreach($allEtab as $e) {
 
@@ -59,7 +79,6 @@ class ParentController extends Controller
 
             $result = $a->getResult();
             $e->setAvgRating($result[0]['vote']);
-//            var_dump($result[0]['vote']).die();
 
             $save = $this->getDoctrine()->getManager();
             $save->persist($e);
@@ -68,14 +87,42 @@ class ParentController extends Controller
 
         }
 
-
-//        var_dump($allEtab).die();
-
-
-
-
-
         return $this->render('@KidsFront/afficheretablissementparent.html.twig', array('etablissement' => $allEtab, 'favoris' => $allFavoris));
 
     }
+
+    public function ajouterOuModifierVoteAction(Request $request,$id){
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $idUser = $user->getId();
+
+        $em = $this->getDoctrine()->getManager();
+        $vote =$request->get('vote');
+
+        $etabli = $this->getDoctrine()->getRepository('UserBundle:Etablissement')->find($id);
+        $save = $this->getDoctrine()->getManager();
+
+        $existantUserVote = $this->getDoctrine()->getRepository('UserBundle:UserEtablissementVote')->findOneBy(array('user'=>$idUser,'etablissement'=>$id));
+        if ($existantUserVote != null){
+            $existantUserVote->setVote((int)$vote);
+            $save->flush();
+
+
+        }else{
+            $newvote = new UserEtablissementVote();
+            $newvote->setVote((int)$vote);
+            $newvote->setEtablissement($etabli);
+            $newvote->setUser($user);
+
+
+            $save->persist($newvote);
+            $save->flush();
+
+        }
+
+        return $this->redirectToRoute('afficherEtabById',array('id'=>$id));
+
+
+    }
+
+
 }
