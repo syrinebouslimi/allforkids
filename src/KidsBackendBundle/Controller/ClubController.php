@@ -9,6 +9,7 @@
 namespace KidsBackendBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use UserBundle\Entity\Club;
 use UserBundle\Entity\EventCustom;
 use UserBundle\Form\ClubType;
@@ -39,23 +40,36 @@ class ClubController extends Controller
 
     public function listeclubAction()
     {
-        return $this->render('@KidsBackend/listeclub.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
+        return $this->render('@KidsBackend/listeclub.html.twig',array(
+            'notifiableNotifications' => $allNotif
+        ));
 
     }
 
     public function calendrierClubAction()
     {
 
+        $em = $this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
         $em=$this->getDoctrine()->getManager();
         $evnt=$em->getRepository('UserBundle:EventCustom')->findAll();
         $evntserv=$em->getRepository('UserBundle:Service')->findAll();
         $publica=$em->getRepository('UserBundle:Publication')->findAll();
 
-        return $this->render('KidsBackendBundle::calendar.html.twig',array('events'=>$evnt,'service'=>$evntserv,'publication'=>$publica));
+        return $this->render('KidsBackendBundle::calendar.html.twig',array('events'=>$evnt,'service'=>$evntserv,'publication'=>$publica,
+            'notifiableNotifications' => $allNotif
+            ));
     }
 
     public function ajouterClubAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
         $Cl = new Club();
         $form=$this->createForm(ClubType::class,$Cl);
         $formView=$form->createView();
@@ -68,15 +82,14 @@ class ClubController extends Controller
             $em=$this->getDoctrine()->getManager();
 
             $adresse = new GeocoderAddressRequest($Cl->getAdresse());
-          //  var_dump($adresse);
+
             $reponse = $this->container->get('ivory.google_map.geocoder')->geocode($adresse);
             if(count($reponse->getResults()) < 1)
             {
                 $reponse = $this->container->get('ivory.google_map.geocoder')->geocode($adresse);
-              //  var_dump('sss');
+
             }
-  //  var_dump($reponse->getResults());
-  //  die();
+
             foreach ($reponse->getResults() as $result) {
                 $placeId = $result->getPlaceId();
                 $geometry = $result->getGeometry();
@@ -84,12 +97,12 @@ class ClubController extends Controller
             }
 
             $lat=$geometry->getBound()->getSouthWest()->getLatitude();
-            $lang=$geometry->getBound()->getSouthWest()->getLongitude();
+            $langi=$geometry->getBound()->getSouthWest()->getLongitude();
             $Cl->setLat($lat);
-            $Cl->setLong($lang);
+            $Cl->setLongi($langi);
             $Cl->setAdresse($Cl->getAdresse());
-          //  var_dump($lat);
-          //  var_dump($lang);
+            //  var_dump($lat);
+            //  var_dump($lang);
 
             $em->persist($Cl);
 
@@ -118,7 +131,7 @@ class ClubController extends Controller
         }
 
 
-        return $this->render ( '@KidsBackend/ajouterclub.html.twig',array('form'=>$formView));
+        return $this->render ( '@KidsBackend/ajouterclub.html.twig',array('form'=>$formView,'notifiableNotifications' => $allNotif));
 
 
     }
@@ -126,8 +139,71 @@ class ClubController extends Controller
     public function afficherClubAction ()
 
     {
+        $em = $this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
+
         $clu=$this->getDoctrine()->getRepository('UserBundle:Club')->findAll();
-        return $this->render ( '@KidsBackend/afficherClub.html.twig',array('form'=>$clu));
+        return $this->render ( '@KidsBackend/afficherClub.html.twig',array('form'=>$clu,'notifiableNotifications' => $allNotif));
+
+    }
+    public function afficherClubJsonAction ()
+
+    {
+        $clu=$this->getDoctrine()->getRepository('UserBundle:Club')->findAll();
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted= $serializer->normalize($clu);
+        return new JsonResponse($formatted);
+
+    }
+
+    public function ajouterClubJsonAction(Request $request)
+    {
+        $em=$this->getDoctrine()->getManager();
+        $em->flush();
+        $cljson = new Club();
+        $cljson->setNomClub($request->get('nomClub'));
+
+        $cljson->setDescriptionClub($request->get('descriptionClub'));
+        $clb = $request->get('dateCreationClub');
+
+        $cljson->setDateCreationClub(new \ DateTime($clb));
+        //   $cljson->setDateCreationClub($request->get('dateCreationClub'));
+        // $cljson->setDateCreationClub(new \DateTime());
+        $cljson->setAdresse($request->get('adresse'));
+        $cljson->setImageClub($request->get('imageClub'));
+        $cljson->setLongi($request->get('longi'));
+        $cljson->setLat($request->get('lat'));
+        $etablisement=$em->getRepository('UserBundle:Etablissement')->find($request->get('idEtablissement'));
+        $cljson->setIdEtablissement($etablisement);
+
+
+        $em->persist($cljson);
+        $em->flush();
+
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $ajouclubJson= $serializer->normalize($cljson);
+        return new JsonResponse($ajouclubJson);
+
+
+        /* $em = $this->getDoctrine()->getManager();
+         $an = new Club();
+         $an->setNomClub($request->get('nomClub'));
+         $an->setDescriptionClub($request->get('descriptionClub'));
+         $an->setDateCreationClub($request->get('dateCreationClub'));
+         $an->setAdresse($request->get('adresse'));
+         //$an->setDateA() = new DateTime();
+        // $an->setDateA(new \DateTime());
+         $an->setImageClub($request->get('imageClub'));
+         $an->setIdEtablissement($request->get('idEtablissement'));
+       //  $an->setEtat("nonResolue");
+
+         $em->persist($an);
+         $em->flush();
+         $serializer = new Serializer([new ObjectNormalizer()]);
+         $formatted = $serializer->normalize($an);
+         return new JsonResponse($formatted);*/
+
 
     }
 
@@ -179,14 +255,17 @@ class ClubController extends Controller
             $em->flush();
             return $this->redirect($this->generateUrl('afficherClub'));
         }
+        $em = $this->getDoctrine()->getManager();
 
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
 
-        return $this->render ( '@KidsBackend/ajouterclub.html.twig',array('form'=>$formView));
+        return $this->render ( '@KidsBackend/ajouterclub.html.twig',array('form'=>$formView,'notifiableNotifications' => $allNotif));
 
     }
 
     public function ajouterevntClubAction(Request $request)
     {
+
         $em=$this->getDoctrine()->getManager();
         $status = 'erreur';
         $html = 'erreur';
@@ -235,23 +314,29 @@ class ClubController extends Controller
     public function searchAction(Request $request)
     {
 
+        $em = $this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
 
 
         $em = $this->getDoctrine()->getManager();
         $nomclub = $em->getRepository('UserBundle:Club')->findAll();
-         if($request->isMethod('POST')){
-          $club=$request->get('nomClub');
-          $nomclub=$em->getRepository('UserBundle:Club')->findBy(array("nomClub"=>$club));
+        if($request->isMethod('POST')){
+            $club=$request->get('nomClub');
+            $nomclub=$em->getRepository('UserBundle:Club')->findBy(array("nomClub"=>$club));
 
-         }
+        }
 
 
-        return $this->render('@KidsBackend/recherche.html.twig', array('form' => $nomclub));
+        return $this->render('@KidsBackend/recherche.html.twig', array('form' => $nomclub,'notifiableNotifications' => $allNotif));
     }
 
     public function modifierCalendarAction(Request $request,$id)
 
     {
+        $em = $this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
 
         //modifierCalendar
         $Uvn=$this->getDoctrine()->getRepository('UserBundle:EventCustom')->find($id);
@@ -268,7 +353,7 @@ class ClubController extends Controller
         }
 
 
-        return $this->render ( '@KidsBackend/ajouterevntClub.html.twig',array('form'=>$formView));
+        return $this->render ( '@KidsBackend/ajouterevntClub.html.twig',array('form'=>$formView,'notifiableNotifications' => $allNotif));
 
     }
 
@@ -286,14 +371,21 @@ class ClubController extends Controller
     public function afficheEvntCostomAction ()
 
     {
+        $em = $this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
+
         $clu=$this->getDoctrine()->getRepository('UserBundle:EventCustom')->findAll();
-        return $this->render ( '@KidsBackend/afficherEvntCostom.html.twig',array('form'=>$clu));
+        return $this->render ( '@KidsBackend/afficherEvntCostom.html.twig',array('form'=>$clu,'notifiableNotifications' => $allNotif));
 
     }
 
 
     public function ajouterEvntCalendarClubAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
         $cat = new EventCustom();
         $form=$this->createForm(EventCustomType::class,$cat);
         $formView=$form->createView();
@@ -309,7 +401,7 @@ class ClubController extends Controller
         }
 
 
-        return $this->render ( '@KidsBackend/ajouterevntClub.html.twig',array('form'=>$formView));
+        return $this->render ( '@KidsBackend/ajouterevntClub.html.twig',array('form'=>$formView,'notifiableNotifications' => $allNotif));
 
 
     }

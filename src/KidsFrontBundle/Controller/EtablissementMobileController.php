@@ -261,6 +261,7 @@ class EtablissementMobileController extends Controller
         $message->setThread($thread);
 
 
+
         $save = $this->getDoctrine()->getManager();
 
         $save->persist($message);

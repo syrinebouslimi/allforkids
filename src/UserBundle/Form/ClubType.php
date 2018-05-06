@@ -22,7 +22,7 @@ class ClubType extends AbstractType
             ->add('dateCreationClub')
             ->add('imageClub', FileType::class, array('label' => '(Image JPG)'))
             ->add('adresse', PlaceAutocompleteType::class, ['variable' => 'place_autocomplete',])
-            ->add('long')
+            ->add('longi')
             ->add('lat')
             ->add('idEtablissement',EntityType::class ,array('class'=>'UserBundle\Entity\Etablissement','choice_label'=>'nomEtablissement'))
         ->add('Register',SubmitType::class);

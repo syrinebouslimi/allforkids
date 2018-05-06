@@ -34,8 +34,10 @@ class AppKernel extends Kernel
             new Nomaya\SocialBundle\NomayaSocialBundle(),
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
             new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
-
-
+            new AncaRebeca\FullCalendarBundle\FullCalendarBundle(),
+            new Ivory\GoogleMapBundle\IvoryGoogleMapBundle(),
+            new Ivory\SerializerBundle\IvorySerializerBundle(),
+            new Http\HttplugBundle\HttplugBundle()
 
         ];
 

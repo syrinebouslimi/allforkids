@@ -436,6 +436,24 @@
 
                 </li>
 
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>Gestion des Club</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{ path('ajouterClub') }}"><i class="fa fa-circle-o"></i> Ajouter des club </a></li>
+                        <li><a href="{{ path('afficherClub') }}"><i class="fa fa-circle-o"></i> Afficher les Club</a></li>
+                        <li><a href=""><i class="fa fa-circle-o"></i> Rechercher des Club </a></li>
+                        <li><a href="{{ path('calendrierClub') }}"><i class="fa fa-circle-o"></i> Afficher Calendrier</a></li>
+                        <li><a href=""><i class="fa fa-circle-o"></i> Google Map</a></li>
+
+                    </ul>
+
+                </li>
+
 
             </ul>
         </section>
@@ -700,6 +718,49 @@
 <script src="{{ asset('template_Admin_Principal/dist/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('template_Admin_Principal/dist/js/demo.js') }}"></script>
+<script>
+    $(document).ready(function() {
+        $("#submit-cal").click(function () {
+            alert('submit clicked');
+            var title = $("#eventName").val();
+
+            var dataString = {};
+            dataString['eventName'] = title;
+            dataString['startTime'] = $('#AgentName').val();
+            dataString['endTime'] =$('#UserName').val();
+            // alert("debut: "+$('#AgentName').val() + " Fin : "+$('#UserName').val())
+            //  alert(dataString);
+            $.ajax({
+                method: 'POST',
+                dataType: 'json',
+                url: '{{ path('ajouterevntClub') }}',
+                data: dataString,
+                success: function (data) {
+                    alert("Data 1 SuccessFully");
+                    window.location.reload();
+                    if (data.success)
+                        alert("Data 2 SuccessFully");
+                }
+
+
+            });
+
+            calendar.fullCalendar('unselect');
+            calendar.fullCalendar('refetchEvents');
+            $("#popup").modal('hide');
+
+
+        });
+        $('#cancel').on('click', function(e){
+            e.stopPropagation();
+            if ($('#popup').css('display') == 'none')
+                $('#popup').show();
+            else
+                $('#popup').hide();
+        });
+    });
+</script>
+
 
 </body>
 </html>

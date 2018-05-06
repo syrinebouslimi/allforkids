@@ -73,9 +73,6 @@ modifier_pubparid:
 recherchePub_Titre:
     path: /recherchePubTitre
     defaults : {_controller: KidsBackendBundle:Publication:recherchePubTitre}
-test:
-    path:     /test
-    defaults: { _controller: KidsBackendBundle:Default:test }
 
 ajout:
     path:     /ajout
@@ -120,3 +117,47 @@ modifierProduit:
 stat:
     path:     /stat
     defaults: { _controller: KidsBackendBundle:Produits:stat}
+
+listeclub:
+    path:     /listeclub
+    defaults: { _controller: KidsBackendBundle:Club:listeclub }
+calendrierClub:
+    path:     /calendrierClub
+    defaults: { _controller: KidsBackendBundle:Club:calendrierClub }
+ajouterevntClub:
+    path:     /ajouterevntClub
+    defaults: { _controller: KidsBackendBundle:Club:ajouterevntClub }
+ajouterClub:
+    path:     /ajouterClub
+    defaults: { _controller: KidsBackendBundle:Club:ajouterClub }
+afficherClub:
+    path:     /afficherClub
+    defaults: { _controller: KidsBackendBundle:Club:afficherClub }
+modificationClub:
+    path:     /modificationClub/{id}
+    defaults: { _controller: KidsBackendBundle:Club:modificationClub }
+remove:
+    path:     /remove/{id}
+    defaults: { _controller: KidsBackendBundle:Club:remove }
+search:
+    path:     /search
+    defaults: { _controller: KidsBackendBundle:Club:search}
+
+afficheEvntCostom:
+    path:     /afficheEvntCostom
+    defaults: { _controller: KidsBackendBundle:Club:afficheEvntCostom}
+ajouterEvntCalendarClub:
+    path:     /ajouterEvntCalendarClub
+    defaults: { _controller: KidsBackendBundle:Club:ajouterEvntCalendarClub }
+modifierCalendar:
+    path:     /modifierCalendar/{id}
+    defaults: { _controller: KidsBackendBundle:Club:modifierCalendar }
+supprimerEvntCalendar:
+    path:     /supprimerEvntCalendar/{id}
+    defaults: { _controller: KidsBackendBundle:Club:supprimerEvntCalendar}
+afficherClubJson:
+    path:     /afficherClubJson
+    defaults: { _controller: KidsBackendBundle:Club:afficherClubJson}
+ajouterClubJson:
+    path:     /ajouterClubJson
+    defaults: { _controller: KidsBackendBundle:Club:ajouterClubJson}
