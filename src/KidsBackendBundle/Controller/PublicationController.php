@@ -53,6 +53,8 @@ class PublicationController extends Controller
             );
             $publication->setImagePublication($fileName);
             $publication->setContenuPublication($fileName1);
+            $publication->setEtatPublication("Publié");
+
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($publication);
@@ -89,6 +91,7 @@ class PublicationController extends Controller
         $publication = $this->getDoctrine()->getRepository('UserBundle:Publication')->find($id);
         $imageOld =$publication->getImagePublication();
         $videoOld = $publication->getContenuPublication();
+        $idParent = $publication->getIdUserPublication();
 
         $form = $this->createForm(publicationType::class, $publication);
         $formView = $form->createView();

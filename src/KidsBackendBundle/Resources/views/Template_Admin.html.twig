@@ -367,11 +367,6 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        {#{% if app.user and is_granted('ROLE_ADMIN') %}#}
-                        {#<li><a href=""><i class="fa fa-circle-o"></i> Ajouter service </a></li>#}
-
-
-                        {#{% endif %}#}
                         <li><a href="{{ path('ajout' ) }}"><i class="fa fa-circle-o"></i>Ajouter service </a></li>
 
                         <li><a href="{{ path('afficherServiceBack' ) }}"><i class="fa fa-circle-o"></i> Afficher Vos
@@ -400,6 +395,65 @@
                     </ul>
 
                 </li>
+
+
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>Statistique</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+
+                        <li><a href="{{ path('stat') }}"><i class="fa fa-circle-o"></i> Statistique Produit </a></li>
+
+
+
+                    </ul>
+
+                </li>
+
+
+
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>Produit</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+
+                        <li><a href="{{ path('ajouterProduit') }}"><i class="fa fa-circle-o"></i> Ajouter Produit </a></li>
+                        <li><a href="{{ path('afficherProduit') }}"><i class="fa fa-circle-o"></i> Listes des Produits </a></li>
+                        <li><a href="{{ path('ajouterCateg') }}"><i class="fa fa-circle-o"></i> Ajouter Categorie </a></li>
+                        <li><a href="{{ path('afficherCateg') }}"><i class="fa fa-circle-o"></i> Listes des Categories </a></li>
+                        <li><a href="{{ path('rechercherProduit') }}"><i class="fa fa-circle-o"></i> Rechercher Produit </a></li>
+
+
+                    </ul>
+
+                </li>
+
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>Gestion des Club</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{ path('ajouterClub') }}"><i class="fa fa-circle-o"></i> Ajouter des club </a></li>
+                        <li><a href="{{ path('afficherClub') }}"><i class="fa fa-circle-o"></i> Afficher les Club</a></li>
+                        <li><a href=""><i class="fa fa-circle-o"></i> Rechercher des Club </a></li>
+                        <li><a href="{{ path('calendrierClub') }}"><i class="fa fa-circle-o"></i> Afficher Calendrier</a></li>
+                        <li><a href=""><i class="fa fa-circle-o"></i> Google Map</a></li>
+
+                    </ul>
+
+                </li>
+
 
             </ul>
         </section>
@@ -432,10 +486,17 @@
 
                         </div>
                     </div>
+                    <!-- /.box -->
                 </div>
+                <!-- /.col-->
             </div>
+            <!-- ./row -->
         </section>
+        <!-- /.content -->
     </div>
+    <!-- /.content-wrapper -->
+
+
 
 
     <footer class="main-footer">
@@ -657,6 +718,49 @@
 <script src="{{ asset('template_Admin_Principal/dist/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('template_Admin_Principal/dist/js/demo.js') }}"></script>
+<script>
+    $(document).ready(function() {
+        $("#submit-cal").click(function () {
+            alert('submit clicked');
+            var title = $("#eventName").val();
+
+            var dataString = {};
+            dataString['eventName'] = title;
+            dataString['startTime'] = $('#AgentName').val();
+            dataString['endTime'] =$('#UserName').val();
+            // alert("debut: "+$('#AgentName').val() + " Fin : "+$('#UserName').val())
+            //  alert(dataString);
+            $.ajax({
+                method: 'POST',
+                dataType: 'json',
+                url: '{{ path('ajouterevntClub') }}',
+                data: dataString,
+                success: function (data) {
+                    alert("Data 1 SuccessFully");
+                    window.location.reload();
+                    if (data.success)
+                        alert("Data 2 SuccessFully");
+                }
+
+
+            });
+
+            calendar.fullCalendar('unselect');
+            calendar.fullCalendar('refetchEvents');
+            $("#popup").modal('hide');
+
+
+        });
+        $('#cancel').on('click', function(e){
+            e.stopPropagation();
+            if ($('#popup').css('display') == 'none')
+                $('#popup').show();
+            else
+                $('#popup').hide();
+        });
+    });
+</script>
+
 
 </body>
 </html>

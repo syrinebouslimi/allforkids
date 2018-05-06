@@ -1,0 +1,76 @@
+{% extends 'KidsFrontBundle::TemplateProduit.html.twig' %}
+{% block body %}
+    <div class="col-md-9 col-sm-8 col-xs-12 block pull-right">
+
+        <div class="row">
+            <div class="col-sm-4 col-xs-12">
+                {#<div class="teachersPhoto">#}
+                {#<img src="{{ asset('uploads/images/' ~ serv.imagServ) }}" alt="image" class="img-rounded img-responsive">#}
+                {#</div>#}
+
+                <div class="imagesPart clearfix">
+                    <img src="{{ asset('uploads/images/' ~ form.imageProduit) }}" class="img-rounded">
+                </div>
+            </div>
+            <div class="col-sm-8 col-xs-12">
+                <div class="teachersInfo">
+                    <h3>Nom Produit</h3>
+                    <p>{{ form.nomProduit }}</p>
+
+
+                    <div class="thumbnail thumbnailContent alt">
+                        <div class="caption border-color-1 singleBlog">
+                            <h3 class="color-1">{{ form.prixProduit }}</h3>
+                            <h3 class="color-1">{{ form.quantiteProduit }}</h3>
+
+                            <div class="imagesPart clearfix">
+
+
+                            </div>
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <p><br><br><br></p>
+                    <p></p>
+                    <ul class="list-inline">
+                        <br><br><br>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+    <div class="col-md-3 col-sm-4 col-xs-12 pull-left">
+        <aside>
+            <div class="rightSidebar">
+                <div class="panel panel-default">
+                    <div class="panel-heading bg-color-1 border-color-1">
+                        <h3 class="panel-title">Information</h3>
+                    </div>
+
+                </div>
+
+                {#<div class="btnPart">#}
+                {#<button  type="button" data-clicked="clicked"  data-toggle="modal" data-target="#modal-default" name="Reserver Rendez-vous"  class="btn btn-primary btn-block bg-color-6"Reserver Rendez-vous >#}
+                {#<a class="panel-title">Description</a>#}
+                {#</button>#}
+
+
+                {#</div>#}
+
+
+            </div>
+        </aside>
+
+    </div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends '@KidsBackend/Template_Admin.html.twig' %}
+{% block body %}
+    <h3 class="box-title">Liste des Categories </h3>
+    <table border="2" class="table table-bordered table-hover" >
+
+        <tr>
+           {#<th>Nom Categorie</th>#}
+
+        </tr>
+        {% for C in form %}
+            <tr>
+                <td>{{ C.nomCategorie }}</td>
+
+
+
+
+            </tr>
+
+        {% endfor %}
+    </table>
+
+{% endblock %}

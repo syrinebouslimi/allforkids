@@ -157,6 +157,10 @@ recherche:
     path:     /recherche
     defaults: { _controller: KidsFrontBundle:Services:recherche}
 
+creerpublication:
+    path:     /creerpublication
+    defaults: { _controller: KidsFrontBundle:Publication:creerpublication }
+
 creerespace:
     path:     /creerespace
     defaults: { _controller: KidsFrontBundle:EspaceEnfant:creerespace }
@@ -169,6 +173,33 @@ creeractivite:
     path:     /creeractivite/{id}
     defaults: { _controller: KidsFrontBundle:EspaceEnfant:creeractivite }
 
+ProduitAfficherFront:
+        path:     /ProduitAfficherFront
+        defaults: { _controller: KidsFrontBundle:Produitfront:ProduitAfficherFront}
+
+
+detailProduitFront:
+        path:     /detailProduitFront/{id}
+        defaults: { _controller: KidsFrontBundle:Produitfront:detailProduitFront}
+
+
+
+CategorieProduit:
+        path:     /CategorieProduit
+        defaults: { _controller: KidsFrontBundle:Produitfront:CategorieProduit}
+afficherProduitjson:
+    path:     /afficherProduitjson
+    defaults: { _controller: KidsFrontBundle:Produitfront:afficherProduitjsonFront}
+ajoutProduitjson:
+    path:     /ajoutProduitjson
+    defaults: { _controller: KidsFrontBundle:Produitfront:ajoutProduitjson}
+afficherCategoriejson:
+    path:     /afficherCategoriejson
+    defaults: { _controller: KidsFrontBundle:Produitfront:afficherCategoriejsonFront}
+
+ProduitParCategorie:
+    path:     /{id}/ProduitParCategorie
+    defaults: { _controller: KidsFrontBundle:Produitfront:produitParCategorie}
 supprimeractivite:
     path:     /supprimeractivite/{id}/{id1}
     defaults: { _controller: KidsFrontBundle:EspaceEnfant:supprimeractivite }
@@ -176,6 +207,10 @@ supprimeractivite:
 imprimeractivite:
     path:     /imprimeractivite/{id}
     defaults: { _controller: KidsFrontBundle:EspaceEnfant:imprimeractivite }
+
+proposerpublication:
+    path:     /proposerpublication
+    defaults: { _controller: KidsFrontBundle:Publication:proposerpublication }
 template:
     path: /template
     defaults: { _controller: KidsFrontBundle:Default:template}
@@ -222,3 +257,10 @@ api_supprimer_notif:
 api_get_all_notifications:
     path: /afficherNotif
     defaults: { _controller: KidsFrontBundle:EtablissementMobile:allNotifications}
+
+afficheclubsfront:
+    path:     /afficheClub
+    defaults: { _controller: KidsFrontBundle:Clubs:afficheclubsfront }
+map:
+    path:     /map/{id}
+    defaults: { _controller: KidsFrontBundle:Clubs:map }
