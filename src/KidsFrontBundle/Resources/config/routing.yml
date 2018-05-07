@@ -273,3 +273,6 @@ afficherGallerieParent:
 ajouterOuModifierVote:
     path: /ajouterOuModifierVote/{id}
     defaults: { _controller: KidsFrontBundle:Parent:ajouterOuModifierVote}
+afficherFiltredEnseignParent:
+    path: /afficherFiltredEnseignParent
+    defaults: { _controller: KidsFrontBundle:Parent:afficherFiltredEnseignParent}

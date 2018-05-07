@@ -158,8 +158,45 @@
 
  {% block body %}
 
+
+
      <section class="teachers teachers-page padding-120">
+
+
+
          <div class="container">
+
+             <form action="{{ path('afficherFiltredEnseignParent') }}" method="post">
+
+                 <h5>Choisir un etablissement : </h5>
+                 <div class="row">
+
+
+
+                     <div class="col-sm-3 col-xs-12">
+                         <div class="dropGeneral roundOne colorBg bg-color-3">
+
+                             <select name="idEtab" class="select-drop">
+                                 <option value="Voir tout">Voir tout</option>
+                                 {% for i in etablissement %}
+                                     <option value="{{ i.id }}">{{ i.nomEtablissement }}</option>
+                                 {% endfor %}
+                             </select>
+
+
+                         </div>
+
+                     </div>
+                     <button type="submit" class="btn btn-info pull-right">Chercher</button>
+
+                 </div>
+
+             </form>
+
+
+
+
+
              <div class="row">
                  {% for i in enseignants %}
 

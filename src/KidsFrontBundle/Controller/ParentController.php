@@ -27,6 +27,7 @@ class ParentController extends Controller
 
     public function afficherEnseignParentAction(){
 
+
         $user = $this->container->get('security.token_storage')->getToken()->getUser();
         $idUser = $user->getId();
 
@@ -34,8 +35,39 @@ class ParentController extends Controller
         $allFavoris = $em->getRepository('UserBundle:UserEtablissementFavoris')->findBy(array('user' => $idUser));
         $allEnsei = $em->getRepository('UserBundle:Enseignant')->findAll();
 
+        $allEtab = $em->getRepository('UserBundle:Etablissement')->findBy(array('etat' => 'valide'));
+
+
         return $this->render('@KidsFront/afficherenseiparparent.html.twig', array('favoris' => $allFavoris,
-            'enseignants'=>$allEnsei));
+            'enseignants'=>$allEnsei, 'etablissement'=>$allEtab));
+    }
+
+
+    public function afficherFiltredEnseignParentAction(Request $request){
+
+
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $idUser = $user->getId();
+
+        $em = $this->getDoctrine()->getManager();
+        $allFavoris = $em->getRepository('UserBundle:UserEtablissementFavoris')->findBy(array('user' => $idUser));
+        $idEtab = $request->get('idEtab');
+
+        if ($idEtab == "Voir tout"){
+            return $this->redirectToRoute('afficherEnseignParent');
+        } else{
+
+            $filtredEnsei = $em->getRepository('UserBundle:Enseignant')->findBy(array('etablissementId'=>$idEtab));
+            $allEtab = $em->getRepository('UserBundle:Etablissement')->findBy(array('etat' => 'valide'));
+
+
+
+            return $this->render('@KidsFront/afficherenseiparparent.html.twig', array('favoris' => $allFavoris,
+                'enseignants'=>$filtredEnsei, 'etablissement'=>$allEtab));
+        }
+
+
+
     }
 
 
