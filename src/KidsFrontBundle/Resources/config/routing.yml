@@ -215,6 +215,16 @@ template:
     path: /template
     defaults: { _controller: KidsFrontBundle:Default:template}
 
+getGallerieForPrestataire:
+    path: /getGallerieForPrestataire
+    defaults: { _controller: KidsFrontBundle:EtablissementMobile:getGallerieForPrestataire}
+getEnseiForPrestataire:
+    path: /getEnseiForPrestataire
+    defaults: { _controller: KidsFrontBundle:EtablissementMobile:getEnseiForPrestataire}
+getEtabForPrestataire:
+    path: /getEtabForPrestataire
+    defaults: { _controller: KidsFrontBundle:EtablissementMobile:getEtabForPrestataire}
+
 
 api_mobile_get_all_etablissement:
     path: /getAllEtablissement

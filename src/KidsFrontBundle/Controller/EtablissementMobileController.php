@@ -26,7 +26,6 @@ class EtablissementMobileController extends Controller
             ->getRepository('UserBundle:Etablissement')
             ->findAll();
         $normalizer = new ObjectNormalizer();
-//        $normalizer->setIgnoredAttributes(array('adresseUser'));
         $normalizer->setCircularReferenceLimit(1);
         $normalizer->setCircularReferenceHandler(function ($object) {
             return $object->getId();
@@ -308,5 +307,74 @@ class EtablissementMobileController extends Controller
         return new \Symfony\Component\HttpFoundation\Response("Suppression effectué avec succés");
 
     }
+
+
+    public function getEtabForPrestataireAction(Request $request)
+    {
+        $encoders = array(new XmlEncoder(), new JsonEncoder());
+        $idUser = $request->get('user');
+        $etab = $this->getDoctrine()->getManager()
+            ->getRepository('UserBundle:Etablissement')
+            ->findBy(array('idUserEtablissement'=>$idUser));
+
+        $normalizer = new ObjectNormalizer();
+        $normalizer->setIgnoredAttributes(array('avgRating','userNote','idUserEtablissement','dateCreationEtablissement','userFavorites'));
+        $normalizer->setCircularReferenceLimit(1);
+        $normalizer->setCircularReferenceHandler(function ($object) {
+            return $object->getId();
+        });
+        $normalizers = array($normalizer);
+        $serializer = new Serializer($normalizers, $encoders);
+        $jsonContent = $serializer->normalize($etab, 'json');
+        return new JsonResponse($jsonContent);
+
+    }
+
+    public function getEnseiForPrestataireAction(Request $request)
+    {
+        $encoders = array(new XmlEncoder(), new JsonEncoder());
+        $idEtab = $request->get('etablissement');
+
+        $etab = $this->getDoctrine()->getManager()
+            ->getRepository('UserBundle:Enseignant')
+            ->findBy(array('etablissementId'=>$idEtab));
+
+        $normalizer = new ObjectNormalizer();
+        $normalizer->setCircularReferenceLimit(1);
+        $normalizer->setCircularReferenceHandler(function ($object) {
+            return $object->getId();
+        });
+        $normalizers = array($normalizer);
+        $serializer = new Serializer($normalizers, $encoders);
+        $jsonContent = $serializer->normalize($etab, 'json');
+        return new JsonResponse($jsonContent);
+
+    }
+
+    public function getGallerieForPrestataireAction(Request $request)
+    {
+        $encoders = array(new XmlEncoder(), new JsonEncoder());
+        $idEtab = $request->get('etablissement');
+
+        $etab = $this->getDoctrine()->getManager()
+            ->getRepository('UserBundle:Gallerie')
+            ->findBy(array('etablissementId'=>$idEtab));
+
+        $normalizer = new ObjectNormalizer();
+        $normalizer->setCircularReferenceLimit(1);
+        $normalizer->setCircularReferenceHandler(function ($object) {
+            return $object->getId();
+        });
+        $normalizers = array($normalizer);
+        $serializer = new Serializer($normalizers, $encoders);
+        $jsonContent = $serializer->normalize($etab, 'json');
+        return new JsonResponse($jsonContent);
+
+    }
+
+
+
+
+
 
 }
