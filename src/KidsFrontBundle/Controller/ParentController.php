@@ -67,14 +67,6 @@ class ParentController extends Controller
 
 
         }
-
-
-//        var_dump($allEtab).die();
-
-
-
-
-
         return $this->render('@KidsFront/afficheretablissementparent.html.twig', array('etablissement' => $allEtab, 'favoris' => $allFavoris));
 
     }

@@ -1,5 +1,98 @@
 {% extends 'KidsFrontBundle::Template_User.html.twig' %}
+{% block Menu %}
+    <nav id="menuBar" class="navbar navbar-default lightHeader" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"><img src="{{ asset('Template_front_principal/img/logo-school.png') }}"
+                                             alt="Kidz School"></a>
+            </div>
 
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown singleDrop color-1 active ">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-home bg-color-1" aria-hidden="true"></i> <span
+                                    class="active">Etablissement</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li class=""><a href="{{ path('afficherEtabByParent') }}">Consulter les
+                                    Etablissements</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown singleDrop color-3 active ">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-list-ul bg-color-3" aria-hidden="true">
+                            </i> <span>Enseignants</span></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li class=" "><a href="{{ path('afficherprof') }}">Consulter la liste des enseigants</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown singleDrop color-4 active">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true">
+                            </i> <span class="active">Gallerie</span></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li class=" "><a href="{{ path('affichergallerie') }}">Consulter la gallerie des images</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown singleDrop color-1 active ">
+                        <a href="{{ path('publications') }}" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-list-ul bg-color-1" aria-hidden="true">
+                            </i>
+                            <span class="active">Publications</span>
+                        </a>
+
+                    </li>
+
+                    <li class="dropdown singleDrop color-4 active" >
+                        <a href="{{ path('afficherespaceenfant') }}" role="button" aria-haspopup="true"
+                           aria-expanded="false">
+                            <i class="fa fa-gg bg-color-4" aria-hidden="true"></i>
+                            <span class="active">Espace Kids</span>
+                        </a>
+                    </li>
+
+                    <li class="dropdown singleDrop color-3 active">
+                        <a href="{{ path('services') }}" class="dropdown-toggle" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-list-ul bg-color-3" aria-hidden="true">
+                            </i> <span class="active">Service</span></a>
+                    </li>
+
+                    <li class="dropdown singleDrop color-4 active">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true">
+                            </i> <span class="active">Réclamations</span></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li class=" "><a href="{{ path('affichergallerie') }}">Mes réclamations</a></li>
+                            <li class=" "><a href="{{ url('fos_message_thread_new' ) }}">Envoyer nouvelle reclamation</a>
+
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+{% endblock Menu %}
 {% block bandeau %}
 
     <section class="pageTitleSection">
@@ -20,12 +113,12 @@
         <h2 style="margin-bottom: 3%">
             <span class="shape shape-left bg-color-4"></span>
             {% if is_granted("ROLE_PARENT") %}
-                <span>Bienvenue {{ app.user }}</span>
+                <span style="font-style: normal;">Bienvenue {{ app.user }}</span>
             {% else %}
-                <span>Bienvenue</span>
+                <span style="font-style: normal;">Bienvenue</span>
             {% endif %}
             <span class="shape shape-right bg-color-4"></span>
-            <h3 class="color-4" style="text-transform: capitalize; font-weight: 600; margin-bottom: 3%">Creez un espace personnalisé pour votre enfant</h3>
+            <h5 class="color-4" style="font-style: normal; font-size: 24px;">Creez un espace personnalisé pour votre enfant</h5>
             <div class="row progress-wizard" style="border-bottom:0;margin-bottom: 0%;margin-left: 40%;padding: 2%;">
                 <div class="col-sm-4 col-xs-12 progress-wizard-step active">
                     <a href="{{ path('creerespace') }}" target="_blank" class="progress-wizard-dot">
@@ -42,7 +135,7 @@
             <div class="sectionTitle text-center alt">
                 <h2>
                     <span class="shape shape-left"></span>
-                    <span style="font-size: 29px;">Consultez vos espaces enfants</span>
+                    <span style="font-size: 29px; font-style: normal;">Consultez vos espaces enfants</span>
                     <span class="shape shape-right"></span>
                 </h2>
             </div>
@@ -55,7 +148,7 @@
                                 <img src="{{ asset('uploads/images/' ~ key.photoEnfant) }}" alt="img" class="img-circle img-responsive">
                             </div>
                             <div class="teamInfo teamTeacher">
-                                <h3><a href="{{ path('espacedetails',{'id':key.id}) }}" style="color: white;">{{ key.nomEnfant }}</a></h3>
+                                <h3 style="font-style: normal;"><a href="{{ path('espacedetails',{'id':key.id}) }}" style="color: white;">{{ key.nomEnfant }}</a></h3>
                                 <p style="color: white;">Consulter le profil</p>
                             </div>
                         </div>

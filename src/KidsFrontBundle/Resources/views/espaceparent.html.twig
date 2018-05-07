@@ -59,20 +59,11 @@
 
                     </li>
 
-
-                    {#<li class="dropdown singleDrop color-3 active">#}
-                    {#<a href="{{ path('publications') }}" role="button" aria-haspopup="true" aria-expanded="false">#}
-                    {#<i class="fa fa-list-ul bg-color-3" aria-hidden="true">#}
-                    {#</i>#}
-                    {#<span class="active">Publications</span>#}
-                    {#</a>#}
-                    {#</li>#}
-
-                    <li class="dropdown singleDrop color-5 active">
+                    <li class="dropdown singleDrop color-4 active" >
                         <a href="{{ path('afficherespaceenfant') }}" role="button" aria-haspopup="true"
                            aria-expanded="false">
-                            <i class="fa fa-calendar bg-color-5" aria-hidden="true"></i>
-                            <span class="active">Espace enfant</span>
+                            <i class="fa fa-gg bg-color-4" aria-hidden="true"></i>
+                            <span class="active">Espace Kids</span>
                         </a>
                     </li>
 
@@ -159,7 +150,7 @@
                 {#<i><h2>Bonjour {{ app.user.username|default('') }}</h2></i>#}
                 {#<br>#}
 
-                <h2>Espace parent</h2>
+                <h2 style="font-style: normal; "> </h2>
             </div>
         </div>
     </section>
@@ -170,16 +161,62 @@
      <section class="mainContent full-width clearfix" style="margin-top: 30px;height:150px; ">
 
          <div class="sectionTitle text-center">
-             <h2>
+             <h2 style="margin-bottom: 1%; margin-top: -2%">
                  <span class="shape shape-left bg-color-4"></span>
-                 <span>Bienvenue {{ app.user.username|default('') }}</span>
+                 <span style="font-style: normal; ">Bienvenue {{ app.user.username|default('') }}</span>
                  <span class="shape shape-right bg-color-4"></span>
+                 <h5 class="color-4" style="font-style: normal; font-size: 24px;">Notre Equipe</h5>
              </h2>
          </div>
 
      </section>
-
-
-
+     <section class="whiteSection full-width clearfix testimonialArea">
+         <div class="container">
+             <div class="row testimonial-grid">
+                 <div class="col-sm-4 col-xs-12">
+                     <div class="testimonialContent  bg-color-1">
+                         <span class="userSign border-color-1"><img src="{{ asset('Template_front_principal/img/testimonial/1.jpg') }}" alt="img" class="img-circle img-responsive"></span>
+                         <p></p>
+                         <h3 style="font-style: normal;">Arwa Achour <br> <small>Taches</small></h3>
+                     </div>
+                 </div>
+                 <div class="col-sm-4 col-xs-12">
+                     <div class="testimonialContent  bg-color-2">
+                         <span class="userSign border-color-2"><img src="{{ asset('Template_front_principal/img/testimonial/1.jpg') }}" alt="img" class="img-circle img-responsive"></span>
+                         <p></p>
+                         <h3 style="font-style: normal;">Syrine Bouslimi<br> <small>Taches</small></h3>
+                     </div>
+                 </div>
+                 <div class="col-sm-4 col-xs-12">
+                     <div class="testimonialContent  bg-color-3">
+                         <span class="userSign border-color-3"><img src="{{ asset('Template_front_principal/img/testimonial/1.jpg') }}" alt="img" class="img-circle img-responsive"></span>
+                         <p></p>
+                         <h3 style="font-style: normal;">Ali Mabrouki<br> <small>Taches</small></h3>
+                     </div>
+                 </div>
+                 <div class="col-sm-4 col-xs-12">
+                     <div class="testimonialContent  bg-color-4">
+                         <span class="userSign border-color-4"><img src="{{ asset('Template_front_principal/img/testimonial/1.jpg') }}" alt="img" class="img-circle img-responsive"></span>
+                         <p></p>
+                         <h3 style="font-style: normal;">Amira Chaouachi<br> <small>Taches</small></h3>
+                     </div>
+                 </div>
+                 <div class="col-sm-4 col-xs-12">
+                     <div class="testimonialContent  bg-color-5">
+                         <span class="userSign border-color-5"><img src="{{ asset('Template_front_principal/img/testimonial/1.jpg') }}" alt="img" class="img-circle img-responsive"></span>
+                         <p></p>
+                         <h3 style="font-style: normal;">Amel Ayari<br> <small>Taches</small></h3>
+                     </div>
+                 </div>
+                 <div class="col-sm-4 col-xs-12">
+                     <div class="testimonialContent  bg-color-6">
+                         <span class="userSign border-color-6"><img src="{{ asset('Template_front_principal/img/testimonial/1.jpg') }}" alt="img" class="img-circle img-responsive"></span>
+                         <p></p>
+                         <h3 style="font-style: normal;">Haythem Ahmed<br> <small>Taches</small></h3>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
 
  {% endblock body %}

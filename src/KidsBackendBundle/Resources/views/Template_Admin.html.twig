@@ -1,273 +1,155 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Dashboard</title>
+    <title>AllForKids </title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet"
-          href="{{ asset('template_Admin_Principal/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('template_Admin_Principal/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
     <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="{{ asset('template_Admin_Principal/bower_components/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('template_Admin_Principal/bower_components/font-awesome/css/font-awesome.min.css') }}">
     <!-- Ionicons -->
-    <link rel="stylesheet"
-          href="{{ asset('template_Admin_Principal/bower_components/Ionicons/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('template_Admin_Principal/bower_components/Ionicons/css/ionicons.min.css') }}">
     <!-- DataTables -->
-    <link rel="stylesheet"
-          href="{{ asset('template_Admin_Principal/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('template_Admin_Principal/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('template_Admin_Principal/dist/css/AdminLTE.min.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('bundles/kidsfront/css/stylenotifications.css') }}">
-
     <link rel="stylesheet" href="{{ asset('template_Admin_Principal/dist/css/skins/_all-skins.min.css') }}">
 
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Google Font -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="../../index2.html" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>A</b>LT</span>
+            <span class="logo-mini"><b>E</b>VT</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Admin</b>LTE</span>
+            <span class="logo-lg"><b>AllFor</b>Kids</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
             <!-- Sidebar toggle button-->
             <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
                 <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
             </a>
 
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
-                    <!-- Messages: style can be found in dropdown.less-->
-                    <li class="dropdown messages-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-envelope-o"></i>
-                            <span class="label label-success">4</span>
-                        </a>
+
+
+                    <li class="dropdown tasks-menu">
+
                         <ul class="dropdown-menu">
-                            <li class="header">You have 4 messages</li>
+                            <li class="header">You have 9 tasks</li>
                             <li>
                                 <!-- inner menu: contains the actual data -->
                                 <ul class="menu">
-                                    <li><!-- start message -->
+                                    <li><!-- Task item -->
                                         <a href="#">
-                                            <div class="pull-left">
-                                                <img src="dist/img/user2-160x160.jpg" class="img-circle"
-                                                     alt="User Image">
+                                            <h3>
+                                                Design some buttons
+                                                <small class="pull-right">20%</small>
+                                            </h3>
+                                            <div class="progress xs">
+                                                <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
+                                                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                    <span class="sr-only">20% Complete</span>
+                                                </div>
                                             </div>
-                                            <h4>
-                                                Support Team
-                                                <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                                            </h4>
-                                            <p>Why not buy a new awesome theme?</p>
                                         </a>
                                     </li>
-                                    <!-- end message -->
-                                    <li>
+                                    <!-- end task item -->
+                                    <li><!-- Task item -->
                                         <a href="#">
-                                            <div class="pull-left">
-                                                <img src="dist/img/user3-128x128.jpg" class="img-circle"
-                                                     alt="User Image">
+                                            <h3>
+                                                Create a nice theme
+                                                <small class="pull-right">40%</small>
+                                            </h3>
+                                            <div class="progress xs">
+                                                <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar"
+                                                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                    <span class="sr-only">40% Complete</span>
+                                                </div>
                                             </div>
-                                            <h4>
-                                                AdminLTE Design Team
-                                                <small><i class="fa fa-clock-o"></i> 2 hours</small>
-                                            </h4>
-                                            <p>Why not buy a new awesome theme?</p>
                                         </a>
                                     </li>
-                                    <li>
+                                    <!-- end task item -->
+                                    <li><!-- Task item -->
                                         <a href="#">
-                                            <div class="pull-left">
-                                                <img src="dist/img/user4-128x128.jpg" class="img-circle"
-                                                     alt="User Image">
+                                            <h3>
+                                                Some task I need to do
+                                                <small class="pull-right">60%</small>
+                                            </h3>
+                                            <div class="progress xs">
+                                                <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar"
+                                                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                    <span class="sr-only">60% Complete</span>
+                                                </div>
                                             </div>
-                                            <h4>
-                                                Developers
-                                                <small><i class="fa fa-clock-o"></i> Today</small>
-                                            </h4>
-                                            <p>Why not buy a new awesome theme?</p>
                                         </a>
                                     </li>
-                                    <li>
+                                    <!-- end task item -->
+                                    <li><!-- Task item -->
                                         <a href="#">
-                                            <div class="pull-left">
-                                                <img src="dist/img/user3-128x128.jpg" class="img-circle"
-                                                     alt="User Image">
+                                            <h3>
+                                                Make beautiful transitions
+                                                <small class="pull-right">80%</small>
+                                            </h3>
+                                            <div class="progress xs">
+                                                <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar"
+                                                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                    <span class="sr-only">80% Complete</span>
+                                                </div>
                                             </div>
-                                            <h4>
-                                                Sales Department
-                                                <small><i class="fa fa-clock-o"></i> Yesterday</small>
-                                            </h4>
-                                            <p>Why not buy a new awesome theme?</p>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="#">
-                                            <div class="pull-left">
-                                                <img src="dist/img/user4-128x128.jpg" class="img-circle"
-                                                     alt="User Image">
-                                            </div>
-                                            <h4>
-                                                Reviewers
-                                                <small><i class="fa fa-clock-o"></i> 2 days</small>
-                                            </h4>
-                                            <p>Why not buy a new awesome theme?</p>
-                                        </a>
-                                    </li>
+                                    <!-- end task item -->
                                 </ul>
                             </li>
-                            <li class="footer"><a href="#">See All Messages</a></li>
+                            <li class="footer">
+                                <a href="#">View all tasks</a>
+                            </li>
                         </ul>
                     </li>
-                    <!-- Notifications: style can be found in dropdown.less -->
-                    <li class="dropdown notifications-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-bell-o"></i>
-                            <span class="label label-warning">{{ notifiableNotifications|length }}</span>
-                        </a>
-                        <ul class="dropdown-menu">
-
-                            {#<ul class="dropdown-menu notifications" role="menu" aria-labelledby="dLabel">#}
-
-                            {#<div class="notification-heading"><h4 class="menu-title">Notifications</h4><h4 class="menu-title pull-right">View all<i class="glyphicon glyphicon-circle-arrow-right"></i></h4>#}
-                            {#</div>#}
-                            {#<li class="divider"></li>#}
-                            {#<div class="notifications-wrapper">#}
-                            {#<a class="content" href="#">#}
-
-                            {#<div class="notification-item">#}
-                            {#<h4 class="item-title">Evaluation Deadline 1 · day ago</h4>#}
-                            {#<p class="item-info">Marketing 101, Video Assignment</p>#}
-                            {#</div>#}
-
-                            {#</a>#}
-                            {#<a class="content" href="#">#}
-                            {#<div class="notification-item">#}
-                            {#<h4 class="item-title">Evaluation Deadline 1 · day ago</h4>#}
-                            {#<p class="item-info">Marketing 101, Video Assignment</p>#}
-                            {#</div>#}
-                            {#</a>#}
-                            {#<a class="content" href="#">#}
-                            {#<div class="notification-item">#}
-                            {#<h4 class="item-title">Evaluation Deadline 1 • day ago</h4>#}
-                            {#<p class="item-info">Marketing 101, Video Assignment</p>#}
-                            {#</div>#}
-                            {#</a>#}
-                            {#<a class="content" href="#">#}
-                            {#<div class="notification-item">#}
-                            {#<h4 class="item-title">Evaluation Deadline 1 • day ago</h4>#}
-                            {#<p class="item-info">Marketing 101, Video Assignment</p>#}
-                            {#</div>#}
-
-                            {#</a>#}
-                            {#<a class="content" href="#">#}
-                            {#<div class="notification-item">#}
-                            {#<h4 class="item-title">Evaluation Deadline 1 • day ago</h4>#}
-                            {#<p class="item-info">Marketing 101, Video Assignment</p>#}
-                            {#</div>#}
-                            {#</a>#}
-                            {#<a class="content" href="#">#}
-                            {#<div class="notification-item">#}
-                            {#<h4 class="item-title">Evaluation Deadline 1 • day ago</h4>#}
-                            {#<p class="item-info">Marketing 101, Video Assignment</p>#}
-                            {#</div>#}
-                            {#</a>#}
-
-                            {#</div>#}
-                            {#<li class="divider"></li>#}
-                            {#<div class="notification-footer"><h4 class="menu-title">View all<i class="glyphicon glyphicon-circle-arrow-right"></i></h4></div>#}
-                            {#</ul>#}
-
-                            {#<div class="notification-heading"><h4 class="menu-title">Notifications</h4><h4 class="menu-title pull-right">View all<i class="glyphicon glyphicon-circle-arrow-right"></i></h4>#}
-
-                            <li class="notification-heading"><h4 class="menu-title">Notifications</h4><h4
-                                        class="menu-title pull-right">View all<i
-                                            class="glyphicon glyphicon-circle-arrow-right"></i></h4></li>
-
-
-                            {#<form action="{{ mgilet_notification_generate_path('notification_mark_all_as_seen', notifiableNotifications|first.notifiableEntity) }}"#}
-                            {#method="post">#}
-                            {#<button type="submit">Mark all as seen</button>#}
-                            {#</form>#}
-                            <div>
-                                {% for notifiableNotification in notifiableNotifications %}
-                                    {#<li>#}
-
-                                    <div class="notification-item">
-                                        <h4 class="item-title"><b>{{ notifiableNotification.notification.subject }} •
-                                                day ago</b></h4>
-                                        <p class="item-info">{{ notifiableNotification.notification.message }}</p>
-                                    </div>
-
-                                    {#<i class="notification-item" >{{ notifiableNotification.notification.subject }}</i>#}
-                                    {#<b>{{ notifiableNotification.notification.message }}</b>#}
-
-                                    {#<br>#}
-                                    {#seen : {{ notifiableNotification.seen }}#}
-                                    {#<form action="{{ mgilet_notification_generate_path('notification_mark_as_seen', notifiableNotification.notifiableEntity, notifiableNotification.notification) }}"#}
-                                    {#method="post">#}
-                                    {#<button type="submit">Mark as seen</button>#}
-                                    {#</form>#}
-                                    {#<form action="{{ mgilet_notification_generate_path('notification_mark_as_unseen', notifiableNotification.notifiableEntity, notifiableNotification.notification) }}"#}
-                                    {#method="post">#}
-                                    {#<button type="submit">Mark as unseen</button>#}
-                                    {#</form>#}
-
-
-                                    {#</li>#}
-                                {% endfor %}
-                            </div>
-
-                            <li class="footer"><a href="#">View all</a></li>
-                        </ul>
-                    </li>
-
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{ asset('bundles/kidsfront/img/home/team/team-2.jpg') }}" class="user-image"
-                                 alt="User Image">
-                            <span class="hidden-xs">Alexander Pierce</span>
+                            <img src="{{ asset('template_Admin_Principal/dist/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
+                            <span class="hidden-xs">Esprit</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
-                                <img src="{{ asset('bundles/kidsfront/img/home/team/team-2.jpg') }}" class="img-circle"
-                                     alt="User Image">
+                                <img src="{{ asset('template_Admin_Principal/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
 
                                 <p>
-                                    Alexander Pierce - Web Developer
-                                    <small>Membre depuis Mars. 2018</small>
+                                    Mabrouki Ali - Web Developer
+                                    <small>Member since Nov. 2018</small>
                                 </p>
+                            </li>
+                            <!-- Menu Body -->
+                            <li class="user-body">
+                                <div class="row">
+                                </div>
+                                <!-- /.row -->
                             </li>
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    <a href="" class="btn btn-default btn-flat">Profile</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">Se déconnecter</a>
+                                    <a href="" class="btn btn-default btn-flat">Sign out</a>
                                 </div>
                             </li>
                         </ul>
@@ -280,6 +162,7 @@
             </div>
         </nav>
     </header>
+
     <!-- Left side column. contains the logo and sidebar -->
     <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
@@ -741,15 +624,10 @@
                     if (data.success)
                         alert("Data 2 SuccessFully");
                 }
-
-
             });
-
             calendar.fullCalendar('unselect');
             calendar.fullCalendar('refetchEvents');
             $("#popup").modal('hide');
-
-
         });
         $('#cancel').on('click', function(e){
             e.stopPropagation();
@@ -759,8 +637,17 @@
                 $('#popup').hide();
         });
     });
+    $(function () {
+        $('#example1').DataTable()
+        $('#example2').DataTable({
+            'paging'      : true,
+            'lengthChange': false,
+            'searching'   : false,
+            'ordering'    : true,
+            'info'        : true,
+            'autoWidth'   : false
+        })
+    })
 </script>
-
-
 </body>
 </html>

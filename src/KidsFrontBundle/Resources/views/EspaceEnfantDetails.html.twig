@@ -1,5 +1,98 @@
 {% extends 'KidsFrontBundle::Template_User.html.twig' %}
+{% block Menu %}
+    <nav id="menuBar" class="navbar navbar-default lightHeader" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand"><img src="{{ asset('Template_front_principal/img/logo-school.png') }}"
+                                             alt="Kidz School"></a>
+            </div>
 
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown singleDrop color-1 active ">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-home bg-color-1" aria-hidden="true"></i> <span
+                                    class="active">Etablissement</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li class=""><a href="{{ path('afficherEtabByParent') }}">Consulter les
+                                    Etablissements</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown singleDrop color-3 active ">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-list-ul bg-color-3" aria-hidden="true">
+                            </i> <span>Enseignants</span></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li class=" "><a href="{{ path('afficherprof') }}">Consulter la liste des enseigants</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown singleDrop color-4 active">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true">
+                            </i> <span class="active">Gallerie</span></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li class=" "><a href="{{ path('affichergallerie') }}">Consulter la gallerie des images</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown singleDrop color-1 active ">
+                        <a href="{{ path('publications') }}" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-list-ul bg-color-1" aria-hidden="true">
+                            </i>
+                            <span class="active">Publications</span>
+                        </a>
+
+                    </li>
+
+                    <li class="dropdown singleDrop color-4 active" >
+                        <a href="{{ path('afficherespaceenfant') }}" role="button" aria-haspopup="true"
+                           aria-expanded="false">
+                            <i class="fa fa-gg bg-color-4" aria-hidden="true"></i>
+                            <span class="active">Espace Kids</span>
+                        </a>
+                    </li>
+
+                    <li class="dropdown singleDrop color-3 active">
+                        <a href="{{ path('services') }}" class="dropdown-toggle" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-list-ul bg-color-3" aria-hidden="true">
+                            </i> <span class="active">Service</span></a>
+                    </li>
+
+                    <li class="dropdown singleDrop color-4 active">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true">
+                            </i> <span class="active">Réclamations</span></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li class=" "><a href="{{ path('affichergallerie') }}">Mes réclamations</a></li>
+                            <li class=" "><a href="{{ url('fos_message_thread_new' ) }}">Envoyer nouvelle reclamation</a>
+
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+{% endblock Menu %}
 {% block bandeau %}
 
     <section class="pageTitleSection">
@@ -20,11 +113,10 @@
     <div class="sectionTitle text-center">
         <h2 style="margin-bottom: 3%">
             <span class="shape shape-left bg-color-4"></span>
-            <span>Bienvenue {{ profil.nomEnfant }}</span>
+            <span style="font-style: normal;">Bienvenue {{ profil.nomEnfant }}</span>
 
             <span class="shape shape-right bg-color-4"></span>
-            <h3 class="color-4" style="text-transform: capitalize; font-weight: 600; margin-bottom: 3%">Creez vos propres activités</h3>
-        </h2>
+            <h5 class="color-4" style="font-style: normal;font-size: 24px;margin-bottom: 3%;">Creez vos propres activités</h5>        </h2>
     </div>
     <div style="margin-left: 48%">
         <div class="media featuresContent">
@@ -65,7 +157,7 @@
                     <aside>
                         <div class="panel panel-default courseSidebar">
                             <div class="panel-heading bg-color-4 border-color-4">
-                                <h3 class="panel-title">Informations</h3>
+                                <h3 class="panel-title" style="font-style: normal;">Informations</h3>
                             </div>
                             <div class="panel-body">
 
