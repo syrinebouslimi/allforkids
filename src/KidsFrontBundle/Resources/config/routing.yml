@@ -238,6 +238,20 @@ api_mobile_get_all_favoris_for_user:
 api_mobile_update_etablissement:
     path: /updateEtab
     defaults: { _controller: KidsFrontBundle:EtablissementMobile:updateEtab}
+
+
+api_mobile_update_enseignant:
+    path: /updateEnseig
+    defaults: { _controller: KidsFrontBundle:EtablissementMobile:updateEnseig}
+
+api_mobile_supp_ense:
+    path: /suppressionEnsei
+    defaults: { _controller: KidsFrontBundle:EtablissementMobile:supprimerEnseignant}
+
+api_mobile_supp_image:
+    path: /suppressionImage
+    defaults: { _controller: KidsFrontBundle:EtablissementMobile:supprimerImage}
+
 api_mobile_add_favoris:
     path: /addFavoris
     defaults: { _controller:  KidsFrontBundle:EtablissementMobile:addFavoris}

@@ -396,42 +396,66 @@ class EtablissementMobileController extends Controller
     {
 
 
-        $idEtab = $request->get('id');
-        $newNomEtab = $request->get('nom');
-        $horaire = $request->get('horaire');
-        $description = $request->get('description');
-        $exigence = $request->get('exigence');
+        $idEns = $request->get('id');
+        $aboutEns = $request->get('about');
+        $designation= $request->get('designation');
+        $diplome = $request->get('diplome');
+        $experience = $request->get('experience');
+        $cours = $request->get('cours');
+        $email = $request->get('email');
         $phone = $request->get('phone');
-        $adresse = $request->get('adresse');
-        $country = $request->get('country');
-        $region = $request->get('region');
-        $codepostal = $request->get('codepostal');
-
-
 
 
         $etab = $this->getDoctrine()->getManager()
-            ->getRepository('UserBundle:Etablissement')
-            ->find($idEtab);
+            ->getRepository('UserBundle:Enseignant')
+            ->find($idEns);
 
-        $etab->setNomEtablissement($newNomEtab);
-        $etab->setHoraireEtablissement($horaire);
-        $etab->setDescriptionEtablissement($description);
-        $etab->setExigenceEtablissement($exigence);
+        $etab->setAboutEnseignant($aboutEns);
+        $etab->setDesignationEnseignant($designation);
+        $etab->setDiplomeEnseignant($diplome);
+        $etab->setExperienceEnseignant($experience);
         $etab->setPhone($phone);
-        $etab->setAdresseEtablissement($adresse);
-        $etab->setCountryEtablissement($country);
-        $etab->setRegionEtablissement($region);
-        $etab->setCodepostalEtablissement($codepostal);
+        $etab->setCoursEnseignant($cours);
+        $etab->setEmailEnseignant($email);
+
 
         $em = $this->getDoctrine()->getManager();
         $em->flush();
 
 
-        return new \Symfony\Component\HttpFoundation\Response("etablissement modifié avec succés");
+        return new \Symfony\Component\HttpFoundation\Response("enseignant modifié avec succés");
     }
 
 
+
+
+    public function supprimerEnseignantAction($id)
+    {
+
+
+        $em = $this->getDoctrine()->getManager();
+        $ensei = $this->getDoctrine()->getRepository('UserBundle:Enseignant')->find($id);
+        $em->remove($ensei);
+
+        $em->flush();
+
+
+        return new \Symfony\Component\HttpFoundation\Response("Suppression effectué avec succés");
+    }
+
+    public function supprimerImageAction($id)
+    {
+
+
+        $em = $this->getDoctrine()->getManager();
+        $image = $this->getDoctrine()->getRepository('UserBundle:Gallerie')->find($id);
+        $em->remove($image);
+
+        $em->flush();
+
+
+        return new \Symfony\Component\HttpFoundation\Response("Suppression effectué avec succés");
+    }
 
 
 
