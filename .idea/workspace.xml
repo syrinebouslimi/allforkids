@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="493db0d9-1ca6-428e-ad17-8e6973fae440" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/KidsBackendBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/KidsBackendBundle/Controller/DefaultController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/NewTest.iml" afterPath="$PROJECT_DIR$/.idea/NewTest.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,7 +32,161 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="ProposerPublication.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/ProposerPublication.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2058">
+              <caret line="98" column="19" lean-forward="false" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="19" />
+              <folding>
+                <marker date="1525812748738" expanded="true" signature="6109:8165" ph="{% block body ...%}" />
+                <marker date="1525812748738" expanded="true" signature="6110:8145" ph="..." />
+                <marker date="1525812748738" expanded="true" signature="6138:8145" ph="..." />
+                <marker date="1525812748738" expanded="true" signature="6181:8145" ph="..." />
+                <marker date="1525812748738" expanded="true" signature="6203:8145" ph="..." />
+                <marker date="1525812748738" expanded="true" signature="6231:8145" ph="..." />
+                <marker date="1525812748738" expanded="true" signature="6268:8145" ph="..." />
+                <marker date="1525812748738" expanded="true" signature="6290:8145" ph="..." />
+                <marker date="1525812748738" expanded="true" signature="6319:6491" ph="..." />
+                <marker date="1525812748738" expanded="true" signature="6348:6480" ph="..." />
+                <marker date="1525812748738" expanded="true" signature="6536:6722" ph="..." />
+                <marker date="1525812748738" expanded="true" signature="6565:6711" ph="..." />
+                <marker date="1525812748738" expanded="true" signature="6760:6979" ph="..." />
+                <marker date="1525812748738" expanded="true" signature="6793:6968" ph="..." />
+                <marker date="1525812748738" expanded="true" signature="7029:7181" ph="..." />
+                <marker date="1525812748738" expanded="true" signature="7058:7170" ph="..." />
+                <marker date="1525812748738" expanded="true" signature="7229:7391" ph="..." />
+                <marker date="1525812748738" expanded="true" signature="7262:7380" ph="..." />
+                <marker date="1525812748738" expanded="true" signature="7429:7578" ph="..." />
+                <marker date="1525812748738" expanded="true" signature="7458:7567" ph="..." />
+                <marker date="1525812748738" expanded="true" signature="7621:7775" ph="..." />
+                <marker date="1525812748738" expanded="true" signature="7650:7764" ph="..." />
+                <marker date="1525812748738" expanded="true" signature="7810:7898" ph="..." />
+                <marker date="1525812748738" expanded="true" signature="7938:8116" ph="..." />
+                <marker date="1525812748738" expanded="true" signature="7972:8105" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PublicationDetails.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/PublicationDetails.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2016">
+              <caret line="96" column="19" lean-forward="false" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Publications.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Publications.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-126">
+              <caret line="96" column="19" lean-forward="false" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="19" />
+              <folding>
+                <element signature="e#5815#5842#0#HTML" expanded="true" />
+                <element signature="e#7262#7289#0#HTML" expanded="true" />
+                <element signature="e#7612#7639#0#HTML" expanded="true" />
+                <element signature="e#8814#8841#0#HTML" expanded="true" />
+                <element signature="e#10327#10354#0#HTML" expanded="true" />
+                <element signature="e#11850#11877#0#HTML" expanded="true" />
+                <element signature="e#12923#12965#0#HTML" expanded="true" />
+                <element signature="e#13119#13146#0#HTML" expanded="true" />
+                <element signature="e#13802#13829#0#HTML" expanded="true" />
+                <element signature="e#14471#14498#0#HTML" expanded="true" />
+                <element signature="e#15161#15188#0#HTML" expanded="true" />
+                <element signature="e#15830#15857#0#HTML" expanded="true" />
+                <element signature="e#16555#16582#0#HTML" expanded="true" />
+                <element signature="e#17221#17248#0#HTML" expanded="true" />
+                <element signature="e#17487#17526#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PublicationsSearch.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/PublicationsSearch.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2037">
+              <caret line="97" column="19" lean-forward="false" selection-start-line="97" selection-start-column="19" selection-end-line="97" selection-end-column="19" />
+              <folding>
+                <element signature="e#12#52#0#Twig" expanded="true" />
+                <element signature="e#5861#5888#0#HTML" expanded="true" />
+                <marker date="1525812748753" expanded="false" signature="6104:6116" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreerEspaceEnfant.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/CreerEspaceEnfant.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2016">
+              <caret line="96" column="19" lean-forward="false" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="19" />
+              <folding>
+                <marker date="1525812748691" expanded="true" signature="6103:8593" ph="{% block body ...%}" />
+                <marker date="1525812748691" expanded="true" signature="6104:8549" ph="..." />
+                <marker date="1525812748691" expanded="true" signature="6132:8534" ph="..." />
+                <marker date="1525812748691" expanded="true" signature="6175:8523" ph="..." />
+                <marker date="1525812748691" expanded="true" signature="6197:8512" ph="..." />
+                <marker date="1525812748691" expanded="true" signature="6225:8501" ph="..." />
+                <marker date="1525812748691" expanded="true" signature="6262:8490" ph="..." />
+                <marker date="1525812748691" expanded="true" signature="6288:8479" ph="..." />
+                <marker date="1525812748691" expanded="true" signature="6334:6591" ph="..." />
+                <marker date="1525812748691" expanded="true" signature="6375:6572" ph="..." />
+                <marker date="1525812748691" expanded="true" signature="6637:6900" ph="..." />
+                <marker date="1525812748691" expanded="true" signature="6678:6881" ph="..." />
+                <marker date="1525812748691" expanded="true" signature="6946:7222" ph="..." />
+                <marker date="1525812748691" expanded="true" signature="6987:7203" ph="..." />
+                <marker date="1525812748691" expanded="true" signature="7268:7545" ph="..." />
+                <marker date="1525812748691" expanded="true" signature="7309:7526" ph="..." />
+                <marker date="1525812748691" expanded="true" signature="7591:7871" ph="..." />
+                <marker date="1525812748691" expanded="true" signature="7632:7852" ph="..." />
+                <marker date="1525812748691" expanded="true" signature="7917:8217" ph="..." />
+                <marker date="1525812748691" expanded="true" signature="7958:8198" ph="..." />
+                <marker date="1525812748691" expanded="true" signature="8254:8464" ph="..." />
+                <marker date="1525812748691" expanded="true" signature="8296:8445" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EspaceEnfant.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/EspaceEnfant.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="79">
+              <caret line="112" column="19" lean-forward="false" selection-start-line="112" selection-start-column="19" selection-end-line="112" selection-end-column="19" />
+              <folding>
+                <element signature="e#5752#5777#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EspaceEnfantDetails.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/EspaceEnfantDetails.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1995">
+              <caret line="95" column="19" lean-forward="false" selection-start-line="95" selection-start-column="19" selection-end-line="95" selection-end-column="19" />
+              <folding>
+                <marker date="1525812748706" expanded="true" signature="8392:8445" ph="..." />
+                <marker date="1525812748706" expanded="true" signature="8392:8975" ph="..." />
+                <marker date="1525812748706" expanded="true" signature="8392:9005" ph="..." />
+                <marker date="1525812748706" expanded="true" signature="8392:9028" ph="..." />
+                <marker date="1525812748706" expanded="true" signature="8392:9047" ph="..." />
+                <marker date="1525812748706" expanded="true" signature="8392:9062" ph="..." />
+                <marker date="1525812748706" expanded="true" signature="8392:9078" ph="..." />
+                <marker date="1525812748706" expanded="true" signature="8392:9100" ph="{% block body ...%}" />
+                <marker date="1525812748706" expanded="true" signature="8498:8944" ph="..." />
+                <marker date="1525812748706" expanded="false" signature="8543:8562" ph="..." />
+                <marker date="1525812748706" expanded="false" signature="8682:8693" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -74,9 +229,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop2" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -238,8 +395,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -250,30 +405,35 @@
             <path>
               <item name="allforkids" type="b2602c69:ProjectViewProjectNode" />
               <item name="allforkids" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="allforkids" type="b2602c69:ProjectViewProjectNode" />
-              <item name="allforkids" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="allforkids" type="b2602c69:ProjectViewProjectNode" />
               <item name="allforkids" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="KidsBackendBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="KidsFrontBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="allforkids" type="b2602c69:ProjectViewProjectNode" />
               <item name="allforkids" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="KidsBackendBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="KidsFrontBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="allforkids" type="b2602c69:ProjectViewProjectNode" />
+              <item name="allforkids" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="KidsFrontBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -331,21 +491,19 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38092000" />
+    <option name="totallyTimeSpent" value="38478000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26928896" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24583964" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5045386" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47008547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09210526" sideWeight="0.49546143" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2598684" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -403,34 +561,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/UserBundle/Repository/ReclamationRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserBundle/Repository/RendezVousRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserBundle/Repository/ServiceRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserBundle/Repository/TypePublicationRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/UserBundle/Repository/TypeServiceRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -491,7 +621,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -590,7 +719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
           <caret line="52" column="38" lean-forward="false" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -633,10 +761,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="901">
           <caret line="53" column="35" lean-forward="false" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
-          <folding>
-            <marker date="1525539794791" expanded="true" signature="0:38" ph="kids_back…d_homepage: &lt;2 keys&gt;" />
-            <marker date="1525539794791" expanded="true" signature="37:38" ph="/admintemplate" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -665,7 +789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="41" column="30" lean-forward="false" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -680,7 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -710,9 +832,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="209" column="0" lean-forward="true" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
-          <folding>
-            <element signature="e#49#106#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -720,7 +839,60 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="47" lean-forward="false" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Publications.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-126">
+          <caret line="96" column="19" lean-forward="false" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="19" />
+          <folding>
+            <element signature="e#5815#5842#0#HTML" expanded="true" />
+            <element signature="e#7262#7289#0#HTML" expanded="true" />
+            <element signature="e#7612#7639#0#HTML" expanded="true" />
+            <element signature="e#8814#8841#0#HTML" expanded="true" />
+            <element signature="e#10327#10354#0#HTML" expanded="true" />
+            <element signature="e#11850#11877#0#HTML" expanded="true" />
+            <element signature="e#12923#12965#0#HTML" expanded="true" />
+            <element signature="e#13119#13146#0#HTML" expanded="true" />
+            <element signature="e#13802#13829#0#HTML" expanded="true" />
+            <element signature="e#14471#14498#0#HTML" expanded="true" />
+            <element signature="e#15161#15188#0#HTML" expanded="true" />
+            <element signature="e#15830#15857#0#HTML" expanded="true" />
+            <element signature="e#16555#16582#0#HTML" expanded="true" />
+            <element signature="e#17221#17248#0#HTML" expanded="true" />
+            <element signature="e#17487#17526#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/PublicationDetails.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2016">
+          <caret line="96" column="19" lean-forward="false" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/PublicationsSearch.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2037">
+          <caret line="97" column="19" lean-forward="false" selection-start-line="97" selection-start-column="19" selection-end-line="97" selection-end-column="19" />
+          <folding>
+            <element signature="e#12#52#0#Twig" expanded="true" />
+            <element signature="e#5861#5888#0#HTML" expanded="true" />
+            <marker date="1525812748753" expanded="false" signature="6104:6116" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/EspaceEnfant.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="112" column="19" lean-forward="false" selection-start-line="112" selection-start-column="19" selection-end-line="112" selection-end-column="19" />
+          <folding>
+            <element signature="e#5752#5777#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
