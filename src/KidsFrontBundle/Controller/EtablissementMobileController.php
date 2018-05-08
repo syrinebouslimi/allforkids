@@ -118,26 +118,7 @@ class EtablissementMobileController extends Controller
     }
 
 
-    public function updateEtabAction(Request $request)
-    {
 
-
-        $idEtab = $request->get('idEtab');
-        $newNomEtab = $request->get('nomEtablissement');
-
-
-        $etab = $this->getDoctrine()->getManager()
-            ->getRepository('UserBundle:Etablissement')
-            ->find($idEtab);
-
-        $etab->setNomEtablissement($newNomEtab);
-
-        $em = $this->getDoctrine()->getManager();
-        $em->flush();
-
-
-        return new \Symfony\Component\HttpFoundation\Response("success update");
-    }
 
     public function addFavorisAction(Request $request)
     {
@@ -370,6 +351,84 @@ class EtablissementMobileController extends Controller
         $jsonContent = $serializer->normalize($etab, 'json');
         return new JsonResponse($jsonContent);
 
+    }
+
+    public function updateEtabAction(Request $request)
+    {
+
+
+        $idEtab = $request->get('id');
+        $newNomEtab = $request->get('nom');
+        $horaire = $request->get('horaire');
+        $description = $request->get('description');
+        $exigence = $request->get('exigence');
+        $phone = $request->get('phone');
+        $adresse = $request->get('adresse');
+        $country = $request->get('country');
+        $region = $request->get('region');
+        $codepostal = $request->get('codepostal');
+
+
+
+
+        $etab = $this->getDoctrine()->getManager()
+            ->getRepository('UserBundle:Etablissement')
+            ->find($idEtab);
+
+        $etab->setNomEtablissement($newNomEtab);
+        $etab->setHoraireEtablissement($horaire);
+        $etab->setDescriptionEtablissement($description);
+        $etab->setExigenceEtablissement($exigence);
+        $etab->setPhone($phone);
+        $etab->setAdresseEtablissement($adresse);
+        $etab->setCountryEtablissement($country);
+        $etab->setRegionEtablissement($region);
+        $etab->setCodepostalEtablissement($codepostal);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->flush();
+
+
+        return new \Symfony\Component\HttpFoundation\Response("etablissement modifié avec succés");
+    }
+
+    public function updateEnseigAction(Request $request)
+    {
+
+
+        $idEtab = $request->get('id');
+        $newNomEtab = $request->get('nom');
+        $horaire = $request->get('horaire');
+        $description = $request->get('description');
+        $exigence = $request->get('exigence');
+        $phone = $request->get('phone');
+        $adresse = $request->get('adresse');
+        $country = $request->get('country');
+        $region = $request->get('region');
+        $codepostal = $request->get('codepostal');
+
+
+
+
+        $etab = $this->getDoctrine()->getManager()
+            ->getRepository('UserBundle:Etablissement')
+            ->find($idEtab);
+
+        $etab->setNomEtablissement($newNomEtab);
+        $etab->setHoraireEtablissement($horaire);
+        $etab->setDescriptionEtablissement($description);
+        $etab->setExigenceEtablissement($exigence);
+        $etab->setPhone($phone);
+        $etab->setAdresseEtablissement($adresse);
+        $etab->setCountryEtablissement($country);
+        $etab->setRegionEtablissement($region);
+        $etab->setCodepostalEtablissement($codepostal);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->flush();
+
+
+        return new \Symfony\Component\HttpFoundation\Response("etablissement modifié avec succés");
     }
 
 
