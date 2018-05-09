@@ -194,17 +194,17 @@ class Club
     /**
      * @return mixed
      */
-    public function getLong()
+    public function getLongi()
     {
-        return $this->long;
+        return $this->longi;
     }
 
     /**
-     * @param mixed $long
+     * @param mixed $longi
      */
-    public function setLong($long)
+    public function setLongi($longi)
     {
-        $this->long = $long;
+        $this->longi = $longi;
     }
 
     /**
@@ -233,7 +233,7 @@ class Club
      *
      * @ORM\Column(name="longi", type="float", nullable=true)
      */
-    private $long;
+    private $longi;
 
 
     /**

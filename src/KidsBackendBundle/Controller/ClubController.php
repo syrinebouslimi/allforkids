@@ -9,9 +9,12 @@
 namespace KidsBackendBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use UserBundle\Entity\Club;
+use UserBundle\Entity\Enfants;
 use UserBundle\Entity\EventCustom;
 use UserBundle\Form\ClubType;
+use UserBundle\Form\EnfantsType;
 use UserBundle\Form\EventCustomType;
 use Ivory\GoogleMap\Service\Geocoder\Request\GeocoderAddressRequest;
 
@@ -68,15 +71,14 @@ class ClubController extends Controller
             $em=$this->getDoctrine()->getManager();
 
             $adresse = new GeocoderAddressRequest($Cl->getAdresse());
-          //  var_dump($adresse);
+
             $reponse = $this->container->get('ivory.google_map.geocoder')->geocode($adresse);
             if(count($reponse->getResults()) < 1)
             {
                 $reponse = $this->container->get('ivory.google_map.geocoder')->geocode($adresse);
-              //  var_dump('sss');
+
             }
-  //  var_dump($reponse->getResults());
-  //  die();
+
             foreach ($reponse->getResults() as $result) {
                 $placeId = $result->getPlaceId();
                 $geometry = $result->getGeometry();
@@ -84,9 +86,9 @@ class ClubController extends Controller
             }
 
             $lat=$geometry->getBound()->getSouthWest()->getLatitude();
-            $lang=$geometry->getBound()->getSouthWest()->getLongitude();
+            $langi=$geometry->getBound()->getSouthWest()->getLongitude();
             $Cl->setLat($lat);
-            $Cl->setLong($lang);
+            $Cl->setLongi($langi);
             $Cl->setAdresse($Cl->getAdresse());
           //  var_dump($lat);
           //  var_dump($lang);
@@ -129,6 +131,72 @@ class ClubController extends Controller
         $clu=$this->getDoctrine()->getRepository('UserBundle:Club')->findAll();
         return $this->render ( '@KidsBackend/afficherClub.html.twig',array('form'=>$clu));
 
+    }
+    public function afficherClubJsonAction ()
+
+    {
+        $clu=$this->getDoctrine()->getRepository('UserBundle:Club')->findAll();
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted= $serializer->normalize($clu);
+        return new JsonResponse($formatted);
+
+    }
+    public function afficherClubJsonbyIdAction ($id)
+
+    {
+        $clu=$this->getDoctrine()->getRepository('UserBundle:Club')->find($id);
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted= $serializer->normalize($clu);
+        return new JsonResponse($formatted);
+
+    }
+
+    public function deleteClubJsonAction($id)
+    {
+        $em=$this->getDoctrine()->getManager();
+        $store=$em->getRepository("UserBundle:Club")->find($id);
+        if ($store!=null){
+            $em->remove($store);
+            $em->flush();
+        }
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $ajouclubJson= $serializer->normalize($store);
+        return new JsonResponse($ajouclubJson);
+    }
+
+    public function searchJsonAction(Request $request, $nom)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+            $nomclub=$em->getRepository('UserBundle:Club')->findBy(array("nomClub"=>$nom));
+
+       // return $this->render('@KidsBackend/recherche.html.twig', array('form' => $nomclub));
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $ajouclubJson= $serializer->normalize($nomclub);
+        return new JsonResponse($ajouclubJson);
+    }
+
+    public function ajouterClubJsonAction(Request $request)
+    {
+            $em=$this->getDoctrine()->getManager();
+            $em->flush();
+            $cljson = new Club();
+            $cljson->setNomClub($request->get('nomClub'));
+            $cljson->setDescriptionClub($request->get('descriptionClub'));
+            $clb = $request->get('dateCreationClub');
+            $cljson->setDateCreationClub(new \ DateTime($clb));
+            $cljson->setAdresse($request->get('adresse'));
+            $cljson->setImageClub($request->get('imageClub'));
+            $cljson->setLongi($request->get('longi'));
+            $cljson->setLat($request->get('lat'));
+            $etablisement=$em->getRepository('UserBundle:Etablissement')->find($request->get('idEtablissement'));
+            $cljson->setIdEtablissement($etablisement);
+            $em->persist($cljson);
+            $em->flush();
+            $serializer = new Serializer([new ObjectNormalizer()]);
+            $ajouclubJson= $serializer->normalize($cljson);
+            return new JsonResponse($ajouclubJson);
     }
 
     public function removeAction($id)
@@ -311,6 +379,33 @@ class ClubController extends Controller
 
         return $this->render ( '@KidsBackend/ajouterevntClub.html.twig',array('form'=>$formView));
 
+
+    }
+
+    public function ajouterEnfantAction(Request $request)
+    {
+        $enf = new Enfants();
+        $form=$this->createForm(EnfantsType::class,$enf);
+        $formView=$form->createView();
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid())
+
+        {
+            $em=$this->getDoctrine()->getManager();
+            $em->persist($enf);
+            $em->flush();
+            return $this->redirect($this->generateUrl('calendrierClub'));
+        }
+
+        return $this->render ( '@KidsBackend/ajouterEnfant.html.twig',array('form'=>$formView));
+    }
+
+    public function afficheEnfantAction ()
+
+    {
+        $enf=$this->getDoctrine()->getRepository('UserBundle:Enfants')->findAll();
+        return $this->render ( '@KidsBackend/AfficherEnfant.html.twig',array('form'=>$enf));
 
     }
 

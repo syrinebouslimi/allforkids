@@ -1,3 +1,71 @@
-kids_backend_homepage:
-    path:     /admintemplate
-    defaults: { _controller: KidsBackendBundle:Default:admin }
+kids_back_homepage:
+    path:     /back
+    defaults: { _controller: KidsBackendBundle:Default:index }
+
+kids_front_homepage:
+    path:     /front
+    defaults: { _controller: KidsFrontBundle:Default:index }
+contact:
+    path:     /contact
+    defaults: { _controller: KidsFrontBundle:Etablissement:contact }
+etablissement:
+    path:     /etablissements
+    defaults: { _controller: KidsFrontBundle:Etablissement:etablissements }
+test:
+    path:     /
+    defaults: { _controller: KidsFrontBundle:Etablissement:index }
+acceuil:
+    path:     /acceuil
+    defaults: { _controller: KidsFrontBundle:Etablissement:acceuil }
+listeclub:
+    path:     /listeclub
+    defaults: { _controller: KidsBackendBundle:Club:listeclub }
+calendrierClub:
+    path:     /calendrierClub
+    defaults: { _controller: KidsBackendBundle:Club:calendrierClub }
+ajouterevntClub:
+    path:     /ajouterevntClub
+    defaults: { _controller: KidsBackendBundle:Club:ajouterevntClub }
+ajouterClub:
+    path:     /ajouterClub
+    defaults: { _controller: KidsBackendBundle:Club:ajouterClub }
+afficherClub:
+    path:     /afficherClub
+    defaults: { _controller: KidsBackendBundle:Club:afficherClub }
+modificationClub:
+    path:     /modificationClub/{id}
+    defaults: { _controller: KidsBackendBundle:Club:modificationClub }
+remove:
+    path:     /remove/{id}
+    defaults: { _controller: KidsBackendBundle:Club:remove }
+search:
+    path:     /search
+    defaults: { _controller: KidsBackendBundle:Club:search}
+
+afficheEvntCostom:
+    path:     /afficheEvntCostom
+    defaults: { _controller: KidsBackendBundle:Club:afficheEvntCostom}
+ajouterEvntCalendarClub:
+    path:     /ajouterEvntCalendarClub
+    defaults: { _controller: KidsBackendBundle:Club:ajouterEvntCalendarClub }
+modifierCalendar:
+    path:     /modifierCalendar/{id}
+    defaults: { _controller: KidsBackendBundle:Club:modifierCalendar }
+supprimerEvntCalendar:
+    path:     /supprimerEvntCalendar/{id}
+    defaults: { _controller: KidsBackendBundle:Club:supprimerEvntCalendar}
+afficherClubJson:
+    path:     /afficherClubJson
+    defaults: { _controller: KidsBackendBundle:Club:afficherClubJson}
+afficherClubJsonbyId:
+    path:     /afficherClubJsonbyId/{id}
+    defaults: { _controller: KidsBackendBundle:Club:afficherClubJsonbyId}
+deleteClubJson:
+    path:     /deleteClubJson/{id}
+    defaults: { _controller: KidsBackendBundle:Club:deleteClubJson}
+ajouterClubJson:
+    path:     /ajouterClubJson
+    defaults: { _controller: KidsBackendBundle:Club:ajouterClubJson}
+searchJson:
+    path:     /searchJson/{nom}
+    defaults: { _controller: KidsBackendBundle:Club:searchJson}

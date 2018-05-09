@@ -78,6 +78,23 @@ fos_user:
     from_email:
         address: "syrine.bouslimi@esprit.tn"
         sender_name: "demo"
+ivory_google_map:
+    map:
+        debug: "%kernel.debug%"
+        language: "%locale%"
+        api_key: AIzaSyAtAAUKes0-Ao9KfHoe8b5pmS2sFdHZ3bc
+    geocoder:
+            client: httplug.client.default
+            message_factory: httplug.message_factory.default
+            format: json
+
+httplug:
+    classes:
+        client: Http\Adapter\Guzzle6\Client
+        message_factory: Http\Message\MessageFactory\GuzzleMessageFactory
+    clients:
+        acme:
+            factory: httplug.factory.guzzle6
 
 
 

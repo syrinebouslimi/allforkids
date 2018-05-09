@@ -1,7 +1,6 @@
-kids_back_homepage:
-    path:     /backend
-    defaults: { _controller: KidsBackendBundle:Default:index }
-
+kids_backend_homepage:
+    path:     /back
+    defaults: { _controller: KidsBackendBundle:Default:admin }
 kids_front_homepage:
     path:     /front
     defaults: { _controller: KidsFrontBundle:Default:index }
@@ -18,3 +17,9 @@ acceuil:
     path:     /acceuil
     defaults: { _controller: KidsFrontBundle:Etablissement:acceuil }
 
+afficheclubsfront:
+    path:     /affiche
+    defaults: { _controller: KidsFrontBundle:Clubs:afficheclubsfront }
+map:
+    path:     /map/{id}
+    defaults: { _controller: KidsFrontBundle:Clubs:map }
