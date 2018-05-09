@@ -146,8 +146,8 @@
     {% if publication.typePublication.nomTypePublication is same as('Article')%}
          <img src="{{ asset('uploads/videos/' ~ publication.contenuPublication) }}" alt="image" class="img-responsive" >
         <div class="caption border-color-1 singleBlog">
-            <h3 class="color-1">{{ publication.nomPublication }}</h3>
-            <h4> {{ publication.categoriePublication.nomCategPublication }}</h4>
+            <h3 class="color-1" style="font-style: normal;">{{ publication.nomPublication }}</h3>
+            <h4 style="font-style: normal;"> {{ publication.categoriePublication.nomCategPublication }}</h4>
 
             {% set string = publication.descriptionPublication %}
             <p>{{ string|raw }}</p>
@@ -172,8 +172,8 @@
     {% if publication.typePublication.nomTypePublication is same as('Activite')%}
          <img src="{{ asset('uploads/videos/' ~ publication.contenuPublication) }}" alt="image" class="img-responsive" >
         <div class="caption border-color-1 singleBlog">
-            <h3 class="color-1">{{ publication.nomPublication }}</h3>
-            <h4> {{ publication.categoriePublication.nomCategPublication }}</h4>
+            <h3 class="color-1" style="font-style: normal;">{{ publication.nomPublication }}</h3>
+            <h4 style="font-style: normal;"> {{ publication.categoriePublication.nomCategPublication }}</h4>
 
             {% set string = publication.descriptionPublication %}
             <p>{{ string|raw }}</p>
@@ -199,8 +199,8 @@
         {% set string = publication.descriptionPublication %}
         <p>{{ string|raw }}</p>
         <div class="caption border-color-1 singleBlog">
-            <h3 class="color-1">{{ publication.nomPublication }}</h3>
-            <h4> {{ publication.categoriePublication.nomCategPublication }}</h4>
+            <h3 class="color-1" style="font-style: normal;">{{ publication.nomPublication }}</h3>
+            <h4 style="font-style: normal;"> {{ publication.categoriePublication.nomCategPublication }}</h4>
             <ul class="list-inline socailLink">
                 <script type="text/javascript" src="{{ asset('bundles/Socialite-master/socialite.js') }}"></script>
 
