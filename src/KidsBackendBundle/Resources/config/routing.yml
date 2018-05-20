@@ -10,10 +10,6 @@ afficherEtablissementbyid:
     path: /afficherEtablissementbyid/id/{id}
     defaults: { _controller: KidsBackendBundle:AdminEtablissement:afficherEtablissementbyid}
 
-afficherpub_json:
-    path: /afficherpubjson
-    defaults : {_controller: KidsBackendBundle:Mobile:afficherpubjson }
-
 afficheretablissementparsearch:
     path: /afficheretablissementparsearch
     defaults: { _controller: KidsBackendBundle:AdminEtablissement:afficheretablissementparsearch}
@@ -165,19 +161,3 @@ afficherClubJson:
 ajouterClubJson:
     path:     /ajouterClubJson
     defaults: { _controller: KidsBackendBundle:Club:ajouterClubJson}
-
-affichercategoriepub_json:
-    path: /affichercategoriepubjson
-    defaults : {_controller: KidsBackendBundle:Mobile:affichercategoriepubjson }
-
-affichertypepub_json:
-    path: /affichertypepubjson
-    defaults : {_controller: KidsBackendBundle:Mobile:affichertypepubjson }
-
-creerpub_json:
-    path: /creerpubjson
-    defaults : {_controller: KidsBackendBundle:Mobile:creerpubjson }
-
-supprimerpub_json:
-    path: /supprimerpubjson/{id}
-    defaults : {_controller: KidsBackendBundle:Mobile:supprimerpubjson }

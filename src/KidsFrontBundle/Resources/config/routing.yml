@@ -193,6 +193,8 @@ afficherProduitjson:
 ajoutProduitjson:
     path:     /ajoutProduitjson
     defaults: { _controller: KidsFrontBundle:Produitfront:ajoutProduitjson}
+
+
 afficherCategoriejson:
     path:     /afficherCategoriejson
     defaults: { _controller: KidsFrontBundle:Produitfront:afficherCategoriejsonFront}
@@ -264,3 +266,7 @@ afficheclubsfront:
 map:
     path:     /map/{id}
     defaults: { _controller: KidsFrontBundle:Clubs:map }
+
+afficherpubjson:
+    path:     /afficherpubjson
+    defaults: { _controller: KidsFrontBundle:Mobile:afficherpubjson }

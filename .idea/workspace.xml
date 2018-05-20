@@ -2,278 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="493db0d9-1ca6-428e-ad17-8e6973fae440" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/2e09b126bdb4e052987b88e166b2f65c.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/3f6142501e6a503999c1f962d2798ba3.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/4b17c7c2bad8ebb4072be926b2e64975.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/513e80401f5e16fadcf142627e19638f.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/605332e6a5fa6678e72efea6c95acf23.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/98403d080d6ba43ea3b5e9467017aabb.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/d7d957d37ad079852fbecad817b27153.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/images/ee846b8776b1222f3188e3b945235a3d.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/videos/08b8c214ed66dc7264931e2ab94a5c47.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/videos/17d1e0c510b048eec4f6bd15efb43831.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/videos/24d9cba8cab086df21d0a65224d494b7.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/videos/2cebe04b795b7d4fe7e96a8f5b42cd34.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/videos/3981cd21e09a103ce020fe3126cb8abf.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/videos/72247ae6ba1dfdf1c387f4f37ad34c4b.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/videos/992aca053e1ecd190d1eded8a5667997.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/videos/b1dd5222651464281b520a932c3245f9.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/videos/df1f532ce6e0ca86f7ee3a68b6f20db1.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/videos/e3e503595619fe48a6f1b501a3d33817.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/videos/ed4dae67e0714bceb0027b9cfba183c2.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nbproject/project.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/nbproject/project.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/KidsBackendBundle/Controller/MobileController.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/00eddc60376808cea9c581fa66fedd7a.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/011705b7a57a8685b84728ceb7bb68ce.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/029eae64ed33e8bcadae69b00e8f501a.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/031ca9eade97d455a7cc1afc271a3d7f.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/07381fac2c597d819a0b4a5a6a0c9731.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/07c5275f73b88219d10483986de20fb6.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/0813cee84e73f7d51742622ee64bf00b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/0a3ad036533f45662be0bcebb2d98e8c.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/0a9aef5668a086e7bddfbf9525721665.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/0ac1f5fd1723352f7a7fcce217b82231.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/0b081c64a2c62cf1cc17725e08c62ac3.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/0c391d18b35491d370721e163b8bca5b.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/0cdb734819cbd83cae6240b2d05d638c.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/0e96b3c78fe5f2e1198148f412e52759.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/0fb14511572ac6f820fedc944e38c242.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/111a4ce3c026cb45ba42e2419964548e.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/11615d7af73c880e178b44de98c077de.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/137a3f13483b3881bbbd00e3e097ce2a.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/16a1a5e419f6815232658f3e0a83963c.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/17fed3482cea4af9832687885c153088.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/18a8c3e09e243f1cd4faeaaa8aa5dad5.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/18e1a549be497e804cd7f491f9481597.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/19578f7b2d197f5d4d600e319bb83c1c.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/1b2630d5fda4c5be22f5cee43a55e9d1.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/1b805fb9849b4d2353ffea40ba0b242f.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/1b85d13ed1181333d6f817ff5f30c4f0.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/1d27788ee2c48d54552704b70f1b16e0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/201db45643796cd5476c0b480c1ae70f.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/2207f0568e825b6d92cc1d0764ff2314.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/24270908fe42c19ffe0a640abd70c313.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/2490294f56f529eb53a8f53f09ee8c07.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/24a3620d9201352ed90bfc2132458a4f.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/255c28ae58fa783b87ce290449404a9b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/27f27254167411a848f5520f0fbfd98e.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/2a90ab0adc977f4af88004aeb249cc04.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/2bbb55f5bf17eb68085f4b50a39b312d.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/2c43305c8d2c5cf9124f699cf264dde7.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/2c8de269974c2c98877301f4a3a69b59.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/2d907f7a7cc8fcdff1902308dcf46990.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/2dc04c90fcb2574fea1ff58056b9212b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/316c5442db5aa21c82fc75d06d66a7b1.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/33525643351f51e3503b0cdb9e22d0b4.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/33625ee0c1ca9e5d09869d58ce9cab15.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/33df3c058f945ef14eeb72a117946e9e.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/34c05569046451b5026afc6839ba7ff5.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/379941c1e3863e43bbb29c0a94c93e43.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/3848356956d215c3545432b1a47d3259.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/3a44253e6d7259f0c4c27fca772b7f23.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/3b8e3708f19d0ef3d388161bac7a5f52.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/3c8b0bd7ed1d5be04a2b2790dd88cc52.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/3d6d37a68f93e3d31c55ee32fd4d953f.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/3daf1ac89dc81bbadb6ba0dc4e6dc4db.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/3dc2d8e892f8d63c823eacee410f46bc.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/3e171d0a69ccc60bfa1aebb69b0380d9.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/3eb9dea041b07145b7cc56dee81187f4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/3edbe874d6b0611c6f1749d46d15714d.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/409eded72d431f398236a2b9c91733c2.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/40e4c960abaa9fd0fa0e4422eca99bf8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/41ea831ec677165f4c775a680da1effc.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/428b213e4d9d73b7d1c2749d07f9c275.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/43b08a925ae96730c1a949159dee9a76.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/43ee920b31fd0c95b71fa3584ddfd225.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/448905056bb4184aa51942ce7cf7f199.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/48416ec89a16b8c3926fbd32737b3fe1.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/487b89a53e327bb7da2bd4dd0c08f1bf.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/490aa4876a359907059509bcb1358f62.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/4b26fdaf43253531e6f4ea5f864ee0f3.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/4b4ab26f382c6630f66d2d549c9c8b07.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/4b67559ff367559d951c6d50de39cf64.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/4b6875f671b7b078f2ecd6fe2bc741c3.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/4d431f1b7c40031d23000876ff70ae52.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/4de784de99475877ad7129d4b51bd17a.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/4f4e215e6880bed7574d925c21d2831c.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/4fd486a307e82671af3c4c9077716bfb.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/51a666d8bff01d0160086e22a09b966d.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/54491ee58a9a0447d11f68c69fa4429b.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/55c307bd0b10a670e6364a0dca51e6aa.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/5692241309d28bca6f5566440e738d84.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/5692fdc7482ed31952566c04793273ac.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/56a506856531eb46146a03cbc318176b.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/577236f7dff9ddb6a90c64add3a081eb.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/5a554c6dbf5884b0e4da356a2945cad3.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/5d427521c1d7894b581e72739773beff.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/5db80c80d1143801eeecc773a23a72b3.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/5e77d312189efc4075b623bd3be69f1f.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/64d1547241c30174432b6bfafc499beb.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/6510b27f22dde49c1a7626c53d4c6241.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/6626b861775ec895d3cb9791bf582393.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/69fd7fd1da45e0dc8d170da4127fa75c.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/6a0fc92188a1faac44f09fe265e8c69c.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/6a632199fdf286f4dc9d68959257a219.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/6b60974bc54495e8c528b96b7adce0e9.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/6bf9b10ebf7c3a3af5dcd079784689f3.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/6ea406fb2894ee02aa9eda8127bfdf92.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/6eced65766b771dca4145f409eb37ace.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/712fb08f08651fa0a09d939b65c63757.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/718de480e15aadf6409f15382fc1cd09.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/71f72f48047122d76c90a1f511b40fec.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/73daea979af988c1f5fc0fd11fb44579.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/74e4dd5be6c2e457b754c39da8187105.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/753e0af5595857ed6f43c499a2a5af54.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/75edefbbc4dbf809c4866228522d95ed.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/781b99beaf7670420de9aaa85fdf58c3.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/7a52410981b837025ba845988421690a.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/7a8ddb2f4408cef500d14aed1489ed41.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/7c91a5766463b7bfde527958af451e0e.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/7f5ab8e66769865440855c1ca1e3fef8.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/7fd6ba6526caf8c2c718e446fdf9e773.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/7ff9232ab214c14f7d66e6059ab0fd07.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/83d6c34889fd721a80e701e3e6775b0b.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/841c23b564301a6fee4fb6c6fd2ecc8b.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/85b6864b223ed093a814d24ee43d6e0b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/86f3680b7ac4808c28dcfb1248a2f3b1.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/89745896985b07190a7fc53d17d0d569.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/8b6966dff9a9a6e2779e081a88f308ab.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/8b729c9f681e556b210ae6c62c6c314b.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/8bc17d24622901e3ee30a065e247a64d.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/8e581e970c4b6c01f580fea2b6f4852f.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/8f32f94f6095c3a93f20780c1ab6c025.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/910f9034ec9cf17a219b54aa0d16863f.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/922d4e0abffb42e96692265e75fd8ef0.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/933ff0e7b5be5cc9d963703cacda5ea9.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/9406b9cd4dcd8675f4a1ccd330c86d86.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/94e6f4d7d154ba3b68fe255b9c926d7d.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/9853ad8857f040ef15afd27178222ece.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/99684cd5501157b9f71b5d3e8c47aa8e.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/9d32f5edc7b99a326534beb722be8a8b.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/9d67ee5a3b56597e96479265dc43911b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/9f67c9fc97f45418b4ba2ef828b45bc3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/a03d5c75a53f99ecb2ad7c0bbb007db3.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/a0d244c877a516311597a060e466ef72.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/a162ede0669449a63e96168ec1f14e3e.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/a2728246c0a46c19f91c81211e1f20ef.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/a2b511f468241671d98b32fdbe17cd35.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/a38dd9b944b11ec5ec9245236fed3f9b.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/a44a540b91bbfe576a6be6919cbc565f.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/a6d77d8851a5682804663ddea40f12d7.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/a7d58f24c9bdecbeb3e11917ceee09ee.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/a9d1b38b7d1f2c0d0a5d635a01d24fee.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/a9d5f731b633dd5126cf15f1ddb34b42.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/abe9e56d80e600b83d9ffaec2f14b486.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/ad1cff657d152b67fbeec7569e716cd1.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/ad308f1756e0b719fbe644a4c11d8cb6.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/ad5a1cf4cd8802f6162fd50d4601aa98.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/add26281b658c58786ead2ed063aeef6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/ae85bd73c07cd0de5c3c8537b5ce9717.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/ae95b80c4039e1c3e1d66fe68c04201e.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/af7507c52aeb240ae16137c78464b2e9.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/b1d8c60e3525a6274373bd34175d728f.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/b1de5971a884de415fb9633722824c1c.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/b3c3286e3b756319fefd3125ec554f65.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/b438f408a243bcfe8026c5eb251bbfbc.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/b5ad25a818c8cc0343df71b3c9f5442a.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/b5f4235195589af504fe09eac7fff632.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/b6018bfc9bfd80a5033b8c2f2be28175.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/b6904c42ecf25792a1d2e777835faf74.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/b6d1af3266ac4fbc5bca64b637b366ff.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/b976d531eaf0700c38983228f44a7e26.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/ba70250d1a108fbc557d547cdc7c428d.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/bc0a661d42a458f5b201214c31544754.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/bc1673d107498a8e18624628b99efe44.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/bc4c402ca5eeb1412d5056c3cf496d10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/bcd1cc5c4fa624df760ac14223beac1c.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/bdb0921254ee51a1656cfd07ee62788e.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/bed3dfef545442d3f4d6c2fa91c0559f.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/c0b3af79834587040a024d291c093005.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/c102086825a71f89b873d3f992fbec7b.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/c292ba43c18572ce72bd7c881d2d3aef.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/c2ed10e5ab2910bd27a6b64391f202b7.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/c39ed00d1d0a9ee08f08baa8dc2ab7b5.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/c4507ada0cb2c338cd141f680446d8b1.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/c5e99c2eb9594dfc8ca5e7ab28991995.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/c69ffe0bef9d98928b1691df19b77af8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/c763c585575fccbe04d721a1a7f41d39.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/c8a8cd042a597f075740b722445eaf71.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/ca154e917600f9b63b480f5b63a50750.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/ca66277d75228e271afbd9fd56762a76.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/ca988672ab208a7d80bcf22da96aed6c.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/ccee804533acffc60e9a4a6ec5ba9680.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/d05b4c72eda5238979c8cf2236cb6e5e.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/d1b097c26146e035c764807b39926f8c.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/d1becbaa33aaf609df43e6db79510660.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/d1bf5bd3e6faaca37754d94e4c1b8fa9.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/d268e64621b28c0b5959aef86c75d46c.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/d27e92e60045e1fe5dc03243d20a56d1.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/d2e2a3af473634a9d41262a1888331fd.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/d44f7ef3b813069beb5c0b36106c3d29.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/d7d4fa845f7ff25be9c3a611ac90a5a9.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/d8464355aaa5609593c175eca71419bc.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/d9a714a3033dd25a14ed8a81179428e6.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/dce8e0e653f86cc09a83c407dac64c8c.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/dd699fa2e4d0a2f83a969dbbf55c430f.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/e0e5a139cc4a87432ab10868e5c27a14.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/e12d9dc33fc4b512384fccc96448e678.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/e13bdc2ff1bc570e88b281a72b53dab8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/e40d0eaf9706ce906c2ffe45846ee608.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/e47c3a9f4bf486772328dbedaa950c05.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/e75c395279eea7dfcb2c713de497537b.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/e8b499cdfd5c53ad1ecea5ff16a8ca7f.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/e94ec4639a7bef737e904a8e255d9e29.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/eeb38eacf937f502862e766e2ed146bf.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/f0e2c27a709e2af6f63e3bdf34cdb9bd.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/f27efa8f3631df23fbe87d54b49e094c.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/f8225f60ba161e6e47702a29014c48eb.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/f89f528e51725be5cc953a6f24ad265d.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/fb6331d6d8d8b5b179bac398e01eee1a.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/fc4077534e4a50ba0cdb3538cb749f9d.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/fc6547cb9ce4442fe63bb8158ca5abcc.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/fdbd91528163db0bc9e9dba29617d973.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/fdda1979e4c4d0055ceb15f39f11b4b2.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/01d4351dc22165c32b050d8db32622ac.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/03a293c2892bce795bc4e9ad90c49d1f.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/0ec7fb49aec69f613192537c71ab9d99.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/1282ac70601f062bfbdb5dbeb855663b.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/17f8a08517efbc3e6ad867ad28dcc58d.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/1aa826fc3a0dc28ae40932f010258f72.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/22138519859223f90b8cf9ec16a8a009.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/275bc7b3749f4d3d1efda561937fc73c.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/2a99ea80832b017a7d0d27b61e1e31cf.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/5c5adcd553e6c118b82e772dc8738793.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/68d3320c78cb74ccd103efa75046ec4a.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/704d8dbf50b1377f4da61e88e9122b13.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/7198185a767708431c8897ef3b79203c.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/7199bcda6eda7bb0dbbba471870cbb74.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/78b773f2a48212b302241a377ad4fb0b.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/7a2454b5cacf72682b402f2a5f67f1e7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/8328a6b4e5a3042633d49ba6bedaf76c.mp4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/9dad98a0833291fc7487cc6fbd392f08.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/a30ceb57d880eac04d11bf274bb31254.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/abb6a5e70a5f2e1d5c7b1dfb25d74f0d.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/b002791a857943849180feace78ea6e3.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/c1db29f720fdc4cebf921c24c0475ef0.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/e3f094f0870c25eefce6ea9d814af3b0.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/f151809da25d4fab1d7ad3a845173b8b.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/fa1d2cc45141cb1bd8e720b1933a7cab.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/videos/fc2a3d32d88783c6a4694a911b55e871.png" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/uploads/images/389f1aa0ae0e9997c9ca208c3d6fdc99.jpeg" afterPath="$PROJECT_DIR$/web/uploads/images/1477da2c8958a48998ab7bb563c3a2d9.jpeg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/uploads/images/867dd0932418b8ad8ff0d60300c6e183.jpeg" afterPath="$PROJECT_DIR$/web/uploads/images/1f608d879b2e2fdf52e1fdd31d7414d3.jpeg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/uploads/images/c38cca818f2cab78bf4d26a3d285d6d1.jpeg" afterPath="$PROJECT_DIR$/web/uploads/images/15b10db8b743e592fc91310c0ce7a095.jpeg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/uploads/images/f297eae2972926baf1a84687d7bf862f.jpeg" afterPath="$PROJECT_DIR$/web/uploads/videos/8236f57b80df8be43f5a48767d2de845.jpeg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/uploads/videos/4150240de78c61ce7f7b4e06a75f43aa.jpeg" afterPath="$PROJECT_DIR$/web/uploads/images/7192913c6e431c5803cfda4af6251488.jpeg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/uploads/videos/734c993e6d2386b151d0dadf9ae0ad18.mp4" afterPath="$PROJECT_DIR$/web/uploads/videos/ff0df17aa9ec3ecccf80b6401d7e0786.mp4" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/uploads/videos/829bf0bc08c232074225b1483718b219.jpeg" afterPath="$PROJECT_DIR$/web/uploads/images/bbb2238284d425e7b2f1bd31bc12ba61.jpeg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/NewTest.iml" afterPath="$PROJECT_DIR$/.idea/NewTest.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nbproject/project.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nbproject/project.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/KidsBackendBundle/Controller/MobileController.php" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/NewTest.iml" afterPath="$PROJECT_DIR$/.idea/AllForKidsProject.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/KidsBackendBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/KidsBackendBundle/Resources/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/PublicationDetails.html.twig" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/PublicationDetails.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Publications.html.twig" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Publications.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Template_User.html.twig" afterPath="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Template_User.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -302,53 +39,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PublicationDetails.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/PublicationDetails.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="214" column="25" lean-forward="false" selection-start-line="214" selection-start-column="25" selection-end-line="214" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/KidsBackendBundle/Resources/config/routing.yml">
+        <entry file="file://$PROJECT_DIR$/src/KidsFrontBundle/Resources/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="13" column="26" lean-forward="true" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+            <state relative-caret-position="5481">
+              <caret line="261" column="0" lean-forward="false" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MobileController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/KidsBackendBundle/Controller/MobileController.php">
+      <file leaf-file-name="Template_User.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Template_User.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="76" column="5" lean-forward="false" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+            <state relative-caret-position="630">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MobileController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/KidsFrontBundle/Controller/MobileController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="58">
+              <caret line="68" column="12" lean-forward="false" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
               <folding>
-                <element signature="e#48#98#0#PHP" expanded="true" />
+                <element signature="e#46#96#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PublicationController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/KidsBackendBundle/Controller/PublicationController.php">
+      <file leaf-file-name="AfficherPublication.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/KidsBackendBundle/Resources/views/AfficherPublication.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1218">
-              <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="72" selection-end-column="152" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Publications.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Publications.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4347">
-              <caret line="207" column="63" lean-forward="false" selection-start-line="207" selection-start-column="36" selection-end-line="207" selection-end-column="63" />
+            <state relative-caret-position="126">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -406,8 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/etablissements.html.twig" />
-        <option value="$PROJECT_DIR$/src/KidsFrontBundle/Controller/EtablissementController.php" />
         <option value="$PROJECT_DIR$/src/UserBundle/EventListener/RegistrationConfirmedListener.php" />
         <option value="$PROJECT_DIR$/src/UserBundle/Controller/AfterLoginRedirectionController.php" />
         <option value="$PROJECT_DIR$/src/UserBundle/Controller/RegistrationConfirmListner.php" />
@@ -436,7 +161,6 @@
         <option value="$PROJECT_DIR$/src/KidsBackendBundle/Controller/ServiceController.php" />
         <option value="$PROJECT_DIR$/composer.lock" />
         <option value="$PROJECT_DIR$/src/KidsFrontBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Template_User.html.twig" />
         <option value="$PROJECT_DIR$/var/cache/dev/ContainerJdfuoeq/getFosComment_Manager_Thread_DefaultService.php" />
         <option value="$PROJECT_DIR$/var/cache/dev/ContainerJdfuoeq/getFosComment_FormType_CommentableThread_DefaultService.php" />
         <option value="$PROJECT_DIR$/src/UserBundle/Entity/Comment.php" />
@@ -450,13 +174,16 @@
         <option value="$PROJECT_DIR$/src/KidsBackendBundle/Resources/views/Template_Admin.html.twig" />
         <option value="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Controller/MessageController.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/src/KidsFrontBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/src/KidsBackendBundle/Controller/ProduitsController.php" />
         <option value="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Publications.html.twig" />
         <option value="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/PublicationDetails.html.twig" />
         <option value="$PROJECT_DIR$/src/KidsBackendBundle/Controller/MobileController.php" />
         <option value="$PROJECT_DIR$/src/KidsBackendBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/KidsFrontBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/KidsFrontBundle/Controller/MobileController.php" />
+        <option value="$PROJECT_DIR$/src/KidsBackendBundle/Resources/views/AfficherPublication.html.twig" />
+        <option value="$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Template_User.html.twig" />
       </list>
     </option>
   </component>
@@ -586,7 +313,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -603,34 +329,20 @@
               <item name="AllForKidsProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="AllForKidsProject" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="KidsBackendBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="KidsFrontBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="AllForKidsProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="AllForKidsProject" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="KidsBackendBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="KidsFrontBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="AllForKidsProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AllForKidsProject" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="KidsBackendBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="AllForKidsProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AllForKidsProject" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="KidsBackendBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -686,7 +398,11 @@
       <workItem from="1525516883928" duration="530000" />
       <workItem from="1525517420396" duration="1071000" />
       <workItem from="1525888107503" duration="2509000" />
-      <workItem from="1525900349279" duration="668000" />
+      <workItem from="1525900349279" duration="1998000" />
+      <workItem from="1526503039997" duration="709000" />
+      <workItem from="1526680137016" duration="268000" />
+      <workItem from="1526827470637" duration="2163000" />
+      <workItem from="1526850967356" duration="453000" />
     </task>
     <task id="LOCAL-00001" summary="// Final Update">
       <created>1525813164508</created>
@@ -695,25 +411,32 @@
       <option name="project" value="LOCAL" />
       <updated>1525813164508</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="// Final Update">
+      <created>1525901040722</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1525901040722</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44527000" />
+    <option name="totallyTimeSpent" value="49450000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23676248" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25189108" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991454" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25128207" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -759,24 +482,12 @@
     <option name="LAST_COMMIT_MESSAGE" value="// Final Update" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/UserBundle/Entity/CategoriePublication.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserBundle/Repository/ActiviteEnfantRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/security.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
@@ -830,13 +541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Template_User.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="104" column="40" lean-forward="false" selection-start-line="104" selection-start-column="37" selection-end-line="104" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -1034,14 +738,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4347">
           <caret line="207" column="63" lean-forward="false" selection-start-line="207" selection-start-column="36" selection-end-line="207" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/KidsFrontBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-511">
-          <caret line="145" column="47" lean-forward="false" selection-start-line="145" selection-start-column="47" selection-end-line="145" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -1049,25 +745,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1218">
           <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="72" selection-end-column="152" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/KidsBackendBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="26" lean-forward="true" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/KidsBackendBundle/Controller/MobileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="76" column="5" lean-forward="false" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
-          <folding>
-            <element signature="e#48#98#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="434">
+          <caret line="162" column="68" lean-forward="false" selection-start-line="162" selection-start-column="68" selection-end-line="162" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -1075,7 +759,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="214" column="25" lean-forward="false" selection-start-line="214" selection-start-column="25" selection-end-line="214" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KidsBackendBundle/Controller/MobileController.php" />
+    <entry file="file://$PROJECT_DIR$/src/KidsBackendBundle/Resources/views/AfficherPublication.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KidsFrontBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5481">
+          <caret line="261" column="0" lean-forward="false" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KidsFrontBundle/Resources/views/Template_User.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KidsFrontBundle/Controller/MobileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="68" column="12" lean-forward="false" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
+          <folding>
+            <element signature="e#46#96#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
