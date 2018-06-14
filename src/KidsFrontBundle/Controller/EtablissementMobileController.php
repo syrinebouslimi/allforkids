@@ -12,6 +12,8 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
+use UserBundle\Entity\Enseignant;
+use UserBundle\Entity\Gallerie;
 use UserBundle\Entity\UserEtablissementFavoris;
 
 
@@ -392,31 +394,46 @@ class EtablissementMobileController extends Controller
         return new \Symfony\Component\HttpFoundation\Response("etablissement modifié avec succés");
     }
 
-    public function updateEnseigAction(Request $request)
+    public function updateEnseigAction(Request $request, $id)
     {
 
+        $ens = $this->getDoctrine()->getManager()
+            ->getRepository('UserBundle:Enseignant')
+            ->find($id);
 
-        $idEns = $request->get('id');
-        $aboutEns = $request->get('about');
-        $designation= $request->get('designation');
-        $diplome = $request->get('diplome');
-        $experience = $request->get('experience');
+        $idEtab = $request->get('idEtab');
+        $nomEns = $request->get('nomEns');
+        $prenomEns = $request->get('prenomEns');
+        $adresseEns = $request->get('adresse');
+        $image = $request->get('image');
+        $about = $request->get('about');
+        $design =$request->get('design');
+        $dipl = $request->get('diplome');
+        $exp = $request->get('exper');
+        $hobbies = $request->get('hobbies');
         $cours = $request->get('cours');
         $email = $request->get('email');
         $phone = $request->get('phone');
 
 
         $etab = $this->getDoctrine()->getManager()
-            ->getRepository('UserBundle:Enseignant')
-            ->find($idEns);
+            ->getRepository('UserBundle:Etablissement')
+            ->find($idEtab);
 
-        $etab->setAboutEnseignant($aboutEns);
-        $etab->setDesignationEnseignant($designation);
-        $etab->setDiplomeEnseignant($diplome);
-        $etab->setExperienceEnseignant($experience);
-        $etab->setPhone($phone);
-        $etab->setCoursEnseignant($cours);
-        $etab->setEmailEnseignant($email);
+
+        $ens->setEtablissementId($etab);
+        $ens->setNomEnseignant($nomEns);
+        $ens->setPrenomEnseignant($prenomEns);
+        $ens->setAdresseEnseignant($adresseEns);
+        $ens->setImageEnseignant($image);
+        $ens->setAboutEnseignant($about);
+        $ens->setDesignationEnseignant($design);
+        $ens->setDiplomeEnseignant($dipl);
+        $ens->setExperienceEnseignant($exp);
+        $ens->setHobbiesEnseignant($hobbies);
+        $ens->setCoursEnseignant($cours);
+        $ens->setEmailEnseignant($email);
+        $ens->setPhoneEnseignant($phone);
 
 
         $em = $this->getDoctrine()->getManager();
@@ -456,6 +473,83 @@ class EtablissementMobileController extends Controller
 
         return new \Symfony\Component\HttpFoundation\Response("Suppression effectué avec succés");
     }
+
+    public function ajouterEnseignantAction (Request $request){
+
+        $idEtab = $request->get('idEtab');
+        $nomEns = $request->get('nomEns');
+        $prenomEns = $request->get('prenomEns');
+        $adresseEns = $request->get('adresse');
+        $image = $request->get('image');
+        $about = $request->get('about');
+        $design =$request->get('design');
+        $dipl = $request->get('diplome');
+        $exp = $request->get('exper');
+        $hobbies = $request->get('hobbies');
+        $cours = $request->get('cours');
+        $email = $request->get('email');
+        $phone = $request->get('phone');
+
+
+        $etab = $this->getDoctrine()->getManager()
+            ->getRepository('UserBundle:Etablissement')
+            ->find($idEtab);
+
+
+        $ens = new Enseignant();
+        $ens->setEtablissementId($etab);
+        $ens->setNomEnseignant($nomEns);
+        $ens->setPrenomEnseignant($prenomEns);
+        $ens->setAdresseEnseignant($adresseEns);
+        $ens->setImageEnseignant($image);
+        $ens->setAboutEnseignant($about);
+        $ens->setDesignationEnseignant($design);
+        $ens->setDiplomeEnseignant($dipl);
+        $ens->setExperienceEnseignant($exp);
+        $ens->setHobbiesEnseignant($hobbies);
+        $ens->setCoursEnseignant($cours);
+        $ens->setEmailEnseignant($email);
+        $ens->setPhoneEnseignant($phone);
+
+        $save = $this->getDoctrine()->getManager();
+
+        $save->persist($ens);
+        $save->flush();
+
+        return new \Symfony\Component\HttpFoundation\Response("Enseignant crée avec succés");
+
+    }
+
+
+    public function ajouterImageAction (Request $request){
+
+        $idEtab = $request->get('idEtab');
+        $image = $request->get('image');
+        $desc = $request->get('description');
+
+
+        $etab = $this->getDoctrine()->getManager()
+            ->getRepository('UserBundle:Etablissement')
+            ->find($idEtab);
+
+        $imageGall = new Gallerie();
+        $imageGall->setEtablissementId($etab);
+        $imageGall->setDescriptionImageGallery($desc);
+        $imageGall->setImageGallery($image);
+
+        $save = $this->getDoctrine()->getManager();
+
+        $save->persist($imageGall);
+        $save->flush();
+
+        return new \Symfony\Component\HttpFoundation\Response("Image ajoutée avec succés dans la gallerie de votre etablissement");
+
+    }
+
+
+
+
+
 
 
 
