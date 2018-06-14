@@ -2,6 +2,7 @@
 
 namespace KidsFrontBundle\Controller;
 
+use Doctrine\ORM\OptimisticLockException;
 use FOS\MessageBundle\Model\ParticipantInterface;
 use MessageBundle\Entity\Message;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -427,7 +428,29 @@ class EtablissementMobileController extends Controller
     }
 
 
+    public function supprimerEtabAction($id)
+    {
 
+
+        $em = $this->getDoctrine()->getManager();
+        $etab = $this->getDoctrine()->getRepository('UserBundle:Etablissement')->find($id);
+        $em->remove($etab);
+        $manager = $this->get('mgilet.notification');
+        $notif = $manager->createNotification('Suppression dun Etablissement crée');
+        $notif->setMessage($etab->getNomEtablissement().' a été supprimé par son propriètaire');
+        $notif->setLink('http://symfony.com/');
+
+        try {
+            $manager->addNotification(array($this->getUser()), $notif, true);
+        } catch (OptimisticLockException $e) {
+        }
+
+
+        $em->flush();
+
+
+        return new \Symfony\Component\HttpFoundation\Response("Suppression etablissement effectué avec succés");
+    }
 
     public function supprimerEnseignantAction($id)
     {

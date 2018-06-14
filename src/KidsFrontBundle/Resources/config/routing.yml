@@ -247,6 +247,9 @@ api_mobile_update_enseignant:
 api_mobile_supp_ense:
     path: /suppressionEnsei
     defaults: { _controller: KidsFrontBundle:EtablissementMobile:supprimerEnseignant}
+api_mobile_supp_etab:
+    path: /supprimerEtab/{id}
+    defaults: { _controller: KidsFrontBundle:EtablissementMobile:supprimerEtab}
 
 api_mobile_supp_image:
     path: /suppressionImage

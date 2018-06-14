@@ -65,6 +65,34 @@
       <path value="$PROJECT_DIR$/vendor/egeloen/ckeditor-bundle" />
       <path value="$PROJECT_DIR$/vendor/egeloen/json-builder" />
       <path value="$PROJECT_DIR$/vendor/cmen/google-charts-bundle" />
+      <path value="$PROJECT_DIR$/vendor/Socialite-master/demo" />
+      <path value="$PROJECT_DIR$/vendor/Socialite-master/extensions" />
+      <path value="$PROJECT_DIR$/vendor/behat/transliterator" />
+      <path value="$PROJECT_DIR$/vendor/stof/doctrine-extensions-bundle" />
+      <path value="$PROJECT_DIR$/vendor/discutea/forum-bundle" />
+      <path value="$PROJECT_DIR$/vendor/gedmo/doctrine-extensions" />
+      <path value="$PROJECT_DIR$/vendor/php-http/logger-plugin" />
+      <path value="$PROJECT_DIR$/vendor/php-http/stopwatch-plugin" />
+      <path value="$PROJECT_DIR$/vendor/php-http/promise" />
+      <path value="$PROJECT_DIR$/vendor/php-http/httplug-bundle" />
+      <path value="$PROJECT_DIR$/vendor/php-http/discovery" />
+      <path value="$PROJECT_DIR$/vendor/php-http/guzzle6-adapter" />
+      <path value="$PROJECT_DIR$/vendor/php-http/httplug" />
+      <path value="$PROJECT_DIR$/vendor/egeloen/google-map" />
+      <path value="$PROJECT_DIR$/vendor/php-http/client-common" />
+      <path value="$PROJECT_DIR$/vendor/php-http/message" />
+      <path value="$PROJECT_DIR$/vendor/egeloen/google-map-bundle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/clue/stream-filter" />
+      <path value="$PROJECT_DIR$/vendor/php-http/cache-plugin" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/egeloen/serializer" />
+      <path value="$PROJECT_DIR$/vendor/egeloen/serializer-bundle" />
+      <path value="$PROJECT_DIR$/vendor/cyberjaw/google-maps-bundle" />
+      <path value="$PROJECT_DIR$/vendor/ancarebeca/full-calendar-bundle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/php-http/message-factory" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.5.0" />
