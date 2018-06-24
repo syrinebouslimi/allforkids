@@ -137,6 +137,7 @@ assetic:
     use_controller: '%kernel.debug%'
     filters:
         cssrewrite: ~
+
 nomaya_social:
     buttons:
         facebook:
