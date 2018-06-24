@@ -36,7 +36,7 @@ class ClubsController extends Controller
         $id=$request->get('id');
         $club = $this->getDoctrine()->getRepository('UserBundle:Club')->findOneBy(array('id'=>$id));
 
-        $coor=new Coordinate($club->getLat(),$club->getLongi());
+        $coor=new Coordinate($club->getLat(),$club->getLong());
 
         $marker = new Marker($coor);
         $marker->setOption('draggable',true);

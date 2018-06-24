@@ -129,7 +129,6 @@ modifierProduit:
 stat:
     path:     /stat
     defaults: { _controller: KidsBackendBundle:Produits:stat}
-
 listeclub:
     path:     /listeclub
     defaults: { _controller: KidsBackendBundle:Club:listeclub }
@@ -170,6 +169,16 @@ supprimerEvntCalendar:
 afficherClubJson:
     path:     /afficherClubJson
     defaults: { _controller: KidsBackendBundle:Club:afficherClubJson}
+afficherClubJsonbyId:
+    path:     /afficherClubJsonbyId/{id}
+    defaults: { _controller: KidsBackendBundle:Club:afficherClubJsonbyId}
+deleteClubJson:
+    path:     /deleteClubJson/{id}
+    defaults: { _controller: KidsBackendBundle:Club:deleteClubJson}
 ajouterClubJson:
     path:     /ajouterClubJson
     defaults: { _controller: KidsBackendBundle:Club:ajouterClubJson}
+searchJson:
+    path:     /searchJson/{nom}
+    defaults: { _controller: KidsBackendBundle:Club:searchJson}
+

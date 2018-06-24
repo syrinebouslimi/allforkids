@@ -285,12 +285,6 @@ api_get_all_notifications:
     path: /afficherNotif
     defaults: { _controller: KidsFrontBundle:EtablissementMobile:allNotifications}
 
-afficheclubsfront:
-    path:     /afficheClub
-    defaults: { _controller: KidsFrontBundle:Clubs:afficheclubsfront }
-map:
-    path:     /map/{id}
-    defaults: { _controller: KidsFrontBundle:Clubs:map }
 afficherEnseignParent:
     path: /afficherEnseign
     defaults: { _controller: KidsFrontBundle:Parent:afficherEnseignParent}
@@ -303,3 +297,9 @@ ajouterOuModifierVote:
 afficherFiltredEnseignParent:
     path: /afficherFiltredEnseignParent
     defaults: { _controller: KidsFrontBundle:Parent:afficherFiltredEnseignParent}
+afficheclubsfront:
+    path:     /affiche
+    defaults: { _controller: KidsFrontBundle:Clubs:afficheclubsfront }
+map:
+    path:     /map/{id}
+    defaults: { _controller: KidsFrontBundle:Clubs:map }

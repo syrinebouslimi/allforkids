@@ -45,9 +45,7 @@ services:
 
         images_directory: '%kernel.root_dir%/../web/uploads/images'
 
-
-
-    # add more services, or override services that need manual wiring
-    # AppBundle\Service\ExampleService:
-    #     arguments:
-    #         $someArgument: 'some_value'
+    app_bundle.service.listener:
+           class: UserBundle\Listener\LoadDataListener
+           tags:
+              - { name: 'kernel.event_listener', event: 'fullcalendar.set_data', method: loadData}
