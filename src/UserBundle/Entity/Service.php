@@ -24,76 +24,33 @@ class Service
     /**
      * @var string
      *
-     * @ORM\Column(name="nomService", type="string", length=255)
+     * @ORM\Column(name="nomService", type="string", length=255,nullable=true)
      */
     private $nomService;
-
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="descriptionService", type="string", length=255)
+     * @ORM\Column(name="descriptionService", type="string", length=255,nullable=true)
      */
     private $descriptionService;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="adresseService", type="string", length=255)
+     * @ORM\Column(name="adresseService", type="string", length=255,nullable=true)
      */
     private $adresseService;
 
 
 
-
-
-
     /**
-     * @var String
+     * @var \DateTime
      *
-     * @ORM\Column(name="contact", type="string")
+     * @ORM\Column(name="dateService", type="datetime",nullable=true)
      */
-    private $contact;
-
-    /**
-     * @return String
-     */
-    public function getContact()
-    {
-        return $this->contact;
-    }
-
-    /**
-     * @param String $contact
-     */
-    public function setContact($contact)
-    {
-        $this->contact = $contact;
-    }
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="imagServ", type="string")
-     */
-    private $imagServ;
-
-    /**
-     * @return string
-     */
-    public function getImagServ()
-    {
-        return $this->imagServ;
-    }
-
-    /**
-     * @param string $imagServ
-     */
-    public function setImagServ($imagServ)
-    {
-        $this->imagServ = $imagServ;
-    }
+    private $dateService;
 
 
     /**
@@ -143,6 +100,28 @@ class Service
         $this->idTypeService = $idTypeService;
     }
 
+    /**
+     * @var String
+     *
+     * @ORM\Column(name="contact", type="string",nullable=true)
+     */
+    private $contact;
+
+    /**
+     * @return String
+     */
+    public function getContact()
+    {
+        return $this->contact;
+    }
+
+    /**
+     * @param String $contact
+     */
+    public function setContact($contact)
+    {
+        $this->contact = $contact;
+    }
 
 
 
@@ -169,6 +148,29 @@ class Service
         $this->nomService = $nomService;
 
         return $this;
+    }
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="imagServ", type="string",nullable=true)
+     */
+    private $imagServ;
+
+    /**
+     * @return string
+     */
+    public function getImagServ()
+    {
+        return $this->imagServ;
+    }
+
+    /**
+     * @param string $imagServ
+     */
+    public function setImagServ($imagServ)
+    {
+        $this->imagServ = $imagServ;
     }
 
     /**
@@ -230,18 +232,29 @@ class Service
         return $this->adresseService;
     }
 
-
-
-   
     /**
+     * Set dateService
      *
-     * @return string
+     * @param \DateTime $dateService
+     *
+     * @return Service
      */
-    public function __toString()
+    public function setDateService($dateService)
     {
-        return $this->setIdTypeService();
+        $this->dateService = $dateService;
+
+        return $this;
     }
 
+    /**
+     * Get dateService
+     *
+     * @return \DateTime
+     */
+    public function getDateService()
+    {
+        return $this->dateService;
+    }
 
 }
 

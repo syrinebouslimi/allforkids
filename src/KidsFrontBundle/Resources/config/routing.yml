@@ -303,3 +303,12 @@ afficheclubsfront:
 map:
     path:     /map/{id}
     defaults: { _controller: KidsFrontBundle:Clubs:map }
+ajoutrendezvous:
+    path:     /ajoutrendezvous
+    defaults: { _controller: KidsFrontBundle:Services:ajoutrendezvous}
+gereRendezvous:
+    path:     /gereRendezvous
+    defaults: { _controller: KidsFrontBundle:Services:gereRendezvous }
+ajoutREclamation:
+    path:     /ajoutREclamation
+    defaults: { _controller: KidsFrontBundle:Services:ajoutREclamation }

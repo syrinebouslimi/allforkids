@@ -504,41 +504,98 @@
 
 
 <!-- MODAL Rendez-vous -->
-
-<div class="modal" tabindex="-1" role="dialog" id="modal-default">>
-
-
-
-
-
-
+<div class="modal" tabindex="-1" role="dialog" id="modal-success">
     <div class="modal-dialog" >
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Reserver un rendez-vous</h5>
+                <h5 class="modal-title">Confirmation du rendez-vous</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
 
                 </button>
             </div>
             <div class="modal-body">
+                <p style="color:#00E466" class=" text-center" id="success-rendezvous"></p>
 
-                <label for="comment" class="form-group formField">Nom et Prenom</label>
-                <textarea class="form-control"></textarea>
+                <table class="table table-striped">
+                    <tr>
+                        <th>
+                            <label>Nom & Prénom</label>
+                        </th>
+                        <td><p id="nomprenom-picked"></p></td>
+                    </tr>
+                    <tr>
+                        <th>Date Rendez-vous</th>
+                        <td>
+                            <p id="daterendezvous-picked"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Horaire</th>
+                        <td>
+                            <p id="horaire-picked"></p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-secondary" data-dismiss="modal" >Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="modal-default">
+
+    <div class="modal-dialog" >
+        <div class="modal-content">
+            <div class="modal-header">
+                {#<h5 class="modal-title">Reserver un rendez-vous</h5>#}
+                <h4 class="modal-title" class="teachersInfo">Reservation d'un rendez-vous</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+
+                </button>
+            </div>
+            <div class="modal-body">
+                <p style="color:#00E466" class=" text-center"  color="red" id="success-rendezvous"></p>
+                <label for="nomprenom" class="form-group formField"  >Nom et Prenom</label>
+                <input class="form-control" name="nomprenom" id="nomprenom" type="text">
+
                 <br>
                 <br>
 
-                <label class="form-group formField" for="comment">Date Rendez-vous:</label>
-                <input id="date" type="date">
+                <label class="form-group formField" for="daterendezvous">Date Rendez-vous:</label>
+                <div class="hello-week">
+                    <div class="hello-week__header">
+                        <button class="btn demo-prev">◀</button>
+                        <div class="hello-week__label"></div>
+                        <button class="btn demo-next">▶</button>
+                    </div>
+                    <div class="hello-week__week"></div>
+                    <div class="hello-week__month"></div>
+                </div>
+                <br>
+                <br>
+
+                <p><strong>Date Rendez-vous:</strong></p>
+                <ul class="demo-picked"><span class="label label-success">n/a</span></ul>
+                {#<input type="date" name="daterendezvous" id="daterv">#}
 
                 <br>
                 <br>
-                <label class="form-group formField" for="comment">Horaire Rendez-vous:</label>
-                <input type="time" name="horaire">
+                {#<label class="form-group formField" for="horaire">Horaire Rendez-vous:</label>#}
+
+                <div class="form-group">
+                    <label  class="form-group formField" for="horaire">Horaire Rendez-vous</label>
+                    <input id="horaire" class="form-control ui-autocomplete-input" autocomplete="off">
+                </div>
+                {#<input type="time" name="horaire" id="horaire">#}
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" action="" method="post" >Confirmer Rendez-vous</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" name="save" id="savebotom" >Confirmer Rendez-vous</button>
+                <button type="submit" class="btn btn-secondary" data-dismiss="modal" >Close</button>
             </div>
         </div>
     </div>
@@ -547,6 +604,8 @@
 
 
 
+<!-- page script -->
+
 <script src="{{ asset('Template_front_principal/plugins/jquery/jquery-min.js')}}"></script>
 <script src="{{ asset('Template_front_principal/plugins/jquery-ui/jquery-ui.js')}}"></script>
 <script src="{{ asset('Template_front_principal/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
@@ -554,6 +613,7 @@
 <script src="{{ asset('Template_front_principal/plugins/rs-plugin/js/jquery.themepunch.revolution.min.js')}}"></script>
 <script src="{{ asset('Template_front_principal/plugins/selectbox/jquery.selectbox-0.1.3.min.js')}}"></script>
 <script src="{{ asset('Template_front_principal/plugins/owl-carousel/owl.carousel.js')}}"></script>
+{#<script src="{{ asset('Template_front_principal/../../../cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js')}}"></script>#}
 <script src="{{ asset('Template_front_principal/plugins/counter-up/jquery.counterup.min.js') }}"></script>
 <script src="{{ asset('Template_front_principal/plugins/isotope/isotope.min.js') }}"></script>
 <script src="{{ asset('Template_front_principal/plugins/isotope/jquery.fancybox.pack.js') }}"></script>
@@ -562,14 +622,124 @@
 <script src="{{ asset('Template_front_principal/plugins/velocity/velocity.min.js') }}"></script>
 <script src="{{ asset('Template_front_principal/plugins/smoothscroll/SmoothScroll.js') }}"></script>
 <script src="{{ asset('Template_front_principal/js/custom.js') }}"></script>
+<link href="{{ asset('hello-week-master/dist/helloweek.min.css') }}" rel="stylesheet">
+<script src="{{ asset('hello-week-master/dist/helloweek.min.js') }}"></script>
+<script src="{{ asset('timepicker/date-en-US.js') }}"></script>
+<script src="{{ asset('timepicker/jquery.ui.timeselect.js') }}"></script>
+{#<link href="{{ asset('Template_front_principal/options/optionswitch.css') }}" rel="stylesheet">#}
+{#<script src="{{ asset('Template_front_principal/options/optionswitcher.js') }}"></script>#}
+<style>
+    .ui-autocomplete {
+        position: fixed;
+        z-index: 10000;
+    }
 
-</div>
+    .demo-picked li{
+        font-weight: 400;
+        padding: 5px 10px;
+        font-size: 14px;
+        font-family: bold;
+        margin-right: 17px;
+        margin-bottom: 15px;
+        display: inline-block;
+        background-color: #5cb85c;
+        color: #fff;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: .25em;
+    }
+</style>
 
 
+<!-- /.script rendez vouq -->
+<script>
+    $(document).ready(function() {
 
+        const prev = document.querySelector('.demo-prev');
+        const next = document.querySelector('.demo-next');
+        const picked = document.querySelector('.demo-picked');
+        const last = document.querySelector('.demo-last');
+        var pickedDate;
+
+        function updateInfo() {
+
+            if (this.lastSelectedDay) {
+
+                picked.innerHTML = '';
+                for (days of this.selectedDays) {
+                    var li = document.createElement('li');
+                    li.innerHTML = days;
+                    pickedDate = days;
+                    picked.appendChild(li);
+                }
+            }
+        }
+
+        const myCalendar = new HelloWeek({
+            selector: '.hello-week',
+            lang: 'en',
+            langFolder: '../../hello-week-master/dist/langs/',
+            format: 'DD-MM-YYYY',
+            weekShort: true,
+            monthShort: false,
+            disablePastDays: true,
+            disabledDaysOfWeek: "0",
+            multiplePick: false,
+            minDate: false,
+            maxDate: false,
+            weekStart: 1,
+            onLoad: updateInfo,
+            onChange: updateInfo,
+            onSelect: updateInfo
+        });
+
+        prev.addEventListener('click', () => myCalendar.prev());
+
+        next.addEventListener('click', () => myCalendar.next());
+
+        $('#horaire').timeselect({
+            'step': 30,
+            'format': 'HH:mm',
+            autocompleteSettings: {
+                autoFocus: true
+            }
+        });
+
+        $("#savebotom").click(function () {
+            var title = $("#nomprenom").val();
+
+            var dataString = {};
+            dataString['nomprenom'] = title;
+
+            dataString['daterendezvous'] = pickedDate.toString()
+            dataString['horaire'] =$('#horaire').val();
+
+            dataString['service'] =$('#idService').val();
+            $.ajax({
+                method: 'POST',
+                dataType: 'json',
+                url: '{{ path('ajoutrendezvous') }}',
+                data: dataString,
+                success: function (data) {
+                    $('#modal-default').modal('hide');
+                    $('#modal-success').modal('show');
+                    $('#success-rendezvous').text('Rendez-vous confirmé.');
+                    $("#nomprenom-picked").text(dataString['nomprenom']);
+                    $("#daterendezvous-picked").text(dataString['daterendezvous']);
+                    $("#horaire-picked").text(dataString['horaire']);
+                    $("#nomprenom").val("");
+                    $(".demo-picked").empty();
+                    $(".demo-picked").append('<span class="label label-success">n/a</span>')
+                    $("#horaire").val("");
+                }
+            });
+
+        });
+    });
+</script>
 
 </body>
 
-<!-- Mirrored from themes.iamabdus.com/kidz/1.4/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Mar 2018 15:48:20 GMT -->
 </html>
 

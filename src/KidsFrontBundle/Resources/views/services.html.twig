@@ -12,40 +12,47 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" ><img src="{{ asset('Template_front_principal/img/logo-school.png') }}" alt="Kidz School"></a>
+                <a class="navbar-brand"><img src="{{ asset('Template_front_principal/img/logo-school.png') }}"
+                                             alt="Kidz School"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown singleDrop color-1  ">
-                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-home bg-color-1" aria-hidden="true"></i> <span class="active">Etablissement</span>
+                    <li class="dropdown singleDrop color-1 active ">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-home bg-color-1" aria-hidden="true"></i> <span
+                                    class="active">Etablissement</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-left">
-                            <li class=""><a href="{{ path('afficherEtabByParent',{'type':'all'}) }}">Consulter les Etablissements</a></li>
+                            <li class=""><a href="{{ path('afficherEtabByParent') }}">Consulter les
+                                    Etablissements</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown singleDrop color-3 ">
-                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <li class="dropdown singleDrop color-3 active ">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-list-ul bg-color-3" aria-hidden="true">
                             </i> <span>Enseignants</span></a>
                         <ul class="dropdown-menu dropdown-menu-left">
-                            <li class=" "><a href="{{ path('afficherprof') }}">Consulter la liste des enseigants</a></li>
+                            <li class=" "><a href="{{ path('afficherEnseignParent') }}">Consulter la liste des enseigants</a>
+                            </li>
                         </ul>
                     </li>
-                    <li class="dropdown singleDrop color-4">
+                    <li class="dropdown singleDrop color-4 active">
                         <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true">
-                            </i> <span>Gallerie</span></a>
+                            </i> <span class="active">Gallerie</span></a>
                         <ul class="dropdown-menu dropdown-menu-left">
-                            <li class=" "><a href="{{ path('affichergallerie') }}">Consulter la gallerie des images</a></li>
+                            <li class=" "><a href="{{ path('affichergallerie') }}">Consulter la gallerie des images</a>
+                            </li>
                         </ul>
                     </li>
 
                     <li class="dropdown singleDrop color-1 active ">
-                        <a href="{{ path('publications') }}"  role="button" aria-haspopup="true" aria-expanded="false">
+                        <a href="{{ path('publications') }}" role="button" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-list-ul bg-color-1" aria-hidden="true">
                             </i>
                             <span class="active">Publications</span>
@@ -53,37 +60,39 @@
 
                     </li>
 
+                    <li class="dropdown singleDrop color-4 active" >
+                    <li class="dropdown singleDrop color-5 active">
+                        <a href="{{ path('afficherespaceenfant') }}" role="button" aria-haspopup="true"
+                           aria-expanded="false">
+                            <i class="fa fa-gg bg-color-4" aria-hidden="true"></i>
+                            <span class="active">Espace Kids</span>
+                        </a>
+                    </li>
 
-                    {#<li class="dropdown singleDrop color-3 active">#}
-                    {#<a href="{{ path('publications') }}" role="button" aria-haspopup="true" aria-expanded="false">#}
-                    {#<i class="fa fa-list-ul bg-color-3" aria-hidden="true">#}
-                    {#</i>#}
-                    {#<span class="active">Publications</span>#}
-                    {#</a>#}
-                    {#</li>#}
+                    <li class="dropdown singleDrop color-3 active">
+                        <a href="{{ path('services') }}" class="dropdown-toggle" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-list-ul bg-color-3" aria-hidden="true">
+                            </i> <span class="active">Service</span></a>
+                    </li>
 
                     <li class="dropdown singleDrop color-4 active">
-                        <a href="{{ path('afficherespaceenfant') }}"  role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-gg bg-color-4" aria-hidden="true"></i>
-                            <span class="active">Espace enfant</span>
-                        </a>
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true">
+                            </i> <span class="active">Réclamations</span></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li class=" "><a href="{{ url('fos_message_inbox' ) }}">Mes réclamations</a></li>
+                            <li class=" "><a href="{{ url('fos_message_thread_new' ) }}">Envoyer nouvelle reclamation</a>
+
+                        </ul>
                     </li>
-
-                    <li class="dropdown singleDrop color-2 active">
-                        <a href="{{ path('services') }}"  role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-gg bg-color-6" aria-hidden="true"></i>
-                            <span class="active">Service</span>
-                        </a>
-                    </li>
-
-
 
                 </ul>
 
             </div>
         </div>
     </nav>
-
 
 {% endblock Menu %}
 
@@ -159,16 +168,15 @@
 
             {#</div>#}
 
-            <div class="input-group searchArea">
-                <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
-                <input type="text" name="search" value="" class="form-control"
-                       aria-label="Amount (to the nearest dollar)" placeholder="Search something...">
-                <button type="submit" class="input-group-addon button" id="basic-addon21">Search</button>
-            </div>
+            {#<div class="input-group searchArea" >#}
+            {#<span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>#}
+            {#<input type="text"   class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Search something...">#}
+            {#<button type="submit"  name="search" action="{{ path('recherche')}}" value=""class="input-group-addon button" id="basic-addon21"  >Search</button>#}
+            {#</div>#}
 
-            <form style="margin: 2%;" class="example" action="{{ path('recherche') }}">
-                <input type="text" placeholder="Recherche.." name="search" value="">
-                <button type="submit"><i class="fa fa-search"></i></button>
+            <form style="margin: 2%;" class="example" action="{{ path('recherche')}}">
+                <input type="text"  class="form-control" aria-label="Amount (to the nearest dollar)"placeholder="Recherche.." name="search" value="">
+                <button type="submit" ><i class="fa fa-search"></i></button>
             </form>
 
 
@@ -198,45 +206,37 @@
                                 {% endif %}
 
                                 <div class="media eventContent bg-color-1">
-                                    <a class="media-left" href="single-event-left-sidebar.html">
-                                        <img class="media-object" src="{{ asset('uploads/images/' ~ p.imagServ) }}"
-                                             alt="Image">
+                                    <a class="media-left" href="{{ asset('uploads/images/' ~ p.imagServ) }}">
+                                        <img class="media-object" src="{{ asset('uploads/images/' ~ p.imagServ) }}" alt="Image">
 
                                     </a>
                                     <div class="media-body">
-                                        <h3 class="media-heading"><a
-                                                    href="{{ asset('Template_front_principal/single-event-left-sidebar.html') }}">{{ p.nomService }}</a>
-                                        </h3>
+                                        <h3 class="media-heading">{{ p.nomService}}</a></h3>
                                         <ul class="list-unstyled">
-                                            <li><i class="fa fa-calendar-o"
-                                                   aria-hidden="true"></i>{{ p.adresseService }}</li>
-                                            <li><i class="fa fa-clock-o" aria-hidden="true"></i>{{ p.contact }}</li>
+                                            <li><i class="fa fa-calendar-o" aria-hidden="true"></i>{{ p.adresseService }}</li>
+                                            <li><i class="fa fa-clock-o" aria-hidden="true"></i>{{ p.contact}}</li>
                                         </ul>
                                         <p>{{ p.descriptionService }} </p>
                                         <ul class="list-inline btn-yellow">
-                                            <li><a href="  {{ path('detailServiceFront',{'id':p.id}) }}" target="_blank"
-                                                   class="btn btn-primary">read more</a></li>
+                                            <li><a href="  {{ path('detailServiceFront',{'id':p.id})}}" target="_blank" class="btn btn-primary">read more</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             {% endfor %}
 
-
+                        </div>
+                        <div class="navigation text-center">
+                            {{ knp_pagination_render(serv) }}
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
 
-
-
-
-    <div class="navigation text-center">
-        {{ knp_pagination_render(serv) }}
-    </div>
 {% endblock %}
 
 

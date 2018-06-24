@@ -1,4 +1,4 @@
-{% extends 'KidsFrontBundle::Template_User.html.twig' %}
+{% extends 'KidsFrontBundle::templateAffichserv.html.twig' %}
 
 {% block Menu %}
     <nav id="menuBar" class="navbar navbar-default lightHeader" role="navigation">
@@ -11,40 +11,47 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" ><img src="{{ asset('Template_front_principal/img/logo-school.png') }}" alt="Kidz School"></a>
+                <a class="navbar-brand"><img src="{{ asset('Template_front_principal/img/logo-school.png') }}"
+                                             alt="Kidz School"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown singleDrop color-1  ">
-                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-home bg-color-1" aria-hidden="true"></i> <span class="active">Etablissement</span>
+                    <li class="dropdown singleDrop color-1 active ">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-home bg-color-1" aria-hidden="true"></i> <span
+                                    class="active">Etablissement</span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-left">
-                            <li class=""><a href="{{ path('afficherEtabByParent',{'type':'all'}) }}">Consulter les Etablissements</a></li>
+                            <li class=""><a href="{{ path('afficherEtabByParent') }}">Consulter les
+                                    Etablissements</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown singleDrop color-3 ">
-                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <li class="dropdown singleDrop color-3 active ">
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-list-ul bg-color-3" aria-hidden="true">
                             </i> <span>Enseignants</span></a>
                         <ul class="dropdown-menu dropdown-menu-left">
-                            <li class=" "><a href="{{ path('afficherprof') }}">Consulter la liste des enseigants</a></li>
+                            <li class=" "><a href="{{ path('afficherEnseignParent') }}">Consulter la liste des enseigants</a>
+                            </li>
                         </ul>
                     </li>
-                    <li class="dropdown singleDrop color-4">
+                    <li class="dropdown singleDrop color-4 active">
                         <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
                            aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true">
-                            </i> <span>Gallerie</span></a>
+                            </i> <span class="active">Gallerie</span></a>
                         <ul class="dropdown-menu dropdown-menu-left">
-                            <li class=" "><a href="{{ path('affichergallerie') }}">Consulter la gallerie des images</a></li>
+                            <li class=" "><a href="{{ path('affichergallerie') }}">Consulter la gallerie des images</a>
+                            </li>
                         </ul>
                     </li>
 
                     <li class="dropdown singleDrop color-1 active ">
-                        <a href="{{ path('publications') }}"  role="button" aria-haspopup="true" aria-expanded="false">
+                        <a href="{{ path('publications') }}" role="button" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-list-ul bg-color-1" aria-hidden="true">
                             </i>
                             <span class="active">Publications</span>
@@ -52,36 +59,40 @@
 
                     </li>
 
+                    <li class="dropdown singleDrop color-4 active" >
+                    <li class="dropdown singleDrop color-5 active">
+                        <a href="{{ path('afficherespaceenfant') }}" role="button" aria-haspopup="true"
+                           aria-expanded="false">
+                            <i class="fa fa-gg bg-color-4" aria-hidden="true"></i>
+                            <span class="active">Espace Kids</span>
+                        </a>
+                    </li>
 
-                    {#<li class="dropdown singleDrop color-3 active">#}
-                    {#<a href="{{ path('publications') }}" role="button" aria-haspopup="true" aria-expanded="false">#}
-                    {#<i class="fa fa-list-ul bg-color-3" aria-hidden="true">#}
-                    {#</i>#}
-                    {#<span class="active">Publications</span>#}
-                    {#</a>#}
-                    {#</li>#}
+                    <li class="dropdown singleDrop color-3 active">
+                        <a href="{{ path('services') }}" class="dropdown-toggle" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-list-ul bg-color-3" aria-hidden="true">
+                            </i> <span class="active">Service</span></a>
+                    </li>
 
                     <li class="dropdown singleDrop color-4 active">
-                        <a href="{{ path('afficherespaceenfant') }}"  role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-gg bg-color-4" aria-hidden="true"></i>
-                            <span class="active">Espace enfant</span>
-                        </a>
+                        <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true">
+                            </i> <span class="active">Réclamations</span></a>
+                        <ul class="dropdown-menu dropdown-menu-left">
+                            <li class=" "><a href="{{ url('fos_message_inbox' ) }}">Mes réclamations</a></li>
+                            <li class=" "><a href="{{ url('fos_message_thread_new' ) }}">Envoyer nouvelle reclamation</a>
+
+                        </ul>
                     </li>
-
-                    <li class="dropdown singleDrop color-2 active">
-                        <a href="{{ path('services') }}"  role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-gg bg-color-6" aria-hidden="true"></i>
-                            <span class="active">Service</span>
-                        </a>
-                    </li>
-
-
 
                 </ul>
 
             </div>
         </div>
     </nav>
+
 
 
 {% endblock Menu %}
@@ -102,17 +113,14 @@
     </section>
 {% endblock bandeau %}
 
-
 {% block body %}
-
-<section class="mainContent full-width clearfix" style="margin-top: 30px">
 
     <div class="col-md-9 col-sm-8 col-xs-12 block pull-right">
 
         <div class="row">
             <div class="col-sm-4 col-xs-12">
                 {#<div class="teachersPhoto">#}
-                    {#<img src="{{ asset('uploads/images/' ~ serv.imagServ) }}" alt="image" class="img-rounded img-responsive">#}
+                {#<img src="{{ asset('uploads/images/' ~ serv.imagServ) }}" alt="image" class="img-rounded img-responsive">#}
                 {#</div>#}
 
                 <div class="imagesPart clearfix">
@@ -121,10 +129,10 @@
             </div>
             <div class="col-sm-8 col-xs-12">
                 <div class="teachersInfo">
-                    <h3>About Me</h3>
+                    <h3>Information générale</h3>
                     <p>{{ serv.descriptionService }}</p>
 
-                   <p><br><br><br></p>
+                    <p><br><br><br></p>
                     <p></p>
                     <ul class="list-inline">
                         <br><br><br>
@@ -141,10 +149,26 @@
             <div class="caption border-color-1 singleBlog">
                 <h3 class="color-1">{{ serv.nomService }}</h3>
 
+
+                <!-- CSS -->
+                {% stylesheets '@KidsFrontBundle/Resources/public/css/comments.css' %}
+                    {#{% stylesheets '@FOSCommentBundle/Resources/public/css/comments.css' %}#}
+                    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+                {% endstylesheets %}
+
                 <div class="imagesPart clearfix">
-                    {% include '@FOSComment/Thread/async.html.twig'  with {'id': 'foo'} %}
+                    {% include '@FOSComment/Thread/async.html.twig'  with {'id': serv.id , 'view': 'flat' } %}
 
                 </div>
+
+                {#<div id="fos_comment_thread" data-thread="{{ thread.id }}">#}
+
+                {#{% include '@FOSComment/Thread/comments.html.twig' with {#}
+                {#'comments': comments,#}
+                {#'thread': thread#}
+                {#} %}#}
+
+                {#</div>#}
                 <p></p>
             </div>
         </div>
@@ -163,7 +187,8 @@
                                     <i class="fa fa-calendar" aria-hidden="true"></i>
                                 </div>
                                 <div class="media-body iconContent">
-                                    <h4 class="media-heading color-2">Adresse</h4>
+                                    <h4 class="media-heading color-2">Adresse</h4
+                                    >
                                     <p>{{ serv.adresseService }}</p>
                                 </div>
                             </li>
@@ -182,25 +207,85 @@
                 </div>
 
                 <div class="btnPart">
-                        <button  type="button" data-clicked="clicked"  data-toggle="modal" data-target="#modal-default" name="Reserver Rendez-vous"  class="btn btn-primary btn-block bg-color-6"Reserver Rendez-vous >
-                            <a class="panel-title">Reserver Rendez-vous</a>
-                        </button>
+                    <button  type="button" data-clicked="clicked"  id="submitclik" data-toggle="modal" data-target="#modal-default" name="Reserver Rendez-vous"  class="btn btn-primary btn-block bg-color-6"Reserver Rendez-vous >
+                        <a class="panel-title">Reserver Rendez-vous</a>
+                    </button>
 
-               </div>
+                </div>
 
 
             </div>
         </aside>
 
-        {% include '@FOSComment/Thread/async.html.twig' with {'id': 'foo'} %}
+        <aside>
+            <div class="panel panel-default eventSidebar">
+                <div class="panel-heading bg-color-1 border-color-1">
+                    <h3 class="panel-title">Passer une réclamation</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="homeContactContent">
+                        <form role="form">
+                            <div class="form-group">
+                                <i class="fa fa-user"></i>
+                                <p  style="color:#00E466" class=" text-center"  color="red" id="success-reclamation"></p>
+                                <input type="text" class="form-control border-color-1" id="reclameur" placeholder="nom && prenom">
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <input type="text" class="form-control border-color-2" id="mail" placeholder="Adresse mail">
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-comments" aria-hidden="true"></i>
+                                <textarea class="form-control border-color-4"  id="textreclam" placeholder="rediger votre réclamation "></textarea>
+                            </div>
+                            <button type="button" class="btn btn-primary" name="save" id="bottomreclam" >Envoyer reclamation</button>
+                            {#<button type="button" id="bottomreclam"class="btn btn-primary btn-Full">Envoyer reclamation</button>#}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        {#{% include '@FOSComment/Thread/async.html.twig' with {'id': 'foo'} %}#}
 
     </div>
-</section>
+
+
+    <input type="hidden" value="{{ serv.id }}" id="idService" />
 
 
 
 
+    <script src="{{ asset('Template_front_principal/plugins/jquery/jquery-min.js')}}"></script>
+    <script>
+        $(document).ready(function() {
+            $("#bottomreclam").click(function () {
+                var title = $("#reclameur").val();
+
+                var dataString = {};
+                dataString['reclameur'] = title;
+
+                dataString['mail'] = $('#mail').val();
+                dataString['textreclam'] =$('#textreclam').val();
+
+//            dataString['service'] =$('#idService').val();
+                $.ajax({
+                    method: 'POST',
+                    dataType: 'json',
+                    url: '{{ path('ajoutREclamation') }}',
+                    data: dataString,
+                    success: function (data) {
+                        console.log(data);
+
+                        $('#success-reclamation').text('reclamation ajouté');
+                        $("#reclameur").val("");
+                        $("#mail").val("");
+                        $("#textreclam").val("");
+                    }
+                });
+
+            });
+        });
+    </script>
+    {#{% endblock javascript %}#}
 {% endblock %}
-  {% block javascript %}
-   {{ parent }}
-  {% endblock javascript %}
