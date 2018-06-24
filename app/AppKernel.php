@@ -20,7 +20,6 @@ class AppKernel extends Kernel
             new UserBundle\UserBundle(),
             new KidsFrontBundle\KidsFrontBundle(),
             new KidsBackendBundle\KidsBackendBundle(),
-            new Mgilet\NotificationBundle\MgiletNotificationBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new FOS\MessageBundle\FOSMessageBundle(),
             new MessageBundle\MessageBundle(),
@@ -37,7 +36,9 @@ class AppKernel extends Kernel
             new AncaRebeca\FullCalendarBundle\FullCalendarBundle(),
             new Ivory\GoogleMapBundle\IvoryGoogleMapBundle(),
             new Ivory\SerializerBundle\IvorySerializerBundle(),
-            new Http\HttplugBundle\HttplugBundle()
+            new Http\HttplugBundle\HttplugBundle(),
+            new Mgilet\NotificationBundle\MgiletNotificationBundle(),
+
 
         ];
 

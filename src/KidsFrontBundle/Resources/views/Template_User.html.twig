@@ -97,6 +97,15 @@
                     </div>
                     <div class="col-sm-5">
                         <ul class="list-inline functionList">
+                            <li><i class="fa fa-globe bg-color-4" aria-hidden="true"></i></li>
+                            <li class="LanguageList">
+                                <select name="guiest_id1" id="guiest_id1" class="select-drop">
+                                    <option value="0"><i class="fa fa-globe bg-color-4" aria-hidden="true"></i> Language</option>
+                                    <option value="1">English</option>
+                                    <option value="2">Spanish</option>
+                                    <option value="3">Hindi</option>
+                                </select>
+                            </li>
                             <li><i class="fa fa-unlock-alt bg-color-5" aria-hidden="true"></i> <a href='#loginModal' data-toggle="modal" >Login</a><span>or</span><a href='#createAccount' data-toggle="modal">Create an account</a></li>
                             {% block favoris %}
                             {% endblock favoris %}
@@ -129,7 +138,7 @@
 
 
                             <li class="dropdown singleDrop color-3 ">
-                                <a href="" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a href="#" role="button" aria-haspopup="true" aria-expanded="false">
                                     <i class="fa fa-list-ul bg-color-3" aria-hidden="true">
                                     </i>
                                     <span>Acceuil</span>
@@ -146,7 +155,7 @@
 
 
                             <li class="dropdown singleDrop color-3 ">
-                                <a href="{{ path('contact') }}" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a href="#contact" role="button" aria-haspopup="true" aria-expanded="false">
                                     <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true">
                                     </i>
                                     <span>Contact</span>
@@ -360,30 +369,30 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-3">
-                            <a href="#ourCourses" class="sectionLink bg-color-1" id="coursesLink">
+                            <a href="#" class="sectionLink bg-color-1" id="coursesLink">
                                 <i class="fa fa-file-text-o linkIcon border-color-1" aria-hidden="true"></i>
-                                <span class="linkText">Courses</span>
+                                <span class="linkText">Education</span>
                                 <i class="fa fa-chevron-down locateArrow" aria-hidden="true"></i>
                             </a>
                         </div>
                         <div class="col-sm-3">
-                            <a href="#ourTeam" class="sectionLink bg-color-2" id="teamLink">
+                            <a href="#" class="sectionLink bg-color-2" id="teamLink">
                                 <i class="fa fa-calendar-o linkIcon border-color-2" aria-hidden="true"></i>
-                                <span class="linkText">Teachers</span>
+                                <span class="linkText">Loisirs</span>
                                 <i class="fa fa-chevron-down locateArrow" aria-hidden="true"></i>
                             </a>
                         </div>
                         <div class="col-sm-3">
-                            <a href="#ourGallery" class="sectionLink bg-color-3" id="galleryLink">
+                            <a href="#" class="sectionLink bg-color-3" id="galleryLink">
                                 <i class="fa fa-picture-o linkIcon border-color-3" aria-hidden="true"></i>
-                                <span class="linkText">Gallery</span>
+                                <span class="linkText">Shop</span>
                                 <i class="fa fa-chevron-down locateArrow" aria-hidden="true"></i>
                             </a>
                         </div>
                         <div class="col-sm-3">
-                            <a href="#latestNews" class="sectionLink bg-color-4" id="newsLink">
+                            <a href="#" class="sectionLink bg-color-4" id="newsLink">
                                 <i class="fa fa-files-o linkIcon border-color-4" aria-hidden="true"></i>
-                                <span class="linkText">News</span>
+                                <span class="linkText">Articles</span>
                                 <i class="fa fa-chevron-down locateArrow" aria-hidden="true"></i>
                             </a>
                         </div>
@@ -393,19 +402,53 @@
         </section>
     {% endblock bandeau %}
 
-
-
-
-    <!-- BODY -->
-    <section class="mainContent full-width clearfix featureSection">
+    <section class="mainContent full-width clearfix featureSection" style="padding-bottom: 0%">
         {% block body %}
+
+            <section id ="apropos" class="mainContent full-width clearfix featureSection" style="padding: 0px">
+                <div class="container">
+                    <div class="sectionTitle text-center">
+                        <h2 style="margin-bottom: 4%">
+                            <span class="shape shape-left bg-color-4"></span>
+                            <span style="font-style: normal;">Bienvenue</span>
+                            <span class="shape shape-right bg-color-4"></span>
+                        </h2>
+                    </div>
+                </div>
+            </section>
+            <section class="about about-two " style="background-color: #f5f5f5;padding: 37px;margin-bottom: 4%;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="about-image">
+                                <img src="{{ asset('bundles/kidsfront/kidy/images/about.png') }}" alt="about image"
+                                     class="img-responsive">
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="padding-top: 3%">
+                            <div class="about-content">
+                                <p style="font-size: 1.5em;text-transform: uppercase;margin-bottom: 2%;">Chers Parents</p>
+                                <p> Bienvenue sur All For Kids, la plateforme destiné aux mamans qui offre des conseils santé, vie pratique, recette cuisine et conseils pour les bébés et les enfants ainsi qu’il offre la possibilité de soumettre des articles mais ça demande une préinscription.
+                                    <br>Un univers éducatif & loisirs pour les enfants de 5 à 11 ans.
+                                    Notre engagement : que vos enfants apprennent en s’amusant et en toute sécurité.
+                                    Afin de remplir ces critères, tous nos jeux font l’objet d’une double construction :
+                                    L'aspect pédagogique est élaboré en collaboration avec des professionels du parascolaire.
+                                    Le côté ludique est assuré par des spécialistes du jeu vidéo.
+                                    Les échanges entre enfants sont systématiquement validés par des modérateurs professionnels avant publication.</p>
+                                <ul>
+                                </ul>
+                            </div><!-- about content -->
+                        </div>
+                    </div><!-- row -->
+                </div><!-- container -->
+            </section><!-- about -->
 
             <section class="mainContent full-width clearfix featureSection" style="padding: 0px">
                 <div class="container">
                     <div class="sectionTitle text-center">
-                        <h2>
+                        <h2 style="margin-bottom: 1%">
                             <span class="shape shape-left bg-color-4"></span>
-                            <span>What Parents Say</span>
+                            <span style="font-style: normal;">Témoignages</span>
                             <span class="shape shape-right bg-color-4"></span>
                         </h2>
                     </div>
@@ -415,17 +458,15 @@
             <section class="testimonial">
                 <div class="container">
                     <div class="section-header">
-                        <p>Rapidiously expedite granular imperativfes before economically sound web services. Credibly actualize
-                            pandemic strategic themeplatform.</p>
+                        <p>Ce que disent les parents & les prestataires de service...Une vision, votre satisfaction</p>
                     </div>
                     <div class="testimonial-items">
                         <div class="testimonial-slider swiper-container">
                             <div class="swiper-wrapper">
-                                <div class="testimonial-item swiper-slide">
+                                <div class="testimonial-item swiper-slide" style="margin-bottom: 3%">
                                     <div class="testimonial-details">
-                                        <p>Professionally predominate that timely infrastriuctures tops line methodlogies
-                                            Colaboratively seize scalable achannels before longterm high impact</p>
-                                        <h4>Joly Smith <span>ui/ux Designer</span></h4>
+                                        <p>Nos enfants ayant désormais atteint un âge où ils devraient avoir assez de discernement dans leur utilisation des outils numériques, nous allons cesser d’utiliser votre programme. Je tenais à vous remercier pour toutes ces années où, grâce à vous, nous n’avons pas eu à nous préoccuper de limiter nous-mêmes leur temps passé devant les écrans. Ce fut précieux et très efficace. Je souhaite à toute votre équipe une bonne continuation.</p>
+                                        <h4 style="font-style: normal;">Joly Smith <span>Parent</span></h4>
                                         <img src="{{ asset('bundles/kidsfront/img/testimonial/testimonial_icon_01.jpg') }}"
                                              alt="testimonial icon" class="img-responsive">
                                     </div>
@@ -434,11 +475,10 @@
                                              alt="client image" class="img-responsive">
                                     </div>
                                 </div><!-- testimonial-item -->
-                                <div class="testimonial-item swiper-slide">
+                                <div class="testimonial-item swiper-slide" style="margin-bottom: 3%">
                                     <div class="testimonial-details">
-                                        <p>Professionally predominate that timely infrastriuctures tops line methodlogies
-                                            Colaboratively seize scalable achannels before longterm high impact</p>
-                                        <h4>Joly Smith <span>ui/ux Designer</span></h4>
+                                        <p>Enfin un logiciel de contrôle parental simple et efficace. Mes trois garçons ne passent plus leurs soirées et week-ends devant les écrans, les repas redeviennent un moment d’échange où ils participent; et surtout, SURTOUT, fini leurs éternels « Deux minutes, j’ai bientôt fini » (qui faisait frôler l’ulcère à mon époux) ! Plus sérieusement, pour les sceptiques : de nombreuses fonctionnalités (protection « multi-supports », gestion à distance, analyse des statistiques d’utilisation et j’en passe) disponibles à un tarif très abordable, sans aucun problème technique à signaler pour le moment. Alors un grand merci à vous, et vivement la version pour Iphone !</p>
+                                        <h4 style="font-style: normal;">Joly Smith <span>Parent</span></h4>
                                         <img src="{{ asset('bundles/kidsfront/img/testimonial/testimonial_icon_02.jpg') }}"
                                              alt="testimonial icon" class="img-responsive">
                                     </div>
@@ -447,11 +487,10 @@
                                              alt="client image" class="img-responsive">
                                     </div>
                                 </div><!-- testimonial-item -->
-                                <div class="testimonial-item swiper-slide">
+                                <div class="testimonial-item swiper-slide" style="margin-bottom: 3%">
                                     <div class="testimonial-details">
-                                        <p>Professionally predominate that timely infrastriuctures tops line methodlogies
-                                            Colaboratively seize scalable achannels before longterm high impact</p>
-                                        <h4>Joly Smith <span>ui/ux Designer</span></h4>
+                                        <p>Je tenais à prendre un peu de temps pour remercier et féliciter vivement les personnes qui ont créée AllForKids.com. Ça fonctionne extrêmement bien, c'est extrêmement pratique au quotidien, et c'est d'une efficacité redoutable ! Avant PDLP, il fallait que je surveille de près mes gamins (temps d'utilisation et web) car je ne trouvais rien de vraiment efficace pour gérer cela... J'ai trouvé PDLP, l'ai essayé gratuitement (en plus il gère plusieurs appareil depuis la même console = pas mal du tout!)... J'ai pris l'abonnement annuel (pour un prix très raisonnable au regards du service apporté), et depuis je suis enfin totalement tranquille quant à la vie numérique des mes loulous ! Donc voilà, je tenais à féliciter et à largement encourager tous les parents à utiliser un soft de ce genre pour leurs enfants. Perso je n'ai trouvé que celui là et à ce jour je n'ai aucune remarque à faire. Pour un parent, c'est parfait.</p>
+                                        <h4 style="font-style: normal;">Joly Smith <span>Parent</span></h4>
                                         <img src="{{ asset('bundles/kidsfront/img/testimonial/testimonial_icon_03.jpg') }}"
                                              alt="testimonial icon" class="img-responsive">
                                     </div>
@@ -459,77 +498,12 @@
                                         <img src="{{ asset('bundles/kidsfront/img/testimonial/testimonial_03.jpg') }}"
                                              alt="client image" class="img-responsive">
                                     </div>
-                                </div><!-- testimonial-item -->
-                                <div class="testimonial-item swiper-slide">
-                                    <div class="testimonial-details">
-                                        <p>Professionally predominate that timely infrastriuctures tops line methodlogies
-                                            Colaboratively seize scalable achannels before longterm high impact</p>
-                                        <h4>Joly Smith <span>ui/ux Designer</span></h4>
-                                        <img src="{{ asset('bundles/kidsfront/img/testimonial/testimonial_icon_01.jpg') }}"
-                                             alt="testimonial icon" class="img-responsive">
-                                    </div>
-                                    <div class="testimonial-image">
-                                        <img src="{{ asset('bundles/kidsfront/img/testimonial/testimonial_01.jpg') }}"
-                                             alt="client image" class="img-responsive">
-                                    </div>
-                                </div><!-- testimonial-item -->
-                                <div class="testimonial-item swiper-slide">
-                                    <div class="testimonial-details">
-                                        <p>Professionally predominate that timely infrastriuctures tops line methodlogies
-                                            Colaboratively seize scalable achannels before longterm high impact</p>
-                                        <h4>Joly Smith <span>ui/ux Designer</span></h4>
-                                        <img src="{{ asset('bundles/kidsfront/img/testimonial/testimonial_icon_02.jpg') }}"
-                                             alt="testimonial icon" class="img-responsive">
-                                    </div>
-                                    <div class="testimonial-image">
-                                        <img src="{{ asset('bundles/kidsfront/img/testimonial/testimonial_02.jpg') }}"
-                                             alt="client image" class="img-responsive">
-                                    </div>
-                                </div><!-- testimonial-item -->
-                                <div class="testimonial-item swiper-slide">
-                                    <div class="testimonial-details">
-                                        <p>Professionally predominate that timely infrastriuctures tops line methodlogies
-                                            Colaboratively seize scalable achannels before longterm high impact</p>
-                                        <h4>Joly Smith <span>ui/ux Designer</span></h4>
-                                        <img src="{{ asset('bundles/kidsfront/img/testimonial/testimonial_icon_03.jpg') }}"
-                                             alt="testimonial icon" class="img-responsive">
-                                    </div>
-                                    <div class="testimonial-image">
-                                        <img src="{{ asset('bundles/kidsfront/img/testimonial/testimonial_03.jpg') }}"
-                                             alt="client image" class="img-responsive">
-                                    </div>
-                                </div><!-- testimonial-item -->
-
+                                </div>
                             </div><!-- swiper-wrapper -->
                         </div><!-- swiper-container -->
                     </div><!-- testimonial-items -->
                 </div><!-- container -->
             </section><!-- testimonial -->
-            <section class="about about-two " style="background-color: #f5f5f5; padding: 80px;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="about-image">
-                                <img src="{{ asset('bundles/kidsfront/kidy/images/about.png') }}" alt="about image"
-                                     class="img-responsive">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="about-content">
-                                <h3>About Our KidsAcademy</h3>
-                                <p>Enthusiasticay diseminate competitive oportunitie through transparent an actions Compelngly
-                                    seize viral schemas through intermandated creative is adiea sources. Enthusiasticay
-                                    plagiarize clientcentered relationship for the covalent experiences. Distinctively architect
-                                    24/365 service for wireless is ebusiness ahosfluorescently Efficiently comunicate coperative
-                                    methods of empowerment awesome athrough Monotonectaly myocardinate cross and functional
-                                    niche markets and an functional.</p>
-                                <ul>
-                                </ul>
-                            </div><!-- about content -->
-                        </div>
-                    </div><!-- row -->
-                </div><!-- container -->
-            </section><!-- about -->
 
         {% endblock body %}
     </section>
@@ -554,7 +528,7 @@
             </div>
         </div>
 
-        <section class="lightSection full-width clearfix homeContactSection" style="padding: 2%">
+        <section id ="contact" class="lightSection full-width clearfix homeContactSection" style="padding: 2%">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-xs-12">
@@ -605,7 +579,7 @@
                     </div>
                     <div class="col-sm-7 col-sm-pull-5 col-xs-12">
                         <div class="copyRightText">
-                            <p>© 2016 Copyright Kidz School Bootstrap Template by <a href="https://www.iamabdus.com/">Abdus</a>.</p>
+                            <p>© 2018 Copyright All For Kids</p>
                         </div>
                     </div>
                 </div>

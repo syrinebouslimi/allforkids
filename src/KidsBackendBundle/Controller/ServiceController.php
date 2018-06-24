@@ -81,6 +81,9 @@ class ServiceController extends Controller
     public function updateServiceAction(Request $request,$id)
     {
 
+        $em = $this->getDoctrine()->getManager();
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
+
         $servi= $this->getDoctrine()->getRepository('UserBundle:Service')->find($id);
         $form=$this->createForm(ServiceType::class, $servi);
         $formview=$form->createView();
@@ -110,13 +113,14 @@ class ServiceController extends Controller
             $em->flush();
             return $this->redirect($this->generateUrl('afficherServiceBack'));
         }
-        return $this->render('@KidsBackend/ajouterService.html.twig',array('form'=>$formview));
+        return $this->render('@KidsBackend/ajouterService.html.twig',array('form'=>$formview,'notifiableNotifications' => $allNotif));
 
     }
 
 //supprimer
     public function suppServAction($id)
     {   $em=$this->getDoctrine()->getManager();
+
         $Pro=$this->getDoctrine()->getRepository('UserBundle:Service')->find($id);
         $em->remove($Pro);
         $em->flush();
@@ -128,6 +132,9 @@ class ServiceController extends Controller
 ///Recherche
     public function recherchebackAction(Request $request)
     {
+
+        $em=$this->getDoctrine()->getManager();
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
 
         $search = $request->query->get('search');
         $publication= $this->getDoctrine()->getRepository('UserBundle:Service')->findBy(array('nomService'=>$search));
@@ -143,7 +150,7 @@ class ServiceController extends Controller
 
         if (strlen($search)!=0){
 
-            return $this->render('@KidsBackend/afficherService.html.twig',array('serv'=>$result));
+            return $this->render('@KidsBackend/afficherService.html.twig',array('serv'=>$result,'notifiableNotifications' => $allNotif));
 
         } else {
 //            return  $this->redirectToRoute('KidsBackendBundle:Service:afficherServiceBack');
