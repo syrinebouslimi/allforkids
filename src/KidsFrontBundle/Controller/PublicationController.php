@@ -24,15 +24,27 @@ class PublicationController extends Controller
 
     public function afficherpublicationAction()
     {
+
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $idUser = $user->getId();
+        $em = $this->getDoctrine()->getManager();
+        $allFavoris = $em->getRepository('UserBundle:UserEtablissementFavoris')->findBy(array('user' => $idUser));
+
         $publication = $this->getDoctrine()->getRepository('UserBundle:Publication')->findAll();
 
-        return $this->render('KidsFrontBundle::Publications.html.twig', array('publication' => $publication));
+        return $this->render('KidsFrontBundle::Publications.html.twig', array('publication' => $publication,'favoris'=>$allFavoris));
     }
 
     public function afficherpublicationdetailsAction($id)
     {
+
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $idUser = $user->getId();
+        $em = $this->getDoctrine()->getManager();
+        $allFavoris = $em->getRepository('UserBundle:UserEtablissementFavoris')->findBy(array('user' => $idUser));
+
         $publication = $this->getDoctrine()->getRepository('UserBundle:Publication')->find($id);
-        return $this->render('KidsFrontBundle::PublicationDetails.html.twig', array('publication'=>$publication));
+        return $this->render('KidsFrontBundle::PublicationDetails.html.twig', array('publication'=>$publication,'favoris'=>$allFavoris));
     }
 
 //    public function afficherpublicationtypeAction($typePublication)
@@ -43,8 +55,14 @@ class PublicationController extends Controller
 
     public function afficherpublicationcategorieAction($categoriePublication)
     {
+
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $idUser = $user->getId();
+        $em = $this->getDoctrine()->getManager();
+        $allFavoris = $em->getRepository('UserBundle:UserEtablissementFavoris')->findBy(array('user' => $idUser));
+
         $publication= $this->getDoctrine()->getRepository('UserBundle:Publication')->findBy(array('categoriePublication'=>$categoriePublication));
-        return $this->render('KidsFrontBundle::PublicationsSearch.html.twig', array('publication'=>$publication));
+        return $this->render('KidsFrontBundle::PublicationsSearch.html.twig', array('publication'=>$publication,'favoris'=>$allFavoris));
     }
 
     public function imprimerpublicationAction(Request $request, $id)
