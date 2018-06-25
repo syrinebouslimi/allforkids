@@ -112,12 +112,15 @@ class ParentController extends Controller
             $result = $a->getResult();
             $e->setAvgRating($result[0]['vote']);
 
+
+
             $save = $this->getDoctrine()->getManager();
             $save->persist($e);
             $save->flush();
 
 
         }
+
 
         return $this->render('@KidsFront/afficheretablissementparent.html.twig', array('etablissement' => $allEtab, 'favoris' => $allFavoris));
 
