@@ -22,7 +22,7 @@ class GallerieType extends AbstractType
                 'required' => true,
                 'multiple' => false))
             ->add('descriptionImageGallery', TextareaType::class)
-            ->add('submit', SubmitType::class, array('label' => 'Ajouter Image pour un etablissment'));
+            ->add('submit', SubmitType::class, array('label' => 'Valider'));
 
     }
 

@@ -63,6 +63,11 @@ ajouterGallerieImage:
 affichergallerie:
     path: /affichergallerie
     defaults: { _controller: KidsFrontBundle:Gallerie:affichergallerie}
+
+affichergalleriePres:
+    path: /affichergalleriePres
+    defaults: { _controller: KidsFrontBundle:Gallerie:affichergalleriePres}
+
 afficherEtabPrestataireInfo:
     path: /afficherEtabPrestataireInfo
     defaults: { _controller: KidsFrontBundle:Etablissement:afficherEtabPrestataireInfo}

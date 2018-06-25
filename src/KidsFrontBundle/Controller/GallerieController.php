@@ -46,7 +46,7 @@ class GallerieController extends Controller
             $save = $this->getDoctrine()->getManager();
             $save->persist($gallerie);
             $save->flush();
-            return $this->redirectToRoute('affichergallerie');
+            return $this->redirectToRoute('affichergalleriePres');
 
         }
 
@@ -65,6 +65,19 @@ class GallerieController extends Controller
         return $this->render('@KidsFront/afficherimagegallerie.html.twig', array('gallerie' => $gallerie));
 
     }
+
+    public function affichergalleriePresAction()
+    {
+
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $id = $user->getId();
+
+        $etablissementId = $this->getDoctrine()->getRepository('UserBundle:Etablissement')->findOneBy(array('idUserEtablissement' => $id));
+        $gallerie = $this->getDoctrine()->getRepository('UserBundle:Gallerie')->findBy(array('etablissementId' => $etablissementId));
+        return $this->render('@KidsFront/afficherimagegallerieprestataire.html.twig', array('gallerie' => $gallerie));
+
+    }
+
 
 
     public function afficherimagepourmodifierAction()
@@ -120,7 +133,7 @@ class GallerieController extends Controller
 
                     $em = $this->getDoctrine()->getManager();
                     $em->flush();
-                    return $this->redirectToRoute('affichergallerie');
+                    return $this->redirectToRoute('affichergalleriePres');
                 }
         }
         return $this->render('@KidsFront/ajoutergallerie.html.twig', array('form' => $formView, 'e' => $etablis));
@@ -149,7 +162,7 @@ class GallerieController extends Controller
         $em->remove($gallerie);
 
         $em->flush();
-        return $this->redirectToRoute('affichergallerie');
+        return $this->redirectToRoute('affichergalleriePres');
     }
 
 

@@ -68,7 +68,7 @@ class EnseignantType extends AbstractType
 
 
 
-            ->add('submit', SubmitType::class, array('label' => 'Ajouter Enseignant'));
+            ->add('submit', SubmitType::class, array('label' => 'Valider'));
     }
 
     /**

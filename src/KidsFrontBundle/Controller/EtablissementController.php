@@ -145,9 +145,8 @@ class EtablissementController extends Controller
                 $etablissement->setImageEtablissement($imageOld);
                 $em = $this->getDoctrine()->getManager();
                 $em->flush();
-                return $this->redirectToRoute('espace_prestataire');
-            }else
-                if(!is_null($imagefile))
+            }
+            else if(!is_null($imagefile))
                 {
                     $fileName = md5(uniqid()) . '.' . $imagefile->guessExtension();
 
@@ -161,8 +160,8 @@ class EtablissementController extends Controller
 
                     $em = $this->getDoctrine()->getManager();
                     $em->flush();
-                    return $this->redirectToRoute('afficherEtabPrestataireInfo');
                 }
+            return $this->redirectToRoute('afficherEtabPrestataireInfo');
         }
         return $this->render('@KidsFront/ajouteretablissement.html.twig', array('form' => $formView));
     }

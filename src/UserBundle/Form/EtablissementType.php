@@ -37,7 +37,7 @@ class EtablissementType extends AbstractType
             ,'7:30am-4:30pm'=>'7:30am-4:30pm','9:00am-5:00pm'=>'9:00am-5:00pm','8:00am-4:00pm'=>'8:00am-4:00pm')))
             ->add('typeEtablissement',ChoiceType::class,array('choices'=>array('Créche'=>'Créche','Jardin denfants'=>'Jardin denfants','Garderie'
             =>'Garderie','Ecole'=>'Ecole')))
-            ->add('AjouterEtablissement',SubmitType::class,array('label'=>'Ajouter Etablissement'));
+            ->add('Valider',SubmitType::class,array('label'=>'Ajouter Etablissement'));
 
         ;
 
