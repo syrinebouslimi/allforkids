@@ -30,12 +30,15 @@ class EnseignantController extends Controller
 
     public function afficherdetailprofAction($id)
     {
-        $em = $this->getDoctrine()->getManager();
         $enseignant = $this->getDoctrine()->getRepository('UserBundle:Enseignant')->find($id);
-
         return $this->render('@KidsFront/teacherdetail.html.twig', array('enseignant' => $enseignant));
 
 
+    }
+
+    public  function afficherdetailprofpresAction($id){
+        $enseignant = $this->getDoctrine()->getRepository('UserBundle:Enseignant')->find($id);
+        return $this->render('@KidsFront/teacherdetailpres.html.twig', array('enseignant' => $enseignant));
     }
 
     public function ajouterEnseignantAction(Request $request)

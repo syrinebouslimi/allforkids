@@ -46,7 +46,7 @@
                             <i class="fa fa-pencil-square-o bg-color-4" aria-hidden="true">
                             </i> <span>Gallerie</span></a>
                         <ul class="dropdown-menu dropdown-menu-left">
-                            <li class=" "><a href="{{ path('affichergallerie') }}">Consulter la gallerie des images</a></li>
+                            <li class=" "><a href="{{ path('affichergalleriePres') }}">Consulter la gallerie des images</a></li>
                             <li class=" "><a href="{{ path('ajouterGallerieImage') }}">Ajouter une image</a></li>
                             <li class=" "><a href="{{ path('afficherimagepourmodifier') }}">Modifier une image</a></li>
                             <li class=" "><a href="{{ path('afficherimagepoursupprimer') }}">Supprimer une image de la gallerie</a></li>
@@ -81,10 +81,29 @@
 
      <section class="teachers teachers-page padding-120">
          <div class="container">
-             <div class="row">
-                 {% for i in enseignants %}
 
-                     <div class="col-md-6 col-sm-12 col-xs-12">
+
+     {% if enseignants is empty %}
+
+
+         <section class="mainContent full-width clearfix" style="margin-top: 30px;height:150px; ">
+
+             <div class="sectionTitle text-center">
+                 <h2>
+                     <span class="shape shape-left bg-color-4"></span>
+                     <span>Aucun enseignant dans votre étabissement !!</span>
+                     <span class="shape shape-right bg-color-4"></span>
+                 </h2>
+             </div>
+
+         </section>
+
+     {% elseif enseignants is not empty %}
+
+         <div class="row">
+             {% for i in enseignants %}
+
+                 <div class="col-md-6 col-sm-12 col-xs-12">
 
 
                      <div class="teacher-item">
@@ -99,14 +118,18 @@
                              <h5> {{ i.designationEnseignant }}</h5>
 
                              <p>{{ i.aboutEnseignant|truncate(100) }}</p>
-                             <a href="{{ path('afficherdetailprof',{'id':i.id}) }}">Voir portfolio</a>
+                             <a href="{{ path('afficherdetailprofpres',{'id':i.id}) }}">Voir portfolio</a>
 
                          </div>
                      </div>
                  </div>
-                 {% endfor %}
+             {% endfor %}
 
-             </div>
+         </div>
+     {% endif %}
+
+
+
          </div>
      </section>
  {% endblock body %}

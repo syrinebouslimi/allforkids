@@ -45,6 +45,9 @@ afficherprof:
 afficherdetailprof:
     path: /afficherdetailprof/id/{id}
     defaults: { _controller: KidsFrontBundle:Enseignant:afficherdetailprof }
+afficherdetailprofpres:
+    path: /afficherdetailprofpres/id/{id}
+    defaults: { _controller: KidsFrontBundle:Enseignant:afficherdetailprofpres }
 
 supprimerfavorisparid:
     path: /supprimerfavorisparid/id/{id}
@@ -80,7 +83,7 @@ modifieretablissement:
     defaults: { _controller: KidsFrontBundle:Etablissement:modifieretablissement}
 
 supprimeretablissementparid:
-    path: /supprimeretablissementparid/id/{id}
+    path: /supprimeretablissementparid/{id}
     defaults: { _controller: KidsFrontBundle:Etablissement:supprimeretablissementparid}
 afficherprofpourmodifier:
     path: /afficherprofpourmodifier

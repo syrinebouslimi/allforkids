@@ -174,9 +174,13 @@ class EtablissementController extends Controller
         $id = $user->getId();
 
 
-        $etablissement = $this->getDoctrine()->getRepository('UserBundle:Etablissement')->findOneBy(array('idUserEtablissement'=>$id));
+        $etablissement = $this->getDoctrine()->getRepository('UserBundle:Etablissement')->findOneBy(array('idUserEtablissement' => $id, 'etat' => 'valide'));
 
-        return $this->render('@KidsFront/etablissementinfo.html.twig',array('detail'=>$etablissement));
+
+        //var_dump($etablissement).die();
+
+
+        return $this->render('@KidsFront/etablissementinfo.html.twig',array('etab'=>$etablissement));
 
     }
 

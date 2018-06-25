@@ -71,8 +71,6 @@
 
                         <h2>Bienvenue {{ app.user.username|default('') }}</h2>
                 <ol class="breadcrumb">
-                    <li><a href="{{ path('ajouterEtablissement') }}">Ajouter un etablissement</a></li>
-                    {#<li class="active">Teachers</li>#}
                 </ol>
             </div>
         </div>
@@ -215,7 +213,7 @@
 
                                  <li class="pull-right">
                                      {#<a href="{{ path('ajouterEtablissement2') }}" class="btn btn-primary">next</a>#}
-                                     {{ form_widget(form.AjouterEtablissement,{'attr':{'class':'btn btn-primary'}} ) }}
+                                     {{ form_widget(form.Valider,{'attr':{'class':'btn btn-primary'}} ) }}
 
                                  </li>
                              </ul>

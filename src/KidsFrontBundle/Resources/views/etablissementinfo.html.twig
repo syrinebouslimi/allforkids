@@ -17,6 +17,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown singleDrop color-1  ">
                         <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-home bg-color-1" aria-hidden="true"></i> <span class="active">Etablissement</span>
@@ -25,7 +26,18 @@
                             <li class=""><a href="{{ path('afficherEtabPrestataireInfo') }}">Consulter les détails</a></li>
                             <li class=""><a href="{{ path('modifieretablissement') }}">Modifier les informations de l'etablissement</a></li>
                             <li class=""><a href="{{ path('ajouterEtablissement') }}">Ajouter un établissement</a></li>
-                            <li class=""><a href="{{ path('supprimeretablissementparid',{'id':detail.id}) }}">Supprimer </a></li>
+
+
+
+                            {% if etab is empty %}
+                                <li class=""><a href="">Supprimer </a></li>
+                            {% elseif etab is not empty %}
+                                <li class=""><a href="{{ path('supprimeretablissementparid',{'id':etab.id}) }}">Supprimer </a></li>
+
+
+                            {% endif %}
+
+
                         </ul>
                     </li>
                     <li class="dropdown singleDrop color-3 ">
@@ -52,7 +64,8 @@
                         </ul>
                     </li>
 
-                </ul></div>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -85,83 +98,106 @@
 
     <section class="mainContent full-width clearfix courseSingleSection" style="padding: 30px;">
         <div class="container">
-            <div class="row">
-                <div class="col-md-9 col-sm-8 col-xs-12 block">
-                    <div class="thumbnail thumbnailContent alt">
-                        <img src="{{ asset('uploads/images/' ~ detail.imageEtablissement) }}" alt="image" class="img-responsive">
-                        <div class="caption border-color-1">
-                            <h3 class="color-1">{{ detail.nomEtablissement }}</h3>
 
-                            <div class="caption border-color-2">
-                                <h3 class="color-2">Description : </h3>
-                                <p>{{ detail.descriptionEtablissement }}</p>
-                                {#<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.</p>#}
+            {% if etab is empty %}
+
+
+                <section class="mainContent full-width clearfix" style="margin-top: 30px;height:150px; ">
+
+                    <div class="sectionTitle text-center">
+                        <h2>
+                            <span class="shape shape-left bg-color-4"></span>
+                            <span>Aucun etablissement existant !! Veuillez ajouter votre étabissement</span>
+                            <span class="shape shape-right bg-color-4"></span>
+                        </h2>
+                    </div>
+
+                </section>
+
+
+            {% elseif etab is not empty %}
+
+                <div class="row">
+                    <div class="col-md-9 col-sm-8 col-xs-12 block">
+                        <div class="thumbnail thumbnailContent alt">
+                            <img src="{{ asset('uploads/images/' ~ etab.imageEtablissement) }}" alt="image" class="img-responsive">
+                            <div class="caption border-color-1">
+                                <h3 class="color-1">{{ etab.nomEtablissement }}</h3>
+
+                                <div class="caption border-color-2">
+                                    <h3 class="color-2">Description : </h3>
+                                    <p>{{ etab.descriptionEtablissement }}</p>
+                                    {#<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.</p>#}
+                                </div>
+
+                                <div class="caption border-color-2">
+                                    <h3 class="color-2">Exigence du {{ etab.typeEtablissement }} : {{ etab.nomEtablissement }} </h3>
+                                    <p>{{ etab.exigenceEtablissement }}</p>
+                                </div>
                             </div>
-
-                        <div class="caption border-color-2">
-                            <h3 class="color-2">Exigence du {{ detail.typeEtablissement }} : {{ detail.nomEtablissement }} </h3>
-                            <p>{{ detail.exigenceEtablissement }}</p>
-                        </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3 col-sm-4 col-xs-12">
-                    <aside>
-                        <div class="rightSidebar">
-                            <div class="panel panel-default">
-                                <div class="panel-heading bg-color-1 border-color-1">
-                                    <h3 class="panel-title">Course Information</h3>
-                                </div>
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <aside>
+                            <div class="rightSidebar">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading bg-color-1 border-color-1">
+                                        <h3 class="panel-title">Course Information</h3>
+                                    </div>
 
-                                <div class="panel-body">
-                                    <ul class="media-list">
-                                        <li class="media">
-                                            <div class="media-left iconContent bg-color-2">
-                                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                                            </div>
-                                            <div class="media-body iconContent">
-                                                <h4 class="media-heading color-2">Date de création</h4>
-                                                <p>{{ detail.dateCreationEtablissement|date("m/d/Y") }}</p>
-                                            </div>
-                                        </li>
-                                        <li class="media">
-                                            <div class="media-left iconContent bg-color-3">
-                                                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                            </div>
-                                            <div class="media-body iconContent">
-                                                <h4 class="media-heading color-3">Ouverture</h4>
-                                                <p>{{ detail.horaireEtablissement }}</p>
-                                            </div>
-                                        </li>
-                                        <li class="media iconContet">
-                                            <div class="media-left iconContent bg-color-4">
-                                                <i class="fa fa-phone" aria-hidden="true"></i>
-                                            </div>
-                                            <div class="media-body iconContent">
-                                                <h4 class="media-heading color-4">Contact </h4>
-                                                <p>954 124 2542</p>
-                                            </div>
-                                        </li>
-                                        <li class="media">
-                                            <div class="media-left iconContent bg-color-5">
-                                                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                            </div>
-                                            <div class="media-body iconContent">
-                                                <h4 class="media-heading color-5">Adresse : </h4>
-                                                <p>{{ detail.countryEtablissement }}<br> {{ detail.adresseEtablissement }}<br> {{ detail.codepostalEtablissement }}</p>
-                                            </div>
-                                        </li>
-                                        {#<li><a href="#" class="btn btn-primary bg-color-6 btn-block">Register now</a></li>#}
-                                    </ul>
+                                    <div class="panel-body">
+                                        <ul class="media-list">
+                                            <li class="media">
+                                                <div class="media-left iconContent bg-color-2">
+                                                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="media-body iconContent">
+                                                    <h4 class="media-heading color-2">Date de création</h4>
+                                                    <p>{{ etab.dateCreationEtablissement|date("m/d/Y") }}</p>
+                                                </div>
+                                            </li>
+                                            <li class="media">
+                                                <div class="media-left iconContent bg-color-3">
+                                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="media-body iconContent">
+                                                    <h4 class="media-heading color-3">Ouverture</h4>
+                                                    <p>{{ etab.horaireEtablissement }}</p>
+                                                </div>
+                                            </li>
+                                            <li class="media iconContet">
+                                                <div class="media-left iconContent bg-color-4">
+                                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="media-body iconContent">
+                                                    <h4 class="media-heading color-4">Contact </h4>
+                                                    <p>954 124 2542</p>
+                                                </div>
+                                            </li>
+                                            <li class="media">
+                                                <div class="media-left iconContent bg-color-5">
+                                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="media-body iconContent">
+                                                    <h4 class="media-heading color-5">Adresse : </h4>
+                                                    <p>{{ etab.countryEtablissement }}<br> {{ etab.adresseEtablissement }}<br> {{ etab.codepostalEtablissement }}</p>
+                                                </div>
+                                            </li>
+                                            {#<li><a href="#" class="btn btn-primary bg-color-6 btn-block">Register now</a></li>#}
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                            {#<div class="btnPart">#}
+                                {#<div class="btnPart">#}
                                 {#<a href="#" class="btn btn-primary btn-block bg-color-6">Enroll now</a>#}
-                            {#</div>#}
-                        </div>
-                    </aside>
+                                {#</div>#}
+                            </div>
+                        </aside>
+                    </div>
                 </div>
-            </div>
+
+            {% endif %}
+
+
         </div>
     </section>
 
