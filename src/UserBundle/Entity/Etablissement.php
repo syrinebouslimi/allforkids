@@ -177,12 +177,12 @@ class Etablissement
 
 
     /**
-     * @ORM\OneToMany(targetEntity="UserBundle\Entity\UserEtablissementFavoris", mappedBy="etablissement", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="UserBundle\Entity\UserEtablissementFavoris", mappedBy="etablissement", cascade={"remove"})
      */
     private $userFavorites;
 
     /**
-     * @ORM\OneToMany(targetEntity="UserBundle\Entity\UserEtablissementVote", mappedBy="etablissement", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="UserBundle\Entity\UserEtablissementVote", mappedBy="etablissement", cascade={"remove"})
      */
     private $userNote;
 

@@ -316,22 +316,41 @@ class EtablissementMobileController extends Controller
 
     public function getEnseiForPrestataireAction(Request $request)
     {
-        $encoders = array(new XmlEncoder(), new JsonEncoder());
+
         $idEtab = $request->get('etablissement');
 
+        $encoders = array(new XmlEncoder(), new JsonEncoder());
         $etab = $this->getDoctrine()->getManager()
             ->getRepository('UserBundle:Enseignant')
-            ->findBy(array('etablissementId'=>$idEtab));
-
+            ->findAll();
         $normalizer = new ObjectNormalizer();
-        $normalizer->setCircularReferenceLimit(1);
+        $normalizer->setCircularReferenceLimit(3);
         $normalizer->setCircularReferenceHandler(function ($object) {
             return $object->getId();
         });
         $normalizers = array($normalizer);
         $serializer = new Serializer($normalizers, $encoders);
-        $jsonContent = $serializer->normalize($etab, 'json');
+        $jsonContent = $serializer->normalize($etab);
         return new JsonResponse($jsonContent);
+
+
+
+//        $encoders = array(new XmlEncoder(), new JsonEncoder());
+//        $idEtab = $request->get('etablissement');
+//
+//        $etab = $this->getDoctrine()->getManager()
+//            ->getRepository('UserBundle:Enseignant')
+//            ->findBy(array('etablissementId'=>$idEtab));
+//
+//        $normalizer = new ObjectNormalizer();
+//        $normalizer->setCircularReferenceLimit(1);
+//        $normalizer->setCircularReferenceHandler(function ($object) {
+//            return $object->getId();
+//        });
+//        $normalizers = array($normalizer);
+//        $serializer = new Serializer($normalizers, $encoders);
+//        $jsonContent = $serializer->normalize($etab, 'json');
+//        return new JsonResponse($jsonContent);
 
     }
 
@@ -360,16 +379,13 @@ class EtablissementMobileController extends Controller
     {
 
 
-        $idEtab = $request->get('id');
-        $newNomEtab = $request->get('nom');
-        $horaire = $request->get('horaire');
-        $description = $request->get('description');
-        $exigence = $request->get('exigence');
-        $phone = $request->get('phone');
-        $adresse = $request->get('adresse');
-        $country = $request->get('country');
-        $region = $request->get('region');
-        $codepostal = $request->get('codepostal');
+        $idEtab = $request->get('idEtab');
+        $newNomEtab = $request->get('nomEtab');
+        $horaire = $request->get('horaireEtab');
+        $description = $request->get('descEtab');
+        $exigence = $request->get('exigenceEtab');
+        $type = $request->get('typeEtab');
+
 
 
 
@@ -382,11 +398,8 @@ class EtablissementMobileController extends Controller
         $etab->setHoraireEtablissement($horaire);
         $etab->setDescriptionEtablissement($description);
         $etab->setExigenceEtablissement($exigence);
-        $etab->setPhone($phone);
-        $etab->setAdresseEtablissement($adresse);
-        $etab->setCountryEtablissement($country);
-        $etab->setRegionEtablissement($region);
-        $etab->setCodepostalEtablissement($codepostal);
+        $etab->setTypeEtablissement($type);
+
 
         $em = $this->getDoctrine()->getManager();
         $em->flush();
@@ -451,18 +464,18 @@ class EtablissementMobileController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $etab = $this->getDoctrine()->getRepository('UserBundle:Etablissement')->find($id);
+
+//        $manager = $this->get('mgilet.notification');
+//        $notif = $manager->createNotification('Suppression dun Etablissement crée');
+//        $notif->setMessage($etab->getNomEtablissement().' a été supprimé par son propriètaire');
+//        $notif->setLink('http://symfony.com/');
+//
+//        try {
+//            $manager->addNotification(array($this->getUser()), $notif, true);
+//        } catch (OptimisticLockException $e) {
+//        }
+
         $em->remove($etab);
-        $manager = $this->get('mgilet.notification');
-        $notif = $manager->createNotification('Suppression dun Etablissement crée');
-        $notif->setMessage($etab->getNomEtablissement().' a été supprimé par son propriètaire');
-        $notif->setLink('http://symfony.com/');
-
-        try {
-            $manager->addNotification(array($this->getUser()), $notif, true);
-        } catch (OptimisticLockException $e) {
-        }
-
-
         $em->flush();
 
 
