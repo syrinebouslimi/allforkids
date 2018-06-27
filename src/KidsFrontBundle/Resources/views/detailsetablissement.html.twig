@@ -199,11 +199,19 @@
                 <div style="margin-left: 30px;">
 
                     <h3 style="font-family: Serif;"> <span>Note moyenne :
+
+                            {% if rating is null %}
+
+                            {% else %}
+
                                          <span class="rating" >
                                              {% for j in 1..rating %}
                                                  <div class="{% if j <= 5 %}star-full{% else %}star-empty{% endif %}"></div>
                                              {% endfor %}
                                          </span>
+
+                            {% endif %}
+
                                </span>
                     </h3>
                 </div>

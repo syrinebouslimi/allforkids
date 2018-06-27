@@ -80,6 +80,8 @@ class ParentController extends Controller
         $allFavoris = $em->getRepository('UserBundle:UserEtablissementFavoris')->findBy(array('user' => $idUser));
         $allGallerie = $em->getRepository('UserBundle:Gallerie')->findAll();
 
+
+
         return $this->render('@KidsFront/affichergallerieparent.html.twig', array('favoris' => $allFavoris,
             'gallerie'=>$allGallerie));
     }
@@ -113,6 +115,7 @@ class ParentController extends Controller
             $e->setAvgRating($result[0]['vote']);
 
 
+           // var_dump($e->getAvgRating()).die();
 
             $save = $this->getDoctrine()->getManager();
             $save->persist($e);

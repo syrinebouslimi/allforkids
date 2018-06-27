@@ -30,7 +30,7 @@ class UserEtablissementVote
 
     /**
      * @ORM\ManyToOne(targetEntity="UserBundle\Entity\Etablissement", inversedBy="userVote")
-     * @ORM\JoinColumn(name="etablissement_id", referencedColumnName="id",onDelete="CASCADE")
+     * @ORM\JoinColumn(name="etablissement_id", referencedColumnName="id")
      */
     private $etablissement;
 

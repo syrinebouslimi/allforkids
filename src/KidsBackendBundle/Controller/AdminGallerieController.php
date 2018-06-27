@@ -24,6 +24,7 @@ class AdminGallerieController extends Controller
 
         $gallerie = $this->getDoctrine()->getRepository('UserBundle:Gallerie')->findAll();
 
+
         return $this->render('@KidsBackend/afficherallgallerie.html.twig', array('gallerie' => $gallerie, 'notifiableNotifications' => $allNotif, 'etab'=>$etablis));
     }
 
