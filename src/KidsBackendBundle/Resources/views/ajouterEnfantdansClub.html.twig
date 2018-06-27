@@ -1,0 +1,59 @@
+{% extends 'KidsBackendBundle::Template_Admin.html.twig' %}
+
+{% block body %}
+
+    <h4><p class="login-box-msg"> Affecter votre Enfant au CLub </p></h4>
+    <table border="2" bgcolor="#a52a2a" align="center" >
+
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+
+
+        <div class="form-group has-feedback">
+            {{ form_label(form.idEnfant ,'Nom Enfant') }}
+            {{ form_errors(form.idEnfant) }}
+            {{ form_widget(form.idEnfant,{'attr': {'class': 'form-control','placeholder': ""}}) }}
+
+        </div>
+
+        <div class="form-group has-feedback">
+            {{ form_label(form.idUserParent ,'Parent') }}
+            {{ form_errors(form.idUserParent) }}
+            {{ form_widget(form.idUserParent,{'attr': {'class': 'form-control','placeholder': ""}}) }}
+
+        </div>
+        <div class="form-group has-feedback">
+            {{ form_label(form.idClub ,'Nom Club') }}
+            {{ form_errors(form.idClub) }}
+            {{ form_widget(form.idClub,{'attr': {'class': 'form-control','placeholder': ""}}) }}
+
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-xs-8">
+                <div class="checkbox icheck">
+
+                </div>
+            </div>
+            <!-- /.col -->
+            <div class="col-xs-4">
+                {{ form_widget(form.Affecter,{'attr': {'class': 'btn btn-primary btn-block btn-flat'}}) }}
+
+            </div>
+            <!-- /.col -->
+        </div>
+
+        {{ form_end(form) }}
+
+    </table>
+{% endblock body %}
+
+
+
+
+
+
+

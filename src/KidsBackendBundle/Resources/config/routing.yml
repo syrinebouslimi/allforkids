@@ -181,4 +181,28 @@ ajouterClubJson:
 searchJson:
     path:     /searchJson/{nom}
     defaults: { _controller: KidsBackendBundle:Club:searchJson}
+modificationClubJson:
+    path:     /modificationClubJson/{id}
+    defaults: { _controller: KidsBackendBundle:Club:modificationClubJson }
+ajouterEnfant:
+    path:     /ajouterEnfant
+    defaults: { _controller: KidsBackendBundle:Club:ajouterEnfant }
+afficheEnfant:
+    path:     /afficheEnfant
+    defaults: { _controller: KidsBackendBundle:Club:afficheEnfant }
 
+affecterEnfantClub:
+    path:     /affecterEnfantClub
+    defaults: { _controller: KidsBackendBundle:Club:affecterEnfantClub }
+ajouterEnfantdansClub:
+    path:     /ajouterEnfantdansClub
+    defaults: { _controller: KidsBackendBundle:Club:ajouterEnfantdansClub }
+modifierAffectClubEnfant:
+    path:     /modifierAffectClubEnfant/{id}
+    defaults: { _controller: KidsBackendBundle:Club:modifierAffectClubEnfant }
+suppEnfant:
+    path:     /suppEnfant/{id}
+    defaults: { _controller: KidsBackendBundle:Club:suppEnfant }
+suppClubEnfant:
+    path:     /suppClubEnfant/{id}
+    defaults: { _controller: KidsBackendBundle:Club:suppClubEnfant }

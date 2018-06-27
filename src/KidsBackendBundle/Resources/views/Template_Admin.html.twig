@@ -317,8 +317,11 @@
                     <ul class="treeview-menu">
                         <li><a href="{{ path('ajouterClub') }}"><i class="fa fa-circle-o"></i> Ajouter des club </a></li>
                         <li><a href="{{ path('afficherClub') }}"><i class="fa fa-circle-o"></i> Afficher les Club</a></li>
-                        <li><a href=""><i class="fa fa-circle-o"></i> Rechercher des Club </a></li>
+                        <li><a href="{{ path('search') }}"><i class="fa fa-circle-o"></i> Rechercher des Club </a></li>
                         <li><a href="{{ path('calendrierClub') }}"><i class="fa fa-circle-o"></i> Afficher Calendrier</a></li>
+                        <li><a href="{{ path('ajouterEnfantdansClub') }}"><i class="fa fa-circle-o"></i> Affecter enfant</a></li>
+                        <li><a href="{{ path('affecterEnfantClub') }}"><i class="fa fa-circle-o"></i> Afficher Clubs Par enfant</a></li>
+                        <li><a href="{{ path('ajouterEnfant') }}"><i class="fa fa-circle-o"></i> Ajouter enfant</a></li>
 
                     </ul>
 
@@ -385,6 +388,7 @@
                 </div>
                 <!-- /.col-->
             </div>
+
             <!-- ./row -->
         </section>
         <!-- /.content -->

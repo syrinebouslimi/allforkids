@@ -7,6 +7,7 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 use UserBundle\Entity\Publication;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class MobileController extends Controller
 {
@@ -39,13 +40,20 @@ class MobileController extends Controller
         $em=$this->getDoctrine()->getManager();
         $em->flush();
         $pubjson = new Publication();
-        $pubjson->setNomPublication($request->get('	nomPublication'));
+        $pubjson->setNomPublication($request->get('nomPublication'));
         $pubjson->setDescriptionPublication($request->get('descriptionPublication'));
         $pub = $request->get('datePublication');
         $pubjson->setDatePublication(new \ DateTime($pub));
+//        $idUser = $request->get('idUser');
 
-        $pubjson->imagePublication($request->get('imagePublication'));
-        $pubjson->contenuPublication($request->get('contenuPublication'));
+        $pubjson->setImagePublication($request->get('imagePublication'));
+        $pubjson->setContenuPublication($request->get('contenuPublication'));
+        $pubjson->setEtatPublication($request->get('etatPublication'));
+
+        $user=$em->getRepository('UserBundle:User')->find($request->get('idUserPublication'));
+        $pubjson->setIdUserPublication($user);
+//        $user = $this->getDoctrine()->getManager()->getRepository('UserBundle:User')->find($idUser);
+//        $pubjson->setIdUserPublication($user);
 
 
         $typepub=$em->getRepository('UserBundle:TypePublication')->find($request->get('typePublication'));
@@ -54,8 +62,6 @@ class MobileController extends Controller
         $categoriepub=$em->getRepository('UserBundle:CategoriePublication')->find($request->get('categoriePublication'));
         $pubjson->setCategoriePublication($categoriepub);
 
-        $user=$em->getRepository('UserBundle:User')->find($request->get('idUserPublication'));
-        $pubjson->setIdUserPublication($user);
 
         $em->persist($pubjson);
         $em->flush();

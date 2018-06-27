@@ -320,3 +320,22 @@ gereRendezvous:
 ajoutREclamation:
     path:     /ajoutREclamation
     defaults: { _controller: KidsFrontBundle:Services:ajoutREclamation }
+
+
+affichercategoriepub_json:
+    path: /affichercategoriepubjson
+    defaults : {_controller: KidsFrontBundle:Mobile:affichercategoriepubjson }
+
+afficherpub_json:
+    path: /afficherpubjson
+    defaults : {_controller: KidsFrontBundle:Mobile:afficherpubjson }
+affichertypepub_json:
+    path: /affichertypepubjson
+    defaults : {_controller: KidsFrontBundle:Mobile:affichertypepubjson }
+creerpub_json:
+    path: /creerpubjson
+    defaults : {_controller: KidsFrontBundle:Mobile:creerpubjson }
+
+supprimerpub_json:
+    path: /supprimerpubjson/{id}
+    defaults : {_controller: KidsFrontBundle:Mobile:supprimerpubjson }

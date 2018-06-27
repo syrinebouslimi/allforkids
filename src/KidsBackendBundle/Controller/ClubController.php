@@ -18,6 +18,8 @@ use UserBundle\Entity\Club;
 use UserBundle\Entity\Enfants;
 use UserBundle\Entity\EventCustom;
 use UserBundle\Form\ClubType;
+use UserBundle\Form\AffectinClubType;
+use UserBundle\Entity\AffectinClub;
 use UserBundle\Form\EnfantsType;
 use UserBundle\Form\EventCustomType;
 
@@ -211,6 +213,9 @@ class ClubController extends Controller
 
     public function removeAction($id)
     {
+        $em = $this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
         $em=$this->getDoctrine()->getManager();
         $store=$em->getRepository("UserBundle:Club")->find($id);
         if ($store!=null){
@@ -223,7 +228,9 @@ class ClubController extends Controller
     public function modificationClubAction(Request $request,$id)
 
     {
+        $em = $this->getDoctrine()->getManager();
 
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
         $Uvn=$this->getDoctrine()->getRepository('UserBundle:Club')->find($id);
         $Uvn->setImageClub(null);
         $form=$this->createForm(ClubType::class,$Uvn);
@@ -268,7 +275,9 @@ class ClubController extends Controller
 
     public function ajouterevntClubAction(Request $request)
     {
-        $em=$this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
         $status = 'erreur';
         $html = 'erreur';
         if ($request->isMethod('POST'))
@@ -315,10 +324,9 @@ class ClubController extends Controller
 
     public function searchAction(Request $request)
     {
-
-
-
         $em = $this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
         $nomclub = $em->getRepository('UserBundle:Club')->findAll();
          if($request->isMethod('POST')){
           $club=$request->get('nomClub');
@@ -336,7 +344,9 @@ class ClubController extends Controller
     public function modifierCalendarAction(Request $request,$id)
 
     {
+        $em = $this->getDoctrine()->getManager();
 
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
         //modifierCalendar
         $Uvn=$this->getDoctrine()->getRepository('UserBundle:EventCustom')->find($id);
         $form=$this->createForm(EventCustomType::class,$Uvn);
@@ -360,6 +370,9 @@ class ClubController extends Controller
 
     public function supprimerEvntCalendarAction($id)
     {
+        $em = $this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
         $em=$this->getDoctrine()->getManager();
         $store=$em->getRepository("UserBundle:EventCustom")->find($id);
         if ($store!=null){
@@ -372,6 +385,9 @@ class ClubController extends Controller
     public function afficheEvntCostomAction ()
 
     {
+        $em = $this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
         $em=$this->getDoctrine()->getManager();
 
         $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
@@ -443,5 +459,90 @@ class ClubController extends Controller
 
     }
 
+    /*************************************************************/
 
+    public function affecterEnfantClubAction ()
+
+    {
+        $em=$this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
+        $enf=$this->getDoctrine()->getRepository('UserBundle:AffectinClub')->findAll();
+        return $this->render ( '@KidsBackend/affecterEnfantClub.html.twig',array('form'=>$enf));
+
+    }
+
+    public function ajouterEnfantdansClubAction(Request $request)
+    {
+        $em=$this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
+        $enf = new AffectinClub();
+        $form=$this->createForm(AffectinClubType::class,$enf);
+        $formView=$form->createView();
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid())
+
+        {
+            $em=$this->getDoctrine()->getManager();
+            $em->persist($enf);
+            $em->flush();
+            return $this->redirect($this->generateUrl('affecterEnfantClub'));
+        }
+
+        return $this->render ( '@KidsBackend/ajouterEnfantdansClub.html.twig',array('form'=>$formView));
+    }
+
+    public function suppClubEnfantAction($id)
+    {
+        $em=$this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
+        $em=$this->getDoctrine()->getManager();
+        $store=$em->getRepository("UserBundle:AffectinClub")->find($id);
+        if ($store!=null){
+            $em->remove($store);
+            $em->flush();
+        }
+        return $this->redirectToRoute("affecterEnfantClub");
+    }
+    public function suppEnfantAction($id)
+    {
+        $em=$this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
+        $em=$this->getDoctrine()->getManager();
+        $store=$em->getRepository("UserBundle:Enfants")->find($id);
+        if ($store!=null){
+            $em->remove($store);
+            $em->flush();
+        }
+        return $this->redirectToRoute("afficheEnfant");
+    }
+
+    public function modifierAffectClubEnfantAction(Request $request,$id)
+
+    {
+        $em=$this->getDoctrine()->getManager();
+
+        $allNotif = $em->getRepository('MgiletNotificationBundle:NotifiableNotification')->findAll();
+        //modifierCalendar
+        $Uvn=$this->getDoctrine()->getRepository('UserBundle:AffectinClub')->find($id);
+        $form=$this->createForm(AffectinClubType::class,$Uvn);
+        $formView=$form->createView();
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $em=$this->getDoctrine()->getManager();
+            $em->persist($Uvn);
+            $em->flush();
+            return $this->redirect($this->generateUrl('affecterEnfantClub'));
+        }
+
+
+        return $this->render ( '@KidsBackend/ajouterEnfantdansClub.html.twig',array('form'=>$formView));
+
+    }
 }

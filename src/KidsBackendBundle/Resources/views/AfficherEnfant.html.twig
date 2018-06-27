@@ -1,0 +1,26 @@
+{% extends 'KidsBackendBundle::Template_Admin.html.twig' %}
+{% block body %}
+    <h3 class="box-title">Listes des enfants  </h3>
+    <table border="2" class="table table-bordered table-hover" >
+        <tr>
+            <th>Nom d'enfant</th>
+            <th>Prénom Enfant</th>
+            <th>Age Enfant</th>
+            <th>Parent d'élève</th>
+        </tr>
+        {% for p in form %}
+            <tr>
+                <th>{{ p.nomEnfant }}</th>
+                <td >{{p.prenomEnfant}} </td>
+                <td>{{ p.ageEnfant}} </td>
+                <th>{{ p.idUserParent.getNomUser()}}</th>
+
+                <td><a  class="btn btn-default" href="{{path('modifierCalendar',{'id':p.id}) }}">Modifier </a>
+                <td><a  class="btn btn-danger" href="{{path('suppEnfant',{'id':p.id}) }}">remove </a>
+
+            </tr>
+        {% endfor %}
+
+    </table>
+
+{% endblock %}

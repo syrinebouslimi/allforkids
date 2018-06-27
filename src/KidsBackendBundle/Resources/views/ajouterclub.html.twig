@@ -39,6 +39,31 @@
             {{ form_widget(form.adresse,{'attr': {'class': 'form-control','placeholder': "adresse"}}) }}
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         </div>
+
+        <div class="form-group has-feedback">
+            {{ form_label(form.longi ,'Longitude')}}
+            {{ form_errors(form.longi) }}
+            {{ form_widget(form.longi,{'attr': {'class': 'form-control','placeholder': "Longitude"}}) }}
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        </div>
+
+        <div class="form-group has-feedback">
+            {{ form_label(form.lat ,'Altitude')}}
+            {{ form_errors(form.lat) }}
+            {{ form_widget(form.lat,{'attr': {'class': 'form-control','placeholder': "Altitude"}}) }}
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="dateCreationClub">Date</label>
+            <div class="input-group date">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                {{ form_widget(form.dateCreationClub,{'attr':{'class':'form-control pull-right'}} ) }}
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-xs-8">
                 <div class="checkbox icheck">

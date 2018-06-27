@@ -1,0 +1,27 @@
+{% extends 'KidsBackendBundle::Template_Admin.html.twig' %}
+{% block body %}
+    <h3 class="box-title">Affecter Votre  Enfant dans Un Club  </h3>
+    <table border="2" class="table table-bordered table-hover" >
+        <tr>
+            <th>Nom Enfant</th>
+            <th>Nom du Club</th>
+            <th>Parent d'élève</th>
+
+
+        </tr>
+        {% for p in form %}
+            <tr>
+
+                <td > {{p.idClub.getNomClub()}} </td>
+                <td> {{ p.idUserParent.getNomUser() }} </td>
+                <td> {{ p.idEnfant.getNomEnfant() }} </td>
+
+                <td><a  class="btn btn-default" href="{{path('modifierAffectClubEnfant',{'id':p.id}) }}">Modifier </a>
+                <td><a  class="btn btn-danger" href="{{path('suppClubEnfant',{'id':p.id}) }}">Supprimer </a>
+
+            </tr>
+        {% endfor %}
+
+    </table>
+
+{% endblock %}
