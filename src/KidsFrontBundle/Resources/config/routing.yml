@@ -67,6 +67,11 @@ affichergallerie:
     path: /affichergallerie
     defaults: { _controller: KidsFrontBundle:Gallerie:affichergallerie}
 
+afficherFiltredGallerie:
+    path: /afficherFiltredgallerie
+    defaults: { _controller: KidsFrontBundle:Gallerie:afficherFiltredgallerie}
+
+
 affichergalleriePres:
     path: /affichergalleriePres
     defaults: { _controller: KidsFrontBundle:Gallerie:affichergalleriePres}
@@ -253,7 +258,7 @@ api_mobile_update_enseignant:
     defaults: { _controller: KidsFrontBundle:EtablissementMobile:updateEnseig}
 
 api_mobile_supp_ense:
-    path: /suppressionEnsei
+    path: /suppressionEnsei/{id}
     defaults: { _controller: KidsFrontBundle:EtablissementMobile:supprimerEnseignant}
 api_mobile_supp_etab:
     path: /supprimerEtab/{id}

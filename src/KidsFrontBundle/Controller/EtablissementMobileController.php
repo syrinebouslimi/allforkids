@@ -321,8 +321,8 @@ class EtablissementMobileController extends Controller
 
         $encoders = array(new XmlEncoder(), new JsonEncoder());
         $etab = $this->getDoctrine()->getManager()
-            ->getRepository('UserBundle:Enseignant')
-            ->findAll();
+            ->getRepository('UserBundle:Enseignant')->findBy(array('etablissementId'=>$idEtab));
+
         $normalizer = new ObjectNormalizer();
         $normalizer->setCircularReferenceLimit(3);
         $normalizer->setCircularReferenceHandler(function ($object) {
@@ -493,7 +493,7 @@ class EtablissementMobileController extends Controller
         $em->flush();
 
 
-        return new \Symfony\Component\HttpFoundation\Response("Suppression effectué avec succés");
+        return new \Symfony\Component\HttpFoundation\Response("Enseignant supprimé effectué avec succés");
     }
 
     public function supprimerImageAction($id)

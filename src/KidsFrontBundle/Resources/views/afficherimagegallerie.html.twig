@@ -113,6 +113,51 @@
 
 {% endblock Menu %}
 
+{% block favoris %}
+    <li class="cart-dropdown">
+        <a href="#" class="bg-color-6 shop-cart">
+            <i class="fa fa-shopping-basket " aria-hidden="true"></i>
+            <span class="badge bg-color-1">{{ favoris|length }}</span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-right">
+            <li><i class="fa fa-shopping-basket " aria-hidden="true"></i>{{ favoris|length }} elements marqués</li>
+
+            {% for i in favoris %}
+
+                {% if loop.index < 2 %}
+                    <li>
+                        <a href="">
+                            <div class="media">
+                                <div class="media-left">
+
+                                    <img src="{{ asset('uploads/images/' ~ i.etablissement.imageEtablissement) }}"
+                                         alt="cart-Image">
+                                </div>
+                                <div class="media-body">
+                                    <h4>{{ i.etablissement.nomEtablissement }}</h4>
+                                    {#<div class="price">#}
+                                    {#<span class="color-1">{{ i.etablissement.adresseEtablissement }}</span>#}
+                                    {#</div>#}
+                                    {#<span class="amount">Qnt: 1</span>#}
+                                </div>
+                            </div>
+                        </a>
+                        <span class="cancel"><i class="fa fa-close" aria-hidden="true"></i></span>
+                    </li>
+
+                {% elseif loop.index == 2 %}
+                    <li>
+                        <a href="{{ path('getAllFavoris') }}">
+                            <button type="button" class="btn btn-primary">Voir plus</button>
+                        </a>
+                    </li>
+
+                {% endif %}
+
+            {% endfor %}
+        </ul>
+    </li>
+{% endblock favoris %}
 
 {% block bandeau %}
     <!-- PAGE TITLE SECTION-->
@@ -135,6 +180,36 @@
 
     <!-- MAIN SECTION -->
     <section class="mainContent full-width clearfix homeGallerySection" style="padding: 40px;">
+
+
+        <form action="{{ path('afficherFiltredGallerie') }}" method="post">
+
+            <h5>Choisir un etablissement : </h5>
+            <div class="row">
+
+
+
+                <div class="col-sm-3 col-xs-12">
+                    <div class="dropGeneral roundOne colorBg bg-color-3">
+
+                        <select name="idEtab" class="select-drop">
+                            <option value="Voir tout">Voir tout</option>
+                            {% for i in etablissement %}
+                                <option value="{{ i.id }}">{{ i.nomEtablissement }}</option>
+                            {% endfor %}
+                        </select>
+
+
+                    </div>
+
+                </div>
+                <button type="submit" class="btn btn-info pull-right">Chercher</button>
+
+            </div>
+
+        </form>
+
+
 
         <div class="row isotopeContainer" id="container">
 

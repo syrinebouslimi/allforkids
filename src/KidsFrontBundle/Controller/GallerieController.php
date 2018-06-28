@@ -54,17 +54,58 @@ class GallerieController extends Controller
 
     }
 
-    public function affichergallerieAction()
+    public function affichergallerieAction(Request $request)
     {
 
-        $user = $this->container->get('security.token_storage')->getToken()->getUser();
-        $id = $user->getId();
+        $em = $this->getDoctrine()->getManager();
 
-        $etablissementId = $this->getDoctrine()->getRepository('UserBundle:Etablissement')->findOneBy(array('idUserEtablissement' => $id));
-        $gallerie = $this->getDoctrine()->getRepository('UserBundle:Gallerie')->findBy(array('etablissementId' => $etablissementId));
-        return $this->render('@KidsFront/afficherimagegallerie.html.twig', array('gallerie' => $gallerie));
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $idUser = $user->getId();
+
+        $allFavoris = $em->getRepository('UserBundle:UserEtablissementFavoris')->findBy(array('user' => $idUser));
+
+        $Image = $em->getRepository('UserBundle:Gallerie')->findAll();
+
+        $allEtab = $em->getRepository('UserBundle:Etablissement')->findBy(array('etat' => 'valide'));
+
+        return $this->render('@KidsFront/afficherimagegallerie.html.twig', array('favoris' => $allFavoris,
+            'gallerie'=>$Image, 'etablissement'=>$allEtab));
 
     }
+
+    public function afficherFiltredgallerieAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $idUser = $user->getId();
+
+        $allFavoris = $em->getRepository('UserBundle:UserEtablissementFavoris')->findBy(array('user' => $idUser));
+
+
+        $idEtab = $request->get('idEtab');
+
+        if ($idEtab == "Voir tout"){
+
+            $allEtab = $em->getRepository('UserBundle:Etablissement')->findBy(array('etat' => 'valide'));
+
+            $gallerie = $this->getDoctrine()->getRepository('UserBundle:Gallerie')->findAll();
+
+            return $this->render('@KidsFront/afficherimagegallerie.html.twig', array('favoris' => $allFavoris,
+                'gallerie'=>$gallerie, 'etablissement'=>$allEtab));
+        } else{
+
+            $filtredImage = $em->getRepository('UserBundle:Gallerie')->findBy(array('etablissementId'=>$idEtab));
+            $allEtab = $em->getRepository('UserBundle:Etablissement')->findBy(array('etat' => 'valide'));
+
+            return $this->render('@KidsFront/afficherimagegallerie.html.twig', array('favoris' => $allFavoris,
+                'gallerie'=>$filtredImage, 'etablissement'=>$allEtab));
+        }
+
+
+
+    }
+
 
     public function affichergalleriePresAction()
     {
