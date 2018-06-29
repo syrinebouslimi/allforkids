@@ -24,10 +24,37 @@ class EtablissementMobileController extends Controller
 
     public function allEtabAction()
     {
+        $em = $this->getDoctrine()->getManager();
+
         $encoders = array(new XmlEncoder(), new JsonEncoder());
         $etab = $this->getDoctrine()->getManager()
             ->getRepository('UserBundle:Etablissement')
             ->findAll();
+
+        foreach($etab as $e) {
+
+            $query = $em->createQueryBuilder();
+            $query->select('avg(o.vote) AS vote');
+            $query->from('UserBundle:UserEtablissementVote', 'o');
+//            $query->where('o.user = :userId');
+//            $query->setParameter('userId', $idUser);
+            $query->where('o.etablissement = :etabId');
+
+            $query->setParameter('etabId', $e->getId());
+
+            $a = $query->getQuery();
+
+            $result = $a->getResult();
+            $e->setAvgRating($result[0]['vote']);
+
+
+            $save = $this->getDoctrine()->getManager();
+            $save->persist($e);
+            $save->flush();
+
+        }
+
+
         $normalizer = new ObjectNormalizer();
         $normalizer->setCircularReferenceLimit(1);
         $normalizer->setCircularReferenceHandler(function ($object) {
@@ -35,10 +62,14 @@ class EtablissementMobileController extends Controller
         });
         $normalizers = array($normalizer);
         $serializer = new Serializer($normalizers, $encoders);
-        $em = $this->getDoctrine()->getManager();
+
+
+
+
         $jsonContent = $serializer->normalize($etab, 'json', array('attributes' => array('id', 'nomEtablissement', 'imageEtablissement'
-        , 'adresseEtablissement', 'typeEtablissement', 'descriptionEtablissement', 'avgRating', 'phone'
+        , 'adresseEtablissement', 'typeEtablissement', 'descriptionEtablissement', 'avgRating', 'phone','exigenceEtablissement'
             => ['name'])));
+
         return new JsonResponse($jsonContent);
 
     }
@@ -117,7 +148,6 @@ class EtablissementMobileController extends Controller
         $serializer = new Serializer($normalizers, $encoders);
         $jsonContent = $serializer->normalize($etab, 'json');
         return new JsonResponse($jsonContent);
-
     }
 
 
@@ -317,40 +347,24 @@ class EtablissementMobileController extends Controller
     public function getEnseiForPrestataireAction(Request $request)
     {
 
-        $idEtab = $request->get('etablissement');
+
 
         $encoders = array(new XmlEncoder(), new JsonEncoder());
+        $idEtab = $request->get('etablissement');
+
         $etab = $this->getDoctrine()->getManager()
-            ->getRepository('UserBundle:Enseignant')->findBy(array('etablissementId'=>$idEtab));
+            ->getRepository('UserBundle:Enseignant')
+            ->findBy(array('etablissementId'=>$idEtab));
 
         $normalizer = new ObjectNormalizer();
-        $normalizer->setCircularReferenceLimit(3);
+        $normalizer->setCircularReferenceLimit(1);
         $normalizer->setCircularReferenceHandler(function ($object) {
             return $object->getId();
         });
         $normalizers = array($normalizer);
         $serializer = new Serializer($normalizers, $encoders);
-        $jsonContent = $serializer->normalize($etab);
+        $jsonContent = $serializer->normalize($etab, 'json');
         return new JsonResponse($jsonContent);
-
-
-
-//        $encoders = array(new XmlEncoder(), new JsonEncoder());
-//        $idEtab = $request->get('etablissement');
-//
-//        $etab = $this->getDoctrine()->getManager()
-//            ->getRepository('UserBundle:Enseignant')
-//            ->findBy(array('etablissementId'=>$idEtab));
-//
-//        $normalizer = new ObjectNormalizer();
-//        $normalizer->setCircularReferenceLimit(1);
-//        $normalizer->setCircularReferenceHandler(function ($object) {
-//            return $object->getId();
-//        });
-//        $normalizers = array($normalizer);
-//        $serializer = new Serializer($normalizers, $encoders);
-//        $jsonContent = $serializer->normalize($etab, 'json');
-//        return new JsonResponse($jsonContent);
 
     }
 
