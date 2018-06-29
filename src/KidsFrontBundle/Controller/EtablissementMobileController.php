@@ -347,40 +347,24 @@ class EtablissementMobileController extends Controller
     public function getEnseiForPrestataireAction(Request $request)
     {
 
-        $idEtab = $request->get('etablissement');
+
 
         $encoders = array(new XmlEncoder(), new JsonEncoder());
+        $idEtab = $request->get('etablissement');
+
         $etab = $this->getDoctrine()->getManager()
-            ->getRepository('UserBundle:Enseignant')->findBy(array('etablissementId'=>$idEtab));
+            ->getRepository('UserBundle:Enseignant')
+            ->findBy(array('etablissementId'=>$idEtab));
 
         $normalizer = new ObjectNormalizer();
-        $normalizer->setCircularReferenceLimit(3);
+        $normalizer->setCircularReferenceLimit(1);
         $normalizer->setCircularReferenceHandler(function ($object) {
             return $object->getId();
         });
         $normalizers = array($normalizer);
         $serializer = new Serializer($normalizers, $encoders);
-        $jsonContent = $serializer->normalize($etab);
+        $jsonContent = $serializer->normalize($etab, 'json');
         return new JsonResponse($jsonContent);
-
-
-
-//        $encoders = array(new XmlEncoder(), new JsonEncoder());
-//        $idEtab = $request->get('etablissement');
-//
-//        $etab = $this->getDoctrine()->getManager()
-//            ->getRepository('UserBundle:Enseignant')
-//            ->findBy(array('etablissementId'=>$idEtab));
-//
-//        $normalizer = new ObjectNormalizer();
-//        $normalizer->setCircularReferenceLimit(1);
-//        $normalizer->setCircularReferenceHandler(function ($object) {
-//            return $object->getId();
-//        });
-//        $normalizers = array($normalizer);
-//        $serializer = new Serializer($normalizers, $encoders);
-//        $jsonContent = $serializer->normalize($etab, 'json');
-//        return new JsonResponse($jsonContent);
 
     }
 
