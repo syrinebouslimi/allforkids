@@ -1,5 +1,6 @@
 {% extends 'KidsBackendBundle::Template_Admin.html.twig' %}
 
+
 {% block body %}
 
     <div class="row">
@@ -10,6 +11,7 @@
             <div class="box-header">
                 <h3 class="box-title">La liste des publications</h3>
             </div>
+
             <!-- /.box-header -->
             <div class="box-body">
                 <table id="example1" class="table table-bordered table-striped">
@@ -101,6 +103,20 @@
                         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
                         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
                         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+                        <script src="{{ asset('template_Admin_Principal/bower_components/jquery/dist/jquery.min.js') }}"></script>
+
+                        <!-- Bootstrap 3.3.7 -->
+                        <script src="{{ asset('template_Admin_Principal/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+                        <!-- DataTables -->
+                        <script src="{{ asset('template_Admin_Principal/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+                        <script src="{{ asset('template_Admin_Principal/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+
+                        <!-- SlimScroll -->
+                        <script src="{{ asset('template_Admin_Principal/bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
+
+                        <!-- FastClick -->
+                        <script src="{{ asset('template_Admin_Principal/bower_components/fastclick/lib/fastclick.js') }}"></script>
                     {% endfor %}
                     </tbody>
                 </table>
@@ -109,7 +125,7 @@
     </div>
     </div>
 
-    <script>
+<script>
         $(function () {
             $('#example1').DataTable()
             $('#example2').DataTable({

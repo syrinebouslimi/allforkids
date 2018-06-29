@@ -18,6 +18,10 @@ class ProduitfrontController extends Controller
 {
     public function ProduitAfficherFrontAction(Request $request)
     {
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $idUser = $user->getId();
+        $em = $this->getDoctrine()->getManager();
+        $allFavoris = $em->getRepository('UserBundle:UserEtablissementFavoris')->findBy(array('user' => $idUser));
 
         $form = $this->createForm(SearchProductType::class);
         $form->handleRequest($request);
@@ -45,7 +49,7 @@ class ProduitfrontController extends Controller
 
 
                 return $this->render('@KidsFront/Default/rechercheProduit.html.twig', array(
-                    'liste_produit' => $liste_produit, 'formP' => $form->createView(),
+                    'liste_produit' => $liste_produit, 'favoris'=>$allFavoris, 'formP' => $form->createView(),
                 ));
 
             }
@@ -53,20 +57,22 @@ class ProduitfrontController extends Controller
         }
 
 
-        return $this->render('@KidsFront/ProduitAfficherFront.html.twig', array('form' => $Uv, 'categories'=>$categories
+        return $this->render('@KidsFront/ProduitAfficherFront.html.twig', array('form' => $Uv, 'favoris'=>$allFavoris, 'categories'=>$categories
         , 'formP' => $form->createView()));
     }
 
-//public function ProduitDescriptionAficherFrontAction()
-//{
-//    $Uv = $this->getDoctrine()->getRepository('UserBundle:Produit')->findAll();
-//    return $this->render('@KidsFront/ProduitDescriptionAficherFront.html.twig', array('serv' => $Uv));
-//}
+
     public function detailProduitFrontAction ($id)
 
     {
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $idUser = $user->getId();
+        $em = $this->getDoctrine()->getManager();
+        $allFavoris = $em->getRepository('UserBundle:UserEtablissementFavoris')->findBy(array('user' => $idUser));
+
+
         $Uv=$this->getDoctrine()->getRepository('UserBundle:Produit')->find($id);
-        return $this->render( 'KidsFrontBundle::details.html.twig',array('form'=>$Uv));
+        return $this->render( 'KidsFrontBundle::details.html.twig',array('form'=>$Uv,'favoris'=>$allFavoris));
 
     }
 
@@ -75,11 +81,16 @@ class ProduitfrontController extends Controller
     public function rechercheAction(Request $request)
     {
 
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $idUser = $user->getId();
+        $em = $this->getDoctrine()->getManager();
+        $allFavoris = $em->getRepository('UserBundle:UserEtablissementFavoris')->findBy(array('user' => $idUser));
+
         $search = $request->query->get('search');
         $servi= $this->getDoctrine()->getRepository('UserBundle:Produit')->findBy(array('nomProduit'=>$search));
         if (strlen($search)!=0){
 
-            return $this->render('@KidsFront/ProduitAfficherFront.html.twig',array('serv'=>$servi));
+            return $this->render('@KidsFront/ProduitAfficherFront.html.twig',array('serv'=>$servi,'favoris'=>$allFavoris));
 
         } else {
             return  $this->redirectToRoute('KidsFrontBundle:Produitfront:ProduitAfficherFront');
@@ -87,16 +98,28 @@ class ProduitfrontController extends Controller
     }
     public function CategorieProduitAction($id)
     {
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $idUser = $user->getId();
+        $em = $this->getDoctrine()->getManager();
+        $allFavoris = $em->getRepository('UserBundle:UserEtablissementFavoris')->findBy(array('user' => $idUser));
+
         $produit= $this->getDoctrine()->getRepository('UserBundle:Produit')->find($id);
-        return $this->render('KidsFrontBundle::CategorieProduit', array('form'=>$produit));
+        return $this->render('KidsFrontBundle::CategorieProduit', array('form'=>$produit,'favoris'=>$allFavoris));
     }
 
     public function produitParCategorieAction($id)
     {
+
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $idUser = $user->getId();
+        $em = $this->getDoctrine()->getManager();
+        $allFavoris = $em->getRepository('UserBundle:UserEtablissementFavoris')->findBy(array('user' => $idUser));
+
+
         $produits = $this->getDoctrine()->getRepository('UserBundle:Produit')->findBy(array('idCategorieProduit'=>$id));
         $categories = $this->getDoctrine()->getRepository('UserBundle:CategorieProduit')->findAll();
 
-        return $this->render('@KidsFront/produitParCategorie.html.twig', array('produits' => $produits, 'categories'=>$categories));
+        return $this->render('@KidsFront/produitParCategorie.html.twig', array('produits' => $produits, 'favoris'=>$allFavoris, 'categories'=>$categories));
     }
 //affichageMobile
     public function afficherProduitjsonFrontAction ()
