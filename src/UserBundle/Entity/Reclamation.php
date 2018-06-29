@@ -24,16 +24,26 @@ class Reclamation
     /**
      * @var string
      *
-     * @ORM\Column(name="nomReclamation", type="string", length=255)
+     * @ORM\Column(name="nomReclameur", type="string", length=255)
      */
-    private $nomReclamation;
+    private $nomReclameur;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="descriptionReclamation", type="string", length=255)
+     * @return string
      */
-    private $descriptionReclamation;
+    public function getNomReclameur()
+    {
+        return $this->nomReclameur;
+    }
+
+    /**
+     * @param string $nomReclameur
+     */
+    public function setNomReclameur($nomReclameur)
+    {
+        $this->nomReclameur = $nomReclameur;
+    }
+
 
     /**
      * @var string
@@ -49,19 +59,10 @@ class Reclamation
      */
     private $emetteurReclamation;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="recepteurReclamation", type="string", length=255)
-     */
-    private $recepteurReclamation;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="dateReclamation", type="datetime")
-     */
-    private $dateReclamation;
+
+
+
 
 
     /**
@@ -83,53 +84,8 @@ class Reclamation
         return $this->id;
     }
 
-    /**
-     * Set nomReclamation
-     *
-     * @param string $nomReclamation
-     *
-     * @return Reclamation
-     */
-    public function setNomReclamation($nomReclamation)
-    {
-        $this->nomReclamation = $nomReclamation;
 
-        return $this;
-    }
 
-    /**
-     * Get nomReclamation
-     *
-     * @return string
-     */
-    public function getNomReclamation()
-    {
-        return $this->nomReclamation;
-    }
-
-    /**
-     * Set descriptionReclamation
-     *
-     * @param string $descriptionReclamation
-     *
-     * @return Reclamation
-     */
-    public function setDescriptionReclamation($descriptionReclamation)
-    {
-        $this->descriptionReclamation = $descriptionReclamation;
-
-        return $this;
-    }
-
-    /**
-     * Get descriptionReclamation
-     *
-     * @return string
-     */
-    public function getDescriptionReclamation()
-    {
-        return $this->descriptionReclamation;
-    }
 
     /**
      * Set contenuReclamation
@@ -155,29 +111,6 @@ class Reclamation
         return $this->contenuReclamation;
     }
 
-    /**
-     * Set dateReclamation
-     *
-     * @param \DateTime $dateReclamation
-     *
-     * @return Reclamation
-     */
-    public function setDateReclamation($dateReclamation)
-    {
-        $this->dateReclamation = $dateReclamation;
-
-        return $this;
-    }
-
-    /**
-     * Get dateReclamation
-     *
-     * @return \DateTime
-     */
-    public function getDateReclamation()
-    {
-        return $this->dateReclamation;
-    }
 
     /**
      * @return string
@@ -195,21 +128,8 @@ class Reclamation
         $this->emetteurReclamation = $emetteurReclamation;
     }
 
-    /**
-     * @return string
-     */
-    public function getRecepteurReclamation()
-    {
-        return $this->recepteurReclamation;
-    }
 
-    /**
-     * @param string $recepteurReclamation
-     */
-    public function setRecepteurReclamation($recepteurReclamation)
-    {
-        $this->recepteurReclamation = $recepteurReclamation;
-    }
+
 
     /**
      * @return mixed
@@ -231,4 +151,3 @@ class Reclamation
 
 
 }
-

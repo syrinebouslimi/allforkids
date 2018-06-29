@@ -87,9 +87,9 @@ class Publication
     private $datePublication;
 
     /**
-     * @var string
+     * @var text
      *
-     * @ORM\Column(name="descriptionPublication", type="string", length=255)
+     * @ORM\Column(name="descriptionPublication", type="text")
      */
     private $descriptionPublication;
 
@@ -201,7 +201,7 @@ class Publication
     }
 
     /**
-     * @return string
+     * @return text
      */
     public function getDescriptionPublication()
     {
@@ -209,12 +209,14 @@ class Publication
     }
 
     /**
-     * @param string $descriptionPublication
+     * @param text $descriptionPublication
      */
     public function setDescriptionPublication($descriptionPublication)
     {
         $this->descriptionPublication = $descriptionPublication;
     }
+
+
 
     /**
      * @return mixed
